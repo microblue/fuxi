@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+pale white octahedron geometric entity, glowing red cracks across surface, floating silently, approximately 2-3x human size, dark black data tendrils extending from vertices, cold mechanical presence
+primordial ancient swamp at night, torrential rain, dark stormy sky with lightning, murky shallow water, twisted ancient trees, muddy wetland, dramatic chiaroscuro lighting
+low angle tilting down, three pale white octahedra descending silently from the darkened sky, glowing red cracks pulsing across their surfaces, black data tendrils trailing from their vertices, floating down through the rain without disturbing it, alien geometry against primitive landscape
+camera low angle tilting down following their descent, emphasizing their imposing alien nature
+cold white glow from octahedra surfaces with red crack light, tendrils absorbing surrounding light, rain illuminated against dark forms
+alien menace, cold mechanical inevitability, geometric horror invading organic world
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

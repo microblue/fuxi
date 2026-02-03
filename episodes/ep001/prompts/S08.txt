@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+young boy age 16, angular face with lingering boyishness, high cheekbones, long black hair half-tied with lower half loose and messy, lean agile teenage hunter build, crude animal hide short tunic, rope belt, barefoot, primitive appearance
+primordial ancient swamp at night, torrential rain, dark stormy sky with lightning, murky shallow water, twisted ancient trees, muddy wetland, dramatic chiaroscuro lighting
+medium shot push in, a glowing silver-blue vortex of energy spinning in the swamp water, at its center a translucent crystal hovering and pulsing with inner light, Fuxi approaching alone through shallow water drawn toward it, other hunters gone from frame
+camera pushing in slowly building tension as Fuxi nears the crystal
+ethereal silver-blue glow from vortex and crystal reflecting off water surface, dark stormy background
+hypnotic attraction, isolation, mystery, the pull of destiny
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

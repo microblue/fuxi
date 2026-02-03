@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+pale white octahedron geometric entity, glowing red cracks across surface, floating silently, approximately 2-3x human size, dark black data tendrils extending from vertices, cold mechanical presence
+primordial ancient swamp at night, torrential rain, dark stormy sky with lightning, murky shallow water, twisted ancient trees, muddy wetland, dramatic chiaroscuro lighting
+full shot handheld chaotic, black data tendrils from the octahedron wrapping around a primitive hunter, the hunter's body pixelating and dissolving from feet upward into fragmenting data particles, expression of pure terror on the hunter's face, other hunters scattering in panic
+camera handheld with chaotic motion capturing the horror and confusion
+harsh red glow from octahedron cracks illuminating the pixelation effect, cold white geometric light against warm flesh tones dissolving
+pure horror, body dissolution, helplessness against incomprehensible technology
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

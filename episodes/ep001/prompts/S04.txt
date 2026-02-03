@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+man age 30, deep-set features, mature refined face, short black hair neatly styled, tall scholarly build, wearing flowing luminous translucent robe with light patterns streaming across surface, golden ornate patterns around left eye, elegant futuristic appearance
+breathtaking futuristic city built entirely of light, luminous crystalline architecture, rivers of golden-white data flowing through sky between buildings, central tower, holographic interfaces, all light glitching and stuttering, red alarm flashes, data streams fragmenting, city-wide emergency
+wide shot pulling back epic scale, Xihe pressing both hands on a massive holographic console, body data being extracted upward in luminous streams, an enormous pillar of light erupting from city center into the sky, the pillar fragmenting into billions of light points scattering outward into the cosmos, one light point carrying a faint bagua trigram pattern
+camera pulling back to reveal the full epic scale of the light pillar and scattering particles
+blinding white-gold central light pillar with blue-white particle scatter, city bathed in final radiance
+sublime sacrifice, cosmic transcendence, devastating beauty
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

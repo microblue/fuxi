@@ -1,0 +1,117 @@
+{
+  "name": "Flux 2 Dev Text-to-Image",
+  "description": "Flux 2 文生图 (T2I) 工作流",
+  "version": "1.0",
+  "parameters": {
+    "positive_prompt": "breathtaking futuristic city...",
+    "seed": 0,
+    "width": 1344,
+    "height": 768,
+    "steps": 20,
+    "cfg": 1.0,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1.0,
+    "filename_prefix": "keyframe"
+  },
+  "workflow": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "flux2_dev_fp8mixed.safetensors",
+        "weight_dtype": "fp8_e4m3fn"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "mistral_3_small_flux2_fp4_mixed.safetensors",
+        "type": "flux2"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "flux2-vae.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "EmptyLatentImage",
+      "inputs": {
+        "width": 1344,
+        "height": 768,
+        "batch_size": 1
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "breathtaking futuristic city...",
+        "clip": [
+          "2",
+          0
+        ]
+      }
+    },
+    "6": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "",
+        "clip": [
+          "2",
+          0
+        ]
+      }
+    },
+    "7": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "5",
+          0
+        ],
+        "negative": [
+          "6",
+          0
+        ],
+        "latent_image": [
+          "4",
+          0
+        ],
+        "seed": 0,
+        "steps": 20,
+        "cfg": 1.0,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "8": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "7",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "9": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "8",
+          0
+        ],
+        "filename_prefix": "keyframe"
+      }
+    }
+  }
+}

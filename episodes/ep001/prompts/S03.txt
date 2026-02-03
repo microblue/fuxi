@@ -1,0 +1,15 @@
+[INPUT IMAGE] generate — character xihe face + red emergency lighting
+
+[IMAGE PROMPT]
+Close-up portrait of an East Asian man age 30, sharp angular jawline, high cheekbones, deep-set mature refined face, short black hair neatly swept back, golden ornate geometric markings around his left eye glowing faintly. A calm determined smile on his face, eyes filled with unwavering resolve. He wears the high collar of a white semi-transparent structured light robe. Red emergency alarm light reflecting on the left side of his face, golden holographic data reflections on the right side. Background is a soft bokeh of red warning lights and flickering city illumination. Cinematic photorealistic, 9:16 vertical, dramatic split lighting red and gold on face, extreme detail on eyes and expression.
+
+[VIDEO PROMPT]
+Close-up portrait of a man's face with golden markings around his left eye, calm determined expression, red emergency light on one side of his face. Motion: A subtle confident smile slowly forms on his lips. His eyes are steady and resolute, filled with quiet courage. He gives a slight deliberate nod. The golden markings around his left eye pulse gently with light. Red alarm reflections flicker across his face from the background. The camera holds steady at eye level, intimate and unwavering.
+
+[NEGATIVE] cartoon, anime, extra fingers, face distortion, asymmetric eyes, deformed, worst quality, blurry
+
+[DURATION] 5s / 121 frames @ 25fps (extended from 3s — dialogue needs time to land)
+[CAMERA] close_up, eye level, steady
+[EMOTION] resolute courage, noble sacrifice
+[DIALOGUE] 那就赌一把。以我灵子文明最后代码者之名——授权执行！
+[PURPOSE] the defining character moment — Xihe's face must convey sacrifice and determination

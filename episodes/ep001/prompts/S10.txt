@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+young boy age 16, angular face with lingering boyishness, high cheekbones, long black hair half-tied with lower half loose and messy, lean agile teenage hunter build, crude animal hide short tunic, rope belt, barefoot, primitive appearance, left eye dark golden with tiny rotating bagua trigram pattern, right eye normal black, faint golden glow around left eye
+primordial ancient swamp at night, torrential rain, murky shallow water, twisted ancient trees, muddy wetland
+extreme close-up on eye transitioning to POV, left pupil dark golden with a slowly rotating bagua trigram pattern visible within the iris, then shifting to code vision POV where trees appear as cascading green code strings, water renders as a translucent molecular grid structure, own hand visible with blue bioelectric lines running beneath the skin surface
+camera transitioning from macro eye detail to subjective first-person augmented reality view
+golden iris glow, green code overlays on organic matter, blue bioelectric lines under skin, digital grid over water surface
+wonder through alien perception, reality decoded, the world revealed as data
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

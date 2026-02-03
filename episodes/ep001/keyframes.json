@@ -1,0 +1,487 @@
+{
+  "episode": "ep001",
+  "total_keyframes": 48,
+  "strategy": "T2I(第1帧) + I2V(参考帧)",
+  "keyframes": [
+    {
+      "keyframe_id": "S01-KF1",
+      "shot_id": "S01",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "breathtaking futuristic city built entirely of light, luminous architecture, rivers of data flowing through the sky between buildings, suddenly all light begins glitching and stuttering, piercing alarm, city-scale emergency, vertical 9:16 framing",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S01-KF2",
+      "shot_id": "S01",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S01-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S01-KF3",
+      "shot_id": "S01",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S01-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S02-KF1",
+      "shot_id": "S02",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "man age 30 in flowing luminous robe standing atop central tower, golden patterns on left eye, fingers rapidly swiping through air, golden data streams following fingertips, city glitching in background, dramatic lighting",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S02-KF2",
+      "shot_id": "S02",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S02-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S03-KF1",
+      "shot_id": "S03",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "close-up of 30-year-old man with golden patterns on left eye, luminous robe, calm determined smile, golden data reflections on face, city alarm lights in background",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S03-KF2",
+      "shot_id": "S03",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S03-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S04-KF1",
+      "shot_id": "S04",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "man pressing both hands on holographic console, luminous data being extracted from entire body creating flowing light trails, massive light pillar erupting from city center reaching into sky, pillar fragmenting into billions of light points scattering into cosmos, one light point contains faint bagua pattern",
+      "reference_frame": null,
+      "duration_until_next_s": 4.0
+    },
+    {
+      "keyframe_id": "S04-KF2",
+      "shot_id": "S04",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": null,
+      "reference_frame": "S04-KF1",
+      "duration_until_next_s": 2.0
+    },
+    {
+      "keyframe_id": "S04-KF3",
+      "shot_id": "S04",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 4.0,
+      "prompt": null,
+      "reference_frame": "S04-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S05-KF1",
+      "shot_id": "S05",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "close-up of man's face becoming transparent and dissolving into light particles, gentle smile, golden eye patterns fading, body dissolving into luminous data fragments drifting upward, bittersweet final moment",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S05-KF2",
+      "shot_id": "S05",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S05-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S05-KF3",
+      "shot_id": "S05",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S05-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S06-KF1",
+      "shot_id": "S06",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "primitive swamp at stormy night, torrential rain, young boy 16 years old with crude animal hide clothing and two adult hunters carrying bone spears, tracking footprints in mud, one hunter pointing up at sky in alarm, raw primal landscape",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S06-KF2",
+      "shot_id": "S06",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S06-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S07-KF1",
+      "shot_id": "S07",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "sky tearing open with silver-blue geometric light streams falling — not lightning but structured geometric energy, crashing into swamp center creating glowing vortex, young boy 16 clutching left eye in sudden pain, rain illuminated by silver-blue light",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S07-KF2",
+      "shot_id": "S07",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S07-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S07-KF3",
+      "shot_id": "S07",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S07-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S08-KF1",
+      "shot_id": "S08",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "glowing silver-blue vortex in swamp water, translucent crystal floating at center, young boy in animal hide approaching cautiously, silver-blue light reflecting on water and his face, other hunters staying back",
+      "reference_frame": null,
+      "duration_until_next_s": 2.0
+    },
+    {
+      "keyframe_id": "S08-KF2",
+      "shot_id": "S08",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": null,
+      "reference_frame": "S08-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S09-KF1",
+      "shot_id": "S09",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "extreme close-up of young hand touching translucent crystal, golden data streams erupting from crystal flowing up arm like glowing veins, cut to face contorted in pain kneeling in water, left eye erupting with golden light, rain streaming down face",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S09-KF2",
+      "shot_id": "S09",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S09-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S09-KF3",
+      "shot_id": "S09",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S09-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S10-KF1",
+      "shot_id": "S10",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "extreme close-up of left eye, pupil transformed to dark gold with tiny rotating bagua pattern; transitions to first-person POV showing trees as green code strings, water surface as molecular grid structure, own hand showing blue bioelectric lines under skin",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S10-KF2",
+      "shot_id": "S10",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S10-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S10-KF3",
+      "shot_id": "S10",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S10-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S11-KF1",
+      "shot_id": "S11",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "medium close-up of 16-year-old boy in animal hide, kneeling in shallow swamp water, looking at own hands in disbelief, faint golden glow in left eye, rain falling, expression of profound shock and confusion",
+      "reference_frame": null,
+      "duration_until_next_s": 2.0
+    },
+    {
+      "keyframe_id": "S11-KF2",
+      "shot_id": "S11",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": null,
+      "reference_frame": "S11-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S12-KF1",
+      "shot_id": "S12",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "wide high-angle shot of dark swamp, sky rapidly darkening beyond normal storm, unnatural shadow spreading, boy tiny in frame looking up, ominous atmospheric shift",
+      "reference_frame": null,
+      "duration_until_next_s": 2.0
+    },
+    {
+      "keyframe_id": "S12-KF2",
+      "shot_id": "S12",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": null,
+      "reference_frame": "S12-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S13-KF1",
+      "shot_id": "S13",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "three pale white octahedron geometric entities descending silently from darkened sky, glowing red cracks on surfaces, floating motionless above swamp, cold alien presence, dwarfing the humans below",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S13-KF2",
+      "shot_id": "S13",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S13-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S14-KF1",
+      "shot_id": "S14",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "black data tendrils shooting from octahedron, wrapping around adult hunter, his body beginning to pixelate and dissolve from feet upward into cubic digital fragments, expression of agony, other hunters watching in horror",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S14-KF2",
+      "shot_id": "S14",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S14-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S14-KF3",
+      "shot_id": "S14",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S14-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S15-KF1",
+      "shot_id": "S15",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "close-up of boy's face screaming in rage, left eye blazing gold; cut to code-vision POV showing black tendril's jagged data structure highlighted red; hand reaching out and grabbing tendril, golden energy from hand causing tendril to shatter into fragments",
+      "reference_frame": null,
+      "duration_until_next_s": 4.0
+    },
+    {
+      "keyframe_id": "S15-KF2",
+      "shot_id": "S15",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": null,
+      "reference_frame": "S15-KF1",
+      "duration_until_next_s": 2.0
+    },
+    {
+      "keyframe_id": "S15-KF3",
+      "shot_id": "S15",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 4.0,
+      "prompt": null,
+      "reference_frame": "S15-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S16-KF1",
+      "shot_id": "S16",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "full shot of boy facing three floating octahedra, more black tendrils extending, boy slams hands on muddy ground, golden energy ripples outward turning soil into quicksand beneath the geometric entities, entities sinking slightly, struggling",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S16-KF2",
+      "shot_id": "S16",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.5,
+      "prompt": null,
+      "reference_frame": "S16-KF1",
+      "duration_until_next_s": 1.5
+    },
+    {
+      "keyframe_id": "S16-KF3",
+      "shot_id": "S16",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S16-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S17-KF1",
+      "shot_id": "S17",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "wide shot: glowing green bone arrow streaking through rain from distant cliff; on cliff stands young girl 17 in green leaf-woven armor with white bone bow, shouting; below in swamp the boy stumbles and runs, geometric entities momentarily distracted by arrow impact",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S17-KF2",
+      "shot_id": "S17",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S17-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S18-KF1",
+      "shot_id": "S18",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "three octahedron entities regrouping in formation, red cracks pulsing in synchronized pattern, scanning the swamp where targets fled, cold mechanical precision, rain passing through their geometric forms",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S18-KF2",
+      "shot_id": "S18",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S18-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S19-KF1",
+      "shot_id": "S19",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "medium close-up of 16-year-old boy pausing in rain, looking back over shoulder, breathing hard, left eye emitting faint golden glow in darkness, expression of shock and confusion mixed with relief of survival, rain streaking down face, primitive swamp behind",
+      "reference_frame": null,
+      "duration_until_next_s": 3.0
+    },
+    {
+      "keyframe_id": "S19-KF2",
+      "shot_id": "S19",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 3.0,
+      "prompt": null,
+      "reference_frame": "S19-KF1",
+      "duration_until_next_s": 0.0
+    },
+    {
+      "keyframe_id": "S20-KF1",
+      "shot_id": "S20",
+      "frame_index": 0,
+      "type": "t2i",
+      "timestamp_s": 0.0,
+      "prompt": "pure black screen with white text fading in",
+      "reference_frame": null,
+      "duration_until_next_s": 2
+    }
+  ]
+}

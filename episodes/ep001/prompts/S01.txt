@@ -1,0 +1,12 @@
+[INPUT IMAGE] assets/locations/lingzi_normal/ref_final.png
+
+[VIDEO PROMPT]
+A golden city built entirely of light, colossal crystalline towers, rivers of golden data streaming between luminous buildings, a massive central spire radiating warm energy at the center, epic scale wide shot, golden-white radiance illuminating every surface. Motion: The camera starts from a high bird's-eye position looking straight down at the city below, then descends in a smooth vertical crane down movement into the city interior, dropping toward the massive central spire and revealing intricate architectural details as it falls. Midway through the descent, all golden data rivers suddenly shatter into jagged flickering fragments, every building surface pulses erratically between golden glow and deep crimson, a red warning shockwave ripples across the entire city, transforming the serene golden metropolis into an urgent red-amber emergency.
+
+[NEGATIVE] pink, purple, magenta, overexposed, blown out highlights, dark scene, blackout, mechanical structures, worst quality, blurry, jittery
+
+[SEEDS] stage1=2048, stage2=20480
+[DURATION] 5s / 121 frames @ 25fps
+[CAMERA] wide_shot, crane down, epic scale
+[EMOTION] awe → dread
+[PURPOSE] hook opening — crane from bird's-eye overhead down into the city, golden serenity to red-amber emergency

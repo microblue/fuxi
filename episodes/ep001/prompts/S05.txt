@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+man age 30, deep-set features, mature refined face, short black hair neatly styled, tall scholarly build, wearing flowing luminous translucent robe with light patterns streaming across surface, golden ornate patterns around left eye, elegant futuristic appearance
+breathtaking futuristic city built entirely of light, luminous crystalline architecture, light fading and dissolving
+close-up static intimate shot, Xihe's body becoming transparent and dissolving into light particles from the edges inward, a gentle peaceful smile on his face, skin turning translucent revealing streams of golden data beneath, particles drifting upward like embers
+camera static and intimate, soft focus transition as the figure dissolves
+soft warm golden glow emanating from dissolving body, ambient light fading to gentle white
+bittersweet farewell, peaceful acceptance, quiet grace in dissolution
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

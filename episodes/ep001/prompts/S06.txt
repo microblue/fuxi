@@ -1,0 +1,11 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+young boy age 16, angular face with lingering boyishness, high cheekbones, long black hair half-tied with lower half loose and messy, lean agile teenage hunter build, crude animal hide short tunic, rope belt, barefoot, primitive appearance
+primordial ancient swamp at night, torrential rain, dark stormy sky with lightning, murky shallow water, twisted ancient trees, muddy wetland, dramatic chiaroscuro lighting
+wide shot low angle handheld, hard cut to primitive swamp in stormy night, young Fuxi and group of hunters tracking through knee-deep murky water, rain hammering down, a hunter looking up and pointing at the sky in alarm
+camera low angle handheld with slight shake conveying raw immediacy
+dramatic chiaroscuro lightning flashes illuminating figures against pitch-dark swamp, rain streaks visible in light
+primal tension, ancient wilderness, sudden shock
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame

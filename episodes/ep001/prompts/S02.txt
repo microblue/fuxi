@@ -1,0 +1,14 @@
+[INPUT IMAGE] generate — character xihe + location lingzi_normal
+
+[IMAGE PROMPT]
+Medium shot from a slight low angle of an East Asian man age 30 standing atop a futuristic tower platform high above a city of light. He wears a floor-length white semi-transparent structured light robe with layered geometric panels that glow faintly. Short black hair neatly swept back, golden ornate markings around his left eye. He holds one hand raised with fingers extended, golden holographic data streams swirling around his fingertips. Behind him the luminous cityscape stretches out with crystalline towers and golden data rivers flowing between buildings. The city lights are beginning to flicker and stutter. Cinematic photorealistic, 9:16 vertical composition, dramatic lighting from below.
+
+[VIDEO PROMPT]
+Medium shot slight low angle of a man in a glowing white robe standing atop a tower, city of light stretching behind him. Motion: His fingers swipe rapidly through the air, commanding golden holographic data streams that dance and spiral around his hands. The data responds instantly to his gestures, flowing and restructuring. In the background, the city lights begin flickering erratically, data rivers stuttering. His expression remains focused and calm despite the growing emergency around him.
+
+[NEGATIVE] cartoon, anime, extra fingers, extra limbs, face distortion, pink, purple, worst quality, blurry
+
+[DURATION] 3s / 73 frames @ 25fps
+[CAMERA] medium_shot, slight low angle, handheld
+[EMOTION] focused urgency
+[PURPOSE] establish Xihe's character — composed commander manipulating data as the city destabilizes

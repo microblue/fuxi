@@ -1,0 +1,23 @@
+[workspace]
+name = "fuxi"
+version = "0.1.0"
+description = "AI Short Drama Production System"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = ">=3.12"
+pillow = ">=12.1.0,<13"
+
+[pypi-dependencies]
+huggingface_hub = "*"
+uvicorn = "*"
+pytest = "*"
+ruff = "*"
+
+[tasks]
+dev = "uvicorn app.main:app --reload"
+test = "pytest"
+lint = "ruff check ."
+format = "ruff format ."
+generate-refs = "python -m pipeline.generate_character_refs"

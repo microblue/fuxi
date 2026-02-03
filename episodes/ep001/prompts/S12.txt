@@ -1,0 +1,10 @@
+[POSITIVE PROMPT]
+cinematic film still, photorealistic, 9:16 vertical aspect ratio, movie quality lighting, shallow depth of field, epic sci-fi meets ancient mythology aesthetic
+primordial ancient swamp at night, torrential rain, dark stormy sky with lightning, murky shallow water, twisted ancient trees, muddy wetland, dramatic chiaroscuro lighting
+wide shot high angle ominous, the sky darkening unnaturally beyond the storm, an oppressive unnatural blackness spreading across the clouds, swamp below looking small and vulnerable, atmosphere shifting from storm to something far more threatening
+camera high angle looking down on the swamp creating a sense of overwhelming threat from above
+light draining from the scene, storm clouds thickening into unnatural darkness, last flickers of lightning being swallowed
+mounting dread, cosmic threat descending, the calm before annihilation
+
+[NEGATIVE PROMPT]
+anatomy error, face distortion, extra limbs, extra fingers, watermark, text artifacts, oversharpen, uncanny look, blurry, low quality, cartoon, anime, illustration style, deformed face, asymmetric eyes, bad proportions, cropped, out of frame
