@@ -149,50 +149,36 @@ def download_image(image_info: dict, dest_path: Path) -> Path:
     return dest_path
 
 
-def find_location_asset_reference(episode_id: str, location: str) -> Path:
+def find_location_asset_reference(location: str) -> Path:
     """找到location对应的场景资产参考图片。
 
+    从共享资产目录（fuxi/assets/locations）查找。
+
     查找顺序:
-      1. 从assets/locations/{location}/ref_final.* 找默认参考
-      2. 如果是复合location(如lingzi_civilization_capital)，尝试相关的asset目录
-      3. 如果没找到，尝试其他ref_*.png/jpg
+      1. 查找 {location}.png
+      2. 查找 {location}.jpg
+      3. 查找 ref_final.png/jpg
 
     返回: Path to reference image
     """
-    ep_dir = get_episode_dir(episode_id)
-    locations_dir = ep_dir / "assets" / "locations"
+    # 使用共享资产目录，位于fuxi项目根目录
+    project_root = Path(__file__).parent.parent
+    locations_dir = project_root / "assets" / "locations"
 
     if not locations_dir.exists():
         raise FileNotFoundError(f"Locations directory not found: {locations_dir}")
 
-    # 尝试直接的location目录
-    location_dir = locations_dir / location
-    if location_dir.exists():
-        # 优先查找ref_final.*
-        for ext in [".jpg", ".png", ".jpeg"]:
-            ref_final = location_dir / f"ref_final{ext}"
-            if ref_final.exists():
-                return ref_final
+    # 尝试直接的location文件
+    for ext in [".png", ".jpg", ".jpeg"]:
+        location_file = locations_dir / f"{location}{ext}"
+        if location_file.exists():
+            return location_file
 
-        # 退而求其次，查找任何ref_*.png/jpg
-        for ref_file in sorted(location_dir.glob("ref_*.png")) + sorted(location_dir.glob("ref_*.jpg")):
-            return ref_file
-
-    # 如果location不存在，尝试查找相关的asset目录
-    # 例如: lingzi_civilization_capital → 查找 lingzi_* 目录
-    location_prefix = location.split("_")[0]  # 取第一个单词作为前缀
-
-    for asset_dir in locations_dir.iterdir():
-        if asset_dir.is_dir() and asset_dir.name.startswith(location_prefix):
-            # 优先查找ref_final.*
-            for ext in [".jpg", ".png", ".jpeg"]:
-                ref_final = asset_dir / f"ref_final{ext}"
-                if ref_final.exists():
-                    return ref_final
-
-            # 查找第一个ref_*.png/jpg
-            for ref_file in sorted(asset_dir.glob("ref_*.png")) + sorted(asset_dir.glob("ref_*.jpg")):
-                return ref_file
+    # 退而求其次，查找ref_final
+    for ext in [".png", ".jpg", ".jpeg"]:
+        ref_final = locations_dir / f"ref_final{ext}"
+        if ref_final.exists():
+            return ref_final
 
     raise FileNotFoundError(f"No location asset reference found for: {location}")
 
@@ -248,7 +234,7 @@ def generate_shot_keyframes(
         return {}
 
     try:
-        location_ref_path = find_location_asset_reference(episode_id, location)
+        location_ref_path = find_location_asset_reference(location)
         print(f"✓ Location asset: {location_ref_path.name}\n")
     except FileNotFoundError as e:
         print(f"❌ {e}")

@@ -1,3 +1,0 @@
-file '/home/dz/fuxi/episodes/ep001/video/temp_compose/S06.mp4'
-file '/home/dz/fuxi/episodes/ep001/video/temp_compose/S07.mp4'
-file '/home/dz/fuxi/episodes/ep001/video/temp_compose/S08.mp4'
