@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-镜头关键帧生成 — 全I2I (Image-to-Image) with Location Assets
+镜头关键帧生成 — 全I2I (Image-to-Image) with Sequential References
 
 逻辑:
-  - 所有关键帧 (I2I): 使用flux2_img2img.json工作流
-  - 参考图片: 从shot的location对应的场景资产中选择
+  - 第一帧 (i2i_first): location场景资产 + visual prompt → 初始场景 (denoise=0.7)
+  - 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
+  - 工作流: 所有关键帧都使用flux2_img2img.json
   - prompt: 从keyframes.json读取每个关键帧的contextual prompt
 
 用法:
@@ -189,7 +190,11 @@ def generate_shot_keyframes(
     num_candidates: int = 1,
     base_seed: int = 0,
 ) -> dict:
-    """为指定镜头生成所有关键帧 (全I2I，使用location场景资产作为参考)。
+    """为指定镜头生成所有关键帧 (全I2I，第一帧用location资产，后续帧使用前一帧)。
+
+    工作流:
+      1. 第一帧 (i2i_first): location参考 + visual prompt → 初始场景 (denoise=0.7)
+      2. 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
 
     返回: {keyframe_id: Path, ...}
     """
@@ -240,14 +245,12 @@ def generate_shot_keyframes(
         print(f"❌ {e}")
         return {}
 
-    # 复制location参考图片到ComfyUI input
-    ref_image_name = f"{shot_id}_location_ref.png"
-    comfyui_ref = COMFYUI_INPUT / ref_image_name
-    shutil.copy2(location_ref_path, comfyui_ref)
-
     results = {}
     keyframe_dir = ep_dir / "video" / "keyframes"
     keyframe_dir.mkdir(parents=True, exist_ok=True)
+
+    # 用于跟踪每个candidate的最后一帧，以供下一帧作为参考
+    last_frame_per_candidate = {}
 
     # 全I2I工作流生成所有关键帧
     for kf in shot_keyframes:
@@ -270,11 +273,29 @@ def generate_shot_keyframes(
             print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
 
             try:
+                # 确定参考图片和denoise强度
+                if kf_type == "i2i_first":
+                    # 第一帧：使用location资产作为参考
+                    ref_image_name = f"{shot_id}_location_ref.png"
+                    comfyui_ref = COMFYUI_INPUT / ref_image_name
+                    shutil.copy2(location_ref_path, comfyui_ref)
+                    denoise = 0.7  # 初始场景，较高强度
+                else:
+                    # i2i_seq：使用上一帧生成的结果作为参考
+                    prev_frame_path = last_frame_per_candidate.get(cand_idx)
+
+                    if not prev_frame_path:
+                        print(f"    ⚠️ No previous frame for candidate {cand_idx}, skipping")
+                        continue
+
+                    # 复制前一帧到ComfyUI input
+                    ref_image_name = f"{shot_id}_prev_c{cand_idx}.png"
+                    comfyui_ref = COMFYUI_INPUT / ref_image_name
+                    shutil.copy2(prev_frame_path, comfyui_ref)
+                    denoise = 0.5  # 运动变化，较低强度
+
                 # 加载I2I工作流
                 workflow = load_workflow("flux2_img2img")
-
-                # 计算denoise强度: T2I类型用较高强度(0.7)，I2V类型用较低强度(0.5)
-                denoise = 0.7 if kf_type == "t2i" else 0.5
 
                 # 注入参数
                 workflow = inject_parameters(workflow, {
@@ -300,6 +321,9 @@ def generate_shot_keyframes(
                 output_path = download_image(images[0], output_path)
                 print(f"    ✅ {output_path.name}")
                 results[keyframe_id] = output_path
+
+                # 记录此candidate的最后一帧，供下一帧使用
+                last_frame_per_candidate[cand_idx] = output_path
 
             except Exception as e:
                 print(f"    ❌ Error: {e}")
