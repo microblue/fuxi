@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-镜头关键帧生成 — T2I + I2I (Image-to-Image)
+镜头关键帧生成 — 全I2I (Image-to-Image) with Location Assets
 
 逻辑:
-  - 第1帧 (T2I): 使用flux2_txt2img.json工作流，从prompt_visual生成
-  - 第2+帧 (I2I): 使用flux2_img2img.json工作流，以第1帧为参考，使用prompt_motion
+  - 所有关键帧 (I2I): 使用flux2_img2img.json工作流
+  - 参考图片: 从shot的location对应的场景资产中选择
+  - prompt: 从keyframes.json读取每个关键帧的contextual prompt
 
 用法:
     python -m pipeline.generate_shot_keyframes ep001 S01
@@ -148,13 +149,61 @@ def download_image(image_info: dict, dest_path: Path) -> Path:
     return dest_path
 
 
+def find_location_asset_reference(episode_id: str, location: str) -> Path:
+    """找到location对应的场景资产参考图片。
+
+    查找顺序:
+      1. 从assets/locations/{location}/ref_final.* 找默认参考
+      2. 如果是复合location(如lingzi_civilization_capital)，尝试相关的asset目录
+      3. 如果没找到，尝试其他ref_*.png/jpg
+
+    返回: Path to reference image
+    """
+    ep_dir = get_episode_dir(episode_id)
+    locations_dir = ep_dir / "assets" / "locations"
+
+    if not locations_dir.exists():
+        raise FileNotFoundError(f"Locations directory not found: {locations_dir}")
+
+    # 尝试直接的location目录
+    location_dir = locations_dir / location
+    if location_dir.exists():
+        # 优先查找ref_final.*
+        for ext in [".jpg", ".png", ".jpeg"]:
+            ref_final = location_dir / f"ref_final{ext}"
+            if ref_final.exists():
+                return ref_final
+
+        # 退而求其次，查找任何ref_*.png/jpg
+        for ref_file in sorted(location_dir.glob("ref_*.png")) + sorted(location_dir.glob("ref_*.jpg")):
+            return ref_file
+
+    # 如果location不存在，尝试查找相关的asset目录
+    # 例如: lingzi_civilization_capital → 查找 lingzi_* 目录
+    location_prefix = location.split("_")[0]  # 取第一个单词作为前缀
+
+    for asset_dir in locations_dir.iterdir():
+        if asset_dir.is_dir() and asset_dir.name.startswith(location_prefix):
+            # 优先查找ref_final.*
+            for ext in [".jpg", ".png", ".jpeg"]:
+                ref_final = asset_dir / f"ref_final{ext}"
+                if ref_final.exists():
+                    return ref_final
+
+            # 查找第一个ref_*.png/jpg
+            for ref_file in sorted(asset_dir.glob("ref_*.png")) + sorted(asset_dir.glob("ref_*.jpg")):
+                return ref_file
+
+    raise FileNotFoundError(f"No location asset reference found for: {location}")
+
+
 def generate_shot_keyframes(
     episode_id: str,
     shot_id: str,
     num_candidates: int = 1,
     base_seed: int = 0,
 ) -> dict:
-    """为指定镜头生成所有关键帧 (T2I + I2I)。
+    """为指定镜头生成所有关键帧 (全I2I，使用location场景资产作为参考)。
 
     返回: {keyframe_id: Path, ...}
     """
@@ -187,113 +236,87 @@ def generate_shot_keyframes(
     shot_keyframes = sorted(shot_keyframes, key=lambda x: x["frame_index"])
 
     print(f"\n{'=' * 60}")
-    print(f"镜头关键帧生成 — {episode_id}/{shot_id}")
+    print(f"镜头关键帧生成 — {episode_id}/{shot_id} (全I2I)")
+    print(f"Location: {shot['location']}")
     print(f"关键帧数: {len(shot_keyframes)}")
     print(f"{'=' * 60}\n")
+
+    # 查找location资产参考图片
+    location = shot["location"]
+    if location == "black_screen":
+        print(f"⚠️ 黑屏镜头，跳过关键帧生成")
+        return {}
+
+    try:
+        location_ref_path = find_location_asset_reference(episode_id, location)
+        print(f"✓ Location asset: {location_ref_path.name}\n")
+    except FileNotFoundError as e:
+        print(f"❌ {e}")
+        return {}
+
+    # 复制location参考图片到ComfyUI input
+    ref_image_name = f"{shot_id}_location_ref.png"
+    comfyui_ref = COMFYUI_INPUT / ref_image_name
+    shutil.copy2(location_ref_path, comfyui_ref)
 
     results = {}
     keyframe_dir = ep_dir / "video" / "keyframes"
     keyframe_dir.mkdir(parents=True, exist_ok=True)
 
-    # 第一帧：T2I
-    t2i_kf = shot_keyframes[0]
-    print(f"[T2I] {t2i_kf['keyframe_id']}")
-    print(f"  Prompt: {shot['prompt_visual'][:80]}...")
+    # 全I2I工作流生成所有关键帧
+    for kf in shot_keyframes:
+        keyframe_id = kf["keyframe_id"]
+        kf_type = kf["type"]
+        kf_prompt = kf.get("prompt", "")
 
-    for cand_idx in range(num_candidates):
-        seed = base_seed + cand_idx * 100
-        output_path = keyframe_dir / f"{t2i_kf['keyframe_id']}_seed{seed:04d}.png"
+        if not kf_prompt:
+            print(f"⚠️ [{keyframe_id}] No prompt, skipping")
+            continue
 
-        print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
+        print(f"[I2I] {keyframe_id}")
+        print(f"  Type: {kf_type}")
+        print(f"  Prompt: {kf_prompt[:80]}...")
 
-        try:
-            # 加载T2I工作流
-            workflow = load_workflow("flux2_txt2img")
+        for cand_idx in range(num_candidates):
+            seed = base_seed + kf["frame_index"] * 1000 + cand_idx * 10
+            output_path = keyframe_dir / f"{keyframe_id}_seed{seed:04d}.png"
 
-            # 注入参数
-            workflow = inject_parameters(workflow, {
-                "positive_prompt": shot["prompt_visual"],
-                "seed": seed,
-                "filename_prefix": f"keyframe/{t2i_kf['keyframe_id']}_seed{seed:04d}",
-            })
+            print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
 
-            # 执行工作流
-            prompt_id = queue_prompt(workflow)
-            print(f"    queued {prompt_id}, waiting...")
+            try:
+                # 加载I2I工作流
+                workflow = load_workflow("flux2_img2img")
 
-            entry = poll_until_done(prompt_id)
-            images = get_output_images(entry)
+                # 计算denoise强度: T2I类型用较高强度(0.7)，I2V类型用较低强度(0.5)
+                denoise = 0.7 if kf_type == "t2i" else 0.5
 
-            if not images:
-                print(f"    ⚠️ No output images")
-                continue
+                # 注入参数
+                workflow = inject_parameters(workflow, {
+                    "positive_prompt": kf_prompt,
+                    "reference_image": ref_image_name,
+                    "seed": seed,
+                    "denoise": denoise,
+                    "filename_prefix": f"keyframe/{keyframe_id}_seed{seed:04d}",
+                })
 
-            # 下载图像
-            output_path = download_image(images[0], output_path)
-            print(f"    ✅ {output_path.name}")
-            results[t2i_kf['keyframe_id']] = output_path
+                # 执行工作流
+                prompt_id = queue_prompt(workflow)
+                print(f"    queued {prompt_id}, waiting...")
 
-        except Exception as e:
-            print(f"    ❌ Error: {e}")
+                entry = poll_until_done(prompt_id)
+                images = get_output_images(entry)
 
-    # 后续帧：I2I （如有）
-    if len(shot_keyframes) > 1:
-        # 使用第一帧作为参考
-        first_t2i_path = results.get(t2i_kf['keyframe_id'])
-        if not first_t2i_path:
-            print(f"\n⚠️ No T2I reference, skipping I2I frames")
-        else:
-            # 将参考帧复制到ComfyUI input
-            ref_image_name = f"{shot_id}_ref.png"
-            comfyui_ref = COMFYUI_INPUT / ref_image_name
-            shutil.copy2(first_t2i_path, comfyui_ref)
+                if not images:
+                    print(f"    ⚠️ No output images")
+                    continue
 
-            # 生成后续帧
-            for i, i2i_kf in enumerate(shot_keyframes[1:], 1):
-                print(f"\n[I2I-{i}] {i2i_kf['keyframe_id']}")
+                # 下载图像
+                output_path = download_image(images[0], output_path)
+                print(f"    ✅ {output_path.name}")
+                results[keyframe_id] = output_path
 
-                # 使用prompt_motion（如有）
-                motion_prompt = shot.get("prompt_motion", "")
-                if motion_prompt:
-                    print(f"  Prompt: {motion_prompt[:80]}...")
-
-                for cand_idx in range(num_candidates):
-                    seed = base_seed + 1000 + i * 100 + cand_idx * 10
-                    output_path = keyframe_dir / f"{i2i_kf['keyframe_id']}_seed{seed:04d}.png"
-
-                    print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
-
-                    try:
-                        # 加载I2I工作流 (临时使用flux2_img2img直到人物角度一致性编辑工作流转换为API格式)
-                        workflow = load_workflow("flux2_img2img")
-
-                        # 注入参数
-                        workflow = inject_parameters(workflow, {
-                            "positive_prompt": motion_prompt or "subtle variation",
-                            "reference_image": ref_image_name,
-                            "seed": seed,
-                            "denoise": 0.6,  # I2I强度
-                            "filename_prefix": f"keyframe/{i2i_kf['keyframe_id']}_seed{seed:04d}",
-                        })
-
-                        # 执行工作流
-                        prompt_id = queue_prompt(workflow)
-                        print(f"    queued {prompt_id}, waiting...")
-
-                        entry = poll_until_done(prompt_id)
-                        images = get_output_images(entry)
-
-                        if not images:
-                            print(f"    ⚠️ No output images")
-                            continue
-
-                        # 下载图像
-                        output_path = download_image(images[0], output_path)
-                        print(f"    ✅ {output_path.name}")
-                        results[i2i_kf['keyframe_id']] = output_path
-
-                    except Exception as e:
-                        print(f"    ❌ Error: {e}")
+            except Exception as e:
+                print(f"    ❌ Error: {e}")
 
     print(f"\n{'=' * 60}")
     print(f"✅ 生成完成")
@@ -308,7 +331,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="生成镜头的所有关键帧 (T2I + I2I)"
+        description="生成镜头的所有关键帧 (全I2I，使用location场景资产作为参考)"
     )
     parser.add_argument("episode_id", help="剧集编号, e.g. ep001")
     parser.add_argument("shot_id", help="镜头编号, e.g. S01")
