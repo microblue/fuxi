@@ -33,104 +33,6 @@ OUTPUT_WIDTH = 1920
 OUTPUT_HEIGHT = 1080
 
 
-def get_camera_position_for_keyframe(shot: dict, kf_index: int, total_kfs: int) -> str:
-    """根据shot的camera信息和关键帧位置，生成该帧的相机位置描述。"""
-    camera = shot.get("camera", "").lower()
-
-    # 关键帧的相对位置 (0 = 开始, 0.5 = 中间, 1.0 = 结束)
-    frame_progress = kf_index / (total_kfs - 1) if total_kfs > 1 else 0
-
-    # 解析camera信息并生成位置描述
-    position_desc = ""
-
-    # 处理distance变化
-    if "crane down" in camera:
-        if frame_progress < 0.4:
-            position_desc += "camera positioned high, wide aerial view"
-        elif frame_progress < 0.7:
-            position_desc += "camera descending, mid-level perspective"
-        else:
-            position_desc += "camera descended low, detailed street-level view"
-
-    elif "crane up" in camera:
-        if frame_progress < 0.4:
-            position_desc += "camera positioned low, street-level view"
-        elif frame_progress < 0.7:
-            position_desc += "camera ascending, expanding perspective"
-        else:
-            position_desc += "camera high, revealing wide panoramic view"
-
-    elif "pulling back" in camera or "pull back" in camera:
-        if frame_progress < 0.4:
-            position_desc += "camera close-in, detailed view"
-        elif frame_progress < 0.7:
-            position_desc += "camera stepping back, widening perspective"
-        else:
-            position_desc += "camera pulled back far, epic wide scale view"
-
-    elif "push in" in camera:
-        if frame_progress < 0.4:
-            position_desc += "camera at medium distance"
-        elif frame_progress < 0.7:
-            position_desc += "camera pushing in, tightening focus"
-        else:
-            position_desc += "camera close intimate detail view"
-
-    # 处理旋转/倾斜
-    if "tilt up" in camera:
-        if frame_progress < 0.5:
-            position_desc = (position_desc or "") + ", tilting upward"
-        else:
-            position_desc = (position_desc or "") + ", looking up at sky"
-
-    elif "tilt down" in camera:
-        if frame_progress < 0.5:
-            position_desc = (position_desc or "") + ", tilting downward"
-        else:
-            position_desc = (position_desc or "") + ", looking down at ground"
-
-    # 处理焦点变化 (rack focus)
-    if "rack focus" in camera:
-        if frame_progress < 0.5:
-            position_desc = (position_desc or "") + ", focus on foreground"
-        else:
-            position_desc = (position_desc or "") + ", focus shifted to background"
-
-    # 处理wide_to_close
-    if "wide_to_close" in camera or "extreme_close_up" in camera:
-        if "eye" in camera and "code vision" in camera:
-            if frame_progress < 0.5:
-                position_desc = "extreme close-up of eye, detail vision"
-            else:
-                position_desc = "POV code vision, seeing through code overlay"
-        elif "hand" in camera and "face" in camera:
-            if frame_progress < 0.5:
-                position_desc = "extreme close-up of hand touching"
-            else:
-                position_desc = "extreme close-up of face, reaction shot"
-
-    # 默认描述
-    if not position_desc:
-        if "close_up" in camera or "close-up" in camera:
-            position_desc = "close-up shot, intimate framing"
-        elif "medium" in camera:
-            position_desc = "medium shot, balanced composition"
-        elif "wide" in camera:
-            position_desc = "wide shot, expansive view"
-        elif "full_shot" in camera:
-            position_desc = "full shot, complete scene in frame"
-        else:
-            position_desc = "static camera position"
-
-    # 添加镜头特性描述
-    if "handheld" in camera:
-        position_desc += ", handheld camera with subtle movement"
-    elif "steady" in camera or "static" in camera:
-        position_desc += ", steady camera, minimal movement"
-
-    return position_desc
-
-
 def scale_image_to_resolution(src_path: Path, dest_path: Path, width: int = OUTPUT_WIDTH, height: int = OUTPUT_HEIGHT) -> None:
     """将图像缩放到指定分辨率（保持宽高比，填充空白）。"""
     img = Image.open(src_path)
@@ -388,7 +290,7 @@ def generate_shot_keyframes(
     last_frame_per_candidate = {}
 
     # 全I2I工作流生成所有关键帧
-    for kf_idx, kf in enumerate(shot_keyframes):
+    for kf in shot_keyframes:
         keyframe_id = kf["keyframe_id"]
         kf_type = kf["type"]
         kf_prompt = kf.get("prompt", "")
@@ -396,11 +298,6 @@ def generate_shot_keyframes(
         if not kf_prompt:
             print(f"⚠️ [{keyframe_id}] No prompt, skipping")
             continue
-
-        # 如果prompt中还未包含相机位置信息，则添加
-        if not kf_prompt.startswith("[Camera:"):
-            camera_pos = get_camera_position_for_keyframe(shot, kf_idx, len(shot_keyframes))
-            kf_prompt = f"[Camera: {camera_pos}] {kf_prompt}"
 
         print(f"[I2I] {keyframe_id}")
         print(f"  Type: {kf_type}")
