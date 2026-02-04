@@ -1,0 +1,329 @@
+{
+  "episode": "ep002",
+  "format": {
+    "resolution": "1920x1080",
+    "aspect_ratio": "16:9",
+    "fps": 24
+  },
+  "transitions": {},
+  "shots": [
+    {
+      "shot_id": "S01",
+      "scene": "2-1",
+      "duration_s": 4,
+      "location": "huaxu_camp_entrance",
+      "characters": [
+        "fuxi",
+        "tribe_members"
+      ],
+      "camera": "wide shot, slow dolly in",
+      "action": "伏羲从晨雾中走来，进入营地。族人们看到他，纷纷后退，面露恐惧。",
+      "dialogue": "",
+      "emotion": "tension, unease",
+      "prompt_visual": "Cinematic wide shot of an ancient tribal camp at dawn, primitive thatched huts and animal skin tents scattered around. A young man (Fuxi, 18 years old, lean muscular build, wearing tattered deer skin clothing, disheveled long black hair) emerges from morning mist, walking toward the camp. His LEFT EYE glows with an unnatural GOLDEN light, piercing through the dim atmosphere. Tribal people (men and women in primitive fur clothing, weathered faces) stumble backward in fear, their hands raised defensively. Soft golden dawn light filtering through mist, creating ethereal god rays. Smoke rises from dying campfires. Style: photorealistic, mythological atmosphere, muted earth tones with striking golden eye contrast.",
+      "prompt_motion": "Camera slowly dollies in toward Fuxi as he walks steadily forward. Tribe members scatter and retreat in panic, some stumbling over objects. Morning mist swirls around Fuxi's feet. His golden eye pulses with subtle luminescence. Background figures move in fearful, jerky motions.",
+      "sfx_bgm": "SFX: footsteps on dirt, gasps, scrambling sounds. BGM: low ominous drone with distant tribal drums, building tension.",
+      "notes": "重点展示伏羲金色左眼的视觉冲击力，建立族人的恐惧反应"
+    },
+    {
+      "shot_id": "S02",
+      "scene": "2-1",
+      "duration_s": 3,
+      "location": "huaxu_camp_entrance",
+      "characters": [
+        "elder_woman"
+      ],
+      "camera": "medium close-up",
+      "action": "老妪指着伏羲，惊恐地喊叫",
+      "dialogue": "邪灵之眼......他被雷泽的恶灵附身了!",
+      "emotion": "terror, accusation",
+      "prompt_visual": "Medium close-up of an elderly tribal woman (70+ years old, deeply wrinkled face, white tangled hair adorned with bone ornaments, wearing layered animal furs). Her face contorted in absolute terror, mouth open wide in a scream, bony finger pointing accusingly off-camera. Eyes wide with primal fear, showing whites. Background blurred with other retreating tribe members. Morning light catches the bone jewelry creating harsh shadows on her weathered skin. Style: cinematic, dramatic lighting, photorealistic textures on aged skin and primitive ornaments.",
+      "prompt_motion": "The old woman's arm extends forward pointing, trembling with fear. Her body shakes as she screams. Other figures blur past in the background, fleeing. Her bone necklaces rattle with her movement.",
+      "sfx_bgm": "SFX: piercing elderly scream, bone rattling, crowd panic. BGM: tension builds with discordant strings.",
+      "notes": "老妪的指控是关键剧情点，需要清晰的面部表情和台词配合"
+    },
+    {
+      "shot_id": "S03",
+      "scene": "2-1",
+      "duration_s": 4,
+      "location": "huaxu_camp_entrance",
+      "characters": [
+        "fuxi_mother",
+        "fuxi"
+      ],
+      "camera": "medium shot, slight low angle",
+      "action": "伏羲母亲冲上前，张开双臂保护儿子",
+      "dialogue": "他只是受伤了!你们看,他还是我的羲儿!",
+      "emotion": "desperation, maternal love, defiance",
+      "prompt_visual": "Medium shot with slight low angle of a middle-aged woman (Fuxi's mother, 40s, strong but weathered features, long dark hair partially braided with small feathers, wearing a well-made deer skin dress with tribal patterns) standing protectively in front of her son. Her arms spread wide in a defensive posture, face showing fierce maternal determination mixed with desperate pleading. Behind her, Fuxi stands with his glowing golden left eye visible over her shoulder, looking confused and hurt. Hostile crowd visible in soft focus background. Dawn light creates a subtle halo effect around the protective mother. Style: emotional cinematic composition, warm undertones despite tense atmosphere.",
+      "prompt_motion": "Mother rushes into frame, arms spreading wide protectively. She turns her head from the crowd to look back at her son reassuringly. Her chest heaves with emotional breathing. Fuxi behind her shifts uncertainly, his golden eye flickering.",
+      "sfx_bgm": "SFX: rushing footsteps, fabric movement, crowd murmuring. BGM: emotional strings swell, mother's theme emerges softly.",
+      "notes": "母亲保护儿子的经典画面，需要传达强烈的情感张力"
+    },
+    {
+      "shot_id": "S04",
+      "scene": "2-2",
+      "duration_s": 3,
+      "location": "council_tent_interior",
+      "characters": [
+        "shaman",
+        "chief"
+      ],
+      "camera": "wide shot establishing",
+      "action": "会议帐篷内部，巫师和族长面对面，气氛凝重",
+      "dialogue": "",
+      "emotion": "foreboding, political tension",
+      "prompt_visual": "Wide establishing shot of a tribal council tent interior. Dark, atmospheric space illuminated by a central fire pit casting dancing shadows on the hide walls. Animal totems and bone decorations hang from wooden supports. On one side sits the SHAMAN (gaunt elderly man, face painted with white ash patterns, wearing a headdress of raven feathers and animal skulls, draped in a dark ceremonial robe with mystic symbols). Opposite him sits the CHIEF (Fuxi's father, 50s, muscular but troubled, wearing a leader's fur cape with wolf fur trim, strong weathered face showing internal conflict). Smoke rises between them, creating a visual divide. Style: chiaroscuro lighting, ritualistic atmosphere, cinematic composition.",
+      "prompt_motion": "Fire flickers, causing shadows to dance across the walls and figures. Smoke spirals upward between the two men. Both remain relatively still, the tension palpable. Occasional ember pops from the fire.",
+      "sfx_bgm": "SFX: crackling fire, wind against tent fabric. BGM: low ceremonial drums, foreboding drone.",
+      "notes": "建立会议帐篷场景，突出巫师和族长的对立构图"
+    },
+    {
+      "shot_id": "S05",
+      "scene": "2-2",
+      "duration_s": 4,
+      "location": "council_tent_interior",
+      "characters": [
+        "shaman"
+      ],
+      "camera": "medium close-up, slight tilt up",
+      "action": "巫师面色阴沉地发出警告",
+      "dialogue": "天火入眼,古籍记载此为'天罚之兆'。若不净化,整个部落将遭灾祸。",
+      "emotion": "menace, conviction, manipulation",
+      "prompt_visual": "Medium close-up with slight tilt up of the SHAMAN, making him appear imposing and threatening. His gaunt face half-lit by firelight, the other half in deep shadow. White ash paint on his face creates skull-like patterns. Raven feather headdress frames his face ominously. His dark eyes gleam with zealous conviction, lips curled in righteous warning. Tribal symbols painted on his cheeks seem to move in the flickering light. Behind him, mysterious talismans and dried herbs hang from the tent frame. Style: horror-tinged, dramatic chiaroscuro, unsettling religious authority aesthetic.",
+      "prompt_motion": "The shaman leans forward slightly as he speaks, firelight flickering across his painted face. His hands make subtle ritualistic gestures. Shadows seem to grow and dance around him as if responding to his words. His eyes narrow with malevolent certainty.",
+      "sfx_bgm": "SFX: his raspy voice echoes slightly in the tent. BGM: dissonant low tones, subtle whisper-like sounds suggesting dark spirits.",
+      "notes": "巫师是反派角色，需要营造不祥和操控的氛围"
+    },
+    {
+      "shot_id": "S06",
+      "scene": "2-2",
+      "duration_s": 3,
+      "location": "council_tent_interior",
+      "characters": [
+        "chief"
+      ],
+      "camera": "close-up",
+      "action": "族长犹豫不决，内心挣扎",
+      "dialogue": "可他刚刚帮我们找到了新的水源......",
+      "emotion": "conflict, doubt, fatherly love",
+      "prompt_visual": "Close-up of the CHIEF's face (Fuxi's father), capturing his internal struggle. A strong, weathered face (50s, short graying beard, tribal scars on cheeks marking leadership) now showing vulnerability and doubt. His eyes dart between looking at the shaman and looking down in shame. Deep furrows on his brow. Firelight creates warm tones on one side of his face while shadow claims the other, visually representing his moral dilemma. His wolf fur cape collar frames the shot. Style: intimate emotional portrait, psychological depth, photorealistic skin texture and emotion.",
+      "prompt_motion": "The chief's jaw tightens, then relaxes. His eyes shift uncertainly. A slight shake of the head. His hand unconsciously grips the arm of his seat. The fire's reflection flickers in his troubled eyes.",
+      "sfx_bgm": "SFX: fabric rustle, his hesitant voice. BGM: melancholic strings, father's guilt theme.",
+      "notes": "特写展示父亲的内心矛盾，为后续他的沉默做铺垫"
+    },
+    {
+      "shot_id": "S07",
+      "scene": "2-2",
+      "duration_s": 2,
+      "location": "council_tent_interior",
+      "characters": [
+        "shaman"
+      ],
+      "camera": "medium shot, push in",
+      "action": "巫师反驳，声音尖锐",
+      "dialogue": "那是邪灵的诡计!为了让我们放松警惕!",
+      "emotion": "accusation, fanaticism",
+      "prompt_visual": "Medium shot of the shaman, camera pushing in as he speaks with accusatory fervor. His body language aggressive, leaning forward, one bony finger raised in warning. The raven feathers of his headdress seem to bristle. Firelight casts exaggerated shadows making him appear larger, more menacing. His ceremonial robe swirls slightly with his animated gestures. The bone talismans around his neck clatter. Behind him, painted symbols on the tent wall seem to reinforce his dark authority. Style: dramatic, slightly fish-eye distortion suggesting fanaticism, intense contrast.",
+      "prompt_motion": "Camera pushes in toward the shaman as he rises slightly, finger jabbing the air accusingly. His movements are sharp, animated with zealous energy. Bone ornaments swing and clatter. His shadow looms large on the tent wall behind him.",
+      "sfx_bgm": "SFX: bone rattling, fabric swishing, raised voice. BGM: percussion intensifies.",
+      "notes": "巫师的反驳被警报打断，需要在情绪高点切换"
+    },
+    {
+      "shot_id": "S08",
+      "scene": "2-2",
+      "duration_s": 2,
+      "location": "council_tent_interior",
+      "characters": [
+        "shaman",
+        "chief"
+      ],
+      "camera": "wide shot, quick pan to tent entrance",
+      "action": "帐篷外传来警报声，两人同时反应",
+      "dialogue": "(VO) 燧人氏来袭!",
+      "emotion": "alarm, urgency",
+      "prompt_visual": "Wide shot of the council tent interior, both shaman and chief freeze mid-conversation, heads snapping toward the tent entrance. The tent flap suddenly glows brighter with morning light as it's thrown open. Silhouette of a warrior messenger visible at the entrance. Both leaders' faces show sudden alarm, the previous argument forgotten. Dust particles visible in the shaft of light cutting into the dark tent. The fire flickers violently from the sudden draft. Style: cinematic action transition, dramatic lighting shift from dark interior to bright exterior intrusion.",
+      "prompt_motion": "Both figures freeze, then turn sharply toward the tent entrance. The tent flap is thrown open, light flooding in. The fire gutters from the sudden wind. Quick camera pan from the two men to the bright entrance where a figure stands in silhouette.",
+      "sfx_bgm": "SFX: urgent shout, tent flap snapping, distant war horns. BGM: sharp percussion hit, transition to battle music.",
+      "notes": "场景转换节点，用声音和光线变化创造紧迫感"
+    },
+    {
+      "shot_id": "S09",
+      "scene": "2-3",
+      "duration_s": 4,
+      "location": "tribe_border",
+      "characters": [
+        "suiren_chief",
+        "suiren_warriors",
+        "huaxu_warriors"
+      ],
+      "camera": "wide shot, crane down",
+      "action": "燧人氏军队出现在边界，对峙华胥氏",
+      "dialogue": "",
+      "emotion": "intimidation, impending conflict",
+      "prompt_visual": "Epic wide shot, camera craning down to reveal the confrontation at the tribal border. In the foreground, FIFTY SUIREN WARRIORS stand in formation, all holding distinctive FLINT WEAPONS (axes, spears with obsidian heads that catch the light). They wear darker, more utilitarian furs with fire symbols branded on their leather armor. At their center stands the SUIREN CHIEF (burly middle-aged man, 40s, battle-scarred face, thick beard, muscular build, wearing a cape of charred black wolf fur, holding a massive flint-headed war club). Opposite them, Huaxu warriors appear fewer, more defensive. Morning sun creates dramatic backlighting on the Suiren forces. Dust rises from their assembled feet. Style: epic battle film aesthetic, Lord of the Rings inspired scale, mythological warriors.",
+      "prompt_motion": "Camera cranes down from sky level to reveal the full scope of the Suiren war party. Warriors shift and adjust their weapons, creating subtle metallic and stone-on-leather sounds. War standards bearing fire emblems flutter in the wind. The Suiren chief steps forward from his men. Dust clouds drift across the no-man's-land between the forces.",
+      "sfx_bgm": "SFX: marching feet settling, weapons clinking, wind. BGM: war drums build, brass swells indicating enemy theme.",
+      "notes": "建立战斗规模，燧人氏的燧石武器是他们的特征"
+    },
+    {
+      "shot_id": "S10",
+      "scene": "2-3",
+      "duration_s": 3,
+      "location": "tribe_border",
+      "characters": [
+        "suiren_chief"
+      ],
+      "camera": "medium shot, low angle",
+      "action": "燧人首领发出最后通牒",
+      "dialogue": "华胥氏!雷泽的狩猎权,今天必须交出来!",
+      "emotion": "aggression, dominance, threat",
+      "prompt_visual": "Medium shot, low angle looking up at the SUIREN CHIEF, making him appear powerful and dominating. A burly, battle-hardened man (40s, thick black beard with gray streaks, face bearing multiple battle scars, intense dark eyes). He wears a dramatic cape of charred black wolf fur over leather armor decorated with fire symbols. His massive flint-headed war club rests on his shoulder. Behind him, his warriors form an intimidating backdrop. Morning sun creates a harsh rim light around his silhouette. His breath visible in the cool morning air as he bellows his demand. Style: epic antagonist introduction, powerful and threatening, mythological warlord aesthetic.",
+      "prompt_motion": "The Suiren chief throws his head back slightly as he shouts, his voice echoing across the border. His war club shifts on his shoulder, catching the light. Behind him, his warriors raise their weapons in support, creating a wave of threatening motion. His cape billows dramatically.",
+      "sfx_bgm": "SFX: powerful bellowing voice, warriors' approving shouts, weapons raised. BGM: enemy theme crescendo, aggressive tribal drums.",
+      "notes": "燧人首领的威慑力需要通过低角度和背光来强化"
+    },
+    {
+      "shot_id": "S11",
+      "scene": "2-3",
+      "duration_s": 4,
+      "location": "tribe_border",
+      "characters": [
+        "fuxi",
+        "huaxu_warriors",
+        "suiren_warriors"
+      ],
+      "camera": "medium shot tracking, then close-up",
+      "action": "战斗爆发，伏羲被迫参战，左眼剧痛",
+      "dialogue": "",
+      "emotion": "chaos, pain, reluctance",
+      "prompt_visual": "Dynamic medium shot tracking FUXI as he's pulled into the battle chaos. Warriors from both sides clash around him - flint weapons striking wooden shields, bodies grappling. Fuxi (young, lean, disheveled, reluctant warrior stance) fights defensively, clearly not wanting to engage. Suddenly he clutches his LEFT EYE, face contorting in agony as GOLDEN LIGHT intensifies, bleeding through his fingers. Around him, the battle continues in violent motion blur. Dust and debris fill the air. Blood spatters visible. His golden eye creates an unnatural glow amidst the earthy chaos of primitive combat. Style: visceral action cinematography, handheld intensity, contrast between chaotic battle and supernatural eye glow.",
+      "prompt_motion": "Camera tracks Fuxi as he dodges attacks, pushed and pulled by the battle flow. He parries a strike, then suddenly doubles over, hand flying to his eye. Golden light pulses intensely from between his fingers. Warriors around him continue fighting, unaware. His body trembles with pain.",
+      "sfx_bgm": "SFX: clashing weapons, battle cries, Fuxi's pained grunt, supernatural hum from the eye. BGM: intense battle percussion with rising supernatural undertone.",
+      "notes": "战斗混乱中突出伏羲的眼睛痛感，为能力爆发做铺垫"
+    },
+    {
+      "shot_id": "S12",
+      "scene": "2-3",
+      "duration_s": 4,
+      "location": "tribe_border",
+      "characters": [
+        "fuxi",
+        "suiren_warriors"
+      ],
+      "camera": "wide shot, dramatic crane up",
+      "action": "坤卦能力爆发，地面塌陷，燧人战士陷入坑中",
+      "dialogue": "",
+      "emotion": "shock, supernatural awe",
+      "prompt_visual": "Epic wide shot with dramatic crane up revealing the supernatural event. FUXI stands at the center, his golden left eye blazing with intense light, KUN TRIGRAM (☷) symbol briefly visible glowing in the air. The GROUND BENEATH THE SUIREN WARRIORS suddenly COLLAPSES - earth cracking in geometric hexagonal patterns (echoing I-Ching symbolism), creating a massive sinkhole. A dozen Suiren warriors fall into the pit, their weapons flying, faces frozen in shock. Dust and debris erupt upward. Other warriors from both sides freeze in terror, weapons lowered. The contrast between Fuxi's glowing eye and the earthen catastrophe. Morning light catches the dust cloud. Style: supernatural disaster cinema, VFX-heavy composition, mythological power manifestation.",
+      "prompt_motion": "Camera cranes up as the ground begins to crack. Hexagonal fissures spread rapidly from Fuxi's position. The earth opens up beneath the Suiren warriors - they fall in slow motion, arms flailing. Massive chunks of earth tumble. Dust explodes upward. All other fighting stops as warriors stumble back from the expanding collapse. Fuxi's eye pulses one final bright flash.",
+      "sfx_bgm": "SFX: deep earth rumbling, cracking stone, screams of falling men, debris tumbling. BGM: supernatural bass drop, otherworldly choir, then sudden silence.",
+      "notes": "关键视觉奇观镜头，坤卦符号和六边形地裂是重要视觉元素"
+    },
+    {
+      "shot_id": "S13",
+      "scene": "2-3",
+      "duration_s": 3,
+      "location": "tribe_border",
+      "characters": [
+        "huaxu_warriors",
+        "suiren_warriors"
+      ],
+      "camera": "reaction shot montage, quick cuts",
+      "action": "双方战士都被震惊，惊呼妖术",
+      "dialogue": "妖术!",
+      "emotion": "terror, disbelief, superstitious fear",
+      "prompt_visual": "Quick-cut reaction shot montage showing faces from BOTH sides frozen in identical terror. HUAXU WARRIOR: young man, dirt-smeared face, eyes wide, jaw dropped, weapon falling from limp hands. SUIREN WARRIOR: older veteran, scarred face now showing primal fear, backing away. ANOTHER HUAXU: woman warrior, pointing at Fuxi with trembling hand. SUIREN CHIEF: even the fierce leader shows fear in his eyes, grip tightening on his weapon. All faces lit by the supernatural golden glow from Fuxi's eye, dust particles floating in the air around them. Each face shows the same universal human terror of the unexplainable. Style: Spielberg-esque reaction shots, extreme emotional close-ups, unified by golden supernatural lighting.",
+      "prompt_motion": "Quick cuts between faces - each person flinches, recoils, or freezes. Weapons clatter to the ground. Hands raise defensively. Mouths form the word 'sorcery' in unison. Some warriors fall to their knees. All movement has stopped except for trembling.",
+      "sfx_bgm": "SFX: multiple gasps, dropped weapons, the word 'yao shu' echoing from multiple voices. BGM: eerie silence, then low drone.",
+      "notes": "快剪反应镜头，强调双方都恐惧伏羲，为下一场的献祭决定埋下伏笔"
+    },
+    {
+      "shot_id": "S14",
+      "scene": "2-4",
+      "duration_s": 3,
+      "location": "tribal_altar",
+      "characters": [
+        "shaman",
+        "tribe_members",
+        "fuxi"
+      ],
+      "camera": "wide shot establishing",
+      "action": "战后，祭坛前聚集众人，伏羲被绑在祭柱上",
+      "dialogue": "",
+      "emotion": "dread, ritualistic menace",
+      "prompt_visual": "Wide establishing shot of the tribal ALTAR area - a raised stone platform with a massive wooden SACRIFICIAL PILLAR at its center, carved with primitive protective symbols. FUXI is bound to the pillar with rough rope, arms behind him, his golden left eye dimmed but still faintly glowing. The SHAMAN stands before him on the platform, arms raised triumphantly. A CROWD of tribe members surrounds the altar in a semi-circle, their faces a mix of fear, sorrow, and righteous anger. Torches have been lit creating harsh, flickering illumination despite it being daytime. Dark clouds gather ominously overhead. Sacrificial offerings (animal skulls, dried herbs) arranged at the pillar's base. Style: ritualistic horror atmosphere, oppressive composition crushing down on Fuxi, religious persecution aesthetic.",
+      "prompt_motion": "Torch flames flicker in an unnatural wind. The crowd shifts uneasily. Fuxi struggles weakly against his bonds. The shaman's robes billow as he turns to address the crowd. Dark clouds roll in faster than natural, casting moving shadows across the scene.",
+      "sfx_bgm": "SFX: wind picking up, torch crackling, crowd murmuring, rope straining. BGM: ominous ceremonial drums, dark choir.",
+      "notes": "祭坛场景需要营造压迫感和不祥氛围，乌云的聚集暗示熵单位"
+    },
+    {
+      "shot_id": "S15",
+      "scene": "2-4",
+      "duration_s": 3,
+      "location": "tribal_altar",
+      "characters": [
+        "shaman"
+      ],
+      "camera": "low angle medium shot",
+      "action": "巫师煽动族人",
+      "dialogue": "你们都看到了!这不是人的力量!为了部落安全,必须献祭!",
+      "emotion": "fanaticism, triumph, manipulation",
+      "prompt_visual": "Low angle medium shot of the SHAMAN at his most powerful and terrifying. He stands on the raised altar platform, arms spread wide, raven feather headdress fully displayed against the darkening sky. His face paint seems more skull-like in the torchlight, eyes gleaming with zealous triumph. His ceremonial robe swirls dramatically. Behind him, the bound figure of Fuxi is partially visible. The crowd below raises their fists in fearful agreement. Lightning flickers in the gathering clouds, seeming to validate his words. The low angle makes him appear as a towering figure of dark religious authority. Style: horror villain cinematography, evangelical menace, thunderstorm dramatic lighting.",
+      "prompt_motion": "The shaman's arms sweep wide as he proclaims. His head tilts back momentarily as if communing with dark forces. He turns and points accusingly at the bound Fuxi. The crowd below raises arms and voices in response. Wind whips his robes and feathers. Lightning flickers behind him.",
+      "sfx_bgm": "SFX: wind howling, his amplified voice, crowd's fearful agreement, distant thunder. BGM: dark triumphant theme, religious horror.",
+      "notes": "巫师的最高光时刻，需要最大化他的威胁感和操控力"
+    },
+    {
+      "shot_id": "S16",
+      "scene": "2-4",
+      "duration_s": 4,
+      "location": "tribal_altar",
+      "characters": [
+        "fuxi_mother",
+        "chief",
+        "fuxi"
+      ],
+      "camera": "medium shot, focus pull",
+      "action": "母亲哭喊，父亲低头不语",
+      "dialogue": "",
+      "emotion": "anguish, shame, helplessness",
+      "prompt_visual": "Emotionally devastating medium shot with focus pull. In the foreground, FUXI'S MOTHER is held back by tribe members, her face contorted in anguished tears, reaching desperately toward her son, mouth open in a silent scream. Focus pulls to the CHIEF (Fuxi's father) standing apart from the crowd, head bowed in shame, unable to look at either his wife or son. His fists are clenched at his sides, showing internal torment but external paralysis. In the deep background, slightly out of focus, FUXI bound to the pillar, watching his parents with heartbreaking clarity. The composition shows the family torn apart - mother fighting, father frozen, son condemned. Style: emotional drama peak, Schindler's List level emotional intensity, family tragedy.",
+      "prompt_motion": "Mother struggles against those holding her, tears streaming. Focus smoothly pulls from her anguished face to the father's bowed head. His shoulders shake slightly - crying silently. In the background, Fuxi's head turns toward them, then drops in despair. Mother's hand reaches out one last time before going limp.",
+      "sfx_bgm": "SFX: mother's muffled sobs, crowd noise dimmed, wind. BGM: heartbreaking strings, family theme in minor key, building emotional devastation.",
+      "notes": "家庭悲剧的情感高潮，需要精准的焦点转移来讲故事"
+    },
+    {
+      "shot_id": "S17",
+      "scene": "2-4",
+      "duration_s": 4,
+      "location": "tribal_altar",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "close-up, slow push in",
+      "action": "伏羲看着族人恐惧的眼神，心寒绝望",
+      "dialogue": "我没有......我不是邪灵......",
+      "emotion": "despair, betrayal, innocence",
+      "prompt_visual": "Intimate close-up of FUXI's face, camera slowly pushing in. His young face (18, previously full of life, now hollow with despair) shows the devastation of betrayal by his own people. His right eye wells with tears; his left golden eye flickers weakly, almost apologetically. Rope burns visible on his neck from the bonds. His lips tremble as he speaks his protest, voice broken. Behind him, out of focus, the faces of tribe members he grew up with stare back with fear and hostility. His hair hangs in sweaty, dirty strands across his face. This is a boy being condemned for something he doesn't understand. Style: extreme emotional intimacy, single tear cinematography, the face of innocence persecuted.",
+      "prompt_motion": "Camera pushes in slowly on Fuxi's face. A single tear rolls down from his right eye. His golden left eye flickers like a dying flame. His lips move forming the words of his weak protest. His head turns slightly, looking at the hostile faces surrounding him, then drops in defeat. His shoulders slump against the bonds.",
+      "sfx_bgm": "SFX: his broken whisper, wind, distant thunder rolling closer. BGM: tragic isolation theme, single piano notes, fading hope.",
+      "notes": "伏羲的情感最低点，需要传达他的无辜和绝望"
+    },
+    {
+      "shot_id": "S18",
+      "scene": "2-4",
+      "duration_s": 3,
+      "location": "tribal_altar",
+      "characters": [],
+      "camera": "wide shot tilt up to sky",
+      "action": "乌云汇聚，不祥的天象",
+      "dialogue": "",
+      "emotion": "dread, supernatural menace, cliffhanger",
+      "prompt_visual": "Dramatic wide shot tilting up from the altar scene to the sky. The altar with Fuxi bound visible at the bottom of frame, the crowd surrounding it appearing small and vulnerable. The camera tilts up to reveal the GATHERING STORM - but this is no ordinary storm. The clouds swirl with unnatural patterns, dark purple and black with occasional flickers of sickly green lightning. The cloud formation suggests something is INSIDE it, moving, approaching. Geometric patterns (hexagonal, fractal) briefly visible in the lightning - hinting at the ENTROPY UNITS approaching. The contrast between the primitive tribal scene below and the cosmic horror above. Style: cosmic horror meets mythology, Lovecraftian sky, Independence Day scale threat emerging.",
+      "prompt_motion": "Camera tilts up from the earthly drama to the heavens. Clouds swirl and gather with impossible speed, forming a vortex. Unnatural lightning flickers within, briefly illuminating massive shadowy shapes. The cloud mass moves toward the village. Wind intensifies, causing the scene below to become chaotic. The threat from above dwarfs all human concerns below.",
+      "sfx_bgm": "SFX: building wind roar, unnatural thunder (almost electronic), fabric and torch sounds of chaos below. BGM: rising cosmic horror theme, building to crescendo, then CUT TO BLACK - silence.",
+      "notes": "本集结尾镜头，必须建立悬念感，暗示熵单位的到来而不完全揭示"
+    }
+  ]
+}

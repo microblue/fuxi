@@ -1,6 +1,6 @@
 {
   "episode": "ep001",
-  "total_keyframes": 48,
+  "total_keyframes": 56,
   "strategy": "T2I(第1帧) + I2V(参考帧)",
   "keyframes": [
     {
@@ -9,28 +9,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: camera positioned high, wide aerial view] breathtaking futuristic city built entirely of light, luminous architecture, rivers of data flowing through the sky between buildings, suddenly all light begins glitching and stuttering, piercing alarm, city-scale emergency, vertical 9:16 framing",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned high above the city, beginning descent, capturing vast panoramic view of luminous architecture breathtaking futuristic city built entirely of light, luminous architecture, rivers of data flowing through the sky between buildings, suddenly all light begins glitching and stuttering, piercing alarm, city-scale emergency, vertical 9:16 framing",
+      "camera_state": "Epic extreme wide shot from bird's eye view, crane beginning descent over breathtaking futuristic metropolis built of pure light, rivers of data streaming between towering luminous structures, vertical 9:16 framing emphasizing city's majestic vertical scale",
+      "ref_image": "assets/locations/lingzi_civilization_capital.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S01-KF2",
       "shot_id": "S01",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: camera descending, mid-level perspective] smooth crane down revealing city, then sudden glitch — all lights stutter and flicker, data streams fragment",
-      "reference_frame": "S01-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "camera mid-descent through the city, now closer to building tops, capturing the moment of disruption smooth crane down revealing city, then sudden glitch — all lights stutter and flicker, data streams fragment",
+      "camera_state": "Wide shot from high angle, crane descending through the city, sudden glitch effect begins — all luminous architecture starts stuttering, data streams fragmenting mid-air, first signs of city-wide emergency",
+      "ref_image": "S01-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S01-KF3",
       "shot_id": "S01",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: camera descended low, detailed street-level view] smooth crane down revealing city, then sudden glitch — all lights stutter and flicker, data streams fragment",
-      "reference_frame": "S01-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "camera completing descent to street level, surrounded by flickering light structures and chaos smooth crane down revealing city, then sudden glitch — all lights stutter and flicker, data streams fragment",
+      "camera_state": "Wide shot at eye level, crane completing dramatic descent, city engulfed in emergency — all lights violently flickering, piercing alarm resonating, data rivers completely fragmented, apocalyptic urban chaos in vertical composition",
+      "ref_image": "S01-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -39,18 +42,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: medium shot, balanced composition, handheld camera with subtle movement] East Asian man age 30, serene celestial sage bearing, standing atop central tower in flowing luminous robes with I-Ching inspired pattern details, golden spiral markings on left eye (太阳女神 Sun Goddess aspect), fingers rapidly swiping through holographic data with graceful precision, golden data streams responding to gestures like silk ribbons, city glitching in background, ethereal dramatic lighting illuminating delicate East Asian facial features",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned slightly below eye level, capturing subject from waist up with tower summit and sky visible East Asian man age 30, serene celestial sage bearing, standing atop central tower in flowing luminous robes with I-Ching inspired pattern details, golden spiral markings on left eye (太阳女神 Sun Goddess aspect), fingers rapidly swiping through holographic data with graceful precision, golden data streams responding to gestures like silk ribbons, city glitching in background, ethereal dramatic lighting illuminating delicate East Asian facial features",
+      "camera_state": "Medium shot, slight low angle handheld, East Asian sage in luminous robes atop tower, fingers poised at holographic interface, golden eye marking visible, city lights below",
+      "ref_image": "assets/characters/xihe.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S02-KF2",
       "shot_id": "S02",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: medium shot, balanced composition, handheld camera with subtle movement] fingers dancing through holographic data, golden streams responding to gestures, background city flickering",
-      "reference_frame": "S02-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "handheld micro-movements, maintaining slight low angle framing on upper body and dancing fingers fingers dancing through holographic data, golden streams responding to gestures, background city flickering",
+      "camera_state": "Medium shot with subtle handheld sway, fingers dancing through golden holographic streams, data particles responding to graceful gestures, luminous robe patterns glowing",
+      "ref_image": "S02-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S02-KF3",
+      "shot_id": "S02",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "handheld gentle drift, framing subject against flickering cityscape backdrop fingers dancing through holographic data, golden streams responding to gestures, background city flickering",
+      "camera_state": "Medium shot handheld, golden data streams peak intensity around swiping fingers, background metropolis flickering with holographic interference, serene sage expression, I-Ching patterns illuminate",
+      "ref_image": "S02-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -59,18 +75,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] close-up of East Asian celestial sage age 30 with chiseled noble features, left eye glowing with golden spiral patterns (ancient I-Ching wisdom mark), wearing luminous flowing robes in white and gold with subtle Daoist geometry, serene yet resolute expression, calm determined smile conveying profound acceptance of sacrifice, golden data light reflections dancing across face, city alarm lights casting dramatic shadows in background",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned at intimate close-up distance, framing face and upper shoulders, centered composition emphasizing golden spiral eye pattern close-up of East Asian celestial sage age 30 with chiseled noble features, left eye glowing with golden spiral patterns (ancient I-Ching wisdom mark), wearing luminous flowing robes in white and gold with subtle Daoist geometry, serene yet resolute expression, calm determined smile conveying profound acceptance of sacrifice, golden data light reflections dancing across face, city alarm lights casting dramatic shadows in background",
+      "camera_state": "Close-up of celestial sage's face at eye level, steady shot, left eye glowing with golden I-Ching spiral, white-gold luminous robes, serene contemplative expression",
+      "ref_image": "assets/characters/xihe.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S03-KF2",
       "shot_id": "S03",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] steady shot, subtle smile forming, eyes filled with resolve, slight head nod at 'authorize'",
-      "reference_frame": "S03-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera maintains intimate close-up framing, subtle focus shift to capture emerging smile forming at corners of mouth steady shot, subtle smile forming, eyes filled with resolve, slight head nod at 'authorize'",
+      "camera_state": "Close-up steady shot capturing subtle smile forming on sage's lips, golden eye pattern intensifying, calm determined expression emerging, soft ethereal lighting",
+      "ref_image": "S03-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S03-KF3",
+      "shot_id": "S03",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera steady at close-up distance, framing slight downward head motion, maintaining eye contact with viewer steady shot, subtle smile forming, eyes filled with resolve, slight head nod at 'authorize'",
+      "camera_state": "Close-up of sage's slight deliberate nod, resolved smile conveying profound wisdom, golden spiral eye glowing with authorization, noble chiseled features in decisive moment",
+      "ref_image": "S03-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -79,28 +108,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: camera close-in, detailed view] celestial East Asian sage pressing both hands on holographic console, luminous data being extracted from entire body in flowing light trails forming eight directions (八 I-Ching pattern), massive white and gold light pillar erupting from city center reaching into infinite sky, pillar fragmenting into billions of luminous points scattering into cosmos like dandelion seeds, one prominent light point contains glowing rotating bagua symbol (太极八卦), cosmic scale sacrifice",
-      "reference_frame": null,
-      "duration_until_next_s": 4.0
+      "prompt": "camera positioned at medium distance facing the holographic console, capturing Xihe's upper body and hands celestial East Asian sage pressing both hands on holographic console, luminous data being extracted from entire body in flowing light trails forming eight directions (八 I-Ching pattern), massive white and gold light pillar erupting from city center reaching into infinite sky, pillar fragmenting into billions of luminous points scattering into cosmos like dandelion seeds, one prominent light point contains glowing rotating bagua symbol (太极八卦), cosmic scale sacrifice",
+      "camera_state": "Medium shot of celestial sage pressing both hands on glowing holographic console, luminous data streams beginning to flow from body in eight directional patterns, dramatic side lighting",
+      "ref_image": "assets/characters/xihe.png",
+      "duration_until_next_s": 1.3333333333333333
     },
     {
       "keyframe_id": "S04-KF2",
       "shot_id": "S04",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 2.0,
-      "prompt": "[Camera: camera stepping back, widening perspective] hands press down, data rips from body upward, light pillar erupts, camera pulls back to reveal cosmic scale, light points scatter like dandelion seeds",
-      "reference_frame": "S04-KF1",
-      "duration_until_next_s": 2.0
+      "timestamp_s": 1.3333333333333333,
+      "prompt": "camera pulling back and tilting up, revealing the massive light pillar erupting from city center into the sky hands press down, data rips from body upward, light pillar erupts, camera pulls back to reveal cosmic scale, light points scatter like dandelion seeds",
+      "camera_state": "Wide shot with camera pulling back dramatically, massive white-gold light pillar erupting skyward from city center, Xihe's silhouette at base with data trails streaming upward, cosmic scale revelation",
+      "ref_image": "S04-KF1",
+      "duration_until_next_s": 1.3333333333333333
     },
     {
       "keyframe_id": "S04-KF3",
       "shot_id": "S04",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 4.0,
-      "prompt": "[Camera: camera pulled back far, epic wide scale view] hands press down, data rips from body upward, light pillar erupts, camera pulls back to reveal cosmic scale, light points scatter like dandelion seeds",
-      "reference_frame": "S04-KF1",
+      "timestamp_s": 2.6666666666666665,
+      "prompt": "camera at extreme distance above the city, capturing cosmic scale as light pillar fragments into billion points scattering across space hands press down, data rips from body upward, light pillar erupts, camera pulls back to reveal cosmic scale, light points scatter like dandelion seeds",
+      "camera_state": "Epic extreme wide shot, light pillar fragmenting into countless luminous points like dandelion seeds scattering across infinite cosmos, one light point reveals subtle bagua pattern, transcendent celestial scale",
+      "ref_image": "S04-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -109,28 +141,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] close-up of East Asian sage's face becoming transparent and dissolving into luminous particles, gentle knowing smile conveying 'live interesting' wisdom, golden spiral eye patterns fading into white light, delicate featured face gradually losing substance, body dissolving into flowing luminous data fragments drifting upward toward cosmos, wisps of white and gold light energy, bittersweet transcendent farewell moment",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned intimately close to subject's face, static framing capturing facial details close-up of East Asian sage's face becoming transparent and dissolving into luminous particles, gentle knowing smile conveying 'live interesting' wisdom, golden spiral eye patterns fading into white light, delicate featured face gradually losing substance, body dissolving into flowing luminous data fragments drifting upward toward cosmos, wisps of white and gold light energy, bittersweet transcendent farewell moment",
+      "camera_state": "Intimate close-up of East Asian sage's serene face, edges beginning to become transparent, golden spiral eye patterns visible, gentle knowing smile, soft ethereal lighting",
+      "ref_image": "assets/characters/xihe.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S05-KF2",
       "shot_id": "S05",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] body slowly becoming transparent from edges inward, gentle smile held, dissolving into floating light particles, fade to white",
-      "reference_frame": "S05-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "camera maintains intimate distance as subject dissolves, static contemplative framing body slowly becoming transparent from edges inward, gentle smile held, dissolving into floating light particles, fade to white",
+      "camera_state": "Close-up of sage's face half-transparent, body dissolving into flowing luminous data particles, smile held with peaceful acceptance, golden light emanating from dissolving edges",
+      "ref_image": "S05-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S05-KF3",
       "shot_id": "S05",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] body slowly becoming transparent from edges inward, gentle smile held, dissolving into floating light particles, fade to white",
-      "reference_frame": "S05-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "camera holds position as subject fully dissolves into white light, contemplative static frame body slowly becoming transparent from edges inward, gentle smile held, dissolving into floating light particles, fade to white",
+      "camera_state": "Final moment of dissolution, luminous particles dispersing into pure white light, faint trace of gentle smile fading, serene fade to white, transcendent peaceful ending",
+      "ref_image": "S05-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -139,18 +174,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: wide shot, expansive view, handheld camera with subtle movement] primitive swamp at stormy night, torrential rain, young East Asian boy 16 years old with noble bearing despite animal hide clothing, deep-set eyes suggesting hidden wisdom (伏羲 primordial sage aspect), and two adult East Asian hunters with strong tribal features carrying carved bone spears with ancestral markings, tracking beast footprints in mud with primal skill, one hunter pointing up at sky in sudden alarm, raw ancient landscape, East Asian tribal aesthetic",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera low to ground level in swamp, handheld movement through rain and mist, capturing figures against stormy sky primitive swamp at stormy night, torrential rain, young East Asian boy 16 years old with noble bearing despite animal hide clothing, deep-set eyes suggesting hidden wisdom (伏羲 primordial sage aspect), and two adult East Asian hunters with strong tribal features carrying carved bone spears with ancestral markings, tracking beast footprints in mud with primal skill, one hunter pointing up at sky in sudden alarm, raw ancient landscape, East Asian tribal aesthetic",
+      "camera_state": "Wide low-angle handheld shot of primitive swamp in torrential rain, young Fuxi and hunters tracking through mud, dramatic storm lighting, camera pushing forward unsteadily",
+      "ref_image": "assets/locations/primordial_swamp_night.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S06-KF2",
       "shot_id": "S06",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: wide shot, expansive view, handheld camera with subtle movement] characters moving through rain, sudden stop, hunter pointing upward, all look up",
-      "reference_frame": "S06-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera holds position low in swamp, handheld micro-movements, capturing sudden halt of movement characters moving through rain, sudden stop, hunter pointing upward, all look up",
+      "camera_state": "Wide low-angle handheld shot freezing as hunters abruptly stop, rain pelting down, tension building, camera trembles slightly capturing the moment of alert",
+      "ref_image": "S06-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S06-KF3",
+      "shot_id": "S06",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera remains low, handheld tilting upward following hunters' gaze toward sky, rain streaking through frame characters moving through rain, sudden stop, hunter pointing upward, all look up",
+      "camera_state": "Wide low-angle handheld shot tilting up as hunter points skyward, all figures looking up in awe, rain backlit against dark storm clouds, dramatic revelation moment",
+      "ref_image": "S06-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -159,28 +207,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: , tilting upward, focus on foreground] sky tearing open with silver-blue geometric light streams (celestial fire seed 火种) falling — not lightning but sacred structured energy, crashing into swamp center creating glowing vortex of ancient power, young East Asian boy 16 with noble features clutching left eye in sudden searing pain, spiritual awakening beginning, rain illuminated by otherworldly silver-blue light, mystical moment",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned low in swamp, tilting upward toward the tearing sky, capturing vast primordial landscape below geometric light phenomenon sky tearing open with silver-blue geometric light streams (celestial fire seed 火种) falling — not lightning but sacred structured energy, crashing into swamp center creating glowing vortex of ancient power, young East Asian boy 16 with noble features clutching left eye in sudden searing pain, spiritual awakening beginning, rain illuminated by otherworldly silver-blue light, mystical moment",
+      "camera_state": "Wide low-angle shot tilting up from dark primordial swamp toward night sky tearing open, silver-blue geometric light streams descending like sacred structured energy, ancient wetland silhouettes framing celestial event",
+      "ref_image": "assets/locations/primordial_swamp_night.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S07-KF2",
       "shot_id": "S07",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: , looking up at sky, focus shifted to background] camera tilts up to sky, geometric light descends, crashes into swamp with splash, rack focus to boy gripping eye",
-      "reference_frame": "S07-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "camera holds steady at swamp edge, framing the violent impact of celestial fire seed into water center camera tilts up to sky, geometric light descends, crashes into swamp with splash, rack focus to boy gripping eye",
+      "camera_state": "Medium wide shot capturing silver-blue geometric light crashing into swamp center, explosive splash creating glowing vortex of ancient power, water and light mixing in sacred collision, ripples spreading outward",
+      "ref_image": "S07-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S07-KF3",
       "shot_id": "S07",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: , looking up at sky, focus shifted to background] camera tilts up to sky, geometric light descends, crashes into swamp with splash, rack focus to boy gripping eye",
-      "reference_frame": "S07-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "camera racks focus from background vortex to extreme foreground, tight on boy's face and hand clutching eye camera tilts up to sky, geometric light descends, crashes into swamp with splash, rack focus to boy gripping eye",
+      "camera_state": "Close-up with rack focus to young East Asian boy 16 with noble features, hand gripping left eye in sudden searing pain, spiritual connection to celestial event, swamp glow reflected on anguished face",
+      "ref_image": "S07-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -189,18 +240,20 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: camera at medium distance] glowing silver-blue vortex in swamp water, translucent geometric crystal floating at hypnotic center (原始密码晶体 primordial code crystal), young East Asian boy 16 in animal hide approaching cautiously with determination, noble bearing despite poverty of clothing, silver-blue mystical light reflecting on water and his East Asian features, eyes filled with recognition and calling, other hunters wisely staying back in fear",
-      "reference_frame": null,
-      "duration_until_next_s": 2.0
+      "prompt": "camera positioned at medium distance from swamp vortex, capturing both the glowing phenomenon and approaching figure in frame glowing silver-blue vortex in swamp water, translucent geometric crystal floating at hypnotic center (原始密码晶体 primordial code crystal), young East Asian boy 16 in animal hide approaching cautiously with determination, noble bearing despite poverty of clothing, silver-blue mystical light reflecting on water and his East Asian features, eyes filled with recognition and calling, other hunters wisely staying back in fear",
+      "camera_state": "Medium shot eye level, silver-blue glowing vortex in dark swamp water, translucent crystal floating at center, young boy in animal hide visible approaching from background, mystical light pulsing rhythmically",
+      "ref_image": "assets/locations/primordial_swamp_night.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S08-KF2",
       "shot_id": "S08",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 2.0,
-      "prompt": "[Camera: camera close intimate detail view] slow push in following boy toward vortex, light pulsing rhythmically",
-      "reference_frame": "S08-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera pushed in closer, now framing boy prominently with vortex behind, intimate distance showing determination on face slow push in following boy toward vortex, light pulsing rhythmically",
+      "camera_state": "Medium close-up after slow push in, young East Asian boy 16 with noble bearing in animal hide, determined expression, silver-blue vortex light reflecting on his face, primordial crystal glowing hypnotically behind him",
+      "ref_image": "S08-KF1",
       "duration_until_next_s": 0.0
     },
     {
@@ -209,28 +262,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing] extreme close-up of young East Asian hand touching translucent crystal, golden data streams erupting from crystal flowing up arm like luminous veins of ancestral code, cut to boy's noble face contorted in transformation pain kneeling in water, left eye erupting with intense golden light and spiral I-Ching patterns, ancient wisdom flooding consciousness, rain streaming down face in agony and ecstasy",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned inches from hand, macro focus on fingertips meeting crystal surface extreme close-up of young East Asian hand touching translucent crystal, golden data streams erupting from crystal flowing up arm like luminous veins of ancestral code, cut to boy's noble face contorted in transformation pain kneeling in water, left eye erupting with intense golden light and spiral I-Ching patterns, ancient wisdom flooding consciousness, rain streaming down face in agony and ecstasy",
+      "camera_state": "Extreme close-up of young East Asian hand reaching towards translucent crystal, fingertips about to make contact, soft ambient glow from crystal illuminating skin texture",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S09-KF2",
       "shot_id": "S09",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: close-up shot, intimate framing] finger touches crystal → instant golden energy eruption up arm → cut to face, dropping to knees, left eye flashing gold",
-      "reference_frame": "S09-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "camera pulling back along arm trajectory as energy erupts, tracking the golden flow finger touches crystal → instant golden energy eruption up arm → cut to face, dropping to knees, left eye flashing gold",
+      "camera_state": "Extreme close-up of golden data streams erupting from crystal, luminous ancestral code veins racing up forearm like electric rivers, intense golden light casting dramatic shadows",
+      "ref_image": "S09-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S09-KF3",
       "shot_id": "S09",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: close-up shot, intimate framing] finger touches crystal → instant golden energy eruption up arm → cut to face, dropping to knees, left eye flashing gold",
-      "reference_frame": "S09-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "camera at water level looking up at kneeling figure, emphasizing transformation agony finger touches crystal → instant golden energy eruption up arm → cut to face, dropping to knees, left eye flashing gold",
+      "camera_state": "Close-up of boy's noble face contorted in transformation pain, kneeling in shallow water, left eye erupting with intense golden spiral light, water ripples reflecting golden radiance",
+      "ref_image": "S09-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -239,28 +295,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing] extreme close-up of left eye, pupil transformed to dark gold with tiny rotating bagua pattern (太极八卦 yin-yang Eight Trigrams) swirling with ancestral memory; transitions to first-person POV showing trees as emerald green flowing code strings of organic life, water surface as molecular crystalline grid structure of elemental essence, own East Asian hand showing blue bioelectric lines like acupuncture meridians under skin, sacred geometry awakening",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "macro lens positioned inches from left eye, capturing iris detail extreme close-up of left eye, pupil transformed to dark gold with tiny rotating bagua pattern (太极八卦 yin-yang Eight Trigrams) swirling with ancestral memory; transitions to first-person POV showing trees as emerald green flowing code strings of organic life, water surface as molecular crystalline grid structure of elemental essence, own East Asian hand showing blue bioelectric lines like acupuncture meridians under skin, sacred geometry awakening",
+      "camera_state": "Extreme macro close-up of left eye, pupil transforming to dark gold with tiny rotating bagua/yin-yang pattern emerging from depths, swirling ancestral memories visible in iris texture, dramatic lighting",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S10-KF2",
       "shot_id": "S10",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: close-up shot, intimate framing] eye close-up 1s, then POV shift — environment overlaid with data visualizations, camera panning across trees/water/hand",
-      "reference_frame": "S10-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "first-person POV camera panning across swamp environment from trees to water eye close-up 1s, then POV shift — environment overlaid with data visualizations, camera panning across trees/water/hand",
+      "camera_state": "First-person POV shot revealing code vision overlay, trees displayed as emerald green flowing code strings of organic life data, water surface rendered as molecular crystalline grid structure, slow pan across environment",
+      "ref_image": "S10-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S10-KF3",
       "shot_id": "S10",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: close-up shot, intimate framing] eye close-up 1s, then POV shift — environment overlaid with data visualizations, camera panning across trees/water/hand",
-      "reference_frame": "S10-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "POV looking down at own hands, slight tilt movement eye close-up 1s, then POV shift — environment overlaid with data visualizations, camera panning across trees/water/hand",
+      "camera_state": "First-person POV close-up looking down at own hands, blue bio-electric current lines visible beneath translucent skin, data visualization overlay showing life force flowing through veins, mystical technological aesthetic",
+      "ref_image": "S10-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -269,18 +328,20 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing] medium close-up of 16-year-old East Asian boy in animal hide, kneeling in shallow swamp water, looking at own hands in profound disbelief and wonder, faint golden spiral glow in left eye revealing I-Ching truth, rain falling on noble young face, expression of existential awakening — seeing the world's fundamental code/text nature for first time, shock mixed with dawning understanding",
-      "reference_frame": null,
-      "duration_until_next_s": 2.0
+      "prompt": "camera positioned slightly below eye level, capturing subject's face and hands in shallow swamp water medium close-up of 16-year-old East Asian boy in animal hide, kneeling in shallow swamp water, looking at own hands in profound disbelief and wonder, faint golden spiral glow in left eye revealing I-Ching truth, rain falling on noble young face, expression of existential awakening — seeing the world's fundamental code/text nature for first time, shock mixed with dawning understanding",
+      "camera_state": "Medium close-up of 16-year-old boy in animal hide kneeling in swamp, looking at hands with disbelief, golden spiral glow in left eye, rain falling, slight low angle emphasizing profound awakening",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S11-KF2",
       "shot_id": "S11",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 2.0,
-      "prompt": "[Camera: close-up shot, intimate framing] boy looking at hands, then slowly looking around at world, mouth slightly open",
-      "reference_frame": "S11-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera maintains slight low angle as subject raises gaze from hands to survey surrounding world boy looking at hands, then slowly looking around at world, mouth slightly open",
+      "camera_state": "Medium close-up of boy slowly lifting gaze from hands, mouth slightly open in wonder, I-Ching truth visible in golden eye, rain on noble face, expression of existential awakening seeing world anew",
+      "ref_image": "S11-KF1",
       "duration_until_next_s": 0.0
     },
     {
@@ -289,18 +350,20 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: wide shot, expansive view] wide high-angle shot of dark swamp, sky rapidly darkening beyond normal storm, unnatural shadow spreading, boy tiny in frame looking up, ominous atmospheric shift",
-      "reference_frame": null,
-      "duration_until_next_s": 2.0
+      "prompt": "camera positioned high above the swamp, looking down at vast landscape with boy as small figure wide high-angle shot of dark swamp, sky rapidly darkening beyond normal storm, unnatural shadow spreading, boy tiny in frame looking up, ominous atmospheric shift",
+      "camera_state": "Wide high-angle establishing shot of primordial swamp, sky beginning to darken unnaturally, ominous clouds gathering, tiny boy figure visible below, atmospheric tension building",
+      "ref_image": "assets/locations/primordial_swamp_night.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S12-KF2",
       "shot_id": "S12",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 2.0,
-      "prompt": "[Camera: wide shot, expansive view] sky darkening rapidly, light draining from scene, wind picking up",
-      "reference_frame": "S12-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera maintains elevated position as supernatural darkness spreads across entire frame sky darkening rapidly, light draining from scene, wind picking up",
+      "camera_state": "Extreme wide high-angle shot, unnatural shadow spreading rapidly across swamp, light draining from scene, wind-swept vegetation, boy tiny and vulnerable looking upward, apocalyptic atmosphere",
+      "ref_image": "S12-KF1",
       "duration_until_next_s": 0.0
     },
     {
@@ -309,18 +372,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: , tilting downward] three pale white octahedron geometric entities descending silently from darkened sky, glowing red cracks on surfaces, floating motionless above swamp, cold alien presence, dwarfing the humans below",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned low near swamp surface, angled upward toward darkened sky, capturing vast scale of descending entities three pale white octahedron geometric entities descending silently from darkened sky, glowing red cracks on surfaces, floating motionless above swamp, cold alien presence, dwarfing the humans below",
+      "camera_state": "Extreme wide low angle shot from swamp level, three pale octahedron entities appearing high in darkened sky, tiny against massive alien forms, threatening atmosphere, red cracks barely visible",
+      "ref_image": "assets/characters/entropy_unit.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S13-KF2",
       "shot_id": "S13",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: , looking down at ground] three shapes descending in formation, slow and silent, stopping to hover, red cracks pulsing",
-      "reference_frame": "S13-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera remains low, slowly tilting downward to follow the descending geometric entities as they approach three shapes descending in formation, slow and silent, stopping to hover, red cracks pulsing",
+      "camera_state": "Wide low angle shot with slow tilt down tracking three octahedrons descending in silent formation, red cracks pulsing rhythmically on pale surfaces, cold alien presence dominating frame",
+      "ref_image": "S13-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S13-KF3",
+      "shot_id": "S13",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera at low position near human level, capturing floating entities hovering motionless above, emphasizing scale disparity three shapes descending in formation, slow and silent, stopping to hover, red cracks pulsing",
+      "camera_state": "Wide low angle shot of three pale octahedrons hovering motionless above swamp, glowing red cracks pulsing ominously, dwarfing tiny human figures below, silent threatening presence",
+      "ref_image": "S13-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -329,28 +405,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: full shot, complete scene in frame, handheld camera with subtle movement] black corrupting data tendrils shooting from octahedron with terrible speed, wrapping around adult East Asian tribal hunter with strong features, his primal body beginning to pixelate and dissolve from feet upward into cubic digital fragments, expression of agony and incomprehension, other East Asian hunters watching in tribal horror and helplessness, moment of ancient world colliding with digital extinction",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "handheld camera at medium distance, slight shake capturing sudden violence black corrupting data tendrils shooting from octahedron with terrible speed, wrapping around adult East Asian tribal hunter with strong features, his primal body beginning to pixelate and dissolve from feet upward into cubic digital fragments, expression of agony and incomprehension, other East Asian hunters watching in tribal horror and helplessness, moment of ancient world colliding with digital extinction",
+      "camera_state": "Chaotic handheld full shot, black data tendrils shooting from octahedron with terrible speed toward East Asian hunter, night swamp atmosphere, digital corruption beginning",
+      "ref_image": "assets/characters/hunter_b.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S14-KF2",
       "shot_id": "S14",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: full shot, complete scene in frame, handheld camera with subtle movement] tendrils lashing out fast, coiling around victim, pixelation rising from feet to torso, struggling but dissolving",
-      "reference_frame": "S14-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "handheld low angle tracking victim's struggle, unstable framing tendrils lashing out fast, coiling around victim, pixelation rising from feet to torso, struggling but dissolving",
+      "camera_state": "Handheld low angle full shot, corrupting tendrils coiling tightly around hunter's muscular body, feet beginning to pixelate into cubic fragments, expression of agony",
+      "ref_image": "S14-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S14-KF3",
       "shot_id": "S14",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: full shot, complete scene in frame, handheld camera with subtle movement] tendrils lashing out fast, coiling around victim, pixelation rising from feet to torso, struggling but dissolving",
-      "reference_frame": "S14-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "chaotic handheld pulling back to capture full dissolution effect tendrils lashing out fast, coiling around victim, pixelation rising from feet to torso, struggling but dissolving",
+      "camera_state": "Chaotic handheld full shot pulling back, hunter dissolving from feet to torso into digital cubic fragments, face frozen in incomprehension and agony, other hunters fleeing background",
+      "ref_image": "S14-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -359,28 +438,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing] close-up of East Asian boy's face screaming in rage and primal power, left eye blazing with intense golden light and I-Ching patterns, ancestral fury awakened; cut to code-vision POV showing black tendril's jagged corrupted data structure highlighted in red; young hand reaching out with instinctive authority and grabbing tendril, golden sacred energy flowing from hand causing black corruption to shatter into digital fragments, code-level manipulation manifesting",
-      "reference_frame": null,
-      "duration_until_next_s": 4.0
+      "prompt": "camera inches from face, capturing raw emotion, slight handheld tremor for intensity close-up of East Asian boy's face screaming in rage and primal power, left eye blazing with intense golden light and I-Ching patterns, ancestral fury awakened; cut to code-vision POV showing black tendril's jagged corrupted data structure highlighted in red; young hand reaching out with instinctive authority and grabbing tendril, golden sacred energy flowing from hand causing black corruption to shatter into digital fragments, code-level manipulation manifesting",
+      "camera_state": "Extreme close-up of East Asian boy's face contorted in primal rage, left eye blazing golden I-Ching light, tears of fury, ancestral power awakening, dramatic side lighting",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.3333333333333333
     },
     {
       "keyframe_id": "S15-KF2",
       "shot_id": "S15",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 2.0,
-      "prompt": "[Camera: close-up shot, intimate framing] face snap with rage, POV shift to code vision, hand grabs tendril, golden energy pulse, tendril shatters",
-      "reference_frame": "S15-KF1",
-      "duration_until_next_s": 2.0
+      "timestamp_s": 1.3333333333333333,
+      "prompt": "POV shift to Fuxi's enhanced vision, seeing through code-perception, camera advances toward target face snap with rage, POV shift to code vision, hand grabs tendril, golden energy pulse, tendril shatters",
+      "camera_state": "Code-vision POV revealing black tendril's corrupted data structure, jagged red-highlighted digital matrix, young hand reaching into frame with golden energy gathering",
+      "ref_image": "S15-KF1",
+      "duration_until_next_s": 1.3333333333333333
     },
     {
       "keyframe_id": "S15-KF3",
       "shot_id": "S15",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 4.0,
-      "prompt": "[Camera: close-up shot, intimate framing] face snap with rage, POV shift to code vision, hand grabs tendril, golden energy pulse, tendril shatters",
-      "reference_frame": "S15-KF1",
+      "timestamp_s": 2.6666666666666665,
+      "prompt": "camera below hand level looking up, capturing heroic moment of destruction, slight pull back for explosion face snap with rage, POV shift to code vision, hand grabs tendril, golden energy pulse, tendril shatters",
+      "camera_state": "Dynamic low angle of young hand gripping black tendril, golden energy pulse radiating outward, tendril shattering into dissolving code fragments, triumphant primal power moment",
+      "ref_image": "S15-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -389,28 +471,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: wide shot, expansive view] full shot of 16-year-old East Asian boy facing three floating octahedra, more black corrupting tendrils extending, boy slams hands on muddy ground with desperate instinctive power, golden sacred energy ripples outward turning solid soil into flowing quicksand beneath the geometric entities, entities sinking and wobbling in surprise, struggling against transformed earth code",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned at full shot distance capturing boy and three octahedra in frame, slight low emphasis full shot of 16-year-old East Asian boy facing three floating octahedra, more black corrupting tendrils extending, boy slams hands on muddy ground with desperate instinctive power, golden sacred energy ripples outward turning solid soil into flowing quicksand beneath the geometric entities, entities sinking and wobbling in surprise, struggling against transformed earth code",
+      "camera_state": "Full wide shot of desperate confrontation, 16-year-old East Asian boy facing three floating black octahedra, corrupting tendrils extending menacingly toward him, swamp atmosphere, tense standoff framing",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S16-KF2",
       "shot_id": "S16",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 1.5,
-      "prompt": "[Camera: wide shot, expansive view] tendrils reaching, boy drops to ground, golden pulse from hands, mud liquefying, entities wobbling as ground shifts",
-      "reference_frame": "S16-KF1",
-      "duration_until_next_s": 1.5
+      "timestamp_s": 1.0,
+      "prompt": "camera low to ground level, angled up at boy's desperate action, emphasizing power release tendrils reaching, boy drops to ground, golden pulse from hands, mud liquefying, entities wobbling as ground shifts",
+      "camera_state": "Low angle medium shot of boy slamming hands onto muddy ground, golden sacred energy bursting from palms, desperate instinctive power radiating outward, dramatic lighting from energy pulse",
+      "ref_image": "S16-KF1",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S16-KF3",
       "shot_id": "S16",
       "frame_index": 2,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: wide shot, expansive view] tendrils reaching, boy drops to ground, golden pulse from hands, mud liquefying, entities wobbling as ground shifts",
-      "reference_frame": "S16-KF1",
+      "timestamp_s": 2.0,
+      "prompt": "camera elevated showing ground transformation effect spreading beneath geometric entities tendrils reaching, boy drops to ground, golden pulse from hands, mud liquefying, entities wobbling as ground shifts",
+      "camera_state": "High angle wide shot revealing golden energy ripples transforming solid soil into flowing quicksand, three octahedra wobbling unstably as ground liquefies beneath them, boy kneeling at center of spreading effect",
+      "ref_image": "S16-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -419,18 +504,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: wide shot, expansive view] wide shot: glowing green bone arrow streaking through rain from distant cliff with ethereal green sacred light; on cliff stands young East Asian girl 17 with fierce intelligent beauty, wearing green leaf-woven armor woven with natural plant spirits (女娲 Goddess of Creation aspect), wielding white ancestral bone bow with masterful grace, shouting command to escape, surrounded by swamp mist and rain; below in swamp the boy stumbles and runs from entities, geometric threats momentarily distracted by arrow impact, two destinies converging",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned low in swamp looking up towards distant cliff, capturing arrow trajectory across frame wide shot: glowing green bone arrow streaking through rain from distant cliff with ethereal green sacred light; on cliff stands young East Asian girl 17 with fierce intelligent beauty, wearing green leaf-woven armor woven with natural plant spirits (女娲 Goddess of Creation aspect), wielding white ancestral bone bow with masterful grace, shouting command to escape, surrounded by swamp mist and rain; below in swamp the boy stumbles and runs from entities, geometric threats momentarily distracted by arrow impact, two destinies converging",
+      "camera_state": "Dramatic wide shot from low angle in swamp, glowing green bone arrow streaking through dark rainy sky trailing ethereal sacred light, distant cliff silhouette visible, atmospheric rain and mist",
+      "ref_image": "assets/locations/primordial_swamp_night.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S17-KF2",
       "shot_id": "S17",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: wide shot, expansive view] arrow flies across frame trailing green light, impacts near entities, cut to girl on cliff shouting, cut to boy stumbling away through swamp water",
-      "reference_frame": "S17-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera on cliff edge looking up at standing figure, dramatic backlighting from stormy sky arrow flies across frame trailing green light, impacts near entities, cut to girl on cliff shouting, cut to boy stumbling away through swamp water",
+      "camera_state": "Dynamic medium shot of 17-year-old East Asian girl in green leaf-woven armor standing on cliff edge, fierce expression shouting warning, wielding white ancient bone bow, wind and rain whipping around her, heroic stance",
+      "ref_image": "S17-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S17-KF3",
+      "shot_id": "S17",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera tracking alongside stumbling figure through shallow swamp water, handheld urgency arrow flies across frame trailing green light, impacts near entities, cut to girl on cliff shouting, cut to boy stumbling away through swamp water",
+      "camera_state": "Urgent medium tracking shot of young East Asian boy stumbling desperately through murky swamp water, splashing frantically, arrow impact visible nearby with dissipating green glow, fear and exhaustion evident",
+      "ref_image": "S17-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -439,18 +537,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: medium shot, balanced composition] three octahedron entities regrouping in formation, red cracks pulsing in synchronized pattern, scanning the swamp where targets fled, cold mechanical precision, rain passing through their geometric forms",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned at medium distance, centered on the three octahedron entities as they begin regrouping three octahedron entities regrouping in formation, red cracks pulsing in synchronized pattern, scanning the swamp where targets fled, cold mechanical precision, rain passing through their geometric forms",
+      "camera_state": "Medium shot of three geometric octahedron entities floating together in dark swamp, red cracks visible on surfaces, rain passing through forms, cold mechanical atmosphere",
+      "ref_image": "assets/characters/entropy_unit.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S18-KF2",
       "shot_id": "S18",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: medium shot, balanced composition] entities floating together, red cracks synchronizing pulse, slow rotation",
-      "reference_frame": "S18-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera slowly orbiting the formation, capturing synchronized red pulse patterns across all three entities entities floating together, red cracks synchronizing pulse, slow rotation",
+      "camera_state": "Medium shot with slow rotation, red cracks pulsing in perfect synchronization across three octahedrons, scanning motion visible, geometric precision highlighted",
+      "ref_image": "S18-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S18-KF3",
+      "shot_id": "S18",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera completing rotation arc, slight low angle emphasizing mechanical authority of the formation entities floating together, red cracks synchronizing pulse, slow rotation",
+      "camera_state": "Medium shot from slight low angle, entities in tight formation scanning swamp below, red cracks pulsing final report pattern, cold calculated presence, rain streaking through geometric bodies",
+      "ref_image": "S18-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -459,18 +570,31 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] medium close-up of 16-year-old East Asian boy pausing in rain, looking back over shoulder with haunted expression, breathing hard and trembling, left eye emitting faint but persistent golden glow and spiral patterns in darkness, expression of profound shock and confusion mixed with awe of survival, rain streaking down noble young face, ancient primordial swamp looming behind, threshold moment between two worlds",
-      "reference_frame": null,
-      "duration_until_next_s": 3.0
+      "prompt": "camera positioned at intimate distance, capturing subject from chest up as he turns, rain falling between lens and subject medium close-up of 16-year-old East Asian boy pausing in rain, looking back over shoulder with haunted expression, breathing hard and trembling, left eye emitting faint but persistent golden glow and spiral patterns in darkness, expression of profound shock and confusion mixed with awe of survival, rain streaking down noble young face, ancient primordial swamp looming behind, threshold moment between two worlds",
+      "camera_state": "Medium close-up of teenage boy stopping abruptly in heavy rain, turning to look back over shoulder, face wet with rain, breathing visible, steady intimate framing",
+      "ref_image": "assets/characters/fuxi.png",
+      "duration_until_next_s": 1.0
     },
     {
       "keyframe_id": "S19-KF2",
       "shot_id": "S19",
       "frame_index": 1,
       "type": "i2v",
-      "timestamp_s": 3.0,
-      "prompt": "[Camera: close-up shot, intimate framing, steady camera, minimal movement] boy stops running, turns to look back, heavy breathing, left eye glows faintly, holds gaze then turns away",
-      "reference_frame": "S19-KF1",
+      "timestamp_s": 1.0,
+      "prompt": "camera holds steady position, focus tightening slightly on subject's face as supernatural element emerges boy stops running, turns to look back, heavy breathing, left eye glows faintly, holds gaze then turns away",
+      "camera_state": "Medium close-up holding on boy's haunted expression, left eye begins emitting faint golden glow with spiral patterns, rain streaking face, trembling with shock and confusion",
+      "ref_image": "S19-KF1",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S19-KF3",
+      "shot_id": "S19",
+      "frame_index": 2,
+      "type": "i2v",
+      "timestamp_s": 2.0,
+      "prompt": "camera maintains steady frame as subject breaks gaze and turns away, golden eye glow persisting in darkness boy stops running, turns to look back, heavy breathing, left eye glows faintly, holds gaze then turns away",
+      "camera_state": "Medium close-up as boy holds haunted gaze momentarily then turns away, golden eye glow fading into rain and darkness, expression of profound survival awe",
+      "ref_image": "S19-KF2",
       "duration_until_next_s": 0.0
     },
     {
@@ -479,9 +603,21 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "[Camera: static camera position, steady camera, minimal movement] pure black screen with white text fading in",
-      "reference_frame": null,
-      "duration_until_next_s": 2
+      "prompt": "fixed camera capturing pure black frame, no spatial reference pure black screen with white text fading in",
+      "camera_state": "Pure black screen, complete darkness with no visible elements, static frame preparing for text overlay fade-in",
+      "ref_image": "assets/locations/black_screen.png",
+      "duration_until_next_s": 1.0
+    },
+    {
+      "keyframe_id": "S20-KF2",
+      "shot_id": "S20",
+      "frame_index": 1,
+      "type": "i2v",
+      "timestamp_s": 1.0,
+      "prompt": "fixed camera on black background with centered white text text fade in 1s, hold 1s",
+      "camera_state": "Black screen with white Chinese text '本集终' (End of Episode) fully faded in, centered frame, clean minimal typography",
+      "ref_image": "S20-KF1",
+      "duration_until_next_s": 0.0
     }
   ]
 }

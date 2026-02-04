@@ -1,0 +1,255 @@
+{
+  "episode": "ep003",
+  "format": {
+    "resolution": "1920x1080",
+    "aspect_ratio": "16:9",
+    "fps": 24
+  },
+  "transitions": {},
+  "shots": [
+    {
+      "shot_id": "S01",
+      "scene": "3-1",
+      "duration_s": 4,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi",
+        "shaman",
+        "tribe_members"
+      ],
+      "camera": "wide shot, slow crane down",
+      "action": "巫师在祭坛上点燃圣火，火焰在黄昏中升起，逐渐逼近被绑在祭坛柱上的伏羲",
+      "dialogue": "",
+      "emotion": "dread, tension",
+      "prompt_visual": "Cinematic wide shot of an ancient primitive altar at dusk, golden-orange sky bleeding into purple. A shaman in bone ornaments and animal skin robes ignites sacred fire with a torch. Flames rise dramatically, casting dancing shadows. Fuxi, a young man around 20 with weathered skin and tribal markings, is bound to a stone pillar, his expression showing defiance mixed with fear. Tribe members in crude leather garments form a semicircle around the altar, their faces lit by firelight showing mix of fear and reverence. Stone altar covered in carved primitive symbols. Smoke curls upward into darkening sky. Photorealistic rendering with dramatic chiaroscuro lighting, volumetric fire effects, epic mythological atmosphere.",
+      "prompt_motion": "Camera slowly cranes down from sky to reveal the altar scene. Fire ignites and grows, flames licking upward with organic movement. Smoke rises and disperses. Shadows dance across faces of gathered tribe members. Shaman moves deliberately around the fire. Fabric and hair flutter from heat convection.",
+      "sfx_bgm": "Crackling fire, low tribal drums, ominous drone, wind across stone plateau",
+      "notes": "Establish the sacrificial atmosphere. Fire VFX crucial. Golden hour lighting transitioning to dusk."
+    },
+    {
+      "shot_id": "S02",
+      "scene": "3-1",
+      "duration_s": 3,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi",
+        "entropy_unit"
+      ],
+      "camera": "medium shot, slight dutch angle",
+      "action": "熵单位隐形于空中，白色光束突然射向伏羲额头，伏羲体内的金色代码流自动形成防御",
+      "dialogue": "熵单位：检测到代码载体即将被破坏。提前执行提取。",
+      "emotion": "shock, cosmic intervention",
+      "prompt_visual": "Cinematic medium shot with slight dutch angle. Fuxi bound to altar pillar, face illuminated by approaching flames. Above him, barely visible geometric shapes shimmer like heat distortion - the entropy units. A piercing white beam suddenly shoots down toward Fuxi's forehead. Golden code streams erupt from his body forming intricate defensive patterns, ancient Chinese characters and binary symbols intertwined in luminescent threads. His eyes widen in shock and pain. Dusk sky backdrop with ethereal cosmic energy. Contrast between warm firelight and cold white beam. Cyberpunk meets primitive mythology aesthetic. Particle effects of colliding energies.",
+      "prompt_motion": "White beam descends rapidly from above, striking toward Fuxi's forehead. Golden code streams instantly materialize from his skin, spiraling outward to intercept. Collision creates energy sparks and ripples. Fuxi's body tenses, head thrown back slightly. Code symbols pulse and rotate in defensive formation. Geometric shapes above flicker between visible and invisible.",
+      "sfx_bgm": "High-pitched energy discharge, synthesizer tension, electrical crackling, low rumble of power clash",
+      "notes": "Key VFX shot - code defense activation. Need clear visual distinction between entropy beam (cold white) and Fuxi's code (warm gold)."
+    },
+    {
+      "shot_id": "S03",
+      "scene": "3-1",
+      "duration_s": 2,
+      "location": "altar_dusk",
+      "characters": [
+        "tribe_members"
+      ],
+      "camera": "low angle close-up, rack focus",
+      "action": "族人抬头看向天空，惊恐地发现若隐若现的几何体",
+      "dialogue": "族人：天上有东西!",
+      "emotion": "terror, awe",
+      "prompt_visual": "Low angle close-up of tribe member's face looking upward in terror. Weathered features, primitive face paint, wide eyes reflecting strange lights from above. Rack focus reveals other tribe members behind, all gazing skyward with expressions of primal fear. Firelight illuminates faces from below creating dramatic shadows. In the soft-focus background, geometric shapes flicker in and out of visibility against darkening sky. Primitive human confronting incomprehensible cosmic phenomenon. Photorealistic skin texture, sweat beads visible, authentic tribal aesthetics with bone jewelry and feathers.",
+      "prompt_motion": "Tribe member's head tilts back, eyes widen progressively. Mouth opens to shout. Rack focus shifts from foreground face to background crowd, all turning upward. Hands raise pointing at sky. Firelight flickers across terrified expressions. Background geometric shapes phase in and out of visibility.",
+      "sfx_bgm": "Frightened gasps, sudden silence of drums, ethereal hum from above, heartbeat sound",
+      "notes": "Reaction shot to establish human perspective on cosmic events. Brief but impactful."
+    },
+    {
+      "shot_id": "S04",
+      "scene": "3-2",
+      "duration_s": 4,
+      "location": "code_vision_realm",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "extreme close-up to POV transition",
+      "action": "伏羲在剧痛中集中精神，第一次主动用代码视觉观察火焰——看到无数跳跃的红色代码片段",
+      "dialogue": "伏羲（内心独白）：如果都是代码......我能不能......改写?",
+      "emotion": "pain, revelation, determination",
+      "prompt_visual": "Extreme close-up of Fuxi's left eye, iris reflecting golden code symbols. Sweat and tears streak his face, veins visible at temple from concentration. Transition into his POV: the physical fire transforms into its code substrate - thousands of dancing red code fragments, hexadecimal values, flame algorithms visualized as cascading ruby-colored data streams. Fire becomes beautiful geometric patterns of crimson light, each flame tongue a executing subroutine. Matrix-style visualization but with ancient Chinese aesthetic influence. Background shows the altar world dissolving into pure information space. Cyberpunk meets transcendental enlightenment moment.",
+      "prompt_motion": "Camera pushes into Fuxi's dilating pupil, transitioning into code-vision POV. Physical reality dissolves, reforming as data structures. Fire fragments into individual code particles, each moving with distinct algorithmic patterns. Camera slowly rotates as perspective shifts to pure information space. Red code streams pulse rhythmically like heartbeat. A central bright node in the fire's code becomes apparent.",
+      "sfx_bgm": "Muffled real-world sounds, rising electronic pulse, data processing sounds, ethereal choir suggesting enlightenment",
+      "notes": "Critical visual transition - first time audience fully enters Fuxi's code vision. Establish the visual language for code manipulation."
+    },
+    {
+      "shot_id": "S05",
+      "scene": "3-2",
+      "duration_s": 3,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi",
+        "entropy_unit"
+      ],
+      "camera": "wide shot, dynamic tracking",
+      "action": "伏羲'推动'火焰代码的中心节点，现实中火焰逆流冲向空中的熵单位",
+      "dialogue": "熵单位：遭受能量反冲。逻辑错误。",
+      "emotion": "triumph, shock, chaos",
+      "prompt_visual": "Cinematic wide shot capturing the impossible moment. Fuxi on altar, arms straining against bonds, face contorted in concentration. The sacred fire defies physics - flames reverse direction, spiraling upward in a vortex toward the sky. Above, an entropy unit fully materializes: a complex crystalline polyhedron of impossible geometry, surfaces covered in scrolling alien symbols. The fire engulfs the geometric entity, which flickers with damage indicators. Tribe members scattered in foreground, cowering. Dusk sky torn by energy discharge. Epic scale shot mixing primitive altar, cosmic entity, and supernatural fire manipulation. Photorealistic with heavy VFX integration.",
+      "prompt_motion": "Fire suddenly reverses flow, flames curling backward and upward against gravity. Spiral vortex forms, accelerating toward the sky. Entropy unit attempts evasion but fire catches it. Geometric form sparks and glitches, surfaces cracking with light. Camera tracks the fire's upward journey dynamically. Tribe members scramble backward. Shockwave ripples outward from altar.",
+      "sfx_bgm": "Roaring reversed fire, electronic malfunction sounds, crystalline shattering, tribal screams, epic orchestral hit",
+      "notes": "Hero shot of episode - Fuxi's first successful code manipulation. Heavy VFX for fire reversal and entity damage."
+    },
+    {
+      "shot_id": "S06",
+      "scene": "3-2",
+      "duration_s": 2,
+      "location": "altar_dusk",
+      "characters": [
+        "tribe_members",
+        "entropy_unit"
+      ],
+      "camera": "low angle wide shot",
+      "action": "几何体完全显形，部落众人惊恐万分",
+      "dialogue": "",
+      "emotion": "primal terror, chaos",
+      "prompt_visual": "Dramatic low angle wide shot from tribe's perspective. The entropy unit fully visible against darkening sky - a massive crystalline polyhedron with surfaces that seem to contain infinite depth, covered in flowing alien mathematics. Its form is both beautiful and deeply unsettling, violating natural geometry. Below, tribe members are scattered in panic, some prostrating, others fleeing, some frozen in terror. Firelight and cosmic light mix. The shaman has dropped his staff, falling backward. Ancient humans confronting something beyond comprehension. Primordial fear captured in faces and body language. Epic mythological moment rendered in photorealistic detail.",
+      "prompt_motion": "Entropy unit rotates slowly, damaged surfaces sparking and regenerating. Tribe members scatter in all directions, some tripping over each other. Arms raise to shield eyes from impossible sight. Shaman falls backward off altar platform. Children cling to parents. The geometric form pulses with alien energy, casting strange shadows that move independently.",
+      "sfx_bgm": "Mass panic sounds, screaming, running feet, alien harmonic resonance from entity, dissonant choir",
+      "notes": "Emphasize the cosmic horror element - humans facing truly alien presence. Contrast primitive tribe with advanced entity."
+    },
+    {
+      "shot_id": "S07",
+      "scene": "3-3",
+      "duration_s": 3,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "medium shot, handheld",
+      "action": "火焰烧断铁链，伏羲摔下祭坛",
+      "dialogue": "",
+      "emotion": "relief, exhaustion, pain",
+      "prompt_visual": "Medium shot with handheld camera feel capturing raw moment. The reversed fire has burned through Fuxi's iron chains, metal glowing red before snapping. Fuxi falls forward from the altar pillar, his body limp with exhaustion. His face shows mixture of relief and pain, blood at corner of his mouth. Golden code traces still faintly visible on his skin, fading. His primitive clothing is singed, skin marked with burns. The altar behind him is scarred and smoking. Dusk light mixing with remaining fire glow. Authentic texture on chains, realistic fall physics implied. Intimate moment of survival amid chaos.",
+      "prompt_motion": "Chains snap in sequence with sparks. Fuxi's body pitches forward, arms unable to break fall properly. He lands hard on stone altar surface, rolls slightly. Dust rises. His chest heaves with labored breathing. Fingers twitch, slowly pushing body upward. Golden code traces pulse once then fade from his skin.",
+      "sfx_bgm": "Metal snapping, body impact on stone, labored breathing, distant chaos, fire crackling dying down",
+      "notes": "Transition from supernatural to human moment. Emphasize physical toll on Fuxi."
+    },
+    {
+      "shot_id": "S08",
+      "scene": "3-3",
+      "duration_s": 4,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi",
+        "chief"
+      ],
+      "camera": "two-shot, eye level",
+      "action": "族长复杂地看着儿子，宣布放逐",
+      "dialogue": "族长：你......走吧。永远不要回来。",
+      "emotion": "conflicted love, painful duty, sorrow",
+      "prompt_visual": "Intimate two-shot at eye level. Fuxi on ground, pushing himself up on one elbow, blood trailing from his mouth. The chief - a weathered man in his 50s with graying hair, elaborate bone crown, and tribal authority symbols - stands over him. The chief's face is a masterwork of conflicted emotion: a father's love warring with a leader's duty, fear of the unknown mixing with pride in his son's power. His hand reaches slightly toward Fuxi then pulls back. Behind them, the traumatized tribe watches from distance. Dusk has deepened, faces lit by dying embers. Authentic tribal leader costume with bear fur cloak and ceremonial markings. Photorealistic emotional portraiture.",
+      "prompt_motion": "Chief approaches slowly, stops at arm's length from fallen Fuxi. His hand twitches toward his son then consciously withdraws. Mouth works before words come out. Eyes glisten but do not shed tears. Fuxi looks up, wiping blood from mouth. Subtle body language of father and son in impossible situation. Background tribe members shift nervously.",
+      "sfx_bgm": "Silence except wind, distant weeping, emotional string melody, single drum beat like heartbeat",
+      "notes": "Emotional core of the scene. Actor direction critical - complex family dynamics under supernatural circumstances."
+    },
+    {
+      "shot_id": "S09",
+      "scene": "3-3",
+      "duration_s": 4,
+      "location": "altar_dusk",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "close-up, slight low angle",
+      "action": "伏羲擦去嘴角血，发誓要找到真相",
+      "dialogue": "伏羲：我会找到真相。到时候,我会回来告诉你们,真正的威胁是什么。",
+      "emotion": "determination, wounded pride, resolve",
+      "prompt_visual": "Close-up of Fuxi's face with slight low angle suggesting rising strength. He wipes blood from the corner of his mouth with the back of his hand, leaving a red smear. His eyes burn with determination despite exhaustion - one eye normal, the left eye with subtle golden code fragments in the iris. Young face hardened by experience beyond his years. Tribal markings and dirt on skin. Hair disheveled but posture straightening with resolve. Dying firelight catches determined expression. Behind him, soft focus of tribe watching. Moment of a hero's declaration. Cinematic portrait capturing transformation from victim to seeker. Photorealistic detail on blood, sweat, and emotional intensity in eyes.",
+      "prompt_motion": "Fuxi's hand rises to wipe blood, deliberate and controlled despite pain. He pushes himself to kneeling position, then standing. Chin lifts defiantly. Eyes meet his father's gaze directly. Words spoken with quiet intensity, not shouting. Golden flicker passes through left eye. Shoulders square with newfound purpose.",
+      "sfx_bgm": "Resolute orchestral swell, wind picking up, subtle electronic undertone suggesting his code nature",
+      "notes": "Fuxi's declaration moment. Emphasize transformation from passive to active protagonist."
+    },
+    {
+      "shot_id": "S10",
+      "scene": "3-3",
+      "duration_s": 4,
+      "location": "wilderness_edge",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "wide shot, slow tracking",
+      "action": "伏羲背起行囊，孤独走入荒野",
+      "dialogue": "",
+      "emotion": "solitude, determination, melancholy",
+      "prompt_visual": "Cinematic wide shot of lonely figure walking into vast wilderness. Fuxi seen from behind, small against the immense landscape. He carries a simple pack on his back, walking stick in hand. The path leads from the altar plateau down into untamed wild lands - twisted ancient trees, rocky outcrops, mist-shrouded valleys. Last light of dusk paints the sky in deep purples and oranges. His tribe visible as small figures in far background, not following. Dust rises from his footsteps. Epic scale emphasizing his solitude and the journey ahead. Photorealistic landscape with atmospheric perspective, volumetric mist, and cinematic color grading suggesting transition from one life to another.",
+      "prompt_motion": "Fuxi walks steadily forward, each step taking him further from his past. Camera slowly tracks alongside. His figure grows smaller against growing darkness of landscape. Occasional glance back, then forward with resolve. Wind moves grass and his tattered clothing. Mist swirls at ground level. Last rays of sun disappear behind mountains.",
+      "sfx_bgm": "Sparse emotional piano melody, wind across plains, footsteps on earth, distant wolf howl, melancholic strings",
+      "notes": "Iconic departure shot. Emphasize scale and solitude. Classic hero's journey visual."
+    },
+    {
+      "shot_id": "S11",
+      "scene": "3-3",
+      "duration_s": 3,
+      "location": "sky_above_wilderness",
+      "characters": [
+        "entropy_unit"
+      ],
+      "camera": "high angle wide shot",
+      "action": "天空中，三个熵单位远远跟随伏羲",
+      "dialogue": "",
+      "emotion": "ominous, surveillance, cosmic threat",
+      "prompt_visual": "High angle wide shot looking down from the sky. Below, the tiny figure of Fuxi walks into wilderness, a single point of life in vast darkness. In the foreground, partially visible, three entropy units hover in formation - crystalline polyhedrons of varying sizes, their surfaces displaying scrolling data and star maps. They maintain distance but clearly track the lone human. Twilight sky serves as backdrop, stars beginning to emerge. The geometry of the entities contrasts with organic landscape below. Sense of vast powers watching a single insignificant-seeming human. Surveillance state meets cosmic horror meets mythological journey. Cinematic framing emphasizing power imbalance and isolation.",
+      "prompt_motion": "Entropy units drift slowly, maintaining precise formation and distance. Their surfaces rotate independently of their movement, displaying changing data. Occasional flicker or spark from damaged unit. Below, Fuxi's progress is tracked - when he moves, they move. Stars emerge in darkening sky. One unit zooms its surface imagery on Fuxi's form.",
+      "sfx_bgm": "Low electronic drone, subtle alien harmonic, wind at altitude, distant earthly sounds from below, tension building",
+      "notes": "Establish ongoing threat and surveillance. Create unease about Fuxi's journey being watched."
+    },
+    {
+      "shot_id": "S12",
+      "scene": "3-4",
+      "duration_s": 4,
+      "location": "wilderness_night",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "medium wide shot, slow orbit",
+      "action": "伏羲独自面对世界，在代码视觉中看到万物皆由代码构成",
+      "dialogue": "",
+      "emotion": "wonder, isolation, enlightenment",
+      "prompt_visual": "Medium wide shot of Fuxi standing alone in nighttime wilderness, camera slowly orbiting. He gazes at his surroundings with his code-vision active - his left eye glowing faintly gold. The world around him exists in dual state: physical reality of rocks, trees, and stars overlaid with their code substrates. Every object trails data streams - trees are biological algorithms in green code, rocks are geological formulas, stars are astronomical calculations in white light code. Ancient Chinese characters mix with mathematical symbols in the visible code layer. Fuxi stands at center of this infinite information tapestry, small but significant. Night sky brilliant with stars, each one a node in cosmic code network. Bioluminescent code particles drift like fireflies. Transcendent beauty in data visualization.",
+      "prompt_motion": "Camera slowly orbits around Fuxi as he turns, taking in his code-vision view of the world. Code streams flow constantly, some toward him, some away. His head tilts up toward stars, down to ground, each direction revealing new data layers. Bioluminescent particles drift past. Trees sway, their code rippling with movement. Night insects create small code sparks. World breathes with information.",
+      "sfx_bgm": "Ethereal ambient soundscape, soft electronic pulse like universal heartbeat, night sounds processed through digital filter, sense of cosmic wonder",
+      "notes": "Establish the beauty of Fuxi's unique perception. World-building through visual design of code overlay system."
+    },
+    {
+      "shot_id": "S13",
+      "scene": "3-4",
+      "duration_s": 3,
+      "location": "wilderness_night",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "close-up",
+      "action": "伏羲对天空低语，询问追踪者的身份",
+      "dialogue": "伏羲：你们是什么?为什么要追我?",
+      "emotion": "defiance, curiosity, vulnerability",
+      "prompt_visual": "Close-up of Fuxi's face against star-filled night sky. His expression mixes defiance with genuine curiosity, and beneath both, vulnerability of a young man cast out from everything he knew. His left eye carries subtle golden glow of dormant code vision. Starlight reflects in both eyes. Dirt and dried blood still mark his face, hair wild from travel. His lips move with whispered questions to unseen watchers. Face lit by starlight and faint code luminescence. Behind him, out of focus, hints of geometric shapes in distant sky. Intimate portrait of human confronting cosmic unknown. Photorealistic skin texture, emotional authenticity in expression, cinematic night photography aesthetic.",
+      "prompt_motion": "Fuxi's gaze lifts to sky, searching. Lips move forming words. Eyes narrow with determination, then soften with wonder, then harden again. A slight tilt of head as if listening for response that doesn't come. Wind moves his hair. Breath visible in cold night air. Golden light in left eye pulses once with the question.",
+      "sfx_bgm": "Near silence, soft wind, own heartbeat audible, whispered words echoing slightly, distant cosmic hum suggesting listeners",
+      "notes": "Intimate character moment. Fuxi's humanity against cosmic backdrop."
+    },
+    {
+      "shot_id": "S14",
+      "scene": "3-4",
+      "duration_s": 4,
+      "location": "wilderness_night",
+      "characters": [
+        "fuxi"
+      ],
+      "camera": "POV transitioning to wide shot, push in",
+      "action": "没有回答，但伏羲的左眼中，昆仑山方向传来强烈的代码信号",
+      "dialogue": "",
+      "emotion": "calling, destiny, hope",
+      "prompt_visual": "Starting as Fuxi's POV through code-vision: the night landscape is quiet data, no response to his question. Then, from the western horizon, an overwhelming signal erupts - a pillar of intensely bright golden-white code reaching from distant mountains to sky. The code is ancient, powerful, complex beyond anything seen before - clearly the source, Kunlun Mountain though unnamed. Transition to wide shot: Fuxi as small silhouette against vast wilderness, the distant code beacon visible even to normal sight as subtle golden glow on horizon. His posture shifts from questioning to alert, drawn toward the signal. The path forward is clear. Mountains in distance, mysterious and beckoning. Epic landscape composition with clear visual goal. Journey's destination established.",
+      "prompt_motion": "POV slowly pans across dark landscape - nothing, nothing, then sudden bloom of light from west. Camera pushes toward the signal. Cut to wide: Fuxi turns toward the beacon, takes first step in that direction. The distant glow pulses rhythmically like heartbeat or beacon. Stars seem to align toward that direction. Wind shifts, blowing toward the mountains. Code particles in air flow toward the source.",
+      "sfx_bgm": "Silence breaking into rising orchestral theme, electronic pulse synchronizing with beacon, wind shifting, destiny theme introduced, hopeful but mysterious melody",
+      "notes": "Episode ending shot. Establish Kunlun as destination without naming. Create sense of calling and destiny. Strong visual composition for cliffhanger."
+    }
+  ]
+}

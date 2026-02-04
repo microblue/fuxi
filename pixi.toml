@@ -14,6 +14,7 @@ huggingface_hub = "*"
 uvicorn = "*"
 pytest = "*"
 ruff = "*"
+creative-toolkit = {path = "../creative-toolkit", editable = true}
 
 [tasks]
 dev = "uvicorn app.main:app --reload"
