@@ -9,9 +9,9 @@
   - prompt: 从keyframes.json读取每个关键帧的contextual prompt
 
 用法:
-    python -m pipeline.generate_shot_keyframes ep001 S01
-    python -m pipeline.generate_shot_keyframes ep001 S01 --num-candidates 3
-    python -m pipeline.generate_shot_keyframes ep001 S01 --base-seed 42
+    python -m pipeline.gen_keyframe_images ep001 S01
+    python -m pipeline.gen_keyframe_images ep001 S01 --num-candidates 3
+    python -m pipeline.gen_keyframe_images ep001 S01 --base-seed 42
 """
 
 import json
