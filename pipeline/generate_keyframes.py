@@ -22,6 +22,95 @@ from pathlib import Path
 from pipeline.utils import get_episode_dir, load_shots
 
 
+def get_camera_position_for_keyframe(
+    shot: dict, kf_index: int, total_kfs: int
+) -> str:
+    """根据shot的camera信息和关键帧位置，生成该帧的相机位置描述。
+
+    时间进度：0 = 开始, 0.5 = 中间, 1.0 = 结束
+    """
+    camera = shot.get("camera", "").lower()
+
+    # 关键帧的相对位置
+    frame_progress = kf_index / (total_kfs - 1) if total_kfs > 1 else 0
+
+    position_desc = ""
+
+    # 处理距离变化
+    if "crane down" in camera:
+        if frame_progress < 0.4:
+            position_desc = "camera positioned high, wide aerial view"
+        elif frame_progress < 0.7:
+            position_desc = "camera descending, mid-level perspective"
+        else:
+            position_desc = "camera descended low, detailed street-level view"
+
+    elif "crane up" in camera:
+        if frame_progress < 0.4:
+            position_desc = "camera positioned low, street-level view"
+        elif frame_progress < 0.7:
+            position_desc = "camera ascending, expanding perspective"
+        else:
+            position_desc = "camera high, revealing wide panoramic view"
+
+    elif "pulling back" in camera or "pull back" in camera:
+        if frame_progress < 0.4:
+            position_desc = "camera close-in, detailed view"
+        elif frame_progress < 0.7:
+            position_desc = "camera stepping back, widening perspective"
+        else:
+            position_desc = "camera pulled back far, epic wide scale view"
+
+    elif "push in" in camera:
+        if frame_progress < 0.4:
+            position_desc = "camera at medium distance"
+        elif frame_progress < 0.7:
+            position_desc = "camera pushing in, tightening focus"
+        else:
+            position_desc = "camera close intimate detail view"
+
+    # 处理旋转/倾斜
+    if "tilt up" in camera:
+        if frame_progress < 0.5:
+            position_desc = (position_desc or "") + ", tilting upward"
+        else:
+            position_desc = (position_desc or "") + ", looking up at sky"
+
+    elif "tilt down" in camera:
+        if frame_progress < 0.5:
+            position_desc = (position_desc or "") + ", tilting downward"
+        else:
+            position_desc = (position_desc or "") + ", looking down at ground"
+
+    # 处理焦点变化 (rack focus)
+    if "rack focus" in camera:
+        if frame_progress < 0.5:
+            position_desc = (position_desc or "") + ", focus on foreground"
+        else:
+            position_desc = (position_desc or "") + ", focus shifted to background"
+
+    # 默认描述
+    if not position_desc:
+        if "close_up" in camera or "close-up" in camera:
+            position_desc = "close-up shot, intimate framing"
+        elif "medium" in camera:
+            position_desc = "medium shot, balanced composition"
+        elif "wide" in camera:
+            position_desc = "wide shot, expansive view"
+        elif "full_shot" in camera:
+            position_desc = "full shot, complete scene in frame"
+        else:
+            position_desc = "static camera position"
+
+    # 添加镜头特性
+    if "handheld" in camera:
+        position_desc += ", handheld camera with subtle movement"
+    elif "steady" in camera or "static" in camera:
+        position_desc += ", steady camera, minimal movement"
+
+    return position_desc
+
+
 # ─────────────────────────────────────────────────────────────
 # 关键帧策略配置
 # ─────────────────────────────────────────────────────────────
@@ -293,27 +382,44 @@ def generate_keyframes_json(episode_id: str) -> Path:
         for i, timing in enumerate(timings, 1):
             keyframe_id = f"{shot_id}-KF{i}"
 
+            # 生成相机位置描述
+            camera_position = get_camera_position_for_keyframe(shot, i - 1, num_frames)
+
             if i == 1:
                 # T2I 帧
+                visual_prompt = shot.get("prompt_visual", "")
+                # 如果prompt非空，则在前面加上相机位置信息
+                if visual_prompt:
+                    prompt_with_camera = f"[Camera: {camera_position}] {visual_prompt}"
+                else:
+                    prompt_with_camera = f"[Camera: {camera_position}]"
+
                 keyframe = {
                     "keyframe_id": keyframe_id,
                     "shot_id": shot_id,
                     "frame_index": i - 1,
                     "type": "t2i",
                     "timestamp_s": timing["timestamp_s"],
-                    "prompt": shot.get("prompt_visual", ""),
+                    "prompt": prompt_with_camera,
                     "reference_frame": None,
                     "duration_until_next_s": timing["duration_until_next_s"],
                 }
             else:
                 # I2V 帧（基于第1帧）
+                # I2V帧使用motion prompt，同样加上相机位置信息
+                motion_prompt = shot.get("prompt_motion", "")
+                if motion_prompt:
+                    prompt_with_camera = f"[Camera: {camera_position}] {motion_prompt}"
+                else:
+                    prompt_with_camera = f"[Camera: {camera_position}]"
+
                 keyframe = {
                     "keyframe_id": keyframe_id,
                     "shot_id": shot_id,
                     "frame_index": i - 1,
                     "type": "i2v",
                     "timestamp_s": timing["timestamp_s"],
-                    "prompt": None,  # I2V 帧使用 prompt_motion
+                    "prompt": prompt_with_camera,
                     "reference_frame": f"{shot_id}-KF1",
                     "duration_until_next_s": timing["duration_until_next_s"],
                 }
