@@ -85,10 +85,26 @@ def get_voice_config(character: str, episode_id: str) -> dict:
 
 
 class FishAudioTTS:
-    """Fish Audio TTS 集成"""
+    """Fish Audio TTS 集成 - 支持本地和远程两种模式"""
 
     API_KEY = os.getenv("FISH_AUDIO_API_KEY")
-    ENDPOINT = "https://api.fish.audio/v1/tts"
+    # 本地服务器地址（默认 localhost:8000）
+    LOCAL_ENDPOINT = os.getenv("FISH_AUDIO_LOCAL", "http://localhost:8000")
+    # 远程 API 地址
+    REMOTE_ENDPOINT = "https://api.fish.audio/v1/tts"
+
+    # 模式选择：local / remote / auto
+    MODE = os.getenv("FISH_AUDIO_MODE", "auto")
+
+    @classmethod
+    def _is_local_available(cls) -> bool:
+        """检查本地 Fish Audio 服务器是否可用"""
+        try:
+            import requests
+            response = requests.get(f"{cls.LOCAL_ENDPOINT}/health", timeout=2)
+            return response.status_code == 200
+        except:
+            return False
 
     @classmethod
     def synthesize(
@@ -100,32 +116,60 @@ class FishAudioTTS:
         pitch: int = 0,
     ) -> bool:
         """使用 Fish Audio 合成语音"""
-        if not cls.API_KEY:
+
+        try:
+            import requests  # 可选依赖
+        except ImportError:
+            print("  ⚠ requests library not installed")
+            return False
+
+        # 确定使用的模式
+        use_local = False
+        if cls.MODE == "local":
+            use_local = True
+        elif cls.MODE == "auto":
+            # 自动检测本地服务器
+            use_local = cls._is_local_available()
+        elif cls.MODE == "remote" and not cls.API_KEY:
             print("  ⚠ FISH_AUDIO_API_KEY not set, falling back to placeholder")
             return False
 
         try:
-            import requests  # 可选依赖
-
-            response = requests.post(
-                cls.ENDPOINT,
-                json={
-                    "text": text,
-                    "voice_id": voice_id,
-                    "speed": speed,
-                    "pitch": pitch,
-                },
-                headers={"Authorization": f"Bearer {cls.API_KEY}"},
-                timeout=30,
-            )
+            if use_local:
+                # 使用本地 Fish Audio 服务器
+                response = requests.post(
+                    f"{cls.LOCAL_ENDPOINT}/v1/tts",
+                    json={
+                        "text": text,
+                        "voice_id": voice_id,
+                        "speed": speed,
+                        "pitch": pitch,
+                    },
+                    timeout=60,
+                )
+                mode_label = "local"
+            else:
+                # 使用远程 Fish Audio API
+                response = requests.post(
+                    cls.REMOTE_ENDPOINT,
+                    json={
+                        "text": text,
+                        "voice_id": voice_id,
+                        "speed": speed,
+                        "pitch": pitch,
+                    },
+                    headers={"Authorization": f"Bearer {cls.API_KEY}"},
+                    timeout=30,
+                )
+                mode_label = "remote"
 
             if response.status_code == 200:
                 with open(output_path, "wb") as f:
                     f.write(response.content)
-                print(f"    ✓ Generated via Fish Audio")
+                print(f"    ✓ Generated via Fish Audio ({mode_label})")
                 return True
             else:
-                print(f"    ✗ Fish Audio API error: {response.status_code}")
+                print(f"    ✗ Fish Audio error ({mode_label}): {response.status_code}")
                 return False
         except ImportError:
             print("    ⚠ requests library not installed, skipping Fish Audio")
