@@ -15,11 +15,11 @@
 """
 
 import json
-import shutil
 import time
 import urllib.request
 from pathlib import Path
 
+from PIL import Image
 from pipeline.utils import get_episode_dir, load_shots
 
 
@@ -27,6 +27,35 @@ COMFYUI_URL = "http://127.0.0.1:8188"
 COMFYUI_INPUT = Path("/home/dz/ComfyUI/input")
 COMFYUI_OUTPUT = Path("/home/dz/ComfyUI/output")
 WORKFLOWS_DIR = Path("/home/dz/ComfyUI/user/default/workflows")
+
+# 输出分辨率
+OUTPUT_WIDTH = 1920
+OUTPUT_HEIGHT = 1080
+
+
+def scale_image_to_resolution(src_path: Path, dest_path: Path, width: int = OUTPUT_WIDTH, height: int = OUTPUT_HEIGHT) -> None:
+    """将图像缩放到指定分辨率（保持宽高比，填充空白）。"""
+    img = Image.open(src_path)
+    original_w, original_h = img.size
+
+    # 计算缩放比例（保持宽高比）
+    scale = max(width / original_w, height / original_h)
+    new_w = int(original_w * scale)
+    new_h = int(original_h * scale)
+
+    # 缩放图像
+    img_scaled = img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+
+    # 创建指定分辨率的新图像（黑色背景）
+    canvas = Image.new('RGB', (width, height), color=(0, 0, 0))
+
+    # 居中粘贴缩放后的图像
+    x_offset = (width - new_w) // 2
+    y_offset = (height - new_h) // 2
+    canvas.paste(img_scaled, (x_offset, y_offset))
+
+    # 保存到目标位置
+    canvas.save(dest_path, quality=95)
 
 
 def load_workflow(workflow_name: str) -> dict:
@@ -286,7 +315,7 @@ def generate_shot_keyframes(
                     # 第一帧：使用location资产作为参考
                     ref_image_name = f"{shot_id}_location_ref.png"
                     comfyui_ref = COMFYUI_INPUT / ref_image_name
-                    shutil.copy2(location_ref_path, comfyui_ref)
+                    scale_image_to_resolution(location_ref_path, comfyui_ref)
                     denoise = 0.7  # 初始场景，较高强度
                 else:
                     # i2i_seq：使用上一帧生成的结果作为参考
@@ -296,10 +325,10 @@ def generate_shot_keyframes(
                         print(f"    ⚠️ No previous frame for candidate {cand_idx}, skipping")
                         continue
 
-                    # 复制前一帧到ComfyUI input
+                    # 复制前一帧到ComfyUI input（同时缩放到输出分辨率）
                     ref_image_name = f"{shot_id}_prev_c{cand_idx}.png"
                     comfyui_ref = COMFYUI_INPUT / ref_image_name
-                    shutil.copy2(prev_frame_path, comfyui_ref)
+                    scale_image_to_resolution(prev_frame_path, comfyui_ref)
                     denoise = 0.5  # 运动变化，较低强度
 
                 # 加载I2I工作流
