@@ -30,13 +30,21 @@ WORKFLOWS_DIR = Path("/home/dz/ComfyUI/user/default/workflows")
 
 
 def load_workflow(workflow_name: str) -> dict:
-    """加载ComfyUI工作流JSON文件。"""
+    """加载ComfyUI工作流JSON文件。支持包装格式和原生ComfyUI格式。"""
     workflow_path = WORKFLOWS_DIR / f"{workflow_name}.json"
     if not workflow_path.exists():
         raise FileNotFoundError(f"Workflow not found: {workflow_path}")
 
     with open(workflow_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
+
+    # 处理包装格式 (带name, description, parameters字段的格式)
+    if "workflow" in data and isinstance(data["workflow"], dict):
+        # 返回内层的workflow字典，它包含节点定义
+        return data["workflow"]
+
+    # 否则直接返回（原生ComfyUI格式）
+    return data
 
 
 def inject_parameters(workflow: dict, params: dict) -> dict:
@@ -295,7 +303,7 @@ def generate_shot_keyframes(
                     denoise = 0.5  # 运动变化，较低强度
 
                 # 加载I2I工作流
-                workflow = load_workflow("flux2_img2img")
+                workflow = load_workflow("flux2_i2i")
 
                 # 注入参数
                 workflow = inject_parameters(workflow, {
