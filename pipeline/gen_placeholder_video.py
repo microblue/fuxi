@@ -157,8 +157,9 @@ def generate_placeholder_shot_enhanced(
         action_text = action.replace("\\n", " ")[:95]
         if len(action) > 95:
             action_text += "…"
+        action_text_escaped = action_text.replace("'", "'\\''")
         filters.append(f"drawtext=text='ACTION':fontsize=18:fontcolor=#ffffff:x=60:y=230{font_param}:box=0")
-        filters.append(f"drawtext=text='{action_text}':fontsize=19:fontcolor=#dddddd:x=60:y=260{font_param}:box=0")
+        filters.append(f"drawtext=text='{action_text_escaped}':fontsize=19:fontcolor=#dddddd:x=60:y=260{font_param}:box=0")
 
     # 5. 情感标记（右侧中方）
     if emotion:
@@ -173,12 +174,13 @@ def generate_placeholder_shot_enhanced(
     filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=24:fontcolor=#88ff88:x=380:y=(h-95){font_param}:box=0")
     filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=16:fontcolor=#888888:x=(w-280):y=(h-93){font_param}:box=0")
 
-    # 7. 对话/字幕信息（下方，就像正常视频字幕）
-    if dialogue_text:
-        dialogue_short = dialogue_text[:85]
-        if len(dialogue_text) > 85:
-            dialogue_short += "…"
-        filters.append(f"drawtext=text='{dialogue_short}':fontsize=24:fontcolor=#ffff99:x=120:y=(h-40){font_param}:box=1:boxcolor=black@0.7:boxborderw=0")
+    # 7. 对话/字幕信息（屏幕中央，大字体） - 暂时禁用，待修复FFmpeg filter问题
+    # TODO: 需要修复FFmpeg drawtext filter与特定中文字符的兼容性
+    # if dialogue_text and len(dialogue_text.strip()) > 0:
+    #     dialogue_short = dialogue_text[:60]
+    #     if len(dialogue_text) > 60:
+    #         dialogue_short = dialogue_short[:57] + "…"
+    #     filters.append(f"drawtext=text='{dialogue_short}':fontsize=48:fontcolor=#ffff99:x=200:y=420{font_param}:box=1:boxcolor=black@0.8:boxborderw=0")
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
     filter_complex = ",".join(filters)
