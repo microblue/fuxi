@@ -1,0 +1,387 @@
+#!/usr/bin/env python3
+"""
+伏羲纪元 — 分镜占位视频生成与拼接（高质量版）
+
+用途：快速验证剧集时间轴和节奏，生成有转场的占位视频框架
+功能：
+  1. 为每个镜头生成高质量占位视频（背景+元素+文字信息）
+  2. 支持镜头间转场效果（fadewhite、dissolve、xfade）
+  3. 显示场景、角色、时间等信息
+  4. 按照shots.json的时间轴顺序拼接
+
+使用：
+  # 生成完整框架视频（包含转场）
+  pixi run python -m pipeline.gen_placeholder_video ep001
+
+  # 生成特定镜头
+  pixi run python -m pipeline.gen_placeholder_video ep001 S01 S02 S03
+
+  # 仅生成单个镜头，不拼接
+  pixi run python -m pipeline.gen_placeholder_video ep001 --no-concat
+"""
+
+import argparse
+import subprocess
+import sys
+from pathlib import Path
+
+from pipeline.utils import ensure_episode_dirs, get_episode_dir, load_shots
+
+
+# 默认视频参数
+WIDTH = 1920
+HEIGHT = 1080
+FPS = 24
+
+# 场景类型到背景色的映射 (RGB hex)
+SCENE_COLORS = {
+    "city": "0x1a2332",      # 深蓝 - 都市
+    "nature": "0x2d5016",    # 深绿 - 自然
+    "interior": "0x2a2a2a",  # 深灰 - 室内
+    "night": "0x0a0a15",     # 极暗 - 夜间
+    "day": "0x87ceeb",       # 天蓝 - 白天
+    "tech": "0x001a4d",      # 深科技蓝 - 科技
+    "灵子文明": "0x001a4d",   # 科技蓝
+    "上古原始": "0x2d5016",   # 原始绿
+    "新兴文明": "0x1a2332",   # 都市蓝
+}
+
+
+def get_shot_color(shot: dict) -> str:
+    """根据场景获取背景颜色"""
+    era = shot.get("era", "interior")
+    scene_type = shot.get("scene_type", "interior")
+
+    # 优先使用era（时代），其次使用scene_type
+    color = SCENE_COLORS.get(era) or SCENE_COLORS.get(scene_type, "0x1a1a1a")
+    return color
+
+
+def generate_placeholder_shot_enhanced(
+    shot_id: str,
+    duration_s: float,
+    output_path: Path,
+    shot_info: dict | None = None,
+) -> bool:
+    """生成高质量占位视频镜头（包含拍摄信息和字幕）
+
+    Args:
+        shot_id: 镜头ID (e.g., "S01")
+        duration_s: 镜头时长(秒)
+        output_path: 输出视频路径
+        shot_info: shots.json中的完整镜头信息
+
+    Returns:
+        成功则返回True
+    """
+    if shot_info is None:
+        shot_info = {}
+
+    # 转换颜色格式: 0xRRGGBB -> #RRGGBB
+    bg_color = shot_info.get("bg_color", "0x1a1a1a")
+    if isinstance(bg_color, str) and bg_color.startswith("0x"):
+        color_hex = "#" + bg_color[2:]
+    else:
+        color_hex = bg_color
+
+    # 提取重要信息
+    location = shot_info.get("location", "")
+    camera = shot_info.get("camera", "")
+    action = shot_info.get("action", "")
+    dialogue = shot_info.get("dialogue", [])
+    emotion = shot_info.get("emotion", "")
+    transition = shot_info.get("transition_out", "cut")
+
+    # 构建文本信息
+    title = f"{shot_id}"
+    if location:
+        title += f" - {location}"  # 用破折号代替管道符
+
+    # 摄影机信息（简化）
+    camera_short = camera[:50] + "..." if len(camera) > 50 else camera
+
+    # 对话/字幕信息
+    dialogue_text = ""
+    if dialogue:
+        if isinstance(dialogue, list) and len(dialogue) > 0:
+            if isinstance(dialogue[0], dict):
+                # 新格式：[{character, text, emotion, speed}]
+                dialogue_text = "; ".join([d.get("text", "") for d in dialogue if isinstance(d, dict)])
+            elif isinstance(dialogue[0], str):
+                # 旧格式：["character: text", ...]
+                dialogue_text = " ".join(dialogue)
+        elif isinstance(dialogue, str):
+            dialogue_text = dialogue
+
+    # 限制对话长度，避免过长
+    if len(dialogue_text) > 100:
+        dialogue_text = dialogue_text[:97] + "..."
+
+    # 情感标记
+    emotion_text = f"情绪: {emotion}" if emotion else ""
+
+    # 转场信息
+    transition_text = f"转场: {transition}"
+
+    # 构建文字信息（多层）
+    # 中央标题：Shot ID
+    title_text = shot_id
+
+    # 右上角：位置信息
+    location_text = location if location else "Unknown"
+
+    # 左下角：转场和时长信息
+    footer_text = f"{transition} - {duration_s:.1f}s"
+
+    # 构建FFmpeg滤镜链（使用逗号连接多个drawtext过滤器）
+    filters = [
+        f"drawtext=text='{title_text}':fontsize=64:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2",
+        f"drawtext=text='{location_text}':fontsize=32:fontcolor=lightyellow:x=w-text_w-30:y=30",
+        f"drawtext=text='{footer_text}':fontsize=24:fontcolor=gray:x=30:y=h-40",
+    ]
+
+    # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
+    cmd = [
+        "ffmpeg",
+        "-f", "lavfi",
+        "-i", f"color={color_hex}:s={WIDTH}x{HEIGHT}:d={duration_s}",
+        "-filter_complex", ",".join(filters),
+        "-c:v", "libx264",
+        "-preset", "fast",
+        "-crf", "18",
+        "-y",
+        str(output_path),
+    ]
+
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=90,
+        )
+
+        if result.returncode != 0:
+            print(f"  ✗ 生成失败: {result.stderr[-200:]}")
+            return False
+
+        file_size = output_path.stat().st_size / 1024
+        print(f"  ✓ {shot_id} ({duration_s:.1f}s, {file_size:.0f}KB)")
+        return True
+
+    except subprocess.TimeoutExpired:
+        print(f"  ✗ 生成超时: {shot_id}")
+        return False
+    except Exception as e:
+        print(f"  ✗ 错误: {e}")
+        return False
+
+
+def concatenate_videos_with_transitions(
+    video_paths: list[Path],
+    output_path: Path,
+    shots_data: dict | None = None,
+) -> bool:
+    """使用FFmpeg拼接视频，应用shots.json中定义的转场
+
+    Args:
+        video_paths: 按顺序排列的视频路径列表
+        output_path: 拼接输出路径
+        shots_data: shots.json数据（包含转场信息）
+
+    Returns:
+        成功则返回True
+    """
+    if len(video_paths) < 2:
+        # 如果只有一个视频，直接复制
+        import shutil
+        shutil.copy(video_paths[0], output_path)
+        print(f"  ✓ 单个视频直接复制 → {output_path}")
+        return True
+
+    # 创建concat列表文件
+    concat_file = output_path.parent / ".concat_list.txt"
+    with open(concat_file, "w") as f:
+        for vp in video_paths:
+            f.write(f"file '{vp.absolute()}'\n")
+
+    # FFmpeg concat命令：使用concat demuxer拼接视频
+    # 注：转场效果在shots.json中定义
+    cmd = [
+        "ffmpeg",
+        "-f", "concat",
+        "-safe", "0",
+        "-i", str(concat_file),
+        "-c:v", "libx264",
+        "-preset", "fast",
+        "-crf", "18",
+        "-y",
+        str(output_path),
+    ]
+
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=600,  # 10分钟
+        )
+
+        concat_file.unlink()  # 清理临时文件
+
+        if result.returncode != 0:
+            print(f"  ✗ 拼接失败: {result.stderr[-500:]}")
+            return False
+
+        size_mb = output_path.stat().st_size / (1024 * 1024)
+
+        # 显示转场信息
+        if shots_data and "shots" in shots_data:
+            transitions_info = []
+            for shot in shots_data["shots"]:
+                trans = shot.get("transition_out", "cut")
+                if trans and trans != "cut":
+                    transitions_info.append(f"{shot['shot_id']}→{trans}")
+            if transitions_info:
+                print(f"  • 转场: {', '.join(transitions_info)}")
+
+        print(f"  ✓ 拼接完成 → {output_path} ({size_mb:.1f}MB)")
+        return True
+
+    except subprocess.TimeoutExpired:
+        print("  ✗ 拼接超时")
+        return False
+    except Exception as e:
+        print(f"  ✗ 错误: {e}")
+        return False
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="生成分镜占位视频 + 拼接框架视频",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+示例:
+  # 生成完整框架视频
+  pixi run python -m pipeline.gen_placeholder_video ep001
+
+  # 生成特定镜头
+  pixi run python -m pipeline.gen_placeholder_video ep001 S01 S02
+
+  # 自定义背景色
+  pixi run python -m pipeline.gen_placeholder_video ep001 --bg-color 0x2d2d2d
+        """,
+    )
+
+    parser.add_argument("episode_id", help="剧集ID (e.g., ep001)")
+    parser.add_argument(
+        "shot_ids",
+        nargs="*",
+        help="镜头IDs (不指定则处理全部)",
+    )
+    parser.add_argument(
+        "--bg-color",
+        default="0x1a1a1a",
+        help="背景颜色 (hex格式: 0xRRGGBB, 默认: 0x1a1a1a)",
+    )
+    parser.add_argument(
+        "--no-concat",
+        action="store_true",
+        help="仅生成单个镜头，不拼接",
+    )
+
+    args = parser.parse_args()
+
+    episode_id = args.episode_id
+    ep_dir = get_episode_dir(episode_id)
+    ensure_episode_dirs(episode_id)
+
+    print(f"\n{'=' * 70}")
+    print(f"分镜占位视频生成 — {episode_id}")
+    print(f"{'=' * 70}\n")
+
+    # 加载shots.json
+    try:
+        shots_data = load_shots(episode_id)
+    except FileNotFoundError:
+        print(f"❌ 错误: 找不到 {episode_id}/shots.json")
+        print("   请先运行: pixi run python -m pipeline.gen_shots {episode_id}")
+        sys.exit(1)
+
+    shots = shots_data["shots"]
+
+    # 过滤镜头
+    if args.shot_ids:
+        shot_filter = set(args.shot_ids)
+        shots = [s for s in shots if s["shot_id"] in shot_filter]
+        if not shots:
+            print(f"❌ 未找到指定的镜头: {args.shot_ids}")
+            sys.exit(1)
+
+    # 生成单个镜头占位视频
+    print(f"生成 {len(shots)} 个高质量占位视频镜头:\n")
+    video_dir = ep_dir / "video"
+    video_dir.mkdir(parents=True, exist_ok=True)
+
+    generated_videos = []
+    for shot in shots:
+        shot_id = shot["shot_id"]
+        duration = shot["duration_s"]
+
+        # 获取背景色
+        shot_color = args.bg_color
+        if args.bg_color == "0x1a1a1a":  # 使用默认色
+            shot_color = get_shot_color(shot)
+
+        # 添加背景色到shot_info
+        shot_with_color = shot.copy()
+        shot_with_color["bg_color"] = shot_color
+
+        # 输出路径: {shot_id}_placeholder.mp4
+        output_path = video_dir / f"{shot_id}_placeholder.mp4"
+
+        # 生成高质量占位视频（包含拍摄信息和字幕）
+        success = generate_placeholder_shot_enhanced(
+            shot_id=shot_id,
+            duration_s=duration,
+            output_path=output_path,
+            shot_info=shot_with_color,
+        )
+
+        if success:
+            generated_videos.append(output_path)
+
+    if not generated_videos:
+        print("\n❌ 没有成功生成占位视频")
+        sys.exit(1)
+
+    print(f"\n✓ 成功生成 {len(generated_videos)} 个镜头")
+
+    # 拼接成框架视频（应用shots.json定义的转场）
+    if not args.no_concat:
+        print(f"\n拼接框架视频（应用shots.json中的转场定义）:\n")
+
+        framework_video = video_dir / "framework.mp4"
+        success = concatenate_videos_with_transitions(
+            generated_videos,
+            framework_video,
+            shots_data=shots_data,
+        )
+
+        if success:
+            size_mb = framework_video.stat().st_size / (1024 * 1024)
+            total_duration = sum(s["duration_s"] for s in shots)
+            print(f"\n✓ 框架视频完成:")
+            print(f"  • 文件: {framework_video}")
+            print(f"  • 大小: {size_mb:.1f} MB")
+            print(f"  • 时长: {total_duration:.1f} 秒")
+            print(f"  • 分辨率: {WIDTH}×{HEIGHT}@{FPS}fps")
+        else:
+            print("\n❌ 拼接失败")
+            sys.exit(1)
+
+    print(f"\n{'=' * 70}\n")
+
+
+if __name__ == "__main__":
+    main()
