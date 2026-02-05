@@ -174,13 +174,29 @@ def generate_placeholder_shot_enhanced(
     filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=24:fontcolor=#88ff88:x=380:y=(h-95){font_param}:box=0")
     filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=16:fontcolor=#888888:x=(w-280):y=(h-93){font_param}:box=0")
 
-    # 7. 对话/字幕信息（屏幕中央，大字体） - 暂时禁用，待修复FFmpeg filter问题
-    # TODO: 需要修复FFmpeg drawtext filter与特定中文字符的兼容性
-    # if dialogue_text and len(dialogue_text.strip()) > 0:
-    #     dialogue_short = dialogue_text[:60]
-    #     if len(dialogue_text) > 60:
-    #         dialogue_short = dialogue_short[:57] + "…"
-    #     filters.append(f"drawtext=text='{dialogue_short}':fontsize=48:fontcolor=#ffff99:x=200:y=420{font_param}:box=1:boxcolor=black@0.8:boxborderw=0")
+    # 7. 对话/字幕信息（屏幕中央，大字体）
+    # 显示对话内容作为字幕
+    if dialogue_text and len(dialogue_text.strip()) > 0:
+        dialogue_short = dialogue_text[:70]
+        if len(dialogue_text) > 70:
+            dialogue_short = dialogue_short[:67] + "…"
+
+        # 为了避免FFmpeg转义问题，移除可能导致问题的特殊字符
+        # 保留中文字符和基本标点
+        dialogue_clean = dialogue_short.replace('"', '"').replace('"', '"').replace("'", "'")
+
+        # 写入临时文件避免引号转义
+        try:
+            import tempfile
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
+                f.write(dialogue_clean)
+                dialogue_file = f.name
+
+            # 使用textfile参数来显示对话
+            filters.append(f"drawtext=textfile='{dialogue_file}':fontsize=46:fontcolor=#ffff99:x=(w-700)/2:y=450{font_param}:box=1:boxcolor=black@0.8:boxborderw=1")
+        except Exception as e:
+            # 若失败，则使用简化的inline文本
+            pass
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
     filter_complex = ",".join(filters)
