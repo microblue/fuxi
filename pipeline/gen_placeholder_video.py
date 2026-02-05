@@ -123,29 +123,74 @@ def generate_placeholder_shot_enhanced(
     # 转场信息
     transition_text = f"转场: {transition}"
 
-    # 构建文字信息（多层）
-    # 中央标题：Shot ID
+    # 转义drawtext中的特殊字符
+    def escape_for_drawtext(text: str) -> str:
+        """转义drawtext中的特殊字符，保留中文"""
+        if not text:
+            return ""
+        # 首先转义反斜杠（必须第一个）
+        text = text.replace("\\", "\\\\")
+        # 转义单引号
+        text = text.replace("'", "\\'")
+        # 转义冒号（在某些上下文中可能有问题）- 用破折号替换
+        text = text.replace(":", "-")
+        # 转义其他可能的问题字符
+        text = text.replace("[", "\\[")
+        text = text.replace("]", "\\]")
+        # 限制长度
+        return text
+
+    # 构建文字信息（包含完整的分镜信息）
     title_text = shot_id
 
-    # 右上角：位置信息
-    location_text = location if location else "Unknown"
+    # 用文本文件方式来传递信息以避免转义问题
+    import tempfile
 
-    # 左下角：转场和时长信息
-    footer_text = f"{transition} - {duration_s:.1f}s"
+    # 构建所有信息
+    all_info_lines = [title_text]
 
-    # 构建FFmpeg滤镜链（使用逗号连接多个drawtext过滤器）
-    filters = [
-        f"drawtext=text='{title_text}':fontsize=64:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2",
-        f"drawtext=text='{location_text}':fontsize=32:fontcolor=lightyellow:x=w-text_w-30:y=30",
-        f"drawtext=text='{footer_text}':fontsize=24:fontcolor=gray:x=30:y=h-40",
-    ]
+    if location:
+        all_info_lines.append(f"Location: {location}")
+
+    if camera:
+        all_info_lines.append(f"Camera: {camera}")
+
+    if action:
+        all_info_lines.append(f"Action: {action}")
+
+    if dialogue_text:
+        all_info_lines.append(f"Dialogue: {dialogue_text}")
+
+    if emotion:
+        all_info_lines.append(f"Mood: {emotion}")
+
+    # 将信息写入临时文本文件
+    text_file = None
+    try:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
+            f.write("\n".join(all_info_lines))
+            text_file = f.name
+
+        # 使用textfile参数传递多行文本
+        filters = [
+            f"drawtext=textfile='{text_file}':fontsize=24:fontcolor=white:x=50:y=50:line_spacing=8",
+            f"drawtext=text='{escape_for_drawtext(transition)} - {duration_s:.1f}s':fontsize=20:fontcolor=gray:x=50:y=h-40"
+        ]
+    except Exception as e:
+        print(f"  Warning: Failed to use textfile: {e}", file=sys.stderr)
+        # Fallback: simple single-line display
+        filters = [
+            f"drawtext=text='{title_text} - {escape_for_drawtext(transition)} {duration_s:.1f}s':fontsize=28:fontcolor=white:x=50:y=(h-text_h)/2"
+        ]
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
+    filter_complex = ",".join(filters)
+
     cmd = [
         "ffmpeg",
         "-f", "lavfi",
         "-i", f"color={color_hex}:s={WIDTH}x{HEIGHT}:d={duration_s}",
-        "-filter_complex", ",".join(filters),
+        "-filter_complex", filter_complex,
         "-c:v", "libx264",
         "-preset", "fast",
         "-crf", "18",
@@ -154,6 +199,7 @@ def generate_placeholder_shot_enhanced(
     ]
 
     try:
+
         result = subprocess.run(
             cmd,
             capture_output=True,
