@@ -117,58 +117,9 @@ def generate_placeholder_shot_enhanced(
     if len(dialogue_text) > 100:
         dialogue_text = dialogue_text[:97] + "..."
 
-    # 情感标记
-    emotion_text = f"情绪: {emotion}" if emotion else ""
-
-    # 转场信息
-    transition_text = f"转场: {transition}"
-
-    # 转义drawtext中的特殊字符
-    def escape_for_drawtext(text: str) -> str:
-        """转义drawtext中的特殊字符，保留中文"""
-        if not text:
-            return ""
-        # 首先转义反斜杠（必须第一个）
-        text = text.replace("\\", "\\\\")
-        # 转义单引号
-        text = text.replace("'", "\\'")
-        # 转义冒号（在某些上下文中可能有问题）- 用破折号替换
-        text = text.replace(":", "-")
-        # 转义其他可能的问题字符
-        text = text.replace("[", "\\[")
-        text = text.replace("]", "\\]")
-        # 限制长度
-        return text
-
-    # 构建文字信息（包含完整的分镜信息）
-    title_text = shot_id
-
-    # 用文本文件方式来传递信息以避免转义问题
-    import tempfile
-
-    # 构建所有信息
-    all_info_lines = [title_text]
-
-    if location:
-        all_info_lines.append(f"Location: {location}")
-
-    if camera:
-        all_info_lines.append(f"Camera: {camera}")
-
-    if action:
-        all_info_lines.append(f"Action: {action}")
-
-    if dialogue_text:
-        all_info_lines.append(f"Dialogue: {dialogue_text}")
-
-    if emotion:
-        all_info_lines.append(f"Mood: {emotion}")
-
-    # 将信息写入临时文本文件
-    text_file = None
-
     # 查找支持中文的字体
     import os
+
     chinese_font = None
     possible_fonts = [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -182,25 +133,53 @@ def generate_placeholder_shot_enhanced(
             chinese_font = font_path
             break
 
-    try:
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
-            f.write("\n".join(all_info_lines))
-            text_file = f.name
+    font_param = f":fontfile={chinese_font}" if chinese_font else ""
 
-        # 构建drawtext参数，包含字体指定
-        font_param = f":fontfile={chinese_font}" if chinese_font else ""
+    # 专业布局设计（优化美观性和可读性）
+    filters = []
 
-        # 使用textfile参数传递多行文本
-        filters = [
-            f"drawtext=textfile='{text_file}':fontsize=24:fontcolor=white:x=50:y=50:line_spacing=8{font_param}",
-            f"drawtext=text='{escape_for_drawtext(transition)} - {duration_s:.1f}s':fontsize=20:fontcolor=gray:x=50:y=h-40{font_param}"
-        ]
-    except Exception as e:
-        print(f"  Warning: Failed to use textfile: {e}", file=sys.stderr)
-        # Fallback: simple single-line display
-        filters = [
-            f"drawtext=text='{title_text} - {escape_for_drawtext(transition)} {duration_s:.1f}s':fontsize=28:fontcolor=white:x=50:y=(h-text_h)/2"
-        ]
+    # 1. 镜头ID - 大字体，突出显示（左上）
+    filters.append(f"drawtext=text='{shot_id}':fontsize=64:fontcolor=white:x=60:y=50{font_param}:box=1:boxcolor=black@0.5:boxborderw=2:bordercolor=white@0.8")
+
+    # 2. Location - 次级标题（左侧，镜头ID下方）
+    if location:
+        location_text = location.replace("_", " ").title()[:40]
+        filters.append(f"drawtext=text='{location_text}':fontsize=24:fontcolor=#ffdd88:x=60:y=140{font_param}:box=0")
+
+    # 3. Camera信息（上方右侧）
+    if camera:
+        camera_short = camera[:65] if len(camera) > 65 else camera
+        filters.append(f"drawtext=text='CAMERA':fontsize=14:fontcolor=#ffffff:x=(w-450):y=50{font_param}:box=0")
+        filters.append(f"drawtext=text='{camera_short}':fontsize=16:fontcolor=#88ddff:x=(w-450):y=75{font_param}:box=0")
+
+    # 4. Action信息（中上方）
+    if action:
+        action_text = action.replace("\\n", " ")[:95]
+        if len(action) > 95:
+            action_text += "…"
+        filters.append(f"drawtext=text='ACTION':fontsize=14:fontcolor=#ffffff:x=60:y=210{font_param}:box=0")
+        filters.append(f"drawtext=text='{action_text}':fontsize=15:fontcolor=#dddddd:x=60:y=235{font_param}:box=0")
+
+    # 5. 对话信息（中方）
+    if dialogue_text:
+        dialogue_short = dialogue_text[:75]
+        if len(dialogue_text) > 75:
+            dialogue_short += "…"
+        filters.append(f"drawtext=text='DIALOGUE':fontsize=14:fontcolor=#ffffff:x=(w-450):y=130{font_param}:box=0")
+        filters.append(f"drawtext=text='{dialogue_short}':fontsize=15:fontcolor=#ffee99:x=(w-450):y=155{font_param}:box=0")
+
+    # 6. 情感标记（右侧中下）
+    if emotion:
+        emotion_display = emotion.replace("_", " ").upper()
+        filters.append(f"drawtext=text='MOOD':fontsize=14:fontcolor=#ffffff:x=(w-450):y=210{font_param}:box=0")
+        filters.append(f"drawtext=text='{emotion_display}':fontsize=16:fontcolor=#ff99dd:x=(w-450):y=235{font_param}:box=0")
+
+    # 7. 底部信息栏 - 转场和时长
+    transition_upper = transition.upper()
+    filters.append(f"drawtext=text='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━':fontsize=16:fontcolor=#444444:x=40:y=(h-90){font_param}:box=0")
+    filters.append(f"drawtext=text='{transition_upper}':fontsize=20:fontcolor=#ffff99:x=60:y=(h-60){font_param}:box=0")
+    filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=18:fontcolor=#88ff88:x=350:y=(h-60){font_param}:box=0")
+    filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=12:fontcolor=#888888:x=(w-280):y=(h-55){font_param}:box=0")
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
     filter_complex = ",".join(filters)
