@@ -139,47 +139,46 @@ def generate_placeholder_shot_enhanced(
     filters = []
 
     # 1. 镜头ID - 大字体，突出显示（左上）
-    filters.append(f"drawtext=text='{shot_id}':fontsize=64:fontcolor=white:x=60:y=50{font_param}:box=1:boxcolor=black@0.5:boxborderw=2:bordercolor=white@0.8")
+    filters.append(f"drawtext=text='{shot_id}':fontsize=80:fontcolor=white:x=60:y=40{font_param}:box=1:boxcolor=black@0.5:boxborderw=2:bordercolor=white@0.8")
 
     # 2. Location - 次级标题（左侧，镜头ID下方）
     if location:
         location_text = location.replace("_", " ").title()[:40]
-        filters.append(f"drawtext=text='{location_text}':fontsize=24:fontcolor=#ffdd88:x=60:y=140{font_param}:box=0")
+        filters.append(f"drawtext=text='{location_text}':fontsize=32:fontcolor=#ffdd88:x=60:y=145{font_param}:box=0")
 
     # 3. Camera信息（上方右侧）
     if camera:
         camera_short = camera[:65] if len(camera) > 65 else camera
-        filters.append(f"drawtext=text='CAMERA':fontsize=14:fontcolor=#ffffff:x=(w-450):y=50{font_param}:box=0")
-        filters.append(f"drawtext=text='{camera_short}':fontsize=16:fontcolor=#88ddff:x=(w-450):y=75{font_param}:box=0")
+        filters.append(f"drawtext=text='CAMERA':fontsize=18:fontcolor=#ffffff:x=(w-450):y=45{font_param}:box=0")
+        filters.append(f"drawtext=text='{camera_short}':fontsize=20:fontcolor=#88ddff:x=(w-450):y=75{font_param}:box=0")
 
     # 4. Action信息（中上方）
     if action:
         action_text = action.replace("\\n", " ")[:95]
         if len(action) > 95:
             action_text += "…"
-        filters.append(f"drawtext=text='ACTION':fontsize=14:fontcolor=#ffffff:x=60:y=210{font_param}:box=0")
-        filters.append(f"drawtext=text='{action_text}':fontsize=15:fontcolor=#dddddd:x=60:y=235{font_param}:box=0")
+        filters.append(f"drawtext=text='ACTION':fontsize=18:fontcolor=#ffffff:x=60:y=230{font_param}:box=0")
+        filters.append(f"drawtext=text='{action_text}':fontsize=19:fontcolor=#dddddd:x=60:y=260{font_param}:box=0")
 
-    # 5. 对话信息（中方）
-    if dialogue_text:
-        dialogue_short = dialogue_text[:75]
-        if len(dialogue_text) > 75:
-            dialogue_short += "…"
-        filters.append(f"drawtext=text='DIALOGUE':fontsize=14:fontcolor=#ffffff:x=(w-450):y=130{font_param}:box=0")
-        filters.append(f"drawtext=text='{dialogue_short}':fontsize=15:fontcolor=#ffee99:x=(w-450):y=155{font_param}:box=0")
-
-    # 6. 情感标记（右侧中下）
+    # 5. 情感标记（右侧中方）
     if emotion:
         emotion_display = emotion.replace("_", " ").upper()
-        filters.append(f"drawtext=text='MOOD':fontsize=14:fontcolor=#ffffff:x=(w-450):y=210{font_param}:box=0")
-        filters.append(f"drawtext=text='{emotion_display}':fontsize=16:fontcolor=#ff99dd:x=(w-450):y=235{font_param}:box=0")
+        filters.append(f"drawtext=text='MOOD':fontsize=18:fontcolor=#ffffff:x=(w-450):y=230{font_param}:box=0")
+        filters.append(f"drawtext=text='{emotion_display}':fontsize=22:fontcolor=#ff99dd:x=(w-450):y=265{font_param}:box=0")
 
-    # 7. 底部信息栏 - 转场和时长
+    # 6. 底部元数据行 - 转场和时长
     transition_upper = transition.upper()
-    filters.append(f"drawtext=text='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━':fontsize=16:fontcolor=#444444:x=40:y=(h-90){font_param}:box=0")
-    filters.append(f"drawtext=text='{transition_upper}':fontsize=20:fontcolor=#ffff99:x=60:y=(h-60){font_param}:box=0")
-    filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=18:fontcolor=#88ff88:x=350:y=(h-60){font_param}:box=0")
-    filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=12:fontcolor=#888888:x=(w-280):y=(h-55){font_param}:box=0")
+    filters.append(f"drawtext=text='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━':fontsize=18:fontcolor=#444444:x=40:y=(h-135){font_param}:box=0")
+    filters.append(f"drawtext=text='{transition_upper}':fontsize=26:fontcolor=#ffff99:x=60:y=(h-95){font_param}:box=0")
+    filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=24:fontcolor=#88ff88:x=380:y=(h-95){font_param}:box=0")
+    filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=16:fontcolor=#888888:x=(w-280):y=(h-93){font_param}:box=0")
+
+    # 7. 对话/字幕信息（下方，就像正常视频字幕）
+    if dialogue_text:
+        dialogue_short = dialogue_text[:85]
+        if len(dialogue_text) > 85:
+            dialogue_short += "…"
+        filters.append(f"drawtext=text='{dialogue_short}':fontsize=24:fontcolor=#ffff99:x=120:y=(h-40){font_param}:box=1:boxcolor=black@0.7:boxborderw=0")
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
     filter_complex = ",".join(filters)
