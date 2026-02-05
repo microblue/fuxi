@@ -166,15 +166,34 @@ def generate_placeholder_shot_enhanced(
 
     # 将信息写入临时文本文件
     text_file = None
+
+    # 查找支持中文的字体
+    import os
+    chinese_font = None
+    possible_fonts = [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+        "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ]
+
+    for font_path in possible_fonts:
+        if os.path.exists(font_path):
+            chinese_font = font_path
+            break
+
     try:
         with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
             f.write("\n".join(all_info_lines))
             text_file = f.name
 
+        # 构建drawtext参数，包含字体指定
+        font_param = f":fontfile={chinese_font}" if chinese_font else ""
+
         # 使用textfile参数传递多行文本
         filters = [
-            f"drawtext=textfile='{text_file}':fontsize=24:fontcolor=white:x=50:y=50:line_spacing=8",
-            f"drawtext=text='{escape_for_drawtext(transition)} - {duration_s:.1f}s':fontsize=20:fontcolor=gray:x=50:y=h-40"
+            f"drawtext=textfile='{text_file}':fontsize=24:fontcolor=white:x=50:y=50:line_spacing=8{font_param}",
+            f"drawtext=text='{escape_for_drawtext(transition)} - {duration_s:.1f}s':fontsize=20:fontcolor=gray:x=50:y=h-40{font_param}"
         ]
     except Exception as e:
         print(f"  Warning: Failed to use textfile: {e}", file=sys.stderr)
