@@ -34,3 +34,9 @@ pixi.lock
 
 # Temporary
 .tmp/
+
+.env
+.env.*
+*.pem
+*.key
+credentials.json
