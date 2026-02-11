@@ -90,6 +90,9 @@ def generate_placeholder_shot_enhanced(
     action = shot_info.get("action", "")
     dialogue = shot_info.get("dialogue", [])
     emotion = shot_info.get("emotion", "")
+    characters = shot_info.get("characters", [])
+    sfx_bgm = shot_info.get("sfx_bgm", "")
+    notes = shot_info.get("notes", "")
     transition = shot_info.get("transition_out", "cut")
 
     # 构建文本信息
@@ -138,65 +141,126 @@ def generate_placeholder_shot_enhanced(
     # 专业布局设计（优化美观性和可读性）
     filters = []
 
+    # Helper functions for FFmpeg text processing
+    def escape_ffmpeg_text(text: str) -> str:
+        """Escape special characters for FFmpeg drawtext filter"""
+        # FFmpeg escaping: single quote becomes '\''
+        return text.replace("'", "'\\''")
+
+    def wrap_text(text: str, width: int = 35) -> str:
+        """Wrap text to multiple lines at specified character width (supports Chinese text)"""
+        if len(text) <= width:
+            return text
+
+        lines = []
+        # Check if text contains spaces (English-like text)
+        if " " in text:
+            # Word-wrap for English text
+            current_line = ""
+            words = text.split()
+            for word in words:
+                if len(current_line) + len(word) + 1 <= width:
+                    if current_line:
+                        current_line += " " + word
+                    else:
+                        current_line = word
+                else:
+                    if current_line:
+                        lines.append(current_line)
+                    current_line = word
+            if current_line:
+                lines.append(current_line)
+        else:
+            # Character-wrap for Chinese text or continuous text
+            for i in range(0, len(text), width):
+                lines.append(text[i:i+width])
+
+        return "\n".join(lines)
+
     # 1. 镜头ID - 大字体，突出显示（左上）
-    filters.append(f"drawtext=text='{shot_id}':fontsize=80:fontcolor=white:x=60:y=40{font_param}:box=1:boxcolor=black@0.5:boxborderw=2:bordercolor=white@0.8")
+    shot_id_escaped = escape_ffmpeg_text(shot_id)
+    filters.append(f"drawtext=text='{shot_id_escaped}':fontsize=160:fontcolor=white:x=60:y=40{font_param}:box=1:boxcolor=black@0.5:boxborderw=2:bordercolor=white@0.8")
 
     # 2. Location - 次级标题（左侧，镜头ID下方）
     if location:
         location_text = location.replace("_", " ").title()[:40]
-        filters.append(f"drawtext=text='{location_text}':fontsize=32:fontcolor=#ffdd88:x=60:y=145{font_param}:box=0")
+        location_escaped = escape_ffmpeg_text(location_text)
+        filters.append(f"drawtext=text='{location_escaped}':fontsize=64:fontcolor=#ffdd88:x=60:y=220{font_param}:box=0")
 
-    # 3. Camera信息（上方右侧）
+    # 3. Characters - 人物列表（左侧，Location下方）
+    if characters:
+        char_text = ", ".join([str(c) for c in characters[:4]])  # 最多4个角色
+        if len(char_text) > 50:
+            char_text = char_text[:47] + "…"
+        char_escaped = escape_ffmpeg_text(char_text)
+        filters.append(f"drawtext=text='CAST:':fontsize=32:fontcolor=#ffffff:x=60:y=320{font_param}:box=0")
+        filters.append(f"drawtext=text='{char_escaped}':fontsize=36:fontcolor=#88ffff:x=60:y=365{font_param}:box=0")
+
+    # 4. Camera信息（上方右侧）
     if camera:
-        camera_short = camera[:65] if len(camera) > 65 else camera
-        filters.append(f"drawtext=text='CAMERA':fontsize=18:fontcolor=#ffffff:x=(w-450):y=45{font_param}:box=0")
-        filters.append(f"drawtext=text='{camera_short}':fontsize=20:fontcolor=#88ddff:x=(w-450):y=75{font_param}:box=0")
+        camera_short = camera[:50] if len(camera) > 50 else camera
+        camera_escaped = escape_ffmpeg_text(camera_short)
+        filters.append(f"drawtext=text='CAMERA':fontsize=32:fontcolor=#ffffff:x=(w-580):y=45{font_param}:box=0")
+        filters.append(f"drawtext=text='{camera_escaped}':fontsize=36:fontcolor=#88ddff:x=(w-580):y=100{font_param}:box=0")
 
-    # 4. Action信息（中上方）
+    # 5. SFX/BGM信息（右侧，Camera下方）
+    if sfx_bgm:
+        sfx_text = sfx_bgm[:45] if len(sfx_bgm) > 45 else sfx_bgm
+        sfx_escaped = escape_ffmpeg_text(sfx_text)
+        filters.append(f"drawtext=text='SFX/BGM:':fontsize=28:fontcolor=#ffffff:x=(w-580):y=200{font_param}:box=0")
+        filters.append(f"drawtext=text='{sfx_escaped}':fontsize=32:fontcolor=#ffdd88:x=(w-580):y=245{font_param}:box=0")
+
+    # 6. Action信息（左侧，Character下方，自动换行）
     if action:
-        action_text = action.replace("\\n", " ")[:95]
-        if len(action) > 95:
-            action_text += "…"
-        action_text_escaped = action_text.replace("'", "'\\''")
-        filters.append(f"drawtext=text='ACTION':fontsize=18:fontcolor=#ffffff:x=60:y=230{font_param}:box=0")
-        filters.append(f"drawtext=text='{action_text_escaped}':fontsize=19:fontcolor=#dddddd:x=60:y=260{font_param}:box=0")
+        action_text = action.replace("\\n", " ")[:120]
+        if len(action) > 120:
+            action_text = action_text[:117] + "…"
+        # 使用wrap_text实现自动换行
+        action_lines = wrap_text(action_text, width=40).split("\n")
+        filters.append(f"drawtext=text='ACTION':fontsize=32:fontcolor=#ffffff:x=60:y=440{font_param}:box=0")
+        # 显示多行Action文本
+        for i, line in enumerate(action_lines):
+            line_escaped = escape_ffmpeg_text(line)
+            y_pos = 485 + (i * 35)  # 每行间隔35像素
+            filters.append(f"drawtext=text='{line_escaped}':fontsize=26:fontcolor=#dddddd:x=60:y={y_pos}{font_param}:box=0")
 
-    # 5. 情感标记（右侧中方）
+    # 7. 情感标记（右侧中方，自动换行）
     if emotion:
         emotion_display = emotion.replace("_", " ").upper()
-        filters.append(f"drawtext=text='MOOD':fontsize=18:fontcolor=#ffffff:x=(w-450):y=230{font_param}:box=0")
-        filters.append(f"drawtext=text='{emotion_display}':fontsize=22:fontcolor=#ff99dd:x=(w-450):y=265{font_param}:box=0")
+        # 使用wrap_text实现自动换行
+        emotion_lines = wrap_text(emotion_display, width=18).split("\n")
+        filters.append(f"drawtext=text='MOOD':fontsize=32:fontcolor=#ffffff:x=(w-580):y=440{font_param}:box=0")
+        # 显示多行Mood文本
+        for i, line in enumerate(emotion_lines):
+            y_pos = 485 + (i * 35)  # 每行间隔35像素
+            filters.append(f"drawtext=text='{line}':fontsize=26:fontcolor=#ff99dd:x=(w-580):y={y_pos}{font_param}:box=0")
 
-    # 6. 底部元数据行 - 转场和时长
+    # 8. Notes - 特殊说明（右下方）
+    if notes:
+        notes_text = notes[:60] if len(notes) > 60 else notes
+        notes_escaped = escape_ffmpeg_text(notes_text)
+        filters.append(f"drawtext=text='NOTE:':fontsize=24:fontcolor=#cccccc:x=(w-580):y=(h-220){font_param}:box=0")
+        filters.append(f"drawtext=text='{notes_escaped}':fontsize=26:fontcolor=#aaaaaa:x=(w-580):y=(h-180){font_param}:box=0")
+
+    # 9. 底部元数据行 - 转场和时长
     transition_upper = transition.upper()
-    filters.append(f"drawtext=text='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━':fontsize=18:fontcolor=#444444:x=40:y=(h-135){font_param}:box=0")
-    filters.append(f"drawtext=text='{transition_upper}':fontsize=26:fontcolor=#ffff99:x=60:y=(h-95){font_param}:box=0")
-    filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=24:fontcolor=#88ff88:x=380:y=(h-95){font_param}:box=0")
-    filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=16:fontcolor=#888888:x=(w-280):y=(h-93){font_param}:box=0")
+    transition_escaped = escape_ffmpeg_text(transition_upper)
+    filters.append(f"drawtext=text='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━':fontsize=32:fontcolor=#444444:x=40:y=(h-150){font_param}:box=0")
+    filters.append(f"drawtext=text='{transition_escaped}':fontsize=48:fontcolor=#ffff99:x=60:y=(h-100){font_param}:box=0")
+    filters.append(f"drawtext=text='{duration_s:.1f}s':fontsize=44:fontcolor=#88ff88:x=450:y=(h-100){font_param}:box=0")
+    filters.append(f"drawtext=text='1920×1080 @ 24fps':fontsize=28:fontcolor=#888888:x=(w-380):y=(h-100){font_param}:box=0")
 
-    # 7. 对话/字幕信息（屏幕中央，大字体）
-    # 显示对话内容作为字幕
+    # 10. 对话/字幕信息（屏幕下方，在条形区域上方）
+    # 显示对话内容作为字幕，使用简化的文本处理
     if dialogue_text and len(dialogue_text.strip()) > 0:
-        dialogue_short = dialogue_text[:70]
-        if len(dialogue_text) > 70:
-            dialogue_short = dialogue_short[:67] + "…"
+        dialogue_short = dialogue_text[:65]
+        if len(dialogue_text) > 65:
+            dialogue_short = dialogue_short[:62] + "…"
 
-        # 为了避免FFmpeg转义问题，移除可能导致问题的特殊字符
-        # 保留中文字符和基本标点
-        dialogue_clean = dialogue_short.replace('"', '"').replace('"', '"').replace("'", "'")
+        # 使用escape函数处理转义
+        dialogue_escaped = escape_ffmpeg_text(dialogue_short)
 
-        # 写入临时文件避免引号转义
-        try:
-            import tempfile
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as f:
-                f.write(dialogue_clean)
-                dialogue_file = f.name
-
-            # 使用textfile参数来显示对话
-            filters.append(f"drawtext=textfile='{dialogue_file}':fontsize=46:fontcolor=#ffff99:x=(w-700)/2:y=450{font_param}:box=1:boxcolor=black@0.8:boxborderw=1")
-        except Exception as e:
-            # 若失败，则使用简化的inline文本
-            pass
+        filters.append(f"drawtext=text='{dialogue_escaped}':fontsize=42:fontcolor=#ffff99:x=(w-800)/2:y=(h-250){font_param}:box=1:boxcolor=black@0.7:boxborderw=1")
 
     # 构建FFmpeg命令 - 使用filter_complex连接多个drawtext过滤器
     filter_complex = ",".join(filters)

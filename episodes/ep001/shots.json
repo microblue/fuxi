@@ -1,666 +1,653 @@
 {
   "episode": "ep001",
+  "total_duration_s": 78,
+  "total_shots": 20,
   "format": {
     "resolution": "1920x1080",
     "aspect_ratio": "16:9",
     "fps": 24
   },
-  "transitions": {},
   "shots": [
     {
       "shot_id": "S01",
       "scene": "1-1",
       "duration_s": 4,
-      "location": "lingzi_capital_skyline",
+      "location": "灵子文明首都·数据中枢 - 全景俯瞰",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [],
-      "camera": "extreme wide shot, slow crane down",
-      "action": "极致璀璨的未来都市全景。建筑由纯光构成，数据河流在空中流淌，整座城市如同活着的电路板。突然，所有光芒开始抽搐闪烁，城市响起刺耳警报。",
-      "dialogue": "",
-      "emotion": "awe, impending doom",
-      "prompt_visual": "Cinematic extreme wide shot of a breathtaking futuristic metropolis at twilight. Buildings are constructed entirely of solidified light, translucent crystalline structures reaching toward purple-orange sky. Rivers of golden data flow through the air like luminous highways, connecting towers with streams of glowing particles. Holographic displays float everywhere showing alien symbols. The architecture follows sacred geometry patterns, spiraling towers with fractal edges. Atmosphere: ethereal, transcendent, impossibly advanced civilization. Suddenly warning signs appear, red alert glyphs flashing across all surfaces. Light structures begin to flicker and distort, like a glitching hologram. Lens flare from central tower. 8K resolution, photorealistic CGI, Blade Runner 2049 meets ancient Chinese aesthetics, volumetric lighting, particle effects.",
-      "prompt_motion": "Slow crane down movement revealing the vast cityscape. Camera descends smoothly for 2 seconds showing peaceful beauty. At second 2.5, all lights begin synchronized flickering, buildings pulse erratically. Data streams stutter and fragment. Red warning symbols cascade across surfaces. Sirens begin wailing. Camera shake increases slightly as chaos spreads.",
+      "character_refs": [],
+      "prop_refs": [
+        "golden_data_stream"
+      ],
+      "camera": "超大远景，无人机式俯冲推进，从太空视角快速下降至城市上空",
+      "action": "极致璀璨的未来都市全貌展现。建筑由纯光构成，数据河流在空中流淌，城市如同一颗发光的宝石。突然，所有光芒开始抽搐闪烁，刺耳警报声响起。",
+      "dialogue": [],
+      "emotion": "震撼、壮美转向不安",
+      "prompt_visual": "Breathtaking futuristic megalopolis from aerial view, buildings made of pure luminescent light and holographic data, rivers of golden data flowing through the sky between crystalline towers, entire city pulsating with energy, ultra-advanced civilization aesthetic, cyan and gold color palette, lens flare, volumetric lighting, cinematic wide shot, 8K detail, sci-fi concept art style, dramatic atmosphere with warning lights beginning to flash red across the skyline",
+      "prompt_motion": "Camera rapidly descends from orbital view diving toward the glowing city, data rivers flowing dynamically through the air, buildings shimmering and pulsating, then all lights begin to stutter and glitch simultaneously, red warning pulses ripple across the cityscape, holographic displays flicker with error codes",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到羲和特写，形成从宏观到个体的视角对比。城市警报声作为audio bridge延续到下一镜头。",
-      "sfx_bgm": "Ethereal ambient synth → harsh alarm sirens, deep bass rumble of impending catastrophe",
-      "notes": "建立镜头，展示灵子文明的辉煌与即将到来的毁灭。需要大量粒子特效。"
+      "transition_note": "硬切到中枢塔顶",
+      "sfx_bgm": "宏大的电子交响乐渐强，突然被刺耳的警报声打断，低频震动声",
+      "notes": "开场建立世界观，展现灵子文明的辉煌与即将毁灭的紧迫感"
     },
     {
       "shot_id": "S02",
       "scene": "1-1",
-      "duration_s": 5,
-      "location": "lingzi_central_tower_top",
+      "duration_s": 3,
+      "location": "灵子文明首都·数据中枢 - 中枢塔顶",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [
-        "Xihe"
+        "羲和"
       ],
-      "camera": "medium shot to close-up, slow push in",
-      "action": "羲和站在中枢塔顶，手指在空中快速滑动，金色数据流随指尖飞舞。他30岁，身着流光长袍，左眼有金色纹路。表情专注而坚定。",
-      "dialogue": "",
-      "emotion": "determination, urgency",
-      "prompt_visual": "Cinematic medium shot of Xihe, a 30-year-old man with sharp, intelligent features and an air of quiet authority. He wears a flowing robe made of liquid light that shifts between silver and gold, fabric rippling with data patterns. His left eye bears intricate golden circuit-like tattoos extending from pupil to temple. He stands at the apex of the central tower, a circular platform surrounded by floating holographic interfaces. His fingers dance through the air with precise, graceful movements, manipulating streams of golden data that spiral around him like living calligraphy. Behind him: the chaotic cityscape, red warnings flashing. His expression: calm determination despite catastrophe. Dramatic rim lighting from below, face half-illuminated by golden data glow. Cyberpunk meets ancient Chinese scholar aesthetic. 8K, shallow depth of field.",
-      "prompt_motion": "Camera slowly pushes in from medium to close-up over 5 seconds. Xihe's fingers move rapidly, each gesture generating trails of golden light. Data streams respond to his touch, forming complex patterns. His robe fabric ripples constantly. Background: city lights flicker chaotically. His left eye occasionally pulses with golden light. Hair moves slightly from energy displacement.",
+      "character_refs": [
+        "xihe"
+      ],
+      "prop_refs": [
+        "golden_data_stream",
+        "control_console"
+      ],
+      "camera": "中景，环绕镜头，从侧后方缓慢环绕到正面",
+      "action": "羲和（30岁，身着流光长袍，左眼有金色纹路）站在中枢塔顶，手指在空中快速滑动操控数据，金色数据流随指尖飞舞，表情专注而焦急。",
+      "dialogue": [],
+      "emotion": "紧迫、专注、英雄气概",
+      "prompt_visual": "A majestic figure standing atop a crystalline tower, 30-year-old male with flowing luminescent robes that shimmer with data patterns, golden circuit-like tattoo on left eye, fingers dancing through holographic golden data streams in the air, futuristic control console before him, wind blowing robes dramatically, red alert lights flashing in background, cinematic medium shot, dramatic rim lighting, cyberpunk meets eastern mythology aesthetic",
+      "prompt_motion": "Character's fingers rapidly swipe and manipulate floating golden data streams, holographic interfaces responding to each gesture, data particles flowing from fingertips, robes rippling with embedded light patterns, camera slowly orbiting from behind to reveal the character's determined face with glowing left eye",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到AI界面画面，保持紧张节奏。羲和的手势动作在最后帧处于动作中间状态，暗示持续操作。",
-      "sfx_bgm": "Alarm sirens continue, electronic beeps of interface interaction, low tension drone",
-      "notes": "首次展示羲和，需要建立其作为高级文明末代守护者的形象。"
+      "transition_note": "切到观测者AI画面",
+      "sfx_bgm": "持续警报声，电子数据流动的嗡嗡声，紧张的弦乐",
+      "notes": "建立羲和角色形象，展现其代码操控能力"
     },
     {
       "shot_id": "S03",
       "scene": "1-1",
       "duration_s": 4,
-      "location": "lingzi_central_tower_top",
+      "location": "灵子文明首都·数据中枢 - 中枢塔顶",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [
-        "Xihe",
-        "Observer_AI"
+        "羲和",
+        "观测者AI"
       ],
-      "camera": "over-the-shoulder shot, static",
-      "action": "观测者AI的全息界面浮现，温柔女声响起。倒计时数字在空中显示。",
-      "dialogue": "观测者AI：格式化程序已锁定本星球。剩余时间:17分42秒。建议:上传核心意识至星网。",
-      "emotion": "clinical calm, underlying tension",
-      "prompt_visual": "Cinematic over-the-shoulder shot from behind Xihe. Before him floats a massive holographic interface, a feminine face composed of flowing data streams and geometric patterns - the Observer AI. Her features are serene, almost maternal, rendered in soft blue and white light particles. A countdown timer displays '17:42' in large alien numerals that pulse red. Multiple data windows show planetary scans, escape routes, network status - all flashing critical warnings. The interface casts soft blue light on Xihe's profile. Background: cityscape visible through transparent displays, buildings starting to dissolve at edges. Atmosphere: clinical efficiency masking existential dread. High-tech holographic UI design, clean lines, sacred geometry motifs.",
-      "prompt_motion": "Static camera. AI face particles flow continuously, forming and reforming features. Countdown timer ticks down visibly. Data windows update with new critical alerts. Occasional glitch effects pass through the hologram. Xihe remains still, listening. Background city continues to destabilize, distant buildings beginning pixel-decomposition.",
+      "character_refs": [
+        "xihe",
+        "observer_ai"
+      ],
+      "prop_refs": [
+        "control_console",
+        "golden_data_stream"
+      ],
+      "camera": "中近景，正面拍摄羲和，观测者AI以全息投影形式出现在侧方",
+      "action": "观测者AI以温柔女声发出警告。羲和摇头，表情坚毅，提出火种协议。",
+      "dialogue": [
+        {
+          "character": "观测者AI",
+          "text": "格式化程序已锁定本星球。剩余时间：17分42秒。建议：上传核心意识至星网。",
+          "emotion": "温柔冷静",
+          "speed": 1.0
+        },
+        {
+          "character": "羲和",
+          "text": "星网也在它们的清单上。启动火种协议——将文明核心数据转为生物编码，植入新生载体。",
+          "emotion": "坚定果断",
+          "speed": 1.1
+        }
+      ],
+      "emotion": "紧迫、决断",
+      "prompt_visual": "Close-up of a determined male face with golden circuit pattern on left eye, a translucent holographic AI feminine figure floating beside him displaying countdown timer 17:42, futuristic control console with emergency red lights, golden data streams swirling around them, dramatic chiaroscuro lighting, sci-fi cinematic style, warm gold and cool blue contrast",
+      "prompt_motion": "Character shakes head firmly while speaking, holographic AI figure pulsates gently with each word, countdown numbers ticking down on floating displays, golden data streams intensifying around the scene, subtle camera push-in toward character's face",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切回羲和正面特写，捕捉他的决定性反应。对话节奏驱动剪辑。",
-      "sfx_bgm": "AI voice: warm, synthesized female tone. Background: countdown beeps, distant explosions, data processing sounds",
-      "notes": "AI角色设计需要体现高度智能但仍有温度感。"
+      "transition_note": "切到对话继续",
+      "sfx_bgm": "低沉的紧迫鼓点，AI的声音带有数字化回音效果",
+      "notes": "核心对话场景，建立火种协议的概念"
     },
     {
       "shot_id": "S04",
       "scene": "1-1",
-      "duration_s": 5,
-      "location": "lingzi_central_tower_top",
+      "duration_s": 3,
+      "location": "灵子文明首都·数据中枢 - 中枢塔顶",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [
-        "Xihe"
+        "羲和",
+        "观测者AI"
       ],
-      "camera": "close-up, slight low angle",
-      "action": "羲和摇头，眼中闪过坚定光芒。他开始输入新的指令序列。",
-      "dialogue": "羲和：星网也在它们的清单上。启动'火种协议'——将文明核心数据转为生物编码,植入新生载体。",
-      "emotion": "defiance, resolve, sacrifice",
-      "prompt_visual": "Cinematic close-up of Xihe's face from slight low angle, emphasizing his determination. His features show calm defiance - a slight knowing smile plays at his lips despite the apocalypse. His left eye's golden tattoo patterns glow brighter as he speaks, pulsing with each word. Sweat beads on his temple reflect golden light. Behind him, holographic code sequences begin new patterns - the Fire Seed Protocol initializing, green and gold symbols cascading. His flowing robe reflects the chaos of the dying city. Dramatic chiaroscuro lighting: golden data glow from below, red alert light from above. Expression: the peace of someone who has made an impossible choice. 8K, shallow depth of field on eyes.",
-      "prompt_motion": "Xihe shakes head slowly at start. As he speaks, his left eye tattoo pulses rhythmically. He raises hands to begin new input gestures. Golden data streams respond, changing from defensive patterns to something new - spiraling DNA-like helixes. His expression shifts from refusal to determined hope. Background protocol text scrolls rapidly.",
+      "character_refs": [
+        "xihe",
+        "observer_ai"
+      ],
+      "prop_refs": [
+        "control_console",
+        "golden_data_stream"
+      ],
+      "camera": "特写，羲和面部，缓慢推近至眼部",
+      "action": "观测者AI告知存活率极低且无法保留记忆。羲和微笑，授权执行火种协议。",
+      "dialogue": [
+        {
+          "character": "观测者AI",
+          "text": "载体随机投放，存活率低于0.03%。且您将无法保留记忆。",
+          "emotion": "担忧",
+          "speed": 1.0
+        },
+        {
+          "character": "羲和",
+          "text": "那就赌一把。以我灵子文明最后代码者之名——授权执行！",
+          "emotion": "微笑、悲壮、决绝",
+          "speed": 1.0
+        }
+      ],
+      "emotion": "悲壮、决绝、浪漫主义的牺牲",
+      "prompt_visual": "Extreme close-up of a heroic male face with a gentle yet resolute smile, golden circuit tattoo on left eye glowing intensely, tears of light forming at the corner of his eye, holographic data reflections on his skin, warm golden light illuminating his features against the chaos behind, cinematic shallow depth of field, emotionally powerful portrait shot",
+      "prompt_motion": "A serene smile slowly forms on the character's face, golden eye tattoo brightens with pulsating light, camera slowly pushes in toward the glowing left eye, light reflections dance across the iris, subtle emotional tremor in expression",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到AI反应，保持对话场景的标准正反打节奏。",
-      "sfx_bgm": "Music shifts to hopeful undertone beneath alarm, protocol activation sounds, ascending tones",
-      "notes": "关键决策时刻，需要捕捉羲和作为最后希望守护者的精神状态。"
+      "transition_note": "硬切到执行动作",
+      "sfx_bgm": "音乐转为悲壮的弦乐主题，带有电子元素，情感高潮前奏",
+      "notes": "情感核心镜头，展现羲和的牺牲精神"
     },
     {
       "shot_id": "S05",
       "scene": "1-1",
-      "duration_s": 3,
-      "location": "lingzi_central_tower_top",
+      "duration_s": 4,
+      "location": "灵子文明首都·数据中枢 - 中枢塔顶",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [
-        "Observer_AI"
+        "羲和"
       ],
-      "camera": "medium close-up, static",
-      "action": "AI面容出现微妙变化，数据流中似乎有一丝情感波动。",
-      "dialogue": "观测者AI：载体随机投放,存活率低于0.03%。且您将无法保留记忆。",
-      "emotion": "concern, warning, subtle sadness",
-      "prompt_visual": "Cinematic medium close-up of the Observer AI holographic face. Her data-stream features show subtle perturbation - particles flow slightly irregularly, suggesting machine emotion. Statistical displays appear beside her: '0.03% survival probability' in stark red numbers, timeline projections showing random scatter across spacetime. Her eyes, formed of concentrated light points, seem to hold genuine concern. The countdown continues: '16:58'. Background data streams slow momentarily, as if the AI is hesitating. Cool blue palette with warm gold reflections from Xihe off-screen. Sacred geometry patterns in her design flicker with uncertainty.",
-      "prompt_motion": "AI face particles swirl with slightly more turbulence than before - emotional subroutines activating. Statistical windows materialize showing grim probabilities. Her gaze tracks to where Xihe stands. A brief glitch passes through her form - perhaps reluctance to deliver this information. Countdown continues relentlessly.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切回羲和，他的回应将是本场景的情感高潮。",
-      "sfx_bgm": "AI voice carries subtle emotional weight, probability calculation sounds, melancholic undertone in score",
-      "notes": "展示AI虽是机器但已发展出情感连接的细节。"
+      "character_refs": [
+        "xihe"
+      ],
+      "prop_refs": [
+        "control_console",
+        "golden_data_stream",
+        "fire_seed_light_pillar",
+        "bagua_eye_pattern"
+      ],
+      "camera": "大全景，从羲和背面拉远到城市全景，垂直上升",
+      "action": "羲和将双手按在控制台上，全身数据被抽取。城市中心升起一道通天光柱，分裂为亿万光点洒向宇宙。最后一刻，一个光点中隐约可见八卦图案。",
+      "dialogue": [],
+      "emotion": "壮烈、升华、宇宙级的壮美",
+      "prompt_visual": "Epic wide shot of a figure pressing both hands on a luminous console, entire body dissolving into golden data streams being pulled upward, a massive pillar of light erupting from the city center shooting into the cosmos, the pillar splitting into billions of golden light particles scattering across the starry universe, one prominent light particle containing a faint bagua trigram pattern, apocalyptic beauty, cosmic scale, volumetric god rays, cinematic masterpiece composition",
+      "prompt_motion": "Character presses hands down and body begins to dissolve into upward-streaming golden particles, colossal light pillar erupts from the city center with explosive force, pillar fragments into millions of light seeds scattering in all directions across space, camera pulls back and rises vertically to reveal the cosmic scale of the event, one glowing particle with spinning bagua symbol drifts toward camera",
+      "transition_out": "dissolve",
+      "transition_duration_s": 0.5,
+      "transition_note": "光粒子溶解过渡",
+      "sfx_bgm": "交响乐情感高潮，巨大的能量释放声，光柱升天的轰鸣，最终归于寂静",
+      "notes": "视觉高潮镜头，火种协议执行的史诗级场面"
     },
     {
       "shot_id": "S06",
       "scene": "1-1",
       "duration_s": 4,
-      "location": "lingzi_central_tower_top",
+      "location": "灵子文明首都·数据中枢 - 中枢塔顶",
+      "location_ref": "lingzi_capital_data_core",
       "characters": [
-        "Xihe"
+        "羲和"
       ],
-      "camera": "close-up, eye level, slow push in",
-      "action": "羲和露出释然的微笑，将双手按向控制台，准备执行最后命令。",
-      "dialogue": "羲和：那就赌一把。以我灵子文明最后代码者之名——授权执行!",
-      "emotion": "acceptance, hope, sacrificial love",
-      "prompt_visual": "Cinematic close-up of Xihe, camera at eye level slowly pushing in. He wears a genuine, peaceful smile - the expression of someone who has found meaning in sacrifice. His left eye blazes with golden light, the tattoo patterns now fully illuminated, spreading across his temple. Tears form but don't fall, catching the golden light like liquid fire. His hands reach forward toward an unseen control surface. Behind him: massive holographic authorization seals materialize, ancient symbols mixed with advanced code. The moment before sacrifice. Lighting: golden radiance from below increasing, face becoming luminous. His flowing robe begins to dematerialize at edges, converting to data. Ultimate peace in the face of dissolution. 8K, extreme detail on facial expression.",
-      "prompt_motion": "Slow push in on Xihe's face over 4 seconds. His smile forms gradually - first corners of mouth, then full peaceful expression. Left eye tattoo illuminates progressively brighter. He extends hands forward deliberately. Golden light begins emanating from his entire body. Robe edges start pixelating into data streams. Tears glisten but hold. Authorization holograms rotate and lock into place behind him.",
-      "transition_out": "match_cut",
-      "transition_duration_s": 0.5,
-      "transition_note": "Match cut: 羲和的双手按向控制台 → 下一镜头控制台特写，手掌触碰的瞬间动作精确匹配。最后帧手掌即将接触控制台，第一帧手掌刚刚接触，保持相同构图位置和光照。",
-      "sfx_bgm": "Music swells to emotional crescendo, voice firm but warm, authorization chimes, building energy hum",
-      "notes": "本集最关键的情感时刻，羲和的牺牲决定。需要捕捉无畏中的温柔。"
+      "character_refs": [
+        "xihe"
+      ],
+      "prop_refs": [
+        "golden_data_stream"
+      ],
+      "camera": "中景，正面拍摄，柔焦渐虚",
+      "action": "羲和身体逐渐透明化，最后留下遗言，身影消散为光尘。",
+      "dialogue": [
+        {
+          "character": "羲和",
+          "text": "告诉下一个文明……要活得……有趣一点……",
+          "emotion": "释然、温柔、带着笑意的永别",
+          "speed": 0.8
+        }
+      ],
+      "emotion": "释然、温柔的悲伤",
+      "prompt_visual": "A translucent ghostly figure fading into golden light particles, gentle smile on the dissolving face, golden circuit eye pattern being the last thing visible, surrounded by floating data fragments like cherry blossoms, warm golden bokeh background, ethereal and dreamlike atmosphere, cinematic emotional close shot, bittersweet beauty",
+      "prompt_motion": "Character's body slowly becomes transparent from the edges inward, golden particles drifting upward like embers, lips moving with final words, a peaceful smile remaining as the figure dissolves completely into shimmering golden dust, the last visible element is the glowing left eye fading into darkness",
+      "transition_out": "fade",
+      "transition_duration_s": 1.5,
+      "transition_note": "渐黑过渡，金色光尘渐暗，沉寂片刻后转场到上古时代",
+      "sfx_bgm": "钢琴独奏悲伤旋律，回音渐远，风声，最终完全寂静",
+      "notes": "羲和的告别，前世记忆的终结，情感留白"
     },
     {
       "shot_id": "S07",
-      "scene": "1-1",
+      "scene": "1-2",
       "duration_s": 3,
-      "location": "lingzi_central_tower_top",
+      "location": "上古雷泽·沼泽地带",
+      "location_ref": "ancient_leize_swamp",
       "characters": [
-        "Xihe"
+        "少年伏羲",
+        "猎人甲",
+        "猎人乙"
       ],
-      "camera": "extreme close-up on hands, then pull back rapidly",
-      "action": "羲和将双手按在控制台，全身数据被抽取，身体开始透明化。",
-      "dialogue": "",
-      "emotion": "transcendence, pain, release",
-      "prompt_visual": "Cinematic extreme close-up of Xihe's hands pressing onto a crystalline control surface. The moment of contact: golden data streams violently erupt from his palms, spreading across the console like lightning. His hands begin to become translucent, skin revealing underlying data structure - not flesh and bone but pure information architecture. Veins become fiber optic channels, bones become code frameworks. The transformation spreads up his arms. Control surface: a mandala-like interface of concentric rings and sacred geometry, now blazing with activation. Golden light floods the frame. Pain and ecstasy merge in this moment of ultimate data transfer. Ultra-detailed macro photography aesthetic, 8K.",
-      "prompt_motion": "Hands press down at frame start. Immediate violent eruption of golden data from contact point. Rapid pull-back revealing arms, torso beginning transparency transformation. Data streams flow FROM Xihe INTO the console - visible extraction of his essence. His body flickers between solid and translucent. Trembling from the intensity but hands remain firmly planted. Light intensity increases exponentially.",
+      "character_refs": [
+        "young_fuxi",
+        "hunter_jia",
+        "hunter_yi"
+      ],
+      "prop_refs": [],
+      "camera": "大全景，低角度，雨中拍摄",
+      "action": "暴雨之夜，原始粗犷的沼泽景象。少年伏羲与三名猎人在雷泽中追踪雷兽足迹，脚踏泥泞。",
+      "dialogue": [],
+      "emotion": "原始、紧张、充满生命力",
+      "prompt_visual": "Primordial swampland at night during a torrential rainstorm, four figures trudging through knee-deep murky water, a 16-year-old boy leading three muscular tribal hunters, wearing primitive animal hide clothing, carrying bone spears, massive ancient trees with hanging moss, lightning illuminating the scene intermittently, raw untamed wilderness, dark greens and deep browns, cinematic wide shot, rain streaks visible, atmospheric fog, prehistoric earth aesthetic",
+      "prompt_motion": "Heavy rain falling in sheets, characters wading through swamp water with determined strides, lightning flashes intermittently illuminating the dark landscape, water splashing with each step, wind whipping tree branches and moss, fog rolling across the swamp surface",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到城市全景，展示火种协议的宏观效果。使用audio bridge：能量充能声音从特写延续到全景。",
-      "sfx_bgm": "Massive energy discharge sound, data extraction whoosh, Xihe's breath catching, building harmonic resonance",
-      "notes": "转化过程需要展示数据提取的痛苦与神圣感并存。"
+      "transition_note": "从黑暗的寂静切入暴雨闪电，形成强烈时空对比",
+      "sfx_bgm": "暴雨声，雷声滚滚，水中跋涉的声音，原始鼓点节奏",
+      "notes": "时空跳转，从未来文明到远古荒野的巨大反差"
     },
     {
       "shot_id": "S08",
-      "scene": "1-1",
-      "duration_s": 4,
-      "location": "lingzi_capital_skyline",
-      "characters": [],
-      "camera": "extreme wide shot, static then slow tilt up",
-      "action": "城市中心升起一道通天光柱，分裂为亿万光点洒向宇宙。",
-      "dialogue": "",
-      "emotion": "cosmic awe, hope amid destruction",
-      "prompt_visual": "Cinematic extreme wide shot of the dying city. From the central tower, a massive pillar of pure golden light erupts toward the heavens, piercing through clouds and atmosphere. The beam is not solid but composed of countless data particles - the essence of an entire civilization. As it reaches the upper atmosphere, it fractures into billions of light points, each carrying genetic and cultural code, scattering across the cosmos like divine seeds. The city below continues its destruction, buildings dissolving, but this moment transcends the apocalypse. The light pillar forms a tree-like structure - roots in the dying world, branches reaching to infinite futures. Cosmic scale, nebula colors in upper atmosphere, stars visible beyond. Sacred geometry patterns visible within the light structure. 8K, IMAX composition.",
-      "prompt_motion": "Light pillar erupts from city center at frame start. Camera holds static for 2 seconds capturing the vertical beam. Then slow tilt up following the light as it ascends. At second 3, the beam fragments into millions of separate light points, each taking different trajectories into space. Seeds of civilization dispersing across the universe. City destruction continues in lower frame but becomes secondary to the cosmic event above.",
-      "transition_out": "dissolve",
-      "transition_duration_s": 0.8,
-      "transition_note": "溶解转场到八卦图案光点特写，暗示时间流逝和聚焦重要元素。光柱粒子在最后帧保持发散状态，下一镜头的八卦光点从粒子背景中凝聚出来。音乐从宏大转为intimate。",
-      "sfx_bgm": "Massive cosmic whoosh, millions of light particles dispersing sound, orchestral swell reaching peak, choir-like harmonics",
-      "notes": "视觉高潮，需要展示文明种子播撒宇宙的壮丽感。"
+      "scene": "1-2",
+      "duration_s": 3,
+      "location": "上古雷泽·沼泽地带",
+      "location_ref": "ancient_leize_swamp",
+      "characters": [
+        "少年伏羲",
+        "猎人甲"
+      ],
+      "character_refs": [
+        "young_fuxi",
+        "hunter_jia"
+      ],
+      "prop_refs": [
+        "golden_data_stream"
+      ],
+      "camera": "中景到仰拍，快速甩镜到天空",
+      "action": "猎人甲大喊让伏羲看天上。镜头随伏羲目光快速甩向天空——天空撕裂，银蓝色几何光流倾泻而下。",
+      "dialogue": [
+        {
+          "character": "猎人甲",
+          "text": "伏羲！看天上！",
+          "emotion": "惊恐",
+          "speed": 1.2
+        }
+      ],
+      "emotion": "惊骇、神秘",
+      "prompt_visual": "Dramatic low angle looking up at a stormy night sky being torn apart by silver-blue geometric light streams pouring through the clouds, not natural lightning but structured data-like energy with hexagonal and crystalline patterns, a young tribal boy and hunter looking up in awe and terror, rain illuminated by the otherworldly light, contrast between primitive humans and cosmic technology, supernatural event in prehistoric setting",
+      "prompt_motion": "Camera whip-pans from character level up to the sky, clouds violently parting as silver-blue geometric light streams cascade downward like digital waterfalls, the light patterns have structured mathematical forms flowing through them, rain drops caught in the light appear to freeze momentarily, characters' hair and clothes blown by supernatural wind",
+      "transition_out": "cut",
+      "transition_duration_s": 0,
+      "transition_note": "硬切到伏羲面部反应",
+      "sfx_bgm": "突然的轰鸣声压过雨声，类似数据传输的高频电子音混合雷声",
+      "notes": "火种残迹降临，连接前世今生"
     },
     {
       "shot_id": "S09",
-      "scene": "1-1",
+      "scene": "1-2",
       "duration_s": 3,
-      "location": "space_void",
-      "characters": [],
-      "camera": "extreme close-up, slow drift",
-      "action": "一个光点中隐约可见八卦图案，这是承载伏羲灵魂的种子。",
-      "dialogue": "",
-      "emotion": "mystery, destiny, hope",
-      "prompt_visual": "Cinematic extreme close-up of a single light particle drifting through the cosmic void. Unlike the others, this seed pulses with unique rhythm. Within its translucent golden shell, an ancient pattern slowly rotates - the Bagua (八卦), eight trigrams arranged in perfect circle. The symbol is not imposed but seems organic, as if the data naturally formed this primordial pattern. The particle carries the essence of Xihe, chosen by fate or probability to find new life. Background: soft nebula colors, distant stars, other light seeds visible but out of focus. The Bagua glows with inner fire, ancient wisdom encoded in the most advanced technology. Macro cosmic photography, lens flare from the particle's inner light. Destiny made visible.",
-      "prompt_motion": "Single light particle drifts slowly across frame from left to right. Camera follows with gentle drift. The Bagua pattern inside rotates slowly, continuously. The particle pulses gently, as if breathing. Other seed particles pass in background, out of focus. Subtle lens flare as the inner light catches camera. A sense of vast journey beginning.",
-      "transition_out": "j_cut",
+      "location": "上古雷泽·沼泽地带",
+      "location_ref": "ancient_leize_swamp",
+      "characters": [
+        "少年伏羲"
+      ],
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [],
+      "camera": "特写，伏羲左眼，微距镜头",
+      "action": "伏羲左眼突然刺痛，手捂眼睛。光流坠入沼泽中央，溶解成发光漩涡。",
+      "dialogue": [
+        {
+          "character": "少年伏羲",
+          "text": "那是什么……",
+          "emotion": "痛苦、困惑",
+          "speed": 0.9
+        }
+      ],
+      "emotion": "痛苦、困惑、命运的触碰",
+      "prompt_visual": "Extreme close-up of a young boy's left eye in pain, pupil dilating, faint golden flicker appearing deep within the iris, rain drops on the skin, hand reaching up to cover the eye, dramatic side lighting from the silver-blue light above, raw emotional expression of sudden unexplained pain, cinematic macro shot, shallow depth of field, water droplets on eyelashes",
+      "prompt_motion": "Eye contracts in pain with pupil rapidly dilating, a brief golden flash sparks deep within the iris, the boy's hand rushes up to press against the eye, rain streaming down the face, subtle trembling of the features, background glow of the descending light stream reflected in the visible right eye",
+      "transition_out": "dissolve",
       "transition_duration_s": 0.5,
-      "transition_note": "J-cut: 下一镜头（羲和的声音）的对白音频提前0.5秒进入，画面仍停留在光点上，然后才切换到透明化的羲和。声音设计：羲和虚弱但温暖的声音在光点画面上开始，创造时空连接感。最后帧光点位于画面中心，内部八卦清晰可见。",
-      "sfx_bgm": "Soft cosmic ambience, single sustained note, heartbeat-like pulse from the particle",
-      "notes": "关键伏笔镜头，八卦图案预示伏羲的诞生。"
+      "transition_note": "溶解到漩涡场景",
+      "sfx_bgm": "尖锐的高频音效表示疼痛，水下般的沉闷声",
+      "notes": "伏羲与火种残迹的首次共鸣"
     },
     {
       "shot_id": "S10",
-      "scene": "1-1",
-      "duration_s": 4,
-      "location": "lingzi_central_tower_top",
+      "scene": "1-3",
+      "duration_s": 3,
+      "location": "漩涡边缘",
+      "location_ref": "vortex_edge",
       "characters": [
-        "Xihe"
+        "少年伏羲"
       ],
-      "camera": "medium shot, static, soft focus",
-      "action": "羲和身体已近乎透明，只剩轮廓由数据点构成。他说出最后的话。",
-      "dialogue": "羲和：告诉下一个文明......要活得......有趣一点......",
-      "emotion": "peaceful acceptance, gentle humor, farewell",
-      "prompt_visual": "Cinematic medium shot of Xihe in his final moments. His body has become almost completely transparent - only a ghostly outline remains, composed of floating data points and fading light streams. His face is still recognizable, wearing that peaceful smile, but features flicker in and out of existence. His left eye tattoo is the last solid element, still glowing gold. Through his translucent form, the chaotic city is visible. He speaks his final words with effort but genuine warmth - a last gift of wisdom wrapped in humor. Lighting: soft, ethereal, golden particles floating upward from his dissolving form. Background: city in flames, but out of focus, irrelevant to this intimate moment. The beauty of graceful dissolution.",
-      "prompt_motion": "Xihe's form continuously loses coherence - particles drift away like embers. He speaks slowly, each word costing energy. His smile remains even as features fade. Hand reaches out slightly, as if passing something invisible forward. Final word 'interesting' accompanied by a slight laugh that dissolves into light. The last solid element - his golden eye - finally releases into particles ascending toward camera.",
-      "transition_out": "fade_out",
-      "transition_duration_s": 1.5,
-      "transition_note": "淡出到黑场，作为第一幕（灵子文明）的结束。羲和完全消散后，画面缓慢淡入黑色。黑场持续0.5秒，让观众消化这个情感时刻。音乐淡出，只留风声过渡到下一场景。最后帧：只剩金色光点在黑暗中消散。",
-      "sfx_bgm": "Voice weak but warm, final particles ascending sound, music fades to silence, distant wind begins",
-      "notes": "羲和的最后台词需要传达牺牲中的希望和幽默感，这是他留给未来的精神遗产。"
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [
+        "semi_transparent_crystal"
+      ],
+      "camera": "中景，正面低角度，缓慢推进",
+      "action": "伏羲独自走近发光漩涡。漩涡中心浮着一块半透明晶体，散发出神秘的光芒。他伸手向晶体触去。",
+      "dialogue": [],
+      "emotion": "神秘、敬畏、命运的吸引",
+      "prompt_visual": "A teenage boy in primitive animal hide clothing cautiously approaching a swirling luminous vortex in the center of a dark swamp, a semi-transparent crystal hovering at the vortex center emitting pulsating golden and silver light, the vortex creating ripples of light on the water surface, boy reaching out one hand toward the crystal, mystical and sacred atmosphere, dramatic back-lighting from the vortex, rain still falling but seeming to slow near the vortex, cinematic composition with the boy small against the cosmic phenomenon",
+      "prompt_motion": "Boy slowly walks forward through shallow water toward the glowing vortex, each step creating ripples that interact with the vortex light patterns, crystal hovering and slowly rotating at the center, his hand extends trembling toward it, vortex light intensifying as he approaches, water around the vortex spiraling gently",
+      "transition_out": "cut",
+      "transition_duration_s": 0,
+      "transition_note": "手指触碰晶体瞬间硬切到特效",
+      "sfx_bgm": "低频嗡鸣渐强，心跳声加速，水流漩涡声，神秘的合成器音色",
+      "notes": "触碰命运的一刻，紧张感递增"
     },
     {
       "shot_id": "S11",
-      "scene": "1-2",
+      "scene": "1-3",
       "duration_s": 4,
-      "location": "swamp_leize_storm",
-      "characters": [],
-      "camera": "extreme wide shot, crane down through rain",
-      "action": "暴雨夜的上古雷泽，原始粗犷的沼泽地带。环境转变为远古蛮荒。",
-      "dialogue": "",
-      "emotion": "primal, dangerous, mysterious",
-      "prompt_visual": "Cinematic extreme wide shot of primordial swampland during a violent thunderstorm. Ancient China's mythical Leize (雷泽) - a vast wetland of dark waters, twisted trees, and mist-shrouded islands. Massive lightning bolts illuminate the prehistoric landscape, revealing silhouettes of strange creatures in the distance. Rain falls in sheets, creating a curtain of water. Gnarled trees with exposed roots rise from black water like skeletal hands. Bioluminescent plants provide eerie green-blue spots of light. No signs of advanced civilization - only raw, untamed nature at its most powerful. Color palette: deep blacks, electric blues from lightning, sickly greens from swamp vegetation. Atmosphere: danger, mystery, the birth-time of legends. Cinematic storm photography, 8K.",
-      "prompt_motion": "Camera cranes down through heavy rain, descending from stormy sky into the swamp. Lightning flashes every 1.5 seconds, each flash revealing more detail. Rain creates dynamic foreground movement. Mist swirls at water level. In the distance, something large moves through the water - perhaps the thunder beast being tracked. Trees sway violently in storm winds. Camera settles at eye level, rain continuing throughout.",
+      "location": "漩涡边缘",
+      "location_ref": "vortex_edge",
+      "characters": [
+        "少年伏羲"
+      ],
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [
+        "semi_transparent_crystal",
+        "golden_data_stream",
+        "bagua_eye_pattern"
+      ],
+      "camera": "特写到中景，快速拉远，震撼感镜头",
+      "action": "手指触碰晶体的瞬间！金色数据流顺手臂涌入！伏羲痛苦跪地，左眼爆发出强光。当他再次睁眼：左瞳孔变成暗金色，深处有微小的八卦图案旋转。",
+      "dialogue": [],
+      "emotion": "剧烈痛苦、觉醒、蜕变",
+      "prompt_visual": "A young boy kneeling in swamp water screaming in pain, golden data streams surging up his arm from a shattered crystal like electric circuits forming under his skin, his left eye erupting with intense golden light, veins of light visible across his body, water around him blown outward by the energy release, the moment of cosmic awakening, extreme dramatic lighting, golden energy explosion, cinematic VFX shot, then the left eye revealed in macro with dark gold iris containing a tiny spinning bagua trigram pattern",
+      "prompt_motion": "The instant of contact triggers an explosive surge of golden data streams racing up the arm like lightning, character collapses to knees with mouth open in silent scream, left eye blasts a beam of golden light upward, water explodes outward in a ring, energy ripples through his entire body, then a cut to extreme close-up of the left eye opening to reveal transformed dark gold pupil with rotating miniature bagua symbol deep within",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到猎人群像，建立人物存在。雷声作为audio bridge连接两个镜头。",
-      "sfx_bgm": "Massive thunder rolls, heavy rain, wind howling through dead trees, distant creature sounds, primal drums begin low",
-      "notes": "场景大转换，从未来科技到远古蛮荒。需要建立完全不同的视觉语言。"
+      "transition_note": "切到代码视觉POV",
+      "sfx_bgm": "爆炸性的冲击音效，电子嗡鸣达到顶峰，随后突然寂静，只剩心跳",
+      "notes": "伏羲觉醒的核心特效镜头"
     },
     {
       "shot_id": "S12",
-      "scene": "1-2",
-      "duration_s": 3,
-      "location": "swamp_leize_storm",
+      "scene": "1-3",
+      "duration_s": 4,
+      "location": "漩涡边缘",
+      "location_ref": "vortex_edge",
       "characters": [
-        "young_Fuxi",
-        "hunter_A",
-        "hunter_B",
-        "hunter_C"
+        "少年伏羲"
       ],
-      "camera": "medium wide shot, tracking",
-      "action": "伏羲与三名华胥氏族猎人在沼泽中追踪雷兽足迹。",
-      "dialogue": "",
-      "emotion": "tension, focus, primal hunt",
-      "prompt_visual": "Cinematic medium wide shot tracking a group of four figures moving through knee-deep swamp water. Young Fuxi (16 years old) leads - lean, alert, with wild dark hair plastered by rain, wearing rough animal hide clothing. His left eye is normal at this point. Three tribal hunters follow, carrying primitive bone spears and wearing ceremonial mud markings. They move with practiced silence despite the storm, eyes scanning for tracks. The Huaxu tribe hunters are weathered, scarred veterans of this dangerous land. Lighting: intermittent lightning creates dramatic chiaroscuro, faces lit in flashes then returning to shadow. Water splashes with each careful step. Primal humanity at its most capable. Documentary hunting sequence aesthetic meets cinematic drama.",
-      "prompt_motion": "Camera tracks alongside the group as they wade through swamp. Fuxi raises hand to signal stop, crouches to examine something in the water. Others freeze, spears ready. Lightning flash reveals massive three-toed footprint in the mud - the thunder beast's trail. Fuxi nods, points direction. Group continues forward. Rain streams down their faces, but focus remains unbroken.",
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [
+        "code_vision_overlay",
+        "bagua_eye_pattern"
+      ],
+      "camera": "POV主观镜头，快速扫视三个方向，最后看向自己的手",
+      "action": "代码视觉首次展现：看树木出现绿色生长代码串；看水面出现分子结构网格；看自己手出现皮肤下的生物电流蓝线。伏羲震惊低语。",
+      "dialogue": [
+        {
+          "character": "少年伏羲",
+          "text": "世界……是由字和画组成的？",
+          "emotion": "震惊、敬畏、困惑",
+          "speed": 0.85
+        }
+      ],
+      "emotion": "震惊、敬畏、世界观颠覆",
+      "prompt_visual": "First-person POV through code vision: looking at ancient trees overlaid with cascading green growth code strings like Matrix text but organic, then water surface showing molecular structure grid wireframes in blue, then looking down at own hands revealing bioluminescent blue circuit lines flowing beneath translucent skin, everything in the world revealed as underlying code and data, augmented reality aesthetic blended with primitive nature, HUD-like golden frame at edges, stunning visual metaphor of seeing reality's source code",
+      "prompt_motion": "POV camera quickly pans to trees where green code strings materialize and scroll upward along branches, then snaps to water surface where geometric molecular grids shimmer into view, then looks down at trembling hands where blue bio-electric lines pulse beneath the skin in rhythm with heartbeat, each view transition has a brief digital glitch effect, the code overlays flutter and stabilize",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到猎人甲的特写和他的警告台词，提高紧张感。",
-      "sfx_bgm": "Rain, thunder, water sloshing, heavy breathing, heartbeat undertone, tribal drums building",
-      "notes": "建立伏羲作为年轻但有领导力的猎人形象。"
+      "transition_note": "硬切到危机场景",
+      "sfx_bgm": "数字化处理后的环境音，每次视角切换有电子扫描声，低沉的震撼音效",
+      "notes": "代码视觉的视觉语言建立，本剧核心概念的首次呈现"
     },
     {
       "shot_id": "S13",
-      "scene": "1-2",
+      "scene": "1-4",
       "duration_s": 3,
-      "location": "swamp_leize_storm",
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
       "characters": [
-        "hunter_A"
+        "少年伏羲",
+        "猎人甲",
+        "猎人乙"
       ],
-      "camera": "close-up, low angle looking up",
-      "action": "猎人甲抬头看天，发现异常，大声警告。",
-      "dialogue": "猎人甲：伏羲!看天上!",
-      "emotion": "shock, fear, warning",
-      "prompt_visual": "Cinematic close-up of Hunter A from low angle, looking up at the sky. His face is weathered, mid-30s, tribal scars across cheeks, wild beard dripping with rain. Expression transforms from focus to shock as he sees something impossible above. His eyes widen, mouth opens in warning shout. Rain falls directly onto camera lens from his perspective looking up. Lightning illuminates his terrified features. Primitive bone ornaments in his hair rattle. Behind him: the stormy sky, but something unnatural begins to glow - not lightning, but geometric light. Dramatic low-angle emphasizes his vulnerability against cosmic forces. Primitive man confronting the incomprehensible.",
-      "prompt_motion": "Hunter A looks up at sky, expression changing from alert to terrified over 2 seconds. He shouts warning, arm raising to point upward. Rain streams down his face. A strange light from above begins to illuminate his features differently than lightning - silver-blue, geometric. His tribal instincts recognize this as something beyond natural. Body language shifts from hunter to frightened animal.",
-      "transition_out": "whip_pan",
-      "transition_duration_s": 0.3,
-      "transition_note": "快速甩镜向上转场，跟随猎人的视线方向。最后帧开始快速向上运动产生运动模糊，下一镜头从运动模糊中恢复，揭示天空异象。甩镜方向：垂直向上。音效：风声加速。",
-      "sfx_bgm": "Thunder, terrified shout echoing, wind whoosh for whip pan",
-      "notes": "转折时刻的反应镜头，需要原始人面对未知的真实恐惧。"
+      "character_refs": [
+        "young_fuxi",
+        "hunter_jia",
+        "hunter_yi"
+      ],
+      "prop_refs": [],
+      "camera": "大全景，仰拍，三个几何体从天而降",
+      "action": "三个苍白的正八面体几何体无声降下，悬浮在沼泽上方，散发冰冷的白光。",
+      "dialogue": [],
+      "emotion": "恐惧、威胁、不祥",
+      "prompt_visual": "Three pale white octahedral geometric entities descending silently from the dark stormy sky, hovering above a swamp, each about 2 meters in diameter, emitting cold clinical white light that contrasts with the warm organic environment, perfectly symmetrical alien geometry against chaotic natural landscape, tribal hunters looking up in terror, eerie otherworldly presence, horror sci-fi atmosphere, volumetric light beams from each entity scanning the ground below",
+      "prompt_motion": "Three octahedral shapes descend in perfect unison with no sound, rotating slowly on their axes, cold white light expanding beneath them, rain drops evaporating on contact with their energy fields, the organic swamp environment seeming to recoil from their presence, scanning beams sweep methodically across the terrain",
+      "transition_out": "cut",
+      "transition_duration_s": 0,
+      "transition_note": "切到熵单位对话",
+      "sfx_bgm": "突然寂静，所有自然音消失，只有低频压迫感的嗡鸣，机械化的嗡嗡声",
+      "notes": "反派登场，营造压倒性的威胁感"
     },
     {
       "shot_id": "S14",
-      "scene": "1-2",
-      "duration_s": 4,
-      "location": "swamp_leize_sky",
-      "characters": [],
-      "camera": "extreme wide shot, tilt down",
-      "action": "天空撕裂，银蓝色几何形状光流——火种残迹——划破夜空坠入沼泽。",
-      "dialogue": "",
-      "emotion": "cosmic awe, terror, destiny",
-      "prompt_visual": "Cinematic extreme wide shot of the stormy sky being torn apart. Not by lightning, but by something alien - streams of silver-blue light with visible geometric patterns, fractals and data structures within the glow. This is the remnant of the Fire Seed Protocol, arriving after eons of cosmic travel. The light tears through clouds like a wounded god falling to earth. Multiple streams converge, their geometric nature clearly unnatural against the organic chaos of the storm. Where they pass, rain freezes momentarily into crystalline patterns. The primitive swamp below seems impossibly small against this cosmic intrusion. Colors: electric silver-blue cutting through storm blacks and lightning whites. The collision of two ages - primordial earth and transcendent technology.",
-      "prompt_motion": "Camera positioned looking up at sky. The geometric light streams tear through clouds from multiple directions, converging. They move with purpose, not random like lightning. Camera slowly tilts down, following the lights' descent toward the swamp below. Where lights pass, visual distortion effects - reality bending slightly. The convergence point becomes brighter and brighter. Finally, they plunge into the swamp center with massive impact.",
-      "transition_out": "light_flash",
-      "transition_duration_s": 0.4,
-      "transition_note": "强光遮挡转场：光流坠入沼泽的冲击产生强烈闪光，画面被白光吞没，然后恢复到伏羲反应镜头。最后帧被光芒完全覆盖，下一镜头从光芒消退开始。",
-      "sfx_bgm": "Unearthly harmonic tones mixed with thunder, crystalline chiming, massive impact bass drop",
-      "notes": "火种到达地球的关键时刻，需要展示其超自然但有序的性质。"
+      "scene": "1-4",
+      "duration_s": 3,
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
+      "characters": [
+        "猎人乙"
+      ],
+      "character_refs": [
+        "hunter_yi"
+      ],
+      "prop_refs": [
+        "black_data_stream"
+      ],
+      "camera": "中景到特写，跟拍黑色数据流的攻击",
+      "action": "熵单位发出机械音宣布检测到异常。黑色数据流卷向猎人乙，猎人身体开始像素化分解。",
+      "dialogue": [
+        {
+          "character": "熵单位",
+          "text": "检测到异常代码残留。执行提取分析。",
+          "emotion": "冰冷机械",
+          "speed": 0.9
+        }
+      ],
+      "emotion": "恐怖、残酷",
+      "prompt_visual": "A terrified tribal hunter being engulfed by tendrils of black data streams emanating from a hovering octahedral entity, the hunter's body beginning to pixelate and decompose into digital fragments from the point of contact, his face frozen in a scream as parts of his body dissolve into black cubic particles, horrifying fusion of digital destruction and organic flesh, dark horror sci-fi aesthetic, dramatic low-key lighting, the black data streams having jagged sawtooth patterns visible in their structure",
+      "prompt_motion": "Black jagged data tendrils lash out from the octahedral entity and wrap around the hunter, upon contact his body begins to break apart into floating black pixels spreading outward from the touch points, his limbs fragmenting into digital cubes, face contorting in agony as the dissolution spreads, black data particles spiraling upward into the entity",
+      "transition_out": "cut",
+      "transition_duration_s": 0,
+      "transition_note": "切到伏羲反应",
+      "sfx_bgm": "恐怖的数字化撕裂声，猎人的惨叫被数字化处理逐渐失真",
+      "notes": "展示熵单位的可怕能力，制造紧迫危机"
     },
     {
       "shot_id": "S15",
-      "scene": "1-2",
-      "duration_s": 3,
-      "location": "swamp_leize_storm",
+      "scene": "1-4",
+      "duration_s": 4,
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
       "characters": [
-        "young_Fuxi"
+        "少年伏羲"
       ],
-      "camera": "close-up, slight dutch angle",
-      "action": "伏羲的左眼突然剧痛，他捂住眼睛，感受到某种连接。",
-      "dialogue": "伏羲：那是什么......",
-      "emotion": "pain, confusion, awakening connection",
-      "prompt_visual": "Cinematic close-up of young Fuxi's face with slight dutch angle suggesting disorientation. He's 16, features still forming between boy and man, wild hair slicked by rain. His left eye suddenly shows pain - he winces, hand rising involuntarily toward it. But there's also something else in his expression: recognition, as if something long dormant is stirring. Rain runs down his face like tears. The strange silver-blue light from the sky reflects in his normal eyes, but his left eye seems to catch it differently, almost absorbing it. A moment of connection across time and space - the seed recognizing its intended host. Dramatic rim lighting from the cosmic event, shadows deep on his confused face.",
-      "prompt_motion": "Fuxi's expression shifts rapidly: curiosity → sudden pain → confusion → strange recognition. His left hand moves to his left eye, pressing against the sudden pain. His right eye stays fixed on where the light fell. He speaks his question in a whisper, barely audible over storm. A subtle glow begins at his left eye, barely perceptible - the first hint of awakening. Body trembles slightly, not from cold.",
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [
+        "code_vision_overlay",
+        "black_data_stream",
+        "bagua_eye_pattern"
+      ],
+      "camera": "中景到特写，伏羲伸手的动作，切到代码视觉POV",
+      "action": "伏羲怒吼\"不！\"无意识伸手。在代码视觉中，他看到黑色数据流的锯齿状结构，本能地\"抓住\"并扯断了黑色数据流！",
+      "dialogue": [
+        {
+          "character": "少年伏羲",
+          "text": "不！",
+          "emotion": "愤怒、本能爆发",
+          "speed": 1.3
+        }
+      ],
+      "emotion": "愤怒、本能觉醒、力量爆发",
+      "prompt_visual": "A teenage boy with blazing dark-gold left eye screaming in rage, his outstretched hand surrounded by golden energy, POV code vision revealing the black data stream as a jagged sawtooth structure being physically grasped and torn apart by golden light from his hand, fragments of broken black code scattering, the visual intersection of code-sight and physical reality, dramatic action pose, golden energy contrasting with black data corruption, cinematic VFX hero moment",
+      "prompt_motion": "Boy lurches forward with arm outstretched, left eye flaring golden, camera switches to code-vision POV showing the black data tendril as a structured sawtooth code pattern, golden energy from his hand wraps around and violently tears the black code stream apart, fragments of black data explode outward, the severed tendril recoils back toward the octahedral entity, camera snaps back to normal view showing the physical result",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到沼泽中心的发光漩涡，展示光流坠落的结果。伏羲的困惑表情作为情感锚点。",
-      "sfx_bgm": "High-pitched resonance tone suggesting pain/connection, muffled thunder, rain, whispered question",
-      "notes": "伏羲首次感应到与火种的连接，需要暗示而非明示这种关联。"
+      "transition_note": "切到熵单位反应",
+      "sfx_bgm": "伏羲的怒吼带有能量回声，撕裂代码的电子碎裂声，冲击波音效",
+      "notes": "伏羲首次使用代码操控能力的战斗场面"
     },
     {
       "shot_id": "S16",
-      "scene": "1-2",
+      "scene": "1-4",
       "duration_s": 3,
-      "location": "swamp_leize_center",
-      "characters": [],
-      "camera": "wide shot, slow push in",
-      "action": "光流坠入沼泽中央，溶解成发光漩涡。",
-      "dialogue": "",
-      "emotion": "otherworldly, dangerous beauty, invitation",
-      "prompt_visual": "Cinematic wide shot of the swamp center where the cosmic light has fallen. A massive luminous vortex now spins in the black water, silver-blue light swirling in geometric patterns unlike any natural phenomenon. The vortex pulls water, debris, even light itself into its center. Mist rises where the energy contacts water, creating an ethereal glow. Dead trees at the edges lean toward it, as if drawn by gravitational anomaly. The vortex is beautiful and terrifying - a wound in reality where the ancient and the transcendent meet. Bioluminescent creatures flee from it, their trails visible in the water. At the center, something solid begins to form. Lovecraftian cosmic horror meets sacred geometry.",
-      "prompt_motion": "Camera slowly pushes in toward the vortex over 3 seconds. The spiral spins clockwise, patterns within patterns visible as camera approaches. Water flows into it continuously. Mist swirls upward. Lightning strikes nearby but the vortex absorbs the electricity, growing briefly brighter. At the center, a crystalline form begins coalescing - the seed solidifying. The invitation is clear: come closer.",
-      "transition_out": "dissolve",
-      "transition_duration_s": 0.8,
-      "transition_note": "溶解转场到场次1-3，表示时间短暂流逝，伏羲已经来到漩涡边缘。漩涡在最后帧保持旋转，下一镜头同样的漩涡但从不同角度，伏羲已在画面中。",
-      "sfx_bgm": "Swirling water, harmonic resonance from vortex, energy crackling, deep bass undertone",
-      "notes": "建立火种载体的神秘感和吸引力。"
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
+      "characters": [
+        "少年伏羲"
+      ],
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [
+        "code_vision_overlay",
+        "black_data_stream"
+      ],
+      "camera": "全景，俯拍，展示地面代码操控效果",
+      "action": "熵单位发出威胁等级提升警告。更多数据触手伸出。伏羲尝试操控地面代码，让泥土变成流沙，困住熵单位片刻。",
+      "dialogue": [
+        {
+          "character": "熵单位",
+          "text": "异常：原生代码操控能力。威胁等级提升。",
+          "emotion": "警觉机械",
+          "speed": 0.9
+        }
+      ],
+      "emotion": "紧张、反击、危机中的智慧",
+      "prompt_visual": "Overhead shot of a swamp battlefield, a young boy manipulating the ground code with both hands, the mud beneath the three octahedral entities transforming into quicksand with visible code-overlay showing terrain data being rewritten, golden code lines spreading from the boy's position through the ground, the geometric entities partially sinking into the altered terrain, black data tentacles reaching outward from the trapped entities, rain-soaked primordial landscape turned into a supernatural battleground",
+      "prompt_motion": "Boy slams hands toward the ground, golden code lines race outward from his position through the mud like cracks, wherever the golden lines touch, the solid ground transforms into swirling quicksand, the three octahedral entities begin to sink and tilt, their scanning beams flailing wildly, more black data tentacles shoot out desperately, the terrain visibly ripples and shifts like liquid",
+      "transition_out": "cut",
+      "transition_duration_s": 0,
+      "transition_note": "切到骨箭射来",
+      "sfx_bgm": "地面变形的沉重声效，数字化处理的泥浆声，熵单位的机械报警声",
+      "notes": "展示伏羲代码操控能力的创造性应用"
     },
     {
       "shot_id": "S17",
-      "scene": "1-3",
-      "duration_s": 4,
-      "location": "swamp_vortex_edge",
+      "scene": "1-4",
+      "duration_s": 3,
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
       "characters": [
-        "young_Fuxi"
+        "女娲"
       ],
-      "camera": "medium shot, low angle from water level",
-      "action": "伏羲独自走近漩涡，被其光芒吸引。漩涡中心浮着一块半透明晶体。",
-      "dialogue": "",
-      "emotion": "trance, destiny, dangerous fascination",
-      "prompt_visual": "Cinematic medium shot from water level, looking up at Fuxi as he wades toward the vortex. He moves as if in a trance, other hunters forgotten somewhere behind. The silver-blue light from the vortex illuminates him from below, casting upward shadows on his young face. His left eye reflects the light more intensely than his right. Water reaches his thighs, each step deliberate. In the background: the massive vortex, at its center a crystalline object floats - the solidified seed, roughly the size of a fist, faceted like a diamond but filled with swirling data patterns. Mist curls around Fuxi's body. He is moth to flame, destined vessel approaching the spark. Low angle emphasizes the momentous nature of this approach.",
-      "prompt_motion": "Fuxi moves forward slowly, hypnotically, each step creating ripples that merge with the vortex's pull. Camera tracks with him at water level. His breathing is visible in the cold mist. He doesn't blink, eyes fixed on the crystal at the center. Other sounds fade away - just the harmonic tone of the vortex and his heartbeat. He reaches the edge of the spiral current. His hand begins to extend toward the floating crystal.",
+      "character_refs": [
+        "nuwa"
+      ],
+      "prop_refs": [
+        "green_light_bone_arrow"
+      ],
+      "camera": "远景到中景，跟随骨箭飞行轨迹，然后切到女娲现身",
+      "action": "远处山崖上，一支缠绕绿光的骨箭射来！命中一个熵单位。女娲（17岁）现身高喊\"跑啊！\"",
+      "dialogue": [
+        {
+          "character": "女娲",
+          "text": "跑啊！",
+          "emotion": "急切、英勇",
+          "speed": 1.3
+        }
+      ],
+      "emotion": "惊喜、援助到来、紧迫",
+      "prompt_visual": "A bone arrow wrapped in spiraling green light energy streaking through the rain toward the octahedral entities, impact creating an explosion of green energy, on a distant cliff edge a 17-year-old girl with wild dark hair and primitive but distinctive clothing standing in a heroic archery pose, green energy aura around her, rain-soaked and fierce, her appearance striking against lightning-lit sky, first appearance of a key character, dramatic entrance composition",
+      "prompt_motion": "A glowing green-wrapped bone arrow flies through the frame in slow motion leaving a trail of emerald light, camera follows the arrow's trajectory until it impacts an octahedral entity with a burst of green energy, then camera whip-pans to a distant cliff where a young girl stands with bow drawn, she lowers the bow and shouts urgently, wind whipping her hair, lightning flashing behind her creating a heroic silhouette",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到手部特写，捕捉接触瞬间。保持连续动作的剪辑点。",
-      "sfx_bgm": "Heartbeat prominent, vortex harmonics, muffled storm sounds, breath sounds, building tension drone",
-      "notes": "命运时刻的准备阶段，需要营造宿命感和不可逆转的氛围。"
+      "transition_note": "切到伏羲逃离",
+      "sfx_bgm": "箭矢破空声，绿色能量冲击的清脆音效，女娲的喊声在雨中回荡",
+      "notes": "女娲首次登场，经典英雄救援时刻"
     },
     {
       "shot_id": "S18",
-      "scene": "1-3",
+      "scene": "1-4",
       "duration_s": 3,
-      "location": "swamp_vortex_edge",
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
       "characters": [
-        "young_Fuxi"
+        "少年伏羲"
       ],
-      "camera": "extreme close-up on hand and crystal",
-      "action": "伏羲伸手触碰晶体，金色数据流顺手臂涌入！",
-      "dialogue": "",
-      "emotion": "contact, transformation begins, overwhelming",
-      "prompt_visual": "Cinematic extreme close-up of Fuxi's rough, young hand reaching toward the floating crystal. His fingers are calloused from hunting, nails dirty - primitive humanity. The crystal hovers, facets catching light, ancient data patterns swirling within like trapped galaxies. The moment of contact: fingertip touches surface. EXPLOSION of golden light. Data streams - not silver-blue now but GOLD, the color of Xihe's sacrifice - erupt from the crystal and flow into Fuxi's hand. The streams are visible as cascading symbols, code, the compressed knowledge of a civilization. They race up his arm like burning veins, his skin becoming translucent where they pass. The most important touch in human history. Macro photography detail, 8K, every droplet of water suspended in the golden light.",
-      "prompt_motion": "Hand approaches crystal in slow motion for first second. Contact at second 1. Immediate violent eruption of golden data streams. They wrap around fingers, spiral up wrist, race toward elbow. Fuxi's hand spasms but cannot release the crystal - locked in place. Skin becomes momentarily translucent showing golden light within. Crystal begins to dissolve, transferring its contents. Water droplets freeze mid-air in the energy field.",
+      "character_refs": [
+        "young_fuxi"
+      ],
+      "prop_refs": [],
+      "camera": "跟拍，手持摇晃风格，追随伏羲奔跑",
+      "action": "伏羲踉跄逃离沼泽，回头望了一眼漩涡中汇合的几何体，然后继续奔跑。",
+      "dialogue": [],
+      "emotion": "紧张、逃离、心有不甘",
+      "prompt_visual": "A teenage boy running desperately through a dark rainy swamp, splashing through shallow water, looking back over his shoulder with his left eye glowing faint gold, three octahedral entities regrouping in the distance behind him with cold white light, the chaos of rain and darkness and pursuit, handheld camera feel creating urgency, motion blur on the edges, primal survival instinct captured in the running figure",
+      "prompt_motion": "Boy runs frantically through the swamp, feet splashing in water, stumbling but regaining balance, camera shakes and follows in pursuit style, he glances back revealing his glowing left eye, the octahedral entities visible in the background rising from the quicksand trap and converging, rain pelting down intensely, branches whipping past the camera",
       "transition_out": "cut",
       "transition_duration_s": 0,
-      "transition_note": "硬切到伏羲全身镜头，展示转化的全面影响。能量流动的音效作为连续性。",
-      "sfx_bgm": "Massive energy surge sound, crystalline shattering, data stream whoosh, Fuxi's gasp of shock",
-      "notes": "核心转化时刻，需要展示数据进入的视觉冲击力。"
+      "transition_note": "切到熵单位最终镜头",
+      "sfx_bgm": "急促的心跳声，奔跑溅水声，喘息声，紧张的打击乐",
+      "notes": "逃离场景，保持紧张节奏"
     },
     {
       "shot_id": "S19",
-      "scene": "1-3",
+      "scene": "1-4",
       "duration_s": 4,
-      "location": "swamp_vortex_edge",
-      "characters": [
-        "young_Fuxi"
+      "location": "熵单位降临地点",
+      "location_ref": "entropy_descent_site",
+      "characters": [],
+      "character_refs": [
+        "entropy_unit"
       ],
-      "camera": "wide shot, camera orbits",
-      "action": "伏羲痛苦跪倒在水中，左眼爆发出强光。金色数据流完全涌入他体内。",
-      "dialogue": "",
-      "emotion": "agony, transformation, rebirth",
-      "prompt_visual": "Cinematic wide shot with camera slowly orbiting around Fuxi. He has collapsed to his knees in the shallow water, head thrown back in silent scream. Golden data streams pour into him from all directions now - the entire vortex feeding into his body. His left eye is the epicenter, blazing with golden light so intense it casts sharp shadows. His body convulses, primitive clothing steaming where energy passes. The crystal has completely dissolved. Water around him has begun to levitate in small droplets, suspended in the energy field. This is death and rebirth, the end of a simple hunter and the birth of something new. His silhouette against the dying vortex - a human form becoming a vessel for a civilization's legacy. Dramatic chiaroscuro, golden rim lighting, 360-degree visual interest.",
-      "prompt_motion": "Camera orbits 90 degrees around Fuxi during the shot. He remains on knees, body rigid with transformation. Golden light pulses in waves through his skin, brightest at heart and left eye. Arms spread involuntarily, fingers splayed. Water droplets hover around him. The vortex behind him diminishes as its energy transfers into him. Silent scream - mouth open, cords in neck visible. At shot's end, the transfer completes - a final pulse of light, then his body goes limp.",
-      "transition_out": "fade_out",
-      "transition_duration_s": 0.5,
-      "transition_note": "短暂淡出到黑场，标志转化完成和意识短暂中断。黑场仅0.5秒，然后淡入新视觉。这个黑场代表伏羲原有意识的重启。",
-      "sfx_bgm": "Energy transfer crescendo reaching peak, then sudden silence, heartbeat stops then restarts with new rhythm",
-      "notes": "转化高潮，需要展示痛苦中的神圣感。"
+      "prop_refs": [
+        "black_data_stream"
+      ],
+      "camera": "中景，三个几何体汇合，缓慢推近到其中一个的表面",
+      "action": "三个熵单位汇合，发出最终报告。机械音声明目标丢失，标记星球存在原生代码操控者，向中央仲裁者发送报告。",
+      "dialogue": [
+        {
+          "character": "熵单位",
+          "text": "目标丢失。标记该星球存在原生代码操控者。向中央仲裁者发送报告……",
+          "emotion": "冰冷机械、不祥的预告",
+          "speed": 0.85
+        }
+      ],
+      "emotion": "不祥、威胁未消、悬念",
+      "prompt_visual": "Three pale octahedral entities hovering together in formation above the dark swamp, their surfaces covered in crawling black data patterns, a beam of coded light shooting upward from their convergence point into the stormy sky toward unseen recipients, cold clinical white light contrasting with the dark organic environment, ominous and foreboding atmosphere, the geometry perfect and alien against nature's chaos, rain still falling but seeming irrelevant to these cosmic entities",
+      "prompt_motion": "Three octahedral entities slowly rotate and converge into a triangular formation, their surfaces pulsing with synchronized black data patterns, a thin beam of encoded light shoots upward from their center point into the clouds, the beam contains visible data packets traveling upward, camera slowly pushes toward the nearest entity's surface revealing intricate alien code scrolling across its face, then slowly pulling back as the entities begin to ascend",
+      "transition_out": "fade",
+      "transition_duration_s": 1.0,
+      "transition_note": "缓慢渐黑，留下不安的余韵",
+      "sfx_bgm": "低沉不祥的机械嗡鸣，数据传输的电子声，渐弱但留有回音",
+      "notes": "留下悬念，暗示更大的威胁即将到来"
     },
     {
       "shot_id": "S20",
-      "scene": "1-3",
-      "duration_s": 3,
-      "location": "swamp_vortex_edge",
-      "characters": [
-        "young_Fuxi"
-      ],
-      "camera": "extreme close-up on eyes, shallow depth of field",
-      "action": "伏羲再次睁眼——左瞳孔变成暗金色，深处有微小八卦图案旋转。右眼正常。",
-      "dialogue": "",
-      "emotion": "awakening, new perception, duality",
-      "prompt_visual": "Cinematic extreme close-up of Fuxi's eyes opening. The reveal: his right eye is unchanged, normal dark brown, human. But his left eye has transformed completely. The iris is now dark gold, metallic, with subtle circuit-like patterns barely visible at the edges. Deep within the pupil, impossibly small but unmistakable, the Bagua (八卦) symbol slowly rotates - the same pattern seen in the seed that traveled across space and time. This eye is no longer simply human; it is an interface between organic and digital, primitive and transcendent. Water droplets cling to his lashes. His expression: confusion, wonder, and the first hints of understanding. The duality of his existence now made visible. Macro photography, 8K detail, shallow depth of field with right eye slightly soft, left eye razor sharp.",
-      "prompt_motion": "Eyes open slowly over 1.5 seconds - first right eye (normal), then left (transformed). The Bagua symbol in the left pupil rotates continuously, slowly. The golden iris catches light, appearing to glow faintly from within. He blinks once, both eyes, confirming reality. A single tear falls from his left eye - but it glows golden before becoming normal water. His gaze shifts, beginning to see the world differently.",
-      "transition_out": "match_cut",
-      "transition_duration_s": 0.3,
-      "transition_note": "Match cut: 伏羲的左眼特写 → POV镜头，他透过新眼睛看到的世界。眼睛的圆形形态与新视觉中的代码圆形图案匹配。最后帧聚焦在发光的左眼瞳孔，第一帧是从该眼睛看出去的视角，保持相同的圆形构图中心。",
-      "sfx_bgm": "New heartbeat rhythm - slightly digital, eye opening sound, subtle harmonic hum from left eye, breath of awakening",
-      "notes": "关键的视觉揭示，需要精确展示眼睛变化的细节。"
-    },
-    {
-      "shot_id": "S21",
-      "scene": "1-3",
-      "duration_s": 5,
-      "location": "swamp_code_vision",
-      "characters": [
-        "young_Fuxi"
-      ],
-      "camera": "POV shot, slow pan",
-      "action": "代码视觉首次展现：树木显示生长代码，水面展示分子结构，自己的手显示生物电流。",
-      "dialogue": "",
-      "emotion": "wonder, overwhelming revelation, new understanding",
-      "prompt_visual": "Cinematic POV shot from Fuxi's left eye perspective - the Code Vision. The swamp is transformed. Trees are no longer just trees: green luminous code streams flow through their trunks like blood, branching algorithms visible in their limbs, growth functions calculating in real-time above their canopy. The water surface has become a molecular grid - H2O structures interconnected, hydrogen bonds visualized as glowing blue lines, current patterns shown as data flows. A hand enters frame - Fuxi's own - and beneath the skin, a network of blue-white bio-electric currents pulses with his heartbeat, nerve signals visible as traveling sparks, the code of life itself laid bare. Reality has become readable. The visual style: holographic HUD overlay on organic nature, cyan and green data on dark organic backgrounds, The Matrix meets Avatar's bio-luminescence.",
-      "prompt_motion": "POV camera slowly pans across the transformed landscape. First: trees with visible code (2 seconds). Pan right to: water surface with molecular grid (1.5 seconds). Finally: Fuxi raises his own hand into view, seeing the bio-electric network within (1.5 seconds). Each element has constant subtle animation - code scrolling, molecules vibrating, nerves firing. The wonder of new sight. Occasional glitches suggest the new ability is unstable.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切回伏羲的外部反应镜头，对比主观视觉和客观现实。代码视觉的HUD音效淡出。",
-      "sfx_bgm": "Digital processing sounds, nature sounds with data overlay, soft wonder music, heartbeat synced with bio-electric pulses",
-      "notes": "首次完整展示代码视觉能力，需要建立其独特的视觉语言。"
-    },
-    {
-      "shot_id": "S22",
-      "scene": "1-3",
-      "duration_s": 3,
-      "location": "swamp_vortex_edge",
-      "characters": [
-        "young_Fuxi"
-      ],
-      "camera": "medium close-up, slight low angle",
-      "action": "伏羲震惊地低语，试图理解他所看到的一切。",
-      "dialogue": "伏羲：世界......是由字和画组成的?",
-      "emotion": "awe, confusion, paradigm shift",
-      "prompt_visual": "Cinematic medium close-up of Fuxi from slight low angle, emphasizing his transformed state. He kneels in the now-calm water, the vortex completely gone. His expression is one of profound shock and wonder - a primitive man suddenly seeing the fundamental code of reality. His left eye glows faintly gold, the Bagua still visible deep within. Water drips from his hair and face. His primitive clothing is torn and steaming from the transformation. Behind him, the storm has begun to clear - first stars visible. His lips move, forming the question that will define his existence. He is the same person but utterly changed - the first human to see beyond the surface of things. Lighting: soft blue from clearing sky, faint gold from his left eye, silver from emerging stars.",
-      "prompt_motion": "Fuxi remains relatively still, processing. His lips move slowly, forming the question. His left eye occasionally flickers with golden light. He looks at his hands, then at the world around him, then back at hands. The Code Vision flickers ON and OFF as he learns to control it - reality shifting between normal and revealed. His expression cycles through confusion, fear, wonder, acceptance. He is beginning a journey of understanding.",
-      "transition_out": "dissolve",
-      "transition_duration_s": 1,
-      "transition_note": "溶解转场到场次1-4，表示时间流逝。伏羲仍在同一位置但天空已变化，暗示过了一段时间。溶解中保持伏羲的位置不变，背景天空从暴风雨后变为更加平静但仍是夜晚。",
-      "sfx_bgm": "Soft wonder music, whispered question echoing, distant thunder fading, new harmonic undertone suggesting awakened power",
-      "notes": "伏羲面对新现实的关键台词，需要传达认知革命的震撼。"
-    },
-    {
-      "shot_id": "S23",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_leize_clearing",
-      "characters": [],
-      "camera": "wide shot, tilt down from sky",
-      "action": "三个苍白几何体（正八面体）无声降下，熵单位到达。",
-      "dialogue": "",
-      "emotion": "dread, alien threat, clinical menace",
-      "prompt_visual": "Cinematic wide shot tilting down from the night sky. Three perfect geometric shapes descend through the air with impossible silence and precision. They are octahedrons - eight-faced polyhedra, each about two meters tall, composed of pale, almost white material that seems to absorb light rather than reflect it. No visible propulsion, no sound, no natural explanation. Their surfaces are perfectly smooth yet somehow wrong, as if they exist slightly out of phase with reality. Faint geometric patterns pulse within their structure - processing, analyzing. These are the Entropy Formatting Units, the clean-up crew of cosmic order, arrived to investigate the anomaly. The swamp seems to recoil from them - water pulling away, plants wilting. They represent absolute order against the chaos of organic life. Clinical horror aesthetics, 2001: A Space Odyssey meets cosmic horror.",
-      "prompt_motion": "Camera tilts down from starry sky, revealing the three octahedrons descending in perfect triangular formation. They move with unnatural smoothness - no acceleration, no deceleration, just constant motion. As they approach ground level, the water beneath them begins to ripple away. They stop precisely one meter above the water surface, hovering in formation. Internal patterns pulse once, twice - scanning. Absolute silence except for a barely audible harmonic hum at the edge of hearing.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到熵单位特写，展示其冷酷的机械性。保持其威胁氛围。",
-      "sfx_bgm": "Near-silence, barely audible harmonic hum, water retreating sound, tension drone at infrasound levels",
-      "notes": "熵单位登场，需要建立其作为宇宙级威胁的非人性。"
-    },
-    {
-      "shot_id": "S24",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "Entropy_Units"
-      ],
-      "camera": "medium shot, static",
-      "action": "熵单位发出机械音，宣布检测到异常代码。",
-      "dialogue": "熵单位：检测到异常代码残留。执行提取分析。",
-      "emotion": "cold menace, clinical threat",
-      "prompt_visual": "Cinematic medium shot of the three Entropy Units hovering in formation. Their pale octahedral forms dominate the frame, geometric perfection against the organic chaos of the swamp. As they speak, no mouths open - the sound emanates from their entire structure, a mechanical voice that seems to come from everywhere and nowhere. Internal patterns pulse in sync with the words - communication as mathematical function. Surface details now visible: microscopic geometric patterns covering every face, constantly shifting, calculating. They show no emotion because they have none - pure function, cosmic janitors eliminating anomalies. The water beneath them is perfectly still despite wind - their influence zone. Color palette: pale white geometry against dark organic greens and blacks.",
-      "prompt_motion": "Static camera. The Units hover motionless except for internal pattern pulses synced to speech. As they declare their purpose, one unit rotates slightly to face a different direction - scanning. After the declaration, dark tendrils of data begin to emerge from their lower vertices, reaching toward the hunters in the distance. The patterns within pulse faster - transitioning from observation to action mode.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到猎人乙被攻击的画面，展示威胁的即时性。",
-      "sfx_bgm": "Mechanical voice: cold, synthesized, no emotion. Background: processing sounds, data analysis tones, building threat undertone",
-      "notes": "熵单位的声音需要完全非人化，数学化的语言模式。"
-    },
-    {
-      "shot_id": "S25",
       "scene": "1-4",
       "duration_s": 4,
-      "location": "swamp_leize_clearing",
+      "location": "上古雷泽·沼泽地带",
+      "location_ref": "ancient_leize_swamp",
       "characters": [
-        "hunter_B",
-        "Entropy_Units"
+        "少年伏羲"
       ],
-      "camera": "medium shot, handheld",
-      "action": "黑色数据流卷向猎人乙，猎人身体开始像素化分解。",
-      "dialogue": "",
-      "emotion": "horror, helplessness, death",
-      "prompt_visual": "Cinematic medium shot with slight handheld movement conveying chaos. Hunter B stands frozen in terror as black data tendrils - anti-life algorithms - wrap around his body. Unlike the golden streams of the Fire Seed, these are dark, void-like, hungry. Where they touch, his flesh begins to pixelate and dissolve - not into blood but into raw data being extracted and analyzed. His face shows pure animal terror as pieces of himself float away as geometric fragments. His scream is silent - vocal cords already converted to data. The other hunters watch in paralyzed horror. This is what the Entropy Units do - reduce complexity to analyzable components. The deconstruction is clinical, precise, horrifying. Body horror meets digital dissolution. The primitive human becoming literally nothing.",
-      "prompt_motion": "Black tendrils wrap around Hunter B rapidly. His body begins dissolution from extremities inward - fingers first becoming pixel clusters that float toward the Units, then hands, arms. He reaches toward camera in silent plea. His face holds longest, expression of terror the last human element before it too fragments. The dissolution is systematic, thorough. Other hunters stumble backward. In 4 seconds, a living man becomes a cloud of data being absorbed by the octahedrons. They glow slightly brighter, processing him.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到伏羲的反应，捕捉他愤怒觉醒的瞬间。",
-      "sfx_bgm": "Data extraction sounds, pixel dissolution, silent scream effect, horror music sting, other hunters' gasps",
-      "notes": "死亡场景需要展示熵单位的可怕能力而不过度gore。"
-    },
-    {
-      "shot_id": "S26",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "young_Fuxi"
+      "character_refs": [
+        "young_fuxi"
       ],
-      "camera": "close-up, push in rapidly",
-      "action": "伏羲怒吼，无意识伸手，首次主动使用代码操控能力。",
-      "dialogue": "伏羲：不!",
-      "emotion": "rage, protective instinct, power awakening",
-      "prompt_visual": "Cinematic close-up of Fuxi's face with rapid push-in. His expression transforms from shock to pure rage - a primal protective fury that triggers his new abilities. His left eye BLAZES with golden light, the Bagua symbol spinning rapidly within the pupil. Golden circuit-patterns begin spreading from his eye across his temple, down his cheek - his power manifesting visibly for the first time. His mouth opens in a scream of denial. His right hand reaches forward instinctively. The Code Vision activates fully - in his perception, he can SEE the black data streams, their structure, their weakness. Tears of golden light stream from his left eye. This is the moment a boy becomes something more. Dramatic lighting: gold from left side (his power), pale white from right (Entropy threat).",
-      "prompt_motion": "Rapid push-in from medium close to extreme close-up over 3 seconds. Fuxi's face contorts with rage. Left eye ignites - light erupts, patterns spread across skin in real-time. He screams 'NO!' with full force. Hand enters frame reaching toward the threat. Golden energy begins forming around his fingers. The camera shake increases with his emotional intensity. His awakening power is raw, uncontrolled, driven purely by protective instinct.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到代码视觉POV，展示伏羲如何\"看到\"并干预黑色数据流。",
-      "sfx_bgm": "Primal scream with digital harmonics, power surge sound, rage music sting, energy building",
-      "notes": "伏羲力量觉醒的关键时刻，需要爆发性的情感和视觉能量。"
-    },
-    {
-      "shot_id": "S27",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_code_vision_combat",
-      "characters": [
-        "young_Fuxi"
+      "prop_refs": [
+        "bagua_eye_pattern"
       ],
-      "camera": "POV shot, dynamic",
-      "action": "代码视觉中，伏羲\"看到\"黑色数据流的锯齿结构，本能地\"抓住\"并扯断！",
-      "dialogue": "",
-      "emotion": "combat instinct, first victory, raw power",
-      "prompt_visual": "Cinematic POV shot from Fuxi's Code Vision perspective. The world is now a data landscape. The black tendrils of the Entropy Units are visible as jagged, serrated code structures - saw-toothed algorithms designed to cut and extract. But Fuxi can SEE them now, and therefore can TOUCH them. His hand enters frame, wreathed in golden data patterns. He reaches into the black stream and GRABS - his fingers finding purchase on the code structure itself. With a pulling motion, he TEARS the data stream apart. The broken code fragments scatter like shattered glass, dissolving into harmless particles. The connection to the remaining hunter is severed. This is the impossible: a primitive human manipulating the fabric of advanced technology through pure instinct. The visuals: golden light tearing through black code, data fragments exploding, reality bending.",
-      "prompt_motion": "POV shot, dynamic camera movement following Fuxi's aggressive action. His gold-wreathed hand reaches into frame, grabs the visible code structure of the black tendril. Pulling motion - the code TEARS, serrated edges shattering. Explosion of data fragments. The severed tendril recoils toward its source. Other black tendrils hesitate, recalculating. First blood in a cosmic war, drawn by a boy who doesn't understand what he's doing.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切回客观视角，展示这一行为的外部效果和熵单位的反应。",
-      "sfx_bgm": "Code tearing sound, shattering data, power surge, momentary silence of shock",
-      "notes": "首次代码战斗，需要建立伏羲能力的独特战斗方式。"
-    },
-    {
-      "shot_id": "S28",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "young_Fuxi",
-        "Entropy_Units"
-      ],
-      "camera": "wide shot, low angle",
-      "action": "熵单位重新评估威胁，更多数据触手伸出。伏羲尝试操控地面代码。",
-      "dialogue": "熵单位：异常:原生代码操控能力。威胁等级提升。",
-      "emotion": "escalation, desperate battle, survival",
-      "prompt_visual": "Cinematic wide shot from low angle, emphasizing the scale of confrontation. Fuxi stands in the swamp, small against the three hovering Entropy Units, but now glowing with golden light - a beacon in the darkness. The Units have reconfigured: more black tendrils emerge from their forms, far more than before, reaching toward him like a hungry void. Fuxi's hands are pressed to the water's surface, and where he touches, the swamp itself is transforming - mud becoming fluid data, responding to his desperate commands. The ground beneath the Units is destabilizing, turning to quicksand as Fuxi rewrites its code. A standoff between cosmic order and human chaos, between extinction protocols and survival instinct. Lighting: golden light vs pale white, organic swamp vs geometric threat.",
-      "prompt_motion": "Units speak their threat assessment, internal patterns pulsing red now. Multiple black tendrils extend toward Fuxi simultaneously. He drops to ground, hands in water, golden light flowing into the swamp. The mud beneath the Units begins to liquify, pulling them slightly downward. They struggle briefly, recalculating. The tendrils pause, redirecting to this new threat. Fuxi strains visibly - this is exhausting him, sweat and golden tears streaming. A desperate delaying action.",
-      "transition_out": "whip_pan",
-      "transition_duration_s": 0.3,
-      "transition_note": "快速甩镜转场向远处山崖方向，跟随骨箭的来源。伏羲的战斗作为转场起点，箭射来的方向作为终点。甩镜方向：向画面右侧/远方。音效：箭射击声提前进入。",
-      "sfx_bgm": "Threat assessment voice, quicksand sounds, energy strain, multiple tendrils extending, building tension",
-      "notes": "展示伏羲能力的局限性 - 他正在学习但力量不足以独自对抗。"
-    },
-    {
-      "shot_id": "S29",
-      "scene": "1-4",
-      "duration_s": 2,
-      "location": "swamp_distant_cliff",
-      "characters": [
-        "Nvwa"
-      ],
-      "camera": "medium shot, telephoto compression",
-      "action": "远处山崖，一支缠绕绿光的骨箭射来！女娲首次登场。",
-      "dialogue": "",
-      "emotion": "rescue, mysterious arrival, power",
-      "prompt_visual": "Cinematic medium shot with telephoto lens compression, isolating a figure on a distant cliff against the stormy sky. Nvwa (女娲), 17 years old, stands in archer's stance - bow drawn, arrow nocked. She is wild and powerful: long dark hair whipping in wind, wearing clothing made of woven plants and animal hide, adorned with bone ornaments and what appear to be living vines. Her eyes glow with faint green light - she too has abilities beyond normal humanity. The arrow she's releasing is extraordinary: a bone shaft wrapped in spiraling green bioluminescent energy, nature's code made weapon. Her expression is fierce, protective, commanding. Lightning silhouettes her in the moment of release. The Green Witch meets the Code Master. A rescue and a meeting of destined souls.",
-      "prompt_motion": "Nvwa releases the arrow at frame start. The bowstring snaps forward. The green-wrapped bone arrow flies toward camera, trailing bioluminescent energy like a comet. Camera follows the arrow's trajectory briefly. Nvwa immediately reaches for another arrow, ready for continued battle. Wind whips her hair dramatically. Her stance is professional, practiced - she's done this before.",
-      "transition_out": "motion_match",
-      "transition_duration_s": 0.2,
-      "transition_note": "运动匹配转场：箭的飞行轨迹在两个镜头间保持连续。最后帧箭飞向画面右侧，下一镜头从画面左侧继续相同运动轨迹。速度和方向精确匹配。",
-      "sfx_bgm": "Bow release twang, arrow whistle, green energy trail sound, dramatic music accent",
-      "notes": "女娲首次登场需要建立她作为强大盟友的印象。"
-    },
-    {
-      "shot_id": "S30",
-      "scene": "1-4",
-      "duration_s": 2,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "Nvwa",
-        "Entropy_Units"
-      ],
-      "camera": "tracking shot following arrow, then impact",
-      "action": "骨箭命中熵单位，绿光能量爆发干扰其系统。",
-      "dialogue": "",
-      "emotion": "impact, interference, hope",
-      "prompt_visual": "Cinematic tracking shot following the green-glowing bone arrow in flight, then capturing its impact. The arrow streaks across the swamp, leaving a trail of green bioluminescent particles. It strikes the nearest Entropy Unit directly on one face. On impact: explosion of green nature-code energy. The Unit's pale geometric form is disrupted - surface patterns scrambling, structure flickering. The green energy spreads across its surface like vines growing at impossible speed, nature's chaos attacking mathematical order. The other Units turn toward this new threat, their black tendrils momentarily forgotten. The organic weapon has found purchase against the cosmic machine. Green light vs white geometry, life vs entropy.",
-      "prompt_motion": "Arrow travels across frame in first second, trailing green light. Impact at second 1: explosion of green energy on Unit's surface. The struck Unit spins slightly, destabilized. Its patterns scramble visibly. Other Units rotate toward the source of attack. Black tendrils retract slightly, threat priority recalculating. Green energy continues spreading on damaged Unit like aggressive plant growth.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到女娲的特写和她的警告台词，建立角色。",
-      "sfx_bgm": "Arrow impact, energy explosion, system disruption sounds, Unit alarm tones",
-      "notes": "展示女娲能力的独特性 - 自然代码vs灵子代码。"
-    },
-    {
-      "shot_id": "S31",
-      "scene": "1-4",
-      "duration_s": 2,
-      "location": "swamp_distant_cliff",
-      "characters": [
-        "Nvwa"
-      ],
-      "camera": "close-up, slight low angle",
-      "action": "女娲高喊警告，命令伏羲逃跑。",
-      "dialogue": "女娲：跑啊!",
-      "emotion": "urgency, command, protective",
-      "prompt_visual": "Cinematic close-up of Nvwa from slight low angle, emphasizing her commanding presence. Her face is fierce and beautiful: sharp features, tribal markings in green pigment on cheeks and forehead, wild dark hair with small braids containing bones and seeds. Her eyes glow with faint green bio-luminescence - nature's chosen. She screams her command with full force, mouth wide, cords in neck visible. Behind her: stormy sky clearing, stars emerging. Her expression combines urgency with something else - recognition, as if she knows who Fuxi is or what he represents. She's already nocking another arrow as she shouts, buying time. The Green Witch commanding the battlefield. 8K detail, dramatic wind effects, lighting from below (swamp) and above (sky).",
-      "prompt_motion": "Nvwa shouts her command, body leaning forward with intensity. Wind blows her hair dramatically. Her glowing eyes flare brighter with the emotion. She's already preparing next arrow, hands moving with practiced speed. Her gaze shifts from Fuxi's position to the Units and back, calculating the tactical situation. She is buying time for a strategic retreat.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切到伏羲响应逃跑的动作，保持紧张节奏。",
-      "sfx_bgm": "Shouted command echoing across swamp, wind, another arrow being drawn, urgent music",
-      "notes": "女娲的第一句台词需要传达领导力和紧迫感。"
-    },
-    {
-      "shot_id": "S32",
-      "scene": "1-4",
-      "duration_s": 3,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "young_Fuxi",
-        "hunter_A",
-        "hunter_C"
-      ],
-      "camera": "medium wide shot, tracking retreat",
-      "action": "伏羲踉跄逃离，带领幸存猎人撤退。",
-      "dialogue": "",
-      "emotion": "desperate flight, survival, exhaustion",
-      "prompt_visual": "Cinematic medium wide shot tracking the desperate retreat. Fuxi leads the surviving hunters (A and C) through the swamp, stumbling, splashing, exhausted. His golden eye still glows but dimmer now - power depleted. His body moves on pure adrenaline and instinct. The hunters are shell-shocked, barely comprehending what they've witnessed. Behind them: the Entropy Units are regrouping, damaged one recovering, green energy being purged from its system. More arrows fly from Nvwa's position, providing covering fire. The swamp becomes an ally - fog rising, water obscuring their trail. Desperate flight through primordial darkness, the first of many escapes from cosmic threat. Documentary war footage aesthetic meets fantasy chase sequence.",
-      "prompt_motion": "Tracking shot following the running group. Fuxi leads, constantly looking back. Hunters follow blindly, trusting him. Water splashes with every step. Occasional green arrows streak overhead, buying time. The fog thickens around them, perhaps responding to Fuxi's unconscious commands. They disappear into the swamp's protective darkness. Behind them, the glow of the Entropy Units remains visible but grows distant.",
-      "transition_out": "cut",
-      "transition_duration_s": 0,
-      "transition_note": "硬切回熵单位，展示他们的最终评估。这形成叙事闭合：威胁尚未消除。",
-      "sfx_bgm": "Running splashes, heavy breathing, distant Unit sounds, covering arrow impacts, escape music tension",
-      "notes": "撤退场景需要展示暂时的胜利实际上只是逃脱。"
-    },
-    {
-      "shot_id": "S33",
-      "scene": "1-4",
-      "duration_s": 4,
-      "location": "swamp_leize_clearing",
-      "characters": [
-        "Entropy_Units"
-      ],
-      "camera": "medium shot, slow push in, low angle",
-      "action": "三个几何体汇合，发送报告。他们的任务未完成，只是暂停。",
-      "dialogue": "熵单位：目标丢失。标记该星球存在原生代码操控者。向中央仲裁者发送报告......",
-      "emotion": "cold conclusion, ongoing threat, ominous promise",
-      "prompt_visual": "Cinematic medium shot with slow push-in from low angle. The three Entropy Units have reformed their perfect triangular formation, hovering over the now-calm swamp. The damaged one has mostly recovered - green energy expelled, geometry restored. They emit no emotion because they have none, but their presence radiates cold inevitability. They are not defeated, merely... paused. As they speak, data beams connect between them - sharing analysis, uploading reports. A bright pulse shoots upward from the center of their formation toward the stars - the report being sent. The message is clear: Earth is now on their list. Hunters can run, but the audit has begun. End on the ominous image of the cosmic bureaucracy at work, patient as entropy itself.",
-      "prompt_motion": "Slow push-in toward the Units over 4 seconds. They hover motionless, perfect geometry restored. Internal patterns pulse with data sharing. The central space between them glows - communication forming. At second 2, a data beam shoots upward through clouds toward space. The beam carries their report to higher authorities. After transmission, the Units begin slow ascent - not pursuing, but not leaving either. Watching. Waiting. The threat is not over; it has merely been documented.",
-      "transition_out": "fade_out",
-      "transition_duration_s": 2,
-      "transition_note": "缓慢淡出到黑场，作为本集结束。熵单位的上升剪影最后消失，留下不安的结局感。音乐保持低沉的威胁暗示。淡出持续2秒，给观众消化空间。最后帧：熵单位变成黑暗天空中的三个小白点。",
-      "sfx_bgm": "Mechanical voice, data transmission sounds, report upload beep, ominous sustained tone, music fades to silence with lingering dread",
-      "notes": "结尾需要建立持续的威胁感 - 这不是胜利，只是序章。为后续剧集建立紧张感。"
+      "camera": "特写，伏羲面部侧脸，缓慢推到左眼极致特写",
+      "action": "伏羲停下脚步，回头望向远方。雨水流过他的脸。左眼中暗金色的八卦图案缓缓旋转。本集终。",
+      "dialogue": [],
+      "emotion": "沉思、命运的重量、未完待续",
+      "prompt_visual": "Cinematic close-up of a rain-soaked teenage boy's profile, water streaming down his face, looking back over his shoulder into the distance with a heavy expression, his left eye prominent in frame showing a dark gold iris with a slowly spinning miniature bagua trigram pattern deep within the pupil, dramatic side-lighting from distant lightning, the weight of destiny visible in his young face, beautiful melancholic composition, film grain, shallow depth of field with rain bokeh, end-of-episode contemplative mood",
+      "prompt_motion": "Rain streams down the boy's face in slow motion, a single blink reveals the transformed left eye, camera very slowly pushes in toward the eye, within the dark gold iris the tiny bagua symbol rotates steadily like a cosmic clock, lightning flashes illuminate his features intermittently, his expression shifts subtly from fear to quiet determination, image gradually darkens at the edges, final slow fade to black",
+      "transition_out": "fade",
+      "transition_duration_s": 2.0,
+      "transition_note": "缓慢渐黑，配合片尾标题\"第一集终\"",
+      "sfx_bgm": "雨声渐弱，简单的钢琴音符回应第一场的旋律，低沉的心跳声渐渐消失，完全寂静",
+      "notes": "结尾镜头，留下深刻印象，八卦眼纹成为本剧标志性视觉符号"
     }
   ]
 }

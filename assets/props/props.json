@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "project": "伏羲纪元",
+    "version": "1.0",
+    "description": "自动从剧本生成的道具资产定义库",
+    "source": "gen_assets_json.py"
+  },
+  "control_console": {
+    "zh_name": "中枢控制台",
+    "en_name": "Central Control Console",
+    "brief": "灵子文明数据中枢塔顶的核心操控平台",
+    "appearance": "未来科技风格的操控台，支持全息手势操控，表面有光流涌动",
+    "color": "金色、青色光芒",
+    "size": "大型平台",
+    "functions": [
+      "数据操控",
+      "火种协议启动",
+      "意识上传接口"
+    ],
+    "visual_keywords": [
+      "全息控制台",
+      "光流表面",
+      "未来科技平台"
+    ],
+    "prompts": [
+      "futuristic holographic control console",
+      "golden light flowing on surface",
+      "sci-fi command platform at tower top"
+    ]
+  },
+  "fire_seed_crystal": {
+    "zh_name": "火种晶体",
+    "en_name": "Fire Seed Crystal",
+    "brief": "灵子文明核心数据转化为生物编码后的载体晶体",
+    "appearance": "半透明晶体，内部有微光流动，悬浮于发光漩涡中心",
+    "color": "半透明，内含银蓝色与金色微光",
+    "size": "手掌大小",
+    "functions": [
+      "承载灵子文明核心数据",
+      "生物编码植入"
+    ],
+    "visual_keywords": [
+      "半透明",
+      "悬浮",
+      "内部微光流动",
+      "漩涡中心"
+    ],
+    "prompts": [
+      "translucent floating crystal",
+      "glowing crystal with inner light",
+      "silver-blue and gold light inside crystal",
+      "hovering in swamp vortex center"
+    ]
+  },
+  "green_light_bone_arrow": {
+    "zh_name": "绿光骨箭",
+    "en_name": "Green Light Bone Arrow",
+    "brief": "女娲使用的缠绕绿光的骨制箭矢",
+    "appearance": "骨质箭矢，箭身缠绕着绿色光芒，带有原始与神秘的混合气质",
+    "color": "骨白色，缠绕绿色光芒",
+    "size": "标准箭矢大小",
+    "functions": [
+      "远程攻击",
+      "对抗熵单位"
+    ],
+    "visual_keywords": [
+      "骨质箭矢",
+      "绿色光芒缠绕",
+      "原始与神秘结合"
+    ],
+    "prompts": [
+      "bone arrow wrapped in green light",
+      "primitive mystical arrow",
+      "glowing green energy around bone arrowhead"
+    ]
+  },
+  "bagua_light_point": {
+    "zh_name": "八卦光点",
+    "en_name": "Bagua Light Point",
+    "brief": "火种协议发射的光点中隐含的八卦图案",
+    "appearance": "微小光点，内部隐约可见八卦图案旋转",
+    "color": "金色",
+    "size": "微小光点",
+    "functions": [
+      "承载文明核心编码符号"
+    ],
+    "visual_keywords": [
+      "微小光点",
+      "八卦图案",
+      "金色旋转"
+    ],
+    "prompts": [
+      "tiny golden light point with bagua pattern",
+      "spinning eight trigrams symbol inside light orb",
+      "ancient Chinese bagua in golden glow"
+    ]
+  }
+}

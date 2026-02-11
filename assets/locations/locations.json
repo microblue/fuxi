@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "project": "伏羲纪元",
+    "version": "1.0",
+    "description": "自动从剧本生成的场景资产定义库",
+    "source": "gen_assets_json.py"
+  },
+  "locations": {
+    "lingzi_capital_data_core": {
+      "zh_name": "灵子文明首都·数据中枢",
+      "en_name": "Lingzi Civilization Capital - Data Core",
+      "type": "未来都市/科幻中枢",
+      "atmosphere": "极致璀璨、科技感十足，末日前的辉煌与紧迫感并存",
+      "visual_style": "光构建筑、空中数据河流、全息界面，赛博朋克与超未来混合风格",
+      "color_palette": [
+        "金色",
+        "银蓝色",
+        "白色",
+        "青色"
+      ],
+      "key_features": [
+        "由光构成的建筑群",
+        "空中流淌的数据河流",
+        "中枢塔顶控制台",
+        "通天光柱"
+      ],
+      "prompts": [
+        "futuristic metropolis made of light",
+        "data streams flowing in the sky",
+        "holographic buildings",
+        "cyberpunk utopia",
+        "central tower with control platform",
+        "golden and cyan data rivers"
+      ],
+      "era": "远古灵子文明时代（超未来科技文明）"
+    },
+    "ancient_leize_swamp": {
+      "zh_name": "上古雷泽·沼泽地带",
+      "en_name": "Ancient Leize Swampland",
+      "type": "原始沼泽/荒野",
+      "atmosphere": "原始粗犷、暴雨笼罩、神秘而危险",
+      "visual_style": "上古蛮荒风格，泥泞沼泽、雷电交加、暗色调中偶有异光",
+      "color_palette": [
+        "暗绿色",
+        "深灰色",
+        "泥褐色",
+        "银蓝色"
+      ],
+      "key_features": [
+        "广阔沼泽",
+        "雷兽足迹",
+        "暴雨环境",
+        "泥泞地面"
+      ],
+      "prompts": [
+        "ancient primordial swamp",
+        "heavy rainstorm at night",
+        "muddy wetlands",
+        "prehistoric wilderness",
+        "lightning-torn sky",
+        "dark and mysterious marshland"
+      ],
+      "era": "上古时代（华胥氏部落时期）"
+    },
+    "vortex_edge": {
+      "zh_name": "漩涡边缘",
+      "en_name": "Vortex Edge",
+      "type": "沼泽异象区域",
+      "atmosphere": "神秘、超自然光芒、危险而吸引人",
+      "visual_style": "沼泽中心的发光漩涡，半透明晶体悬浮，金色数据流涌动",
+      "color_palette": [
+        "银蓝色",
+        "金色",
+        "暗绿色",
+        "白色"
+      ],
+      "key_features": [
+        "发光漩涡",
+        "半透明悬浮晶体",
+        "银蓝色几何光流坠入点"
+      ],
+      "prompts": [
+        "glowing vortex in swamp center",
+        "floating translucent crystal",
+        "silver-blue geometric light streams",
+        "supernatural phenomenon in ancient marsh"
+      ],
+      "era": "上古时代"
+    }
+  }
+}

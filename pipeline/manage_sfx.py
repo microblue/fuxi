@@ -21,7 +21,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from utils import get_episode_dir, load_shots
+from pipeline.utils import get_episode_dir, load_shots
 
 
 class SFXEntry:

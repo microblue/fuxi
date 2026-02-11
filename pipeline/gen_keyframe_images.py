@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-镜头关键帧生成 — 全I2I (Image-to-Image) with Sequential References
+镜头关键帧生成 — 全I2I (Image-to-Image) with Intelligent First-Frame Reference Selection
 
 逻辑:
-  - 第一帧 (i2i_first): location场景资产 + visual prompt → 初始场景 (denoise=0.7)
+  - 第一帧 (i2i_first): 智能选择 location 或 character 资产 + visual prompt → 初始场景 (denoise=0.7)
+    * 多角色场景（2+）优先选择 character 资产
+    * 单角色或环境聚焦场景选择 location 资产
   - 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
-  - 工作流: 所有关键帧都使用flux2_img2img.json
-  - prompt: 从keyframes.json读取每个关键帧的contextual prompt
+  - 工作流: 所有关键帧都使用 flux2_i2i.json
+  - prompt: 从 keyframes.json 读取每个关键帧的 contextual prompt
+  - 资产: 从 keyframes.json 的 assets 字段读取 location_ref 和 character_refs
 
 用法:
     python -m pipeline.gen_keyframe_images ep001 S01
@@ -16,6 +19,7 @@
 
 import json
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -104,15 +108,26 @@ def inject_parameters(workflow: dict, params: dict) -> dict:
 
     else:
         # 旧格式：简单字典型（flux2_txt2img/flux2_img2img风格）
-        # T2I工作流参数注入
-        if "positive_prompt" in params and "5" in workflow:
-            workflow["5"]["inputs"]["text"] = params["positive_prompt"]
+        # 动态查找节点而不是硬编码 ID
 
-        if "seed" in params and "7" in workflow:
-            workflow["7"]["inputs"]["seed"] = params["seed"]
+        # 查找第一个 CLIPTextEncode 节点用于正向提示词
+        if "positive_prompt" in params:
+            for node_id, node in workflow.items():
+                if node.get("class_type") == "CLIPTextEncode" and "text" in node.get("inputs", {}):
+                    # 只设置第一个（正向提示词）
+                    if node["inputs"].get("text") != "anatomy error":
+                        node["inputs"]["text"] = params["positive_prompt"]
+                        break
 
-        if "denoise" in params and "8" in workflow:
-            workflow["8"]["inputs"]["denoise"] = params["denoise"]
+        # 查找 KSampler 节点用于 seed 和 denoise
+        if "seed" in params or "denoise" in params:
+            for node_id, node in workflow.items():
+                if node.get("class_type") == "KSampler":
+                    if "seed" in params:
+                        node["inputs"]["seed"] = params["seed"]
+                    if "denoise" in params:
+                        node["inputs"]["denoise"] = params["denoise"]
+                    break
 
         if "filename_prefix" in params:
             # 找到SaveImage节点并更新
@@ -120,9 +135,12 @@ def inject_parameters(workflow: dict, params: dict) -> dict:
                 if node.get("class_type") == "SaveImage":
                     node["inputs"]["filename_prefix"] = params["filename_prefix"]
 
-        # I2I工作流参数注入
-        if "reference_image" in params and "4" in workflow:
-            workflow["4"]["inputs"]["image"] = params["reference_image"]
+        # I2I工作流参数注入 - 查找 LoadImage 节点
+        if "reference_image" in params:
+            for node_id, node in workflow.items():
+                if node.get("class_type") == "LoadImage":
+                    node["inputs"]["image"] = params["reference_image"]
+                    break
 
     return workflow
 
@@ -141,7 +159,7 @@ def queue_prompt(workflow: dict) -> str:
         return result.get("prompt_id")
 
 
-def poll_until_done(prompt_id: str, poll_interval: float = 2.0, timeout: float = 600.0) -> dict:
+def poll_until_done(prompt_id: str, poll_interval: float = 2.0, timeout: float = 1200.0) -> dict:
     """轮询直到任务完成。"""
     import time
     start_time = time.time()
@@ -188,37 +206,150 @@ def download_image(image_info: dict, dest_path: Path) -> Path:
 
 
 def find_location_asset_reference(location: str) -> Path:
-    """找到location对应的场景资产参考图片。
+    """找到location对应的地点参考图片。
 
-    从共享资产目录（fuxi/assets/locations）查找。
+    查找优先级:
+      1. assets/locations/{location}/ 下的生成参考图 (gen_locations_refs.py生成)
+      2. assets/locations/ 下的资产 (向后兼容)
 
-    查找顺序:
-      1. 查找 {location}.png
-      2. 查找 {location}.jpg
-      3. 查找 ref_final.png/jpg
-
-    返回: Path to reference image
+    返回: Path to best reference image
     """
     # 使用共享资产目录，位于fuxi项目根目录
     project_root = Path(__file__).parent.parent
+    locations_ref_dir = project_root / "assets" / "locations" / location
     locations_dir = project_root / "assets" / "locations"
 
-    if not locations_dir.exists():
-        raise FileNotFoundError(f"Locations directory not found: {locations_dir}")
+    # 优先级1: 查找从gen_locations_refs.py生成的地点参考图
+    if locations_ref_dir.exists():
+        # 查找 {location}_ref_*.png 格式的文件（由gen_locations_refs.py生成）
+        ref_files = sorted(list(locations_ref_dir.glob(f"{location}_ref_*.png")))
+        if ref_files:
+            # 返回第一个（最基础的参考）
+            selected = ref_files[0]
+            print(f"    └─ Using generated location reference: {selected.name}")
+            return selected
 
-    # 尝试直接的location文件
-    for ext in [".png", ".jpg", ".jpeg"]:
-        location_file = locations_dir / f"{location}{ext}"
-        if location_file.exists():
-            return location_file
+    # 优先级2: 降级到assets/locations目录（向后兼容）
+    if locations_dir.exists():
+        # 尝试直接的location文件
+        for ext in [".png", ".jpg", ".jpeg"]:
+            location_file = locations_dir / f"{location}{ext}"
+            if location_file.exists():
+                print(f"    └─ Using legacy location asset: {location_file.name}")
+                return location_file
 
-    # 退而求其次，查找ref_final
-    for ext in [".png", ".jpg", ".jpeg"]:
-        ref_final = locations_dir / f"ref_final{ext}"
+        # 退而求其次，查找ref_final
+        for ext in [".png", ".jpg", ".jpeg"]:
+            ref_final = locations_dir / f"ref_final{ext}"
+            if ref_final.exists():
+                print(f"    └─ Using fallback ref_final: {ref_final.name}")
+                return ref_final
+
+    raise FileNotFoundError(
+        f"No location asset reference found for '{location}'. "
+        f"Expected either: {locations_ref_dir} or {locations_dir}"
+    )
+
+
+def find_character_asset_reference(character: str) -> Path:
+    """找到character对应的角色参考图片。
+
+    查找优先级:
+      1. assets/characters/{character}/ 下的生成参考图 (gen_characters_refs.py生成)
+         - {character}_ref_*.png 格式（新格式）
+         - ref_final.png 格式（现有格式）
+      2. assets/characters/ 下的资产 (向后兼容)
+
+    返回: Path to best reference image
+    """
+    project_root = Path(__file__).parent.parent
+    character_ref_dir = project_root / "assets" / "characters" / character
+    characters_dir = project_root / "assets" / "characters"
+
+    # 优先级1: 查找从gen_characters_refs.py生成的角色参考图
+    if character_ref_dir.exists():
+        # 查找 {character}_ref_*.png 格式的文件（新格式）
+        ref_files = sorted(list(character_ref_dir.glob(f"{character}_ref_*.png")))
+        if ref_files:
+            selected = ref_files[0]
+            print(f"    └─ Using generated character reference: {selected.name}")
+            return selected
+
+        # 查找 ref_final.png（现有格式）
+        ref_final = character_ref_dir / "ref_final.png"
         if ref_final.exists():
+            print(f"    └─ Using character reference: {ref_final.name}")
             return ref_final
 
-    raise FileNotFoundError(f"No location asset reference found for: {location}")
+        # 查找任何 ref_*.png 文件（其他格式兼容）
+        ref_files = sorted(list(character_ref_dir.glob("ref_*.png")))
+        if ref_files:
+            selected = ref_files[0]
+            print(f"    └─ Using character reference: {selected.name}")
+            return selected
+
+    # 优先级2: 降级到assets/characters目录（向后兼容）
+    if characters_dir.exists():
+        # 尝试直接的character文件
+        for ext in [".png", ".jpg", ".jpeg"]:
+            character_file = characters_dir / f"{character}{ext}"
+            if character_file.exists():
+                print(f"    └─ Using legacy character asset: {character_file.name}")
+                return character_file
+
+    raise FileNotFoundError(
+        f"No character asset reference found for '{character}'. "
+        f"Expected either: {character_ref_dir}/{{ref_final.png or {character}_ref_*.png}} or {characters_dir}"
+    )
+
+
+def select_first_frame_reference(shot: dict, keyframe: dict) -> tuple[str, Path] | None:
+    """智能选择第一帧的参考图片（location或character）。
+
+    决策逻辑:
+      1. 检查keyframe中的assets字段
+      2. 如果有多个characters（2+），优先使用character
+      3. 否则使用location
+      4. 如果参考图未找到，回退到另一个选项
+
+    返回: (asset_type, asset_path) 或 None
+    """
+    # 获取keyframe和shot中的资产信息
+    kf_assets = keyframe.get("assets", {})
+    character_refs = kf_assets.get("character_refs", []) or shot.get("character_refs", [])
+    location_ref = kf_assets.get("location_ref") or shot.get("location_ref") or shot.get("location")
+
+    print(f"    Location: {location_ref}, Characters: {character_refs}")
+
+    # 智能决策：如果有多个characters（2+），优先使用character
+    if len(character_refs) >= 2:
+        for char in character_refs:
+            try:
+                path = find_character_asset_reference(char)
+                print(f"    └─ Selected CHARACTER '{char}' (multi-character scene)")
+                return ("character", path)
+            except FileNotFoundError:
+                continue
+
+    # 否则使用location
+    if location_ref:
+        try:
+            path = find_location_asset_reference(location_ref)
+            print(f"    └─ Selected LOCATION '{location_ref}'")
+            return ("location", path)
+        except FileNotFoundError:
+            pass
+
+    # 回退：如果location未找到但有character，尝试character
+    if character_refs and len(character_refs) == 1:
+        try:
+            path = find_character_asset_reference(character_refs[0])
+            print(f"    └─ Fallback to CHARACTER '{character_refs[0]}' (location not found)")
+            return ("character", path)
+        except FileNotFoundError:
+            pass
+
+    return None
 
 
 def generate_shot_keyframes(
@@ -227,10 +358,12 @@ def generate_shot_keyframes(
     num_candidates: int = 1,
     base_seed: int = 0,
 ) -> dict:
-    """为指定镜头生成所有关键帧 (全I2I，第一帧用location资产，后续帧使用前一帧)。
+    """为指定镜头生成所有关键帧 (全I2I，第一帧智能选择location或character资产，后续帧使用前一帧)。
 
     工作流:
-      1. 第一帧 (i2i_first): location参考 + visual prompt → 初始场景 (denoise=0.7)
+      1. 第一帧 (i2i_first): 智能选择location或character参考 + visual prompt → 初始场景 (denoise=0.7)
+         - 多角色场景（2+）优先选择character资产
+         - 单角色或环境聚焦场景选择location资产
       2. 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
 
     返回: {keyframe_id: Path, ...}
@@ -265,21 +398,21 @@ def generate_shot_keyframes(
 
     print(f"\n{'=' * 60}")
     print(f"镜头关键帧生成 — {episode_id}/{shot_id} (全I2I)")
-    print(f"Location: {shot['location']}")
+
+    location = shot.get("location", None)
+    location_ref = shot.get("location_ref", None)
+    characters = shot.get("characters", [])
+    character_refs = shot.get("character_refs", [])
+
+    print(f"Location: {location} → Location Ref: {location_ref}")
+    print(f"Characters: {characters} → Character Refs: {character_refs}")
     print(f"关键帧数: {len(shot_keyframes)}")
     print(f"{'=' * 60}\n")
 
-    # 查找location资产参考图片
-    location = shot["location"]
-    if location == "black_screen":
+    # 检查黑屏镜头
+    location_to_check = location_ref or location
+    if location_to_check == "black_screen":
         print(f"⚠️ 黑屏镜头，跳过关键帧生成")
-        return {}
-
-    try:
-        location_ref_path = find_location_asset_reference(location)
-        print(f"✓ Location asset: {location_ref_path.name}\n")
-    except FileNotFoundError as e:
-        print(f"❌ {e}")
         return {}
 
     results = {}
@@ -290,10 +423,11 @@ def generate_shot_keyframes(
     last_frame_per_candidate = {}
 
     # 全I2I工作流生成所有关键帧
-    for kf in shot_keyframes:
+    for kf_idx, kf in enumerate(shot_keyframes):
         keyframe_id = kf["keyframe_id"]
         kf_type = kf["type"]
         kf_prompt = kf.get("prompt", "")
+        kf_ref_image = kf.get("ref_image")  # 从keyframes.json读取ref_image
 
         if not kf_prompt:
             print(f"⚠️ [{keyframe_id}] No prompt, skipping")
@@ -310,38 +444,42 @@ def generate_shot_keyframes(
             print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
 
             try:
-                # 确定参考图片和denoise强度
-                if kf_type == "i2i_first":
-                    # 第一帧：使用location资产作为参考
-                    ref_image_name = f"{shot_id}_location_ref.png"
-                    comfyui_ref = COMFYUI_INPUT / ref_image_name
-                    scale_image_to_resolution(location_ref_path, comfyui_ref)
-                    denoise = 0.7  # 初始场景，较高强度
-                else:
-                    # i2i_seq：使用上一帧生成的结果作为参考
-                    prev_frame_path = last_frame_per_candidate.get(cand_idx)
-
-                    if not prev_frame_path:
-                        print(f"    ⚠️ No previous frame for candidate {cand_idx}, skipping")
-                        continue
-
-                    # 复制前一帧到ComfyUI input（同时缩放到输出分辨率）
-                    ref_image_name = f"{shot_id}_prev_c{cand_idx}.png"
-                    comfyui_ref = COMFYUI_INPUT / ref_image_name
-                    scale_image_to_resolution(prev_frame_path, comfyui_ref)
-                    denoise = 0.5  # 运动变化，较低强度
-
-                # 加载I2I工作流
+                # 加载I2I工作流（所有关键帧都使用I2I）
                 workflow = load_workflow("flux2_i2i")
+                denoise = 0.7 if kf_idx == 0 else 0.5  # 首帧0.7，后续0.5
 
-                # 注入参数
-                workflow = inject_parameters(workflow, {
+                # 构建工作流参数
+                params = {
                     "positive_prompt": kf_prompt,
-                    "reference_image": ref_image_name,
                     "seed": seed,
                     "denoise": denoise,
                     "filename_prefix": f"keyframe/{keyframe_id}_seed{seed:04d}",
-                })
+                }
+
+                # 处理参考图像
+                if kf_ref_image:
+                    # 检查ref_image是否为文件路径或keyframe_id
+                    ref_path = Path(kf_ref_image)
+
+                    if ref_path.is_absolute() and ref_path.exists():
+                        # 文件路径：缩放并复制到ComfyUI input
+                        ref_image_name = f"{keyframe_id}_ref.png"
+                        comfyui_ref = COMFYUI_INPUT / ref_image_name
+                        scale_image_to_resolution(ref_path, comfyui_ref)
+                        params["reference_image"] = ref_image_name
+                        print(f"    [I2I] Using reference image: {ref_path.name}")
+
+                    elif cand_idx in last_frame_per_candidate and kf_ref_image.startswith(shot_id):
+                        # 前一帧：使用前一个候选的输出
+                        prev_frame_path = last_frame_per_candidate[cand_idx]
+                        ref_image_name = f"{keyframe_id}_ref_c{cand_idx}.png"
+                        comfyui_ref = COMFYUI_INPUT / ref_image_name
+                        scale_image_to_resolution(prev_frame_path, comfyui_ref)
+                        params["reference_image"] = ref_image_name
+                        print(f"    [I2I] Using previous frame reference")
+
+                # 注入参数
+                workflow = inject_parameters(workflow, params)
 
                 # 执行工作流
                 prompt_id = queue_prompt(workflow)
@@ -378,7 +516,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="生成镜头的所有关键帧 (全I2I，使用location场景资产作为参考)"
+        description="生成镜头的所有关键帧 (全I2I，智能选择location或character资产作为首帧参考)"
     )
     parser.add_argument("episode_id", help="剧集编号, e.g. ep001")
     parser.add_argument("shot_id", help="镜头编号, e.g. S01")

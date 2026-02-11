@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "project": "伏羲纪元",
+    "version": "1.0",
+    "description": "自动从剧本生成的角色资产定义库",
+    "source": "gen_assets_json.py"
+  },
+  "characters": {
+    "xihe": {
+      "zh_name": "羲和",
+      "en_name": "Xi He",
+      "role_description": "灵子文明最后的代码者，伏羲的前世。灵子文明首都数据中枢的核心操控者。",
+      "appearance": "约30岁，左眼有金色纹路，整体气质兼具科技精英的冷静与从容",
+      "clothing": "身着流光长袍，材质随光线变化，充满未来感",
+      "personality_keywords": [
+        "果断",
+        "无畏",
+        "智慧",
+        "幽默豁达",
+        "责任感"
+      ],
+      "visual_keywords": [
+        "左眼金色纹路",
+        "流光长袍",
+        "金色数据流环绕"
+      ],
+      "prompts": [
+        "30-year-old futuristic code master",
+        "golden tattoo pattern on left eye",
+        "flowing luminous robe",
+        "golden data streams around fingertips",
+        "calm and determined expression"
+      ]
+    },
+    "young_fuxi": {
+      "zh_name": "少年伏羲",
+      "en_name": "Young Fuxi",
+      "role_description": "华胥氏族的16岁少年猎人，羲和的转世载体",
+      "appearance": "16岁少年，体格健壮，原始部落少年猎人的身材，面容坚毅",
+      "clothing": "上古部落风格的兽皮衣物，原始猎人装束",
+      "personality_keywords": [
+        "勇敢",
+        "好奇",
+        "本能敏锐",
+        "正义感强"
+      ],
+      "visual_keywords": [
+        "16岁少年猎人",
+        "原始部落装束",
+        "坚毅面容"
+      ],
+      "prompts": [
+        "16-year-old primitive tribal hunter boy",
+        "muscular youth in animal hide clothing",
+        "ancient Chinese tribal style",
+        "determined young face",
+        "prehistoric hunter attire"
+      ]
+    },
+    "nvwa": {
+      "zh_name": "女娲",
+      "en_name": "Nüwa",
+      "role_description": "17岁少女，擅长弓箭，具有神秘的绿光力量",
+      "appearance": "17岁少女，身手矫健，常出没于山崖高处",
+      "clothing": "上古部落风格服饰",
+      "personality_keywords": [
+        "果敢",
+        "敏捷",
+        "英勇"
+      ],
+      "visual_keywords": [
+        "17岁少女",
+        "矫健身姿",
+        "山崖上的弓箭手"
+      ],
+      "prompts": [
+        "17-year-old ancient tribal girl",
+        "agile young archer on cliff edge",
+        "primitive warrior girl",
+        "prehistoric huntress"
+      ]
+    },
+    "observer_ai": {
+      "zh_name": "观测者AI",
+      "en_name": "Observer AI",
+      "role_description": "灵子文明的人工智能助手，辅助羲和进行数据操控和决策",
+      "appearance": "无实体形象，以温柔女声呈现，可能伴有全息投影界面",
+      "clothing": "无",
+      "personality_keywords": [
+        "理性",
+        "温柔",
+        "忠诚",
+        "精确"
+      ],
+      "visual_keywords": [
+        "无形体",
+        "温柔女声",
+        "全息投影界面"
+      ],
+      "prompts": [
+        "disembodied AI voice",
+        "holographic interface",
+        "gentle female AI assistant",
+        "futuristic data display"
+      ]
+    },
+    "entropy_unit": {
+      "zh_name": "熵格式化单位",
+      "en_name": "Entropy Formatting Unit",
+      "role_description": "执行格式化程序的外星机械生命体，负责清除异常代码残留",
+      "appearance": "苍白色正八面体几何体，表面光滑冷硬，无声悬浮",
+      "clothing": "无",
+      "personality_keywords": [
+        "机械",
+        "冷酷",
+        "服从指令",
+        "无情"
+      ],
+      "visual_keywords": [
+        "苍白正八面体",
+        "几何形态",
+        "黑色数据触手",
+        "无声悬浮"
+      ],
+      "prompts": [
+        "pale white octahedron geometric entity",
+        "floating alien geometric body",
+        "mechanical cold surface",
+        "black data tendrils extending outward",
+        "silent hovering geometric alien"
+      ]
+    },
+    "hunter_jia": {
+      "zh_name": "猎人甲",
+      "en_name": "Hunter A",
+      "role_description": "华胥氏族猎人，伏羲的同伴",
+      "appearance": "上古部落成年男性猎人，体格强壮",
+      "clothing": "兽皮衣物，原始猎人装束",
+      "personality_keywords": [
+        "警觉",
+        "忠诚"
+      ],
+      "visual_keywords": [
+        "原始部落猎人",
+        "强壮体格",
+        "兽皮装束"
+      ],
+      "prompts": [
+        "ancient tribal hunter",
+        "muscular primitive man in animal hide",
+        "prehistoric warrior"
+      ]
+    }
+  }
+}
