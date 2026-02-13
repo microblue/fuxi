@@ -20,8 +20,8 @@
 **视觉事件:**
 
   1. 太空俯瞰都市 (extreme wide shot, bird's eye view)
-  2. 急速下降穿越 (wide shot, high angle)
-  3. 全城异常闪烁 (wide shot, high angle)
+  2. 俯冲穿越数据流 (wide shot, high angle)
+  3. 全城光芒闪烁 (wide shot, high angle)
 
 **关键帧详情:**
 
@@ -32,7 +32,7 @@
 - **景别:** extreme wide shot
 - **相机角度:** bird's eye view
 - **参考图像:** location/灵子文明首都·数据中枢 - 全景俯瞰
-- **Prompt:** `camera positioned at orbital altitude, looking straight down at the luminescent megalopolis below Breathtaking futuristi...`
+- **Prompt:** `camera at orbital altitude, looking straight down at luminescent megalopolis Breathtaking futuristic megalopolis from ae...`
 
 ### S01-KF2 (i2v)
 
@@ -41,7 +41,7 @@
 - **景别:** wide shot
 - **相机角度:** high angle
 - **参考帧:** S01-KF1
-- **Motion Prompt:** `camera rapidly descending through atmosphere, passing through layers of holographic data streams and glowing aerial high...`
+- **Motion Prompt:** `camera at mid-altitude, rapidly descending through streams of flowing data between holographic towers Camera rapidly des...`
 
 ### S01-KF3 (i2v)
 
@@ -50,7 +50,7 @@
 - **景别:** wide shot
 - **相机角度:** high angle
 - **参考帧:** S01-KF2
-- **Motion Prompt:** `camera hovering above city skyline, capturing the full metropolitan vista as systems malfunction Camera rapidly descends...`
+- **Motion Prompt:** `camera hovering above cityscape, capturing sudden system malfunction across entire metropolis Camera rapidly descends fr...`
 
 ---
 
@@ -63,8 +63,8 @@
 **视觉事件:**
 
   1. 侧后方操控数据 (medium shot, eye level)
-  2. 数据流环绕飞舞 (medium shot, eye level)
-  3. 正面揭示决心 (medium shot, eye level)
+  2. 环绕至侧面 (medium shot, eye level)
+  3. 正面揭示决意 (medium shot, eye level)
 
 **关键帧详情:**
 
@@ -75,7 +75,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考图像:** character/羲和
-- **Prompt:** `camera positioned behind and to the left of subject, capturing back and side profile, beginning orbital movement A majes...`
+- **Prompt:** `camera positioned behind and to the side of subject, approximately 45 degrees from back, capturing profile and flowing r...`
 
 ### S02-KF2 (i2v)
 
@@ -84,7 +84,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考帧:** S02-KF1
-- **Motion Prompt:** `camera at 90-degree side position, capturing profile view during orbital movement Character's fingers rapidly swipe and ...`
+- **Motion Prompt:** `camera at 90-degree side position, profile view of subject with data console visible Character's fingers rapidly swipe a...`
 
 ### S02-KF3 (i2v)
 
@@ -93,7 +93,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考帧:** S02-KF2
-- **Motion Prompt:** `camera arrives at frontal position, revealing subject's face directly Character's fingers rapidly swipe and manipulate f...`
+- **Motion Prompt:** `camera arrives at frontal position, facing subject directly with tower pinnacle backdrop Character's fingers rapidly swi...`
 
 ---
 
@@ -105,8 +105,8 @@
 
 **视觉事件:**
 
-  1. AI警告倒计时 (medium close-up, eye level)
-  2. 羲和坚定摇头 (medium close-up, eye level)
+  1. 羲和坚定摇头 (medium close-up, eye level)
+  2. AI脉动警告 (medium close-up, eye level)
   3. 提出火种协议 (close-up, eye level)
 
 **关键帧详情:**
@@ -118,7 +118,7 @@
 - **景别:** medium close-up
 - **相机角度:** eye level
 - **参考图像:** character/羲和
-- **Prompt:** `camera positioned at medium-close distance, frontal angle capturing both character and holographic AI on the side Close-...`
+- **Prompt:** `camera positioned at medium-close distance, frontal angle on Xi He with holographic AI visible on the right side Close-u...`
 
 ### S03-KF2 (i2v)
 
@@ -127,7 +127,7 @@
 - **景别:** medium close-up
 - **相机角度:** eye level
 - **参考帧:** S03-KF1
-- **Motion Prompt:** `camera slowly pushing in toward character's face, maintaining frontal framing Character shakes head firmly while speakin...`
+- **Motion Prompt:** `camera begins subtle push-in motion, maintaining frontal framing while holographic AI pulses with warning intensity Char...`
 
 ### S03-KF3 (i2v)
 
@@ -136,7 +136,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考帧:** S03-KF2
-- **Motion Prompt:** `camera completed push-in, now close to character's face capturing intense emotional moment Character shakes head firmly ...`
+- **Motion Prompt:** `camera completed push-in to close-up framing, tight on character's determined face with AI partially visible Character s...`
 
 ---
 
@@ -148,9 +148,9 @@
 
 **视觉事件:**
 
-  1. 微笑浮现 (close-up, eye level)
-  2. 金纹亮起 (close-up, eye level)
-  3. 眼部聚焦 (extreme close-up, eye level)
+  1. 微笑初现 (close-up, eye level)
+  2. 金眸闪耀 (close-up, eye level)
+  3. 泪光凝聚 (extreme close-up, eye level)
 
 **关键帧详情:**
 
@@ -161,7 +161,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考图像:** character/羲和
-- **Prompt:** `camera positioned close to face, framing full facial features with golden eye tattoo visible Extreme close-up of a heroi...`
+- **Prompt:** `camera positioned close to subject's face, capturing full facial features with emphasis on forming smile Extreme close-u...`
 
 ### S04-KF2 (i2v)
 
@@ -170,7 +170,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考帧:** S04-KF1
-- **Motion Prompt:** `camera slowly pushing in, transitioning focus from full face to upper face area A serene smile slowly forms on the chara...`
+- **Motion Prompt:** `camera slowly pushing in, framing tightens from face to upper face region, left eye becoming more prominent A serene smi...`
 
 ### S04-KF3 (i2v)
 
@@ -179,7 +179,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S04-KF2
-- **Motion Prompt:** `camera extremely close to left eye, filling frame with glowing golden iris and circuit tattoo A serene smile slowly form...`
+- **Motion Prompt:** `camera very close, framing centered on glowing left eye with partial smile visible, intimate extreme close-up A serene s...`
 
 ---
 
@@ -191,9 +191,9 @@
 
 **视觉事件:**
 
-  1. 双手按下光芒涌动 (extreme wide shot, high angle)
-  2. 通天光柱冲天而起 (extreme wide shot, low angle)
-  3. 光点洒落八卦浮现 (extreme wide shot, bird's eye view)
+  1. 羲和按压控制台 (extreme wide shot, high angle)
+  2. 通天光柱爆发 (extreme wide shot, high angle)
+  3. 八卦光点飘向镜头 (extreme wide shot, bird's eye view)
 
 **关键帧详情:**
 
@@ -204,16 +204,16 @@
 - **景别:** extreme wide shot
 - **相机角度:** high angle
 - **参考图像:** location/灵子文明首都·数据中枢 - 中枢塔顶
-- **Prompt:** `camera positioned high above, looking down at figure and control console from behind Epic wide shot of a figure pressing...`
+- **Prompt:** `camera positioned high above the central tower, looking down at the figure at the console Epic wide shot of a figure pre...`
 
 ### S05-KF2 (i2v)
 
 - **时间:** 1.3333333333333333s (持续 1.3333333333333333s)
 - **类型:** i2v
 - **景别:** extreme wide shot
-- **相机角度:** low angle
+- **相机角度:** high angle
 - **参考帧:** S05-KF1
-- **Motion Prompt:** `camera rapidly ascending vertically, pulling back to reveal massive scale of light pillar erupting from city center Char...`
+- **Motion Prompt:** `camera rapidly ascending and pulling back, revealing the massive light pillar erupting from city center Character presse...`
 
 ### S05-KF3 (i2v)
 
@@ -222,7 +222,7 @@
 - **景别:** extreme wide shot
 - **相机角度:** bird's eye view
 - **参考帧:** S05-KF2
-- **Motion Prompt:** `camera at cosmic height, stabilized, one glowing particle with bagua symbol drifting toward lens Character presses hands...`
+- **Motion Prompt:** `camera at cosmic height overlooking the scattering light seeds, one glowing particle with bagua symbol drifting toward l...`
 
 ---
 
@@ -236,7 +236,7 @@
 
   1. 身体边缘透明化 (medium shot, eye level)
   2. 遗言微笑消散 (medium shot, eye level)
-  3. 金瞳渐隐入暗 (medium shot, eye level)
+  3. 金瞳渐隐入黑 (medium shot, eye level)
 
 **关键帧详情:**
 
@@ -256,7 +256,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考帧:** S06-KF1
-- **Motion Prompt:** `camera maintains frontal position, focus progressively softening as subject dissolves further Character's body slowly be...`
+- **Motion Prompt:** `camera maintains frontal medium framing, focus gradually softening as subject dissolves Character's body slowly becomes ...`
 
 ### S06-KF3 (i2v)
 
@@ -265,7 +265,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考帧:** S06-KF2
-- **Motion Prompt:** `camera static as subject fully dissolves, focus tracking the last glowing eye before fading to darkness Character's body...`
+- **Motion Prompt:** `camera static as subject fully dissolves, focus on last visible golden circuit eye fading into darkness Character's body...`
 
 ---
 
@@ -277,9 +277,9 @@
 
 **视觉事件:**
 
-  1. 雷泽夜雨全景 (extreme wide shot, low angle)
-  2. 追踪雷兽足迹 (wide shot, low angle)
-  3. 闪电照亮前路 (wide shot, low angle)
+  1. 雷泽夜雨追踪 (extreme wide shot, low angle)
+  2. 泥泞艰难跋涉 (wide shot, low angle)
+  3. 闪电照亮前路 (wide shot, worm's eye view)
 
 **关键帧详情:**
 
@@ -290,7 +290,7 @@
 - **景别:** extreme wide shot
 - **相机角度:** low angle
 - **参考图像:** location/上古雷泽·沼泽地带
-- **Prompt:** `camera positioned at water level, low angle capturing vast swampland and stormy sky Primordial swampland at night during...`
+- **Prompt:** `camera positioned at water level, capturing the vast swamp expanse with figures silhouetted against lightning Primordial...`
 
 ### S07-KF2 (i2v)
 
@@ -299,16 +299,16 @@
 - **景别:** wide shot
 - **相机角度:** low angle
 - **参考帧:** S07-KF1
-- **Motion Prompt:** `camera tracking at knee height through water, following the group from behind-side angle Heavy rain falling in sheets, c...`
+- **Motion Prompt:** `camera tracking at knee height beside the wading group, rain sheets falling, water splashing Heavy rain falling in sheet...`
 
 ### S07-KF3 (i2v)
 
 - **时间:** 2.0s (持续 0.0s)
 - **类型:** i2v
 - **景别:** wide shot
-- **相机角度:** low angle
+- **相机角度:** worm's eye view
 - **参考帧:** S07-KF2
-- **Motion Prompt:** `camera low and stable, capturing dramatic lightning illumination of the hunting party against stormy landscape Heavy rai...`
+- **Motion Prompt:** `camera very low in water, tilting up to capture figures against dramatic lightning-lit sky Heavy rain falling in sheets,...`
 
 ---
 
@@ -321,8 +321,8 @@
 **视觉事件:**
 
   1. 猎人示警仰望 (medium shot, eye level)
-  2. 快速甩镜上移 (medium shot to wide shot, tilting rapidly upward)
-  3. 天空光流倾泻 (extreme wide shot, worm's eye view)
+  2. 快速甩镜上移 (transitional shot, tilting from eye level to low angle)
+  3. 天空撕裂光流 (extreme wide shot, worm's eye view)
 
 **关键帧详情:**
 
@@ -332,17 +332,17 @@
 - **类型:** t2i
 - **景别:** medium shot
 - **相机角度:** eye level
-- **参考图像:** location/上古雷泽·沼泽地带
-- **Prompt:** `camera at character level, capturing hunter and young Fuxi in swamp terrain, rain falling heavily around them Dramatic l...`
+- **参考图像:** character/少年伏羲
+- **Prompt:** `camera at character level in swamp terrain, framing hunter and young Fuxi from mid-body up Dramatic low angle looking up...`
 
 ### S08-KF2 (i2v)
 
 - **时间:** 1.0s (持续 1.0s)
 - **类型:** i2v
-- **景别:** medium shot to wide shot
-- **相机角度:** tilting rapidly upward
+- **景别:** transitional shot
+- **相机角度:** tilting from eye level to low angle
 - **参考帧:** S08-KF1
-- **Motion Prompt:** `camera whip-panning vertically following Fuxi's gaze upward, motion blur on edges, rain streaks becoming vertical lines ...`
+- **Motion Prompt:** `camera whip-panning vertically from character level toward sky, motion blur visible, following Fuxi's gaze upward Camera...`
 
 ### S08-KF3 (i2v)
 
@@ -351,7 +351,7 @@
 - **景别:** extreme wide shot
 - **相机角度:** worm's eye view
 - **参考帧:** S08-KF2
-- **Motion Prompt:** `camera at extreme low angle looking straight up at torn sky, silver-blue geometric light cascading down through parted s...`
+- **Motion Prompt:** `camera pointing directly upward at dramatic low angle, capturing full sky expanse with geometric light cascade Camera wh...`
 
 ---
 
@@ -363,9 +363,9 @@
 
 **视觉事件:**
 
-  1. 眼瞳收缩刺痛 (extreme close-up, eye level)
-  2. 金色闪光显现 (extreme close-up, eye level)
-  3. 手掌遮眼 (extreme close-up, eye level)
+  1. 眼睛特写痛楚 (extreme close-up, eye level)
+  2. 瞳孔金光闪现 (extreme close-up, eye level)
+  3. 手捂眼睛定格 (extreme close-up, eye level)
 
 **关键帧详情:**
 
@@ -376,7 +376,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考图像:** character/少年伏羲
-- **Prompt:** `macro lens positioned directly in front of left eye, filling frame with iris detail Extreme close-up of a young boy's le...`
+- **Prompt:** `macro lens positioned extremely close to left eye, filling frame with iris detail Extreme close-up of a young boy's left...`
 
 ### S09-KF2 (i2v)
 
@@ -385,7 +385,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S09-KF1
-- **Motion Prompt:** `macro lens maintaining intimate eye detail, subtle trembling visible in frame Eye contracts in pain with pupil rapidly d...`
+- **Motion Prompt:** `macro lens holding steady on dilating pupil, capturing golden spark deep in iris Eye contracts in pain with pupil rapidl...`
 
 ### S09-KF3 (i2v)
 
@@ -394,7 +394,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S09-KF2
-- **Motion Prompt:** `macro lens capturing hand rushing into frame to cover eye, background glow reflected in visible right eye Eye contracts ...`
+- **Motion Prompt:** `macro lens capturing hand rushing into frame to cover eye, motion blur transitioning to stillness Eye contracts in pain ...`
 
 ---
 
@@ -406,9 +406,9 @@
 
 **视觉事件:**
 
-  1. 少年缓步前行 (medium shot, low angle)
-  2. 接近漩涡 (medium shot, low angle)
-  3. 伸手触碰 (medium close-up, low angle)
+  1. 少年缓步靠近 (medium shot, low angle)
+  2. 晶体悬浮旋转 (medium shot, low angle)
+  3. 伸手触向晶体 (medium close-up, low angle)
 
 **关键帧详情:**
 
@@ -419,7 +419,7 @@
 - **景别:** medium shot
 - **相机角度:** low angle
 - **参考图像:** location/漩涡边缘
-- **Prompt:** `camera positioned low at knee height, frontal view capturing boy and distant vortex A teenage boy in primitive animal hi...`
+- **Prompt:** `camera positioned low near water surface, frontal view facing the boy, medium distance from subject with glowing vortex ...`
 
 ### S10-KF2 (i2v)
 
@@ -428,7 +428,7 @@
 - **景别:** medium shot
 - **相机角度:** low angle
 - **参考帧:** S10-KF1
-- **Motion Prompt:** `camera slowly pushing forward, maintaining low angle, closing distance to boy and vortex Boy slowly walks forward throug...`
+- **Motion Prompt:** `camera closer to subject, low angle capturing both boy and hovering crystal, vortex light intensifying in frame Boy slow...`
 
 ### S10-KF3 (i2v)
 
@@ -437,7 +437,7 @@
 - **景别:** medium close-up
 - **相机角度:** low angle
 - **参考帧:** S10-KF2
-- **Motion Prompt:** `camera pushed closer, low frontal angle emphasizing reaching gesture toward glowing crystal Boy slowly walks forward thr...`
+- **Motion Prompt:** `camera now close to subject, low angle emphasizing boy's reaching gesture toward crystal, vortex light at peak intensity...`
 
 ---
 
@@ -449,9 +449,9 @@
 
 **视觉事件:**
 
-  1. 触碰瞬间爆发 (extreme close-up, eye level)
-  2. 跪地痛苦尖叫 (medium shot, low angle)
-  3. 金瞳八卦显现 (extreme close-up, eye level)
+  1. 触碰爆发 (extreme close-up, eye level)
+  2. 痛苦跪地 (medium shot, low angle)
+  3. 瞳孔蜕变 (extreme close-up, eye level)
 
 **关键帧详情:**
 
@@ -462,7 +462,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考图像:** character/少年伏羲
-- **Prompt:** `camera extremely close to hand and crystal contact point, capturing the moment of explosive energy transfer A young boy ...`
+- **Prompt:** `camera extremely close to point of contact between finger and crystal A young boy kneeling in swamp water screaming in p...`
 
 ### S11-KF2 (i2v)
 
@@ -471,7 +471,7 @@
 - **景别:** medium shot
 - **相机角度:** low angle
 - **参考帧:** S11-KF1
-- **Motion Prompt:** `camera pulling back quickly from subject kneeling in swamp water, capturing full body convulsion and energy surge The in...`
+- **Motion Prompt:** `camera pulling back from subject kneeling in swamp water, capturing full body convulsion The instant of contact triggers...`
 
 ### S11-KF3 (i2v)
 
@@ -480,7 +480,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S11-KF2
-- **Motion Prompt:** `camera positioned extremely close to left eye, macro lens capturing pupil transformation detail The instant of contact t...`
+- **Motion Prompt:** `camera locked extremely close to left eye, macro lens detail The instant of contact triggers an explosive surge of golde...`
 
 ---
 
@@ -492,9 +492,9 @@
 
 **视觉事件:**
 
-  1. 扫视树木代码 (medium shot, eye level)
-  2. 扫视水面网格 (medium shot, high angle)
-  3. 凝视双手电流 (close-up, high angle)
+  1. 树木代码涌现 (medium shot, eye level)
+  2. 水面分子网格 (medium shot, high angle)
+  3. 手部生物电流 (close-up, high angle)
 
 **关键帧详情:**
 
@@ -505,7 +505,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考图像:** location/漩涡边缘
-- **Prompt:** `POV camera snapping towards ancient trees, first-person subjective view with slight instability First-person POV through...`
+- **Prompt:** `POV camera snapping to view ancient trees, first-person perspective at eye height First-person POV through code vision: ...`
 
 ### S12-KF2 (i2v)
 
@@ -514,7 +514,7 @@
 - **景别:** medium shot
 - **相机角度:** high angle
 - **参考帧:** S12-KF1
-- **Motion Prompt:** `POV camera snapping down towards water surface, subjective downward gaze with digital transition glitch POV camera quick...`
+- **Motion Prompt:** `POV camera snapping down to water surface, looking at molecular patterns POV camera quickly pans to trees where green co...`
 
 ### S12-KF3 (i2v)
 
@@ -523,7 +523,7 @@
 - **景别:** close-up
 - **相机角度:** high angle
 - **参考帧:** S12-KF2
-- **Motion Prompt:** `POV camera looking down at own trembling hands, extreme subjective close framing POV camera quickly pans to trees where ...`
+- **Motion Prompt:** `POV looking down at own trembling hands held in front of body POV camera quickly pans to trees where green code strings ...`
 
 ---
 
@@ -535,9 +535,9 @@
 
 **视觉事件:**
 
-  1. 几何体初现天际 (extreme wide shot, low angle)
-  2. 降临逼近地面 (wide shot, low angle)
-  3. 悬浮沼泽上方 (wide shot, worm's eye view)
+  1. 几何体显现天际 (extreme wide shot, low angle)
+  2. 几何体缓降扫描 (extreme wide shot, low angle)
+  3. 悬浮沼泽上方 (extreme wide shot, low angle)
 
 **关键帧详情:**
 
@@ -548,25 +548,25 @@
 - **景别:** extreme wide shot
 - **相机角度:** low angle
 - **参考图像:** location/熵单位降临地点
-- **Prompt:** `camera positioned low in swamp environment, looking up at dark stormy sky, three octahedral shapes emerging from clouds ...`
+- **Prompt:** `camera positioned low at swamp level, angled upward toward stormy sky, capturing vast atmospheric scale Three pale white...`
 
 ### S13-KF2 (i2v)
 
 - **时间:** 1.0s (持续 1.0s)
 - **类型:** i2v
-- **景别:** wide shot
+- **景别:** extreme wide shot
 - **相机角度:** low angle
 - **参考帧:** S13-KF1
-- **Motion Prompt:** `camera maintains low position, geometric entities now closer, scanning beams visible sweeping across terrain Three octah...`
+- **Motion Prompt:** `camera maintains low position, octahedra now mid-descent, scanning beams visible sweeping terrain below Three octahedral...`
 
 ### S13-KF3 (i2v)
 
 - **时间:** 2.0s (持续 0.0s)
 - **类型:** i2v
-- **景别:** wide shot
-- **相机角度:** worm's eye view
+- **景别:** extreme wide shot
+- **相机角度:** low angle
 - **参考帧:** S13-KF2
-- **Motion Prompt:** `camera at ground level among swamp vegetation, three octahedrons hovering in formation above, cold light illuminating or...`
+- **Motion Prompt:** `camera low at ground level, octahedra hovering above swamp surface, energy fields fully visible creating contrast with o...`
 
 ---
 
@@ -578,9 +578,9 @@
 
 **视觉事件:**
 
-  1. 黑色触须伸出 (medium shot, eye level)
-  2. 触须缠绕猎人 (medium close-up, eye level)
-  3. 身体像素化分解 (close-up, low angle)
+  1. 数据触手伸向猎人 (medium shot, eye level)
+  2. 身体开始像素化 (medium close-up, eye level)
+  3. 数据粒子上升消散 (close-up, low angle)
 
 **关键帧详情:**
 
@@ -591,7 +591,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考图像:** character/猎人乙
-- **Prompt:** `camera positioned at medium distance capturing both the octahedral entity and the hunter in frame A terrified tribal hun...`
+- **Prompt:** `camera positioned at medium distance capturing both the octahedral entity and the hunter, slightly off-center framing A ...`
 
 ### S14-KF2 (i2v)
 
@@ -600,7 +600,7 @@
 - **景别:** medium close-up
 - **相机角度:** eye level
 - **参考帧:** S14-KF1
-- **Motion Prompt:** `camera tracking closer to the hunter as tendrils make contact, following the spreading dissolution Black jagged data ten...`
+- **Motion Prompt:** `camera pushing in towards the hunter focusing on contact points where dissolution begins Black jagged data tendrils lash...`
 
 ### S14-KF3 (i2v)
 
@@ -609,7 +609,7 @@
 - **景别:** close-up
 - **相机角度:** low angle
 - **参考帧:** S14-KF2
-- **Motion Prompt:** `camera low angle capturing the hunter's fragmenting form with black pixels spiraling upward toward the entity Black jagg...`
+- **Motion Prompt:** `camera at low position tilting upward following the spiral of black data particles ascending toward the entity Black jag...`
 
 ---
 
@@ -622,8 +622,8 @@
 **视觉事件:**
 
   1. 伏羲怒吼伸手 (medium shot, eye level)
-  2. 代码视觉撕裂 (close-up, eye level)
-  3. 黑色数据爆散 (close-up, eye level)
+  2. 代码视觉锯齿流 (close-up, eye level)
+  3. 黑色代码撕裂爆散 (close-up, eye level)
 
 **关键帧详情:**
 
@@ -634,7 +634,7 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考图像:** character/少年伏羲
-- **Prompt:** `camera positioned at medium distance capturing boy's upper body, moving closer to emphasize the desperate reach A teenag...`
+- **Prompt:** `camera positioned at medium distance, framing the boy from waist up as he lunges forward A teenage boy with blazing dark...`
 
 ### S15-KF2 (i2v)
 
@@ -643,7 +643,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考帧:** S15-KF1
-- **Motion Prompt:** `POV code-vision perspective showing hand grasping the data structure, intimate digital realm framing Boy lurches forward...`
+- **Motion Prompt:** `POV camera showing code-vision perspective, subjective view of data stream Boy lurches forward with arm outstretched, le...`
 
 ### S15-KF3 (i2v)
 
@@ -652,7 +652,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考帧:** S15-KF2
-- **Motion Prompt:** `camera snapping back to normal reality view, close framing on the physical aftermath Boy lurches forward with arm outstr...`
+- **Motion Prompt:** `camera snaps back to normal view, close framing on the violent destruction of data stream Boy lurches forward with arm o...`
 
 ---
 
@@ -666,7 +666,7 @@
 
   1. 金色代码线扩散 (extreme wide shot, bird's eye view)
   2. 地面变流沙 (wide shot, high angle)
-  3. 熵单位下沉挣扎 (wide shot, bird's eye view)
+  3. 熵单位下沉挣扎 (wide shot, high angle)
 
 **关键帧详情:**
 
@@ -677,7 +677,7 @@
 - **景别:** extreme wide shot
 - **相机角度:** bird's eye view
 - **参考图像:** location/熵单位降临地点
-- **Prompt:** `camera positioned directly overhead at high altitude, capturing full battlefield scope Overhead shot of a swamp battlefi...`
+- **Prompt:** `camera positioned directly overhead, capturing full battlefield from above Overhead shot of a swamp battlefield, a young...`
 
 ### S16-KF2 (i2v)
 
@@ -686,16 +686,16 @@
 - **景别:** wide shot
 - **相机角度:** high angle
 - **参考帧:** S16-KF1
-- **Motion Prompt:** `camera maintaining high overhead position, slight angle to show depth of terrain transformation Boy slams hands toward t...`
+- **Motion Prompt:** `camera maintaining overhead position, slight angle to show depth of terrain transformation Boy slams hands toward the gr...`
 
 ### S16-KF3 (i2v)
 
 - **时间:** 2.0s (持续 0.0s)
 - **类型:** i2v
 - **景别:** wide shot
-- **相机角度:** bird's eye view
+- **相机角度:** high angle
 - **参考帧:** S16-KF2
-- **Motion Prompt:** `camera overhead capturing full extent of terrain liquefaction and entity struggle Boy slams hands toward the ground, gol...`
+- **Motion Prompt:** `camera overhead capturing full effect of terrain manipulation and entity struggle Boy slams hands toward the ground, gol...`
 
 ---
 
@@ -707,9 +707,9 @@
 
 **视觉事件:**
 
-  1. 骨箭翠光飞射 (extreme wide shot, eye level)
-  2. 绿光命中熵体 (medium shot, low angle)
-  3. 女娲英姿呐喊 (wide shot, low angle)
+  1. 骨箭飞行 (wide shot, eye level)
+  2. 箭矢命中 (medium shot, low angle)
+  3. 女娲呼喊 (medium wide shot, low angle)
 
 **关键帧详情:**
 
@@ -717,10 +717,10 @@
 
 - **时间:** 0.0s (持续 1.0s)
 - **类型:** t2i
-- **景别:** extreme wide shot
+- **景别:** wide shot
 - **相机角度:** eye level
 - **参考图像:** location/熵单位降临地点
-- **Prompt:** `camera positioned at distance tracking the bone arrow's trajectory through stormy sky A bone arrow wrapped in spiraling ...`
+- **Prompt:** `camera positioned parallel to arrow trajectory, tracking the projectile through space A bone arrow wrapped in spiraling ...`
 
 ### S17-KF2 (i2v)
 
@@ -729,16 +729,16 @@
 - **景别:** medium shot
 - **相机角度:** low angle
 - **参考帧:** S17-KF1
-- **Motion Prompt:** `camera low angle capturing the moment of impact on octahedral entity A glowing green-wrapped bone arrow flies through th...`
+- **Motion Prompt:** `camera low and close to impact point, capturing explosion upward A glowing green-wrapped bone arrow flies through the fr...`
 
 ### S17-KF3 (i2v)
 
 - **时间:** 2.0s (持续 0.0s)
 - **类型:** i2v
-- **景别:** wide shot
+- **景别:** medium wide shot
 - **相机角度:** low angle
 - **参考帧:** S17-KF2
-- **Motion Prompt:** `camera whip-pans to distant cliff edge framing heroic silhouette against lightning A glowing green-wrapped bone arrow fl...`
+- **Motion Prompt:** `camera on cliff edge looking up at heroic figure silhouetted against lightning A glowing green-wrapped bone arrow flies ...`
 
 ---
 
@@ -750,9 +750,9 @@
 
 **视觉事件:**
 
-  1. 伏羲狂奔踩水 (medium shot, eye level)
-  2. 回望几何体汇合 (medium close-up, eye level)
-  3. 继续逃亡穿越 (medium shot, low angle)
+  1. 沼泽狂奔 (medium shot, eye level)
+  2. 回望威胁 (medium close-up, low angle)
+  3. 踉跄前行 (medium shot, eye level)
 
 **关键帧详情:**
 
@@ -763,25 +763,25 @@
 - **景别:** medium shot
 - **相机角度:** eye level
 - **参考图像:** location/熵单位降临地点
-- **Prompt:** `handheld camera following behind subject at close pursuit distance, shaking with running rhythm A teenage boy running de...`
+- **Prompt:** `handheld camera following behind subject at medium distance, shaky pursuit style tracking through swamp terrain A teenag...`
 
 ### S18-KF2 (i2v)
 
 - **时间:** 1.0s (持续 1.0s)
 - **类型:** i2v
 - **景别:** medium close-up
-- **相机角度:** eye level
+- **相机角度:** low angle
 - **参考帧:** S18-KF1
-- **Motion Prompt:** `handheld camera swinging to capture subject's face as he looks back, revealing background pursuers Boy runs frantically ...`
+- **Motion Prompt:** `handheld camera swings to capture boy's backward glance, slightly below eye level, chaotic motion following his turn Boy...`
 
 ### S18-KF3 (i2v)
 
 - **时间:** 2.0s (持续 0.0s)
 - **类型:** i2v
 - **景别:** medium shot
-- **相机角度:** low angle
+- **相机角度:** eye level
 - **参考帧:** S18-KF2
-- **Motion Prompt:** `low handheld camera pushing forward through branches and rain, dynamic pursuit perspective Boy runs frantically through ...`
+- **Motion Prompt:** `handheld camera continues aggressive pursuit, closer distance, maximum shake intensity as subject stumbles forward Boy r...`
 
 ---
 
@@ -793,9 +793,9 @@
 
 **视觉事件:**
 
-  1. 三体汇合成阵 (wide shot, low angle)
-  2. 光束传输数据 (medium shot, eye level)
-  3. 熵体缓升消隐 (medium wide shot, low angle)
+  1. 三体汇合成阵 (medium shot, low angle)
+  2. 光束射向云端 (medium shot, low angle)
+  3. 实体缓缓升空 (medium wide shot, low angle)
 
 **关键帧详情:**
 
@@ -803,19 +803,19 @@
 
 - **时间:** 0.0s (持续 1.3333333333333333s)
 - **类型:** t2i
-- **景别:** wide shot
+- **景别:** medium shot
 - **相机角度:** low angle
 - **参考图像:** location/熵单位降临地点
-- **Prompt:** `camera positioned low, looking up at three converging octahedral entities forming triangular pattern above dark swamp Th...`
+- **Prompt:** `camera positioned at medium distance below the three converging octahedral entities, looking up at their triangular form...`
 
 ### S19-KF2 (i2v)
 
 - **时间:** 1.3333333333333333s (持续 1.3333333333333333s)
 - **类型:** i2v
 - **景别:** medium shot
-- **相机角度:** eye level
+- **相机角度:** low angle
 - **参考帧:** S19-KF1
-- **Motion Prompt:** `camera pushing forward toward nearest entity, beam of encoded light visible shooting upward from convergence point Three...`
+- **Motion Prompt:** `camera slowly pushing forward toward the nearest entity while maintaining upward angle, capturing the encoded light beam...`
 
 ### S19-KF3 (i2v)
 
@@ -824,7 +824,7 @@
 - **景别:** medium wide shot
 - **相机角度:** low angle
 - **参考帧:** S19-KF2
-- **Motion Prompt:** `camera slowly pulling back as three entities begin ascending into clouds, light beam fading Three octahedral entities sl...`
+- **Motion Prompt:** `camera pulling back slowly as the three entities begin ascending, revealing their departure from the swamp location Thre...`
 
 ---
 
@@ -837,7 +837,7 @@
 **视觉事件:**
 
   1. 雨水流淌侧脸 (close-up, eye level)
-  2. 眨眼显露异瞳 (extreme close-up, eye level)
+  2. 眨眼露出异瞳 (extreme close-up, eye level)
   3. 八卦旋转渐黑 (extreme close-up, eye level)
 
 **关键帧详情:**
@@ -849,7 +849,7 @@
 - **景别:** close-up
 - **相机角度:** eye level
 - **参考图像:** character/少年伏羲
-- **Prompt:** `camera positioned at close distance, capturing profile view of subject's face from the side Cinematic close-up of a rain...`
+- **Prompt:** `camera positioned at close range capturing side profile of face, slight angle to emphasize cheekbone and eye Cinematic c...`
 
 ### S20-KF2 (i2v)
 
@@ -858,7 +858,7 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S20-KF1
-- **Motion Prompt:** `camera slowly pushing in toward subject's left eye, transitioning from profile to eye detail Rain streams down the boy's...`
+- **Motion Prompt:** `camera slowly pushing in toward left eye, framing tightens from face to eye region Rain streams down the boy's face in s...`
 
 ### S20-KF3 (i2v)
 
@@ -867,6 +867,6 @@
 - **景别:** extreme close-up
 - **相机角度:** eye level
 - **参考帧:** S20-KF2
-- **Motion Prompt:** `camera at extreme close position on left eye, edges of frame darkening with vignette effect Rain streams down the boy's ...`
+- **Motion Prompt:** `camera at maximum proximity to left eye, iris fills majority of frame Rain streams down the boy's face in slow motion, a...`
 
 ---

@@ -27,14 +27,45 @@ sys.path.insert(0, "/home/dz/creative-toolkit")
 from pipeline.utils import get_episode_dir, load_shots, PROJECT_ROOT
 from creative_toolkit.storyboard import extract_keyframe_specs_for_shot
 
+# ── 名称别名映射 ─────────────────────────────────────────────────
+# shots.json 中的 ref 名称 → 实际资产目录名
+LOCATION_ALIASES = {
+    "ancient_leize_swamp": "primordial_swamp_rainstorm",
+    "entropy_descent_site": "primordial_swamp_rainstorm",  # 同一片沼泽区域
+}
+
+CHARACTER_ALIASES = {
+    "young_fuxi": "fuxi",
+    "hunter_jia": "hunter",
+    "hunter_yi": "hunter",
+    "nuwa": "nvwa",
+    "observer_ai": None,  # 无视觉形象，仅画外音
+}
+
+
+def resolve_location_name(location: str) -> str:
+    """将 shots.json 中的 location_ref 映射到实际资产目录名。"""
+    return LOCATION_ALIASES.get(location, location)
+
+
+def resolve_character_name(character: str) -> str | None:
+    """将 shots.json 中的 character_ref 映射到实际资产目录名。返回 None 表示无视觉形象。"""
+    if character in CHARACTER_ALIASES:
+        return CHARACTER_ALIASES[character]
+    return character
+
 
 def find_character_reference(character: str) -> Path | None:
-    """找到character对应的参考图片。返回第一个找到的参考图片路径，或None。"""
-    char_ref_dir = PROJECT_ROOT / "assets" / "characters" / character
+    """找到character对应的参考图片。自动应用别名映射。"""
+    resolved = resolve_character_name(character)
+    if resolved is None:
+        return None  # 无视觉形象
+
+    char_ref_dir = PROJECT_ROOT / "assets" / "characters" / resolved
 
     if char_ref_dir.exists():
-        # 查找 {character}_ref_*.png 格式
-        ref_files = sorted(list(char_ref_dir.glob(f"{character}_ref_*.png")))
+        # 查找 {resolved}_ref_*.png 格式
+        ref_files = sorted(list(char_ref_dir.glob(f"{resolved}_ref_*.png")))
         if ref_files:
             return ref_files[0]
 
@@ -52,11 +83,12 @@ def find_character_reference(character: str) -> Path | None:
 
 
 def find_location_reference(location: str) -> Path | None:
-    """找到location对应的参考图片。返回第一个找到的参考图片路径，或None。"""
-    loc_ref_dir = PROJECT_ROOT / "assets" / "locations" / location
+    """找到location对应的参考图片。自动应用别名映射。"""
+    resolved = resolve_location_name(location)
+    loc_ref_dir = PROJECT_ROOT / "assets" / "locations" / resolved
 
     if loc_ref_dir.exists():
-        ref_files = sorted(list(loc_ref_dir.glob(f"{location}_ref_*.png")))
+        ref_files = sorted(list(loc_ref_dir.glob(f"{resolved}_ref_*.png")))
         if ref_files:
             return ref_files[0]
 
@@ -244,31 +276,29 @@ def generate_keyframes_json(episode_id: str) -> Path:
         for i, kf_spec in enumerate(shot_keyframes, 1):
             keyframe_id = f"{shot_id}-KF{i}"
 
-            # 确定 ref_image：第一帧智能选择location或character，后续帧参考前一帧
+            # 确定 ref_image：第一帧用角色参考（有角色时）或场景参考，后续帧参考前一帧
             ref_image = None
             if i == 1:
-                # 第一帧：智能选择location或character参考图
-                # 决策逻辑：多角色场景（2+）优先使用character，否则使用location
+                # 第一帧：如果有角色，优先用角色参考；否则用场景参考
+                # 过滤掉无视觉形象的角色（如 observer_ai）
+                visual_chars = [c for c in character_refs if resolve_character_name(c) is not None]
 
-                # 首先尝试多角色场景（character优先）
-                if len(character_refs) >= 2:
-                    for char in character_refs:
-                        char_ref = find_character_reference(char)
-                        if char_ref:
-                            ref_image = str(char_ref)
+                # 1) 有视觉角色 → 用角色参考
+                if visual_chars:
+                    for char in visual_chars:
+                        char_ref_path = find_character_reference(char)
+                        if char_ref_path:
+                            ref_image = str(char_ref_path)
                             break
 
-                # 如果没有找到character或单角色，使用location
+                # 2) 无角色或角色参考未找到 → 用场景参考
                 if not ref_image and location_ref:
-                    loc_ref = find_location_reference(location_ref)
-                    if loc_ref:
-                        ref_image = str(loc_ref)
+                    loc_ref_path = find_location_reference(location_ref)
+                    if loc_ref_path:
+                        ref_image = str(loc_ref_path)
 
-                # 回退：单角色场景，如果location未找到则尝试character
-                if not ref_image and len(character_refs) == 1:
-                    char_ref = find_character_reference(character_refs[0])
-                    if char_ref:
-                        ref_image = str(char_ref)
+                if not ref_image:
+                    print(f"  ⚠️ {shot_id}: 未找到任何参考图 (loc={location_ref}, chars={character_refs})")
             else:
                 # 后续帧：参考前一帧的keyframe_id
                 ref_image = f"{shot_id}-KF{i-1}"

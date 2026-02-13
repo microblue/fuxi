@@ -9,8 +9,10 @@
     "xihe": {
       "zh_name": "羲和",
       "en_name": "Xi He",
+      "gender": "male",
+      "hairstyle": "short dark hair",
       "role_description": "灵子文明最后的代码者，伏羲的前世。灵子文明首都数据中枢的核心操控者。",
-      "appearance": "约30岁，左眼有金色纹路，整体气质兼具科技精英的冷静与从容",
+      "appearance": "约30岁，男性，左眼有金色纹路，整体气质兼具科技精英的冷静与从容",
       "clothing": "身着流光长袍，材质随光线变化，充满未来感",
       "personality_keywords": [
         "果断",
@@ -35,8 +37,10 @@
     "young_fuxi": {
       "zh_name": "少年伏羲",
       "en_name": "Young Fuxi",
+      "gender": "male",
+      "hairstyle": "short dark hair, primitive style",
       "role_description": "华胥氏族的16岁少年猎人，羲和的转世载体",
-      "appearance": "16岁少年，体格健壮，原始部落少年猎人的身材，面容坚毅",
+      "appearance": "16岁少年，男性，体格健壮，原始部落少年猎人的身材，面容坚毅",
       "clothing": "上古部落风格的兽皮衣物，原始猎人装束",
       "personality_keywords": [
         "勇敢",
@@ -60,8 +64,10 @@
     "nvwa": {
       "zh_name": "女娲",
       "en_name": "Nüwa",
+      "gender": "female",
+      "hairstyle": "long dark hair",
       "role_description": "17岁少女，擅长弓箭，具有神秘的绿光力量",
-      "appearance": "17岁少女，身手矫健，常出没于山崖高处",
+      "appearance": "17岁少女，女性，身手矫健，常出没于山崖高处",
       "clothing": "上古部落风格服饰",
       "personality_keywords": [
         "果敢",
@@ -83,6 +89,7 @@
     "observer_ai": {
       "zh_name": "观测者AI",
       "en_name": "Observer AI",
+      "gender": "none",
       "role_description": "灵子文明的人工智能助手，辅助羲和进行数据操控和决策",
       "appearance": "无实体形象，以温柔女声呈现，可能伴有全息投影界面",
       "clothing": "无",
@@ -107,6 +114,7 @@
     "entropy_unit": {
       "zh_name": "熵格式化单位",
       "en_name": "Entropy Formatting Unit",
+      "gender": "none",
       "role_description": "执行格式化程序的外星机械生命体，负责清除异常代码残留",
       "appearance": "苍白色正八面体几何体，表面光滑冷硬，无声悬浮",
       "clothing": "无",
@@ -133,6 +141,8 @@
     "hunter_jia": {
       "zh_name": "猎人甲",
       "en_name": "Hunter A",
+      "gender": "male",
+      "hairstyle": "short dark hair, primitive style",
       "role_description": "华胥氏族猎人，伏羲的同伴",
       "appearance": "上古部落成年男性猎人，体格强壮",
       "clothing": "兽皮衣物，原始猎人装束",

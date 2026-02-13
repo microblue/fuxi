@@ -9,8 +9,8 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned at orbital altitude, looking straight down at the glowing megalopolis below Breathtaking futuristic megalopolis from aerial view, buildings made of pure luminescent light and holographic data, rivers of golden data flowing through the sky between crystalline towers, entire city pulsating with energy, ultra-advanced civilization aesthetic, cyan and gold color palette, lens flare, volumetric lighting, cinematic wide shot, 8K detail, sci-fi concept art style, dramatic atmosphere with warning lights beginning to flash red across the skyline",
-      "camera_state": "Extreme wide orbital shot looking down at luminescent futuristic city, crystalline towers and golden data rivers visible from space, cyan and gold color palette, camera begins rapid descent",
+      "prompt": "camera positioned at orbital altitude, looking straight down at the luminous megalopolis from space Breathtaking futuristic megalopolis from aerial view, buildings made of pure luminescent light and holographic data, rivers of golden data flowing through the sky between crystalline towers, entire city pulsating with energy, ultra-advanced civilization aesthetic, cyan and gold color palette, lens flare, volumetric lighting, cinematic wide shot, 8K detail, sci-fi concept art style, dramatic atmosphere with warning lights beginning to flash red across the skyline",
+      "camera_state": "Extreme wide orbital shot looking down at breathtaking futuristic city, buildings of pure light forming geometric patterns, golden data rivers flowing between crystalline towers, cyan and gold palette, camera begins rapid descent",
       "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -57,8 +57,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera rapidly descending through atmospheric layer, passing through streams of flowing data between holographic towers Camera rapidly descends from orbital view diving toward the glowing city, data rivers flowing dynamically through the air, buildings shimmering and pulsating, then all lights begin to stutter and glitch simultaneously, red warning pulses ripple across the cityscape, holographic displays flicker with error codes",
-      "camera_state": "Wide aerial shot diving through golden data streams flowing between crystalline skyscrapers, buildings made of pure light pulsating with energy, holographic displays shimmering, dynamic forward momentum",
+      "prompt": "camera rapidly descending through atmosphere, passing through layers of flowing data streams and holographic clouds Camera rapidly descends from orbital view diving toward the glowing city, data rivers flowing dynamically through the air, buildings shimmering and pulsating, then all lights begin to stutter and glitch simultaneously, red warning pulses ripple across the cityscape, holographic displays flicker with error codes",
+      "camera_state": "Wide aerial shot diving through luminescent data clouds, holographic streams rushing past camera, city growing larger below, towers of pure light becoming visible, energy pulsating through urban grid, dynamic forward momentum",
       "ref_image": "S01-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -105,8 +105,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera hovering above city skyline as glitch effects ripple across all structures Camera rapidly descends from orbital view diving toward the glowing city, data rivers flowing dynamically through the air, buildings shimmering and pulsating, then all lights begin to stutter and glitch simultaneously, red warning pulses ripple across the cityscape, holographic displays flicker with error codes",
-      "camera_state": "Wide shot of city skyline as all lights begin stuttering and glitching simultaneously, red warning pulses rippling across buildings, holographic displays flickering with error codes, chaos spreading",
+      "prompt": "camera hovering above city skyline, capturing the sudden glitch cascade across the metropolis Camera rapidly descends from orbital view diving toward the glowing city, data rivers flowing dynamically through the air, buildings shimmering and pulsating, then all lights begin to stutter and glitch simultaneously, red warning pulses ripple across the cityscape, holographic displays flicker with error codes",
+      "camera_state": "Wide aerial shot above glitching cityscape, all lights stuttering and flickering simultaneously, red warning pulses rippling across buildings, holographic displays showing error codes, entire city experiencing synchronized malfunction",
       "ref_image": "S01-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -153,9 +153,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned behind and to the side of subject, beginning orbital movement around the figure atop crystalline tower A majestic figure standing atop a crystalline tower, 30-year-old male with flowing luminescent robes that shimmer with data patterns, golden circuit-like tattoo on left eye, fingers dancing through holographic golden data streams in the air, futuristic control console before him, wind blowing robes dramatically, red alert lights flashing in background, cinematic medium shot, dramatic rim lighting, cyberpunk meets eastern mythology aesthetic",
-      "camera_state": "Medium shot from behind-side angle, 30-year-old male in luminescent robes manipulating golden holographic data streams, fingers dancing through air, wind-blown robes with embedded light patterns, camera begins slow orbit",
-      "ref_image": "/home/dz/fuxi/assets/characters/xihe/ref_final.png",
+      "prompt": "camera positioned behind and to the side of subject, capturing back of flowing robes and arms extended manipulating data A majestic figure standing atop a crystalline tower, 30-year-old male with flowing luminescent robes that shimmer with data patterns, golden circuit-like tattoo on left eye, fingers dancing through holographic golden data streams in the air, futuristic control console before him, wind blowing robes dramatically, red alert lights flashing in background, cinematic medium shot, dramatic rim lighting, cyberpunk meets eastern mythology aesthetic",
+      "camera_state": "Medium shot from behind-side angle, 30-year-old male in luminescent robes standing atop crystalline tower, fingers manipulating golden holographic data streams, wind rippling fabric with embedded light patterns, camera beginning orbital movement",
+      "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "lingzi_capital_data_core",
@@ -255,8 +255,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera now at 90-degree profile view, continuing smooth orbital path around the data manipulator Character's fingers rapidly swipe and manipulate floating golden data streams, holographic interfaces responding to each gesture, data particles flowing from fingertips, robes rippling with embedded light patterns, camera slowly orbiting from behind to reveal the character's determined face with glowing left eye",
-      "camera_state": "Medium shot profile view, golden data particles flowing from fingertips, holographic interfaces responding to rapid gestures, robes rippling with circuit-like patterns, tower platform visible below, camera continuing orbital movement",
+      "prompt": "camera at three-quarter view, revealing profile and flowing golden data particles streaming from fingertips Character's fingers rapidly swipe and manipulate floating golden data streams, holographic interfaces responding to each gesture, data particles flowing from fingertips, robes rippling with embedded light patterns, camera slowly orbiting from behind to reveal the character's determined face with glowing left eye",
+      "camera_state": "Medium shot at three-quarter angle, golden data streams flowing dynamically from dancing fingertips, holographic interfaces responding to rapid gestures, robes shimmering with data patterns, focused expression visible in profile, tower pinnacle environment",
       "ref_image": "S02-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -357,8 +357,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera completes orbit to frontal position, revealing subject's face directly Character's fingers rapidly swipe and manipulate floating golden data streams, holographic interfaces responding to each gesture, data particles flowing from fingertips, robes rippling with embedded light patterns, camera slowly orbiting from behind to reveal the character's determined face with glowing left eye",
-      "camera_state": "Medium shot frontal reveal, determined expression with glowing golden circuit tattoo on left eye, focused and anxious face illuminated by swirling data streams, holographic console before him, orbital movement settling",
+      "prompt": "camera arrived at frontal position, fully revealing subject's face and glowing golden left eye tattoo Character's fingers rapidly swipe and manipulate floating golden data streams, holographic interfaces responding to each gesture, data particles flowing from fingertips, robes rippling with embedded light patterns, camera slowly orbiting from behind to reveal the character's determined face with glowing left eye",
+      "camera_state": "Medium frontal shot revealing determined face with glowing golden circuit tattoo on left eye, expression focused and anxious, hands continuing data manipulation, luminescent robes flowing, golden holographic streams surrounding figure atop tower",
       "ref_image": "S02-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -459,9 +459,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "Medium shot of Xihe standing at futuristic control console atop crystalline tower, upper body and console visible, cityscape with glowing towers in background, 30-year-old male with golden circuit pattern on left eye, flowing luminous robes shimmering with data patterns, holographic countdown timer 17:42 floating beside him, golden data streams swirling through the air, emergency red alert lights flashing in background, dramatic cinematic lighting, sci-fi aesthetic blending cyberpunk and eastern mythology",
-      "camera_state": "Medium close-up frontal shot of determined male face with golden circuit pattern on left eye, translucent holographic feminine AI figure floating beside displaying countdown 17:42, dramatic chiaroscuro lighting with emergency red accents, golden data streams beginning to swirl",
-      "ref_image": "/home/dz/fuxi/assets/characters/xihe/ref_final.png",
+      "prompt": "camera positioned at medium-close distance, frontal view of Xihe with holographic AI on right side of frame Close-up of a determined male face with golden circuit pattern on left eye, a translucent holographic AI feminine figure floating beside him displaying countdown timer 17:42, futuristic control console with emergency red lights, golden data streams swirling around them, dramatic chiaroscuro lighting, sci-fi cinematic style, warm gold and cool blue contrast",
+      "camera_state": "Medium close-up frontal shot of determined male face with golden circuit on left eye, translucent feminine AI hologram displaying 17:42 countdown beside him, red emergency lights, golden data streams beginning to swirl",
+      "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "lingzi_capital_data_core",
@@ -586,8 +586,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "Medium close-up of Xihe at control console on tower top, camera slowly pushing closer, character shaking head firmly while speaking, upper torso visible with flowing robes, crystalline tower structure and city lights visible in background, holographic countdown timer ticking down, golden data streams intensifying around the scene, dramatic side lighting emphasizing determination, futuristic control platform glowing beneath his hands",
-      "camera_state": "Subtle camera push-in as Xihe shakes head firmly, golden eye circuit glowing intensely, holographic AI pulsating gently with warning words, countdown numbers ticking on floating displays, golden data streams intensifying around scene, dramatic side lighting emphasizing determination",
+      "prompt": "camera slowly pushing in toward subject's face, AI hologram pulsating with gentle glow on side Character shakes head firmly while speaking, holographic AI figure pulsates gently with each word, countdown numbers ticking down on floating displays, golden data streams intensifying around the scene, subtle camera push-in toward character's face",
+      "camera_state": "Slow push-in as Xihe shakes head firmly, holographic AI figure pulsates gently, countdown ticking to 17:38, golden data streams intensifying, dramatic chiaroscuro lighting emphasizing resolve",
       "ref_image": "S03-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -713,8 +713,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "Medium close-up of Xihe's resolute face and upper body at control console, golden circuit pattern on left eye pulsing intensely, holographic AI figure casting soft blue glow from side, countdown timer 17:41 visible, intense golden data streams swirling around, tower top environment with city backdrop, dramatic lighting capturing unwavering determination, futuristic sci-fi atmosphere",
-      "camera_state": "Close-up of Xihe's resolute face as he proposes the Fire Seed Protocol, golden circuit pattern pulsing on left eye, holographic AI figure casting soft blue glow from side, intense golden data streams swirling around, countdown timer 17:41 visible, dramatic lighting capturing unwavering determination",
+      "prompt": "camera completing push-in to tight close-up on Xihe's determined face, golden circuit glowing intensely Character shakes head firmly while speaking, holographic AI figure pulsates gently with each word, countdown numbers ticking down on floating displays, golden data streams intensifying around the scene, subtle camera push-in toward character's face",
+      "camera_state": "Tight close-up of Xihe's resolute expression, golden eye circuit glowing bright, AI hologram soft-focus in background, swirling golden data streams peak intensity, countdown visible at frame edge",
       "ref_image": "S03-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -840,9 +840,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned close to subject's face, framing from forehead to chin Extreme close-up of a heroic male face with a bittersweet smile full of sorrow and acceptance, melancholic yet dignified expression, golden circuit tattoo on left eye glowing intensely, tears of light forming at the corner of his eye signifying the weight of civilization's end, tragic composure, resigned determination mixed with deep sadness, holographic data reflections on his skin, warm golden light illuminating his sorrowful features against the chaos behind, cinematic shallow depth of field, emotionally devastating portrait shot",
-      "camera_state": "Close-up of heroic male face, serene smile beginning to form, golden circuit tattoo on left eye starting to glow, warm golden light on features, holographic reflections on skin",
-      "ref_image": "/home/dz/fuxi/assets/characters/xihe/ref_final.png",
+      "prompt": "camera positioned close to subject's face, centered on facial features Extreme close-up of a heroic male face with a gentle yet resolute smile, golden circuit tattoo on left eye glowing intensely, tears of light forming at the corner of his eye, holographic data reflections on his skin, warm golden light illuminating his features against the chaos behind, cinematic shallow depth of field, emotionally powerful portrait shot",
+      "camera_state": "Close-up of heroic male face, serene smile beginning to form, golden circuit tattoo on left eye glowing softly, warm golden light illuminating features, holographic data reflections on skin",
+      "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "lingzi_capital_data_core",
@@ -967,8 +967,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera slowly pushing in, tighter framing on upper face and eyes A bitter yet peaceful smile of resigned acceptance slowly forms on the character's face, mixed with deep sorrow for humanity's fate, knowing he will not remember this sacrifice, golden eye tattoo brightens with pulsating light symbolizing the final moments, camera slowly pushes in toward the sorrowful yet determined glowing left eye, light reflections dance across the iris, profound emotional weight visible in every micro-expression, tragic heroism",
-      "camera_state": "Tighter close-up as camera pushes in, golden eye tattoo pulsating with intense light, light tears forming at eye corner, emotional tremor visible, data reflections dancing across iris",
+      "prompt": "camera slowly pushing in, transitioning from full face to emphasizing left eye region A serene smile slowly forms on the character's face, golden eye tattoo brightens with pulsating light, camera slowly pushes in toward the glowing left eye, light reflections dance across the iris, subtle emotional tremor in expression",
+      "camera_state": "Tighter close-up as camera pushes in, golden eye tattoo pulsating with intensifying light, gentle resolute smile fully formed, tears of light forming at eye corner, emotional tremor visible",
       "ref_image": "S04-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -1094,8 +1094,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera very close, framing centered on glowing left eye Tragic composure in the character's expression, sorrowful determination as he accepts annihilation for a chance at continuation, melancholic farewell to a dying civilization, golden eye tattoo radiates with final brilliant pulsating light, camera focuses on the glowing left eye filled with both tears of sorrow and resolute courage, light reflections dance across the iris like memories fading away, bittersweet acceptance of inevitable death while choosing hope over despair, profound emotional devastation mixed with dignified sacrifice",
-      "camera_state": "Extreme close-up of glowing golden left eye, brilliant pulsating light from circuit tattoo, luminous tear at corner, iris filled with holographic data reflections, resolute determination in gaze",
+      "prompt": "camera very close, framing primarily the glowing left eye with golden tattoo A serene smile slowly forms on the character's face, golden eye tattoo brightens with pulsating light, camera slowly pushes in toward the glowing left eye, light reflections dance across the iris, subtle emotional tremor in expression",
+      "camera_state": "Extreme close-up of glowing left eye, golden circuit tattoo radiating intense pulsating light, light reflections dancing across iris, luminous tears, cinematic shallow depth of field",
       "ref_image": "S04-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -1221,9 +1221,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned behind and above Xihe at tower summit, overlooking the city Epic wide shot of a figure pressing both hands on a luminous console, entire body dissolving into golden data streams being pulled upward, a massive pillar of light erupting from the city center shooting into the cosmos, the pillar splitting into billions of golden light particles scattering across the starry universe, one prominent light particle containing a faint bagua trigram pattern, apocalyptic beauty, cosmic scale, volumetric god rays, cinematic masterpiece composition",
-      "camera_state": "Epic wide shot from behind Xihe pressing hands on luminous console, golden data streams beginning to extract from body, city sprawling below at night with bioluminescent towers",
-      "ref_image": "/home/dz/fuxi/assets/characters/xihe/ref_final.png",
+      "prompt": "camera positioned behind and above Xi He at the tower apex, beginning vertical ascent Epic wide shot of a figure pressing both hands on a luminous console, entire body dissolving into golden data streams being pulled upward, a massive pillar of light erupting from the city center shooting into the cosmos, the pillar splitting into billions of golden light particles scattering across the starry universe, one prominent light particle containing a faint bagua trigram pattern, apocalyptic beauty, cosmic scale, volumetric god rays, cinematic masterpiece composition",
+      "camera_state": "Epic wide shot from behind Xi He, hands pressing luminous console, body beginning to dissolve into golden upward-streaming particles, city sprawling below, camera starting vertical pullback",
+      "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "lingzi_capital_data_core",
@@ -1325,8 +1325,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera rapidly ascending vertically, pulling back to reveal expanding light pillar from city center Character presses hands down and body begins to dissolve into upward-streaming golden particles, colossal light pillar erupts from the city center with explosive force, pillar fragments into millions of light seeds scattering in all directions across space, camera pulls back and rises vertically to reveal the cosmic scale of the event, one glowing particle with spinning bagua symbol drifts toward camera",
-      "camera_state": "Colossal pillar of golden light erupting from city center with explosive force, Xihe's dissolving silhouette at base, camera rising vertically revealing cosmic scale, light fragments scattering",
+      "prompt": "camera high above city center, continuing vertical ascent, capturing full scale of light pillar eruption Character presses hands down and body begins to dissolve into upward-streaming golden particles, colossal light pillar erupts from the city center with explosive force, pillar fragments into millions of light seeds scattering in all directions across space, camera pulls back and rises vertically to reveal the cosmic scale of the event, one glowing particle with spinning bagua symbol drifts toward camera",
+      "camera_state": "Massive pillar of golden light erupting from city center with explosive force, splitting into millions of light seeds scattering across space, camera rising vertically revealing cosmic scale",
       "ref_image": "S05-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -1429,8 +1429,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera stationary at cosmic vantage point, billions of light seeds scattered across starfield, one particle drifting toward lens Character presses hands down and body begins to dissolve into upward-streaming golden particles, colossal light pillar erupts from the city center with explosive force, pillar fragments into millions of light seeds scattering in all directions across space, camera pulls back and rises vertically to reveal the cosmic scale of the event, one glowing particle with spinning bagua symbol drifts toward camera",
-      "camera_state": "Cosmic vista of billions of golden light seeds scattering across space, city below as tiny glow, single luminous particle with spinning bagua symbol approaching camera, serene stillness",
+      "prompt": "camera stabilized in cosmic space, billions of scattered light particles filling frame, one glowing particle with bagua symbol drifting toward lens Character presses hands down and body begins to dissolve into upward-streaming golden particles, colossal light pillar erupts from the city center with explosive force, pillar fragments into millions of light seeds scattering in all directions across space, camera pulls back and rises vertically to reveal the cosmic scale of the event, one glowing particle with spinning bagua symbol drifts toward camera",
+      "camera_state": "Vast cosmic vista with billions of golden light seeds dispersing into universe, camera stable, single glowing particle with spinning bagua symbol gently floating toward camera, ethereal stillness",
       "ref_image": "S05-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -1533,9 +1533,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned frontally at medium distance, soft focus beginning to diffuse edges A translucent ghostly figure fading into golden light particles, calm dignified expression showing quiet strength and composed acceptance, no tears only resolute determination, golden circuit eye pattern glowing steadily with unwavering resolve, surrounded by floating holographic data streams and geometric light patterns from the city's data core, futuristic cityscape glowing in background, ethereal yet strong atmosphere, cinematic emotional close shot, serene beauty of a hero's final moment",
-      "camera_state": "Medium frontal shot of ethereal figure, edges beginning to dissolve into golden particles drifting upward like embers, soft focus creating dreamlike quality, warm golden bokeh background",
-      "ref_image": "/home/dz/fuxi/assets/characters/xihe/ref_final.png",
+      "prompt": "camera positioned at medium distance, centered on subject, slight soft focus beginning at edges A translucent ghostly figure fading into golden light particles, gentle smile on the dissolving face, golden circuit eye pattern being the last thing visible, surrounded by floating data fragments like cherry blossoms, warm golden bokeh background, ethereal and dreamlike atmosphere, cinematic emotional close shot, bittersweet beauty",
+      "camera_state": "Medium shot of translucent figure with edges dissolving into golden particles, soft focus effect starting, warm golden bokeh background, ethereal lighting, frontal framing",
+      "ref_image": "/home/dz/fuxi/assets/locations/lingzi_capital_data_core/lingzi_capital_data_core_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "lingzi_capital_data_core",
@@ -1610,8 +1610,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera maintains frontal position, focus gradually softening as subject becomes translucent Character's body slowly becomes transparent from the edges inward, golden data particles streaming upward into the digital void, lips moving with final calm words spoken with quiet strength, a composed dignified expression of stoic acceptance without fear as the figure dissolves into shimmering golden light, unwavering resolve visible in every fading feature, holographic data streams flowing around the dissolving form, the last visible element is the glowing left eye radiating steady determination before fading",
-      "camera_state": "Translucent ghostly figure speaking final words with peaceful smile, golden light particles streaming upward, data fragments floating like cherry blossoms, circuit eye pattern glowing through fading form",
+      "prompt": "camera maintains centered framing, focus softening progressively, golden particles rising like embers Character's body slowly becomes transparent from the edges inward, golden particles drifting upward like embers, lips moving with final words, a peaceful smile remaining as the figure dissolves completely into shimmering golden dust, the last visible element is the glowing left eye fading into darkness",
+      "camera_state": "Medium shot capturing peaceful smile on dissolving face, lips moving with final words, golden light particles ascending, cherry blossom-like data fragments floating, increasing soft focus",
       "ref_image": "S06-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -1687,8 +1687,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera static as subject dissolves completely, focus extremely soft merging into darkness Character's body becomes completely transparent and dissolves into pure light, golden data particles streaming upward into the cosmic data stream, lips forming silent final words spoken with calm resolve, expression showing quiet composure and dignified acceptance of sacrifice, figure vanishing into shimmering golden light that merges with the city's data core, holographic patterns swirling in the void, the last visible element is the glowing left eye expressing steady unwavering determination before fading into light",
-      "camera_state": "Final glowing golden circuit eye pattern fading into darkness, shimmering golden dust dispersing into void, warm light dimming to black, ethereal silence descending",
+      "prompt": "camera static, maximum soft focus, only golden circuit eye pattern visible against darkening background Character's body slowly becomes transparent from the edges inward, golden particles drifting upward like embers, lips moving with final words, a peaceful smile remaining as the figure dissolves completely into shimmering golden dust, the last visible element is the glowing left eye fading into darkness",
+      "camera_state": "Soft focus medium shot of glowing golden circuit eye fading into darkness, shimmering golden dust dispersing, warm bokeh dimming to black, ethereal dreamlike atmosphere dissolving",
       "ref_image": "S06-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -1764,9 +1764,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned at water level, capturing vast swamp expanse with figures in distance Primordial swampland at night during a torrential rainstorm, four figures trudging through knee-deep murky water, young Fuxi, a 16-year-old boy with determined face and muscular build, leading in front, followed by three adult tribal hunters, all wearing primitive animal hide clothing, carrying bone spears, massive ancient trees with hanging moss, lightning illuminating the scene intermittently, raw untamed wilderness, dark greens and deep browns, cinematic wide shot, rain streaks visible, atmospheric fog, prehistoric earth aesthetic",
-      "camera_state": "Extreme wide shot from low angle at water surface level, primordial swamp under torrential rain, lightning flash illuminating four silhouettes wading through murky waters, ancient trees with hanging moss, fog rolling across surface",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned at water level, capturing vast swampland expanse with figures in distance Primordial swampland at night during a torrential rainstorm, four figures trudging through knee-deep murky water, a 16-year-old boy leading three muscular tribal hunters, wearing primitive animal hide clothing, carrying bone spears, massive ancient trees with hanging moss, lightning illuminating the scene intermittently, raw untamed wilderness, dark greens and deep browns, cinematic wide shot, rain streaks visible, atmospheric fog, prehistoric earth aesthetic",
+      "camera_state": "Extreme wide shot from low angle at water level, torrential rain sheets falling, lightning flash illuminating primordial swamp, four silhouettes wading through murky knee-deep water, ancient moss-draped trees looming, fog rolling across surface",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "ancient_leize_swamp",
@@ -1861,8 +1861,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera tracking laterally at knee height, following group through swamp Heavy rain falling in sheets, young Fuxi leading the group, wading through swamp water with determined strides, three hunters following behind, lightning flashes intermittently illuminating the dark landscape, water splashing with each step, wind whipping tree branches and moss, fog rolling across the swamp surface",
-      "camera_state": "Wide tracking shot from low angle, young Fuxi leading three hunters through knee-deep water, rain sheets falling, splashing with each determined stride, primitive hide clothing soaked, bone spears raised",
+      "prompt": "camera advancing through swamp water towards the group, maintaining low perspective Heavy rain falling in sheets, characters wading through swamp water with determined strides, lightning flashes intermittently illuminating the dark landscape, water splashing with each step, wind whipping tree branches and moss, fog rolling across the swamp surface",
+      "camera_state": "Wide shot pushing forward through rain, young Fuxi leading three muscular hunters in animal hides, bone spears raised, water splashing violently with each determined stride, wind whipping moss and branches, lightning crackling overhead",
       "ref_image": "S07-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -1958,8 +1958,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera at water surface tilting upward toward figures and stormy sky Heavy rain falling in sheets, young Fuxi at the front of the group, wading through swamp water with determined strides, three tribal hunters following, lightning flashes intermittently illuminating the dark landscape, water splashing with each step, wind whipping tree branches and moss, fog rolling across the swamp surface",
-      "camera_state": "Wide shot from worm's eye view, dramatic lightning flash illuminating dark landscape, four figures silhouetted against stormy sky, wind whipping tree branches, water droplets caught in lightning glow, epic primordial atmosphere",
+      "prompt": "camera at ground/water level looking up at figures silhouetted against stormy sky Heavy rain falling in sheets, characters wading through swamp water with determined strides, lightning flashes intermittently illuminating the dark landscape, water splashing with each step, wind whipping tree branches and moss, fog rolling across the swamp surface",
+      "camera_state": "Dramatic worm's eye view as massive lightning bolt illuminates the hunters from behind, Fuxi's determined young face visible, tribal hunters' muscular forms silhouetted, rain pouring down, ancient swamp landscape stretching into darkness",
       "ref_image": "S07-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -2055,9 +2055,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "Close-up portrait of a 16-year-old tribal hunter boy with short dark hair and determined face, muscular youth wearing animal hide clothing, standing in ancient marshland at night, looking upward with awe and terror, rain soaking his face and hair, silver-blue geometric light streams reflecting in his eyes, stormy sky behind him with hexagonal crystalline energy patterns pouring through clouds, prehistoric swamp setting, dramatic cinematic lighting, highly detailed face",
-      "camera_state": "Medium shot at eye level, stormy night in ancient marshland, hunter shouting warning while young tribal boy Fuxi begins looking upward, rain-soaked atmosphere, supernatural wind stirring hair and clothes",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera at character level, framing hunter and young Fuxi in tribal swamp setting, rain falling around them Dramatic low angle looking up at a stormy night sky being torn apart by silver-blue geometric light streams pouring through the clouds, not natural lightning but structured data-like energy with hexagonal and crystalline patterns, a young tribal boy and hunter looking up in awe and terror, rain illuminated by the otherworldly light, contrast between primitive humans and cosmic technology, supernatural event in prehistoric setting",
+      "camera_state": "Medium shot at eye level, hunter shouting warning to Fuxi, both figures in stormy swamp, rain illuminated by ambient light, tension building before sky reveals phenomenon",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "ancient_leize_swamp",
@@ -2090,7 +2090,8 @@
           "era": "上古时代（华胥氏部落时期）"
         },
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -2152,8 +2153,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "Medium shot of a 16-year-old tribal hunter boy with short dark hair in animal hide clothing, arms raised defensively as silver-blue geometric light cascades from the torn sky above, supernatural wind blowing his hair and clothes violently, rain drops frozen in the otherworldly light around him, ancient marshland background, clouds parting with structured mathematical light patterns, dramatic upward camera angle, prehistoric wilderness, cinematic composition focused on the boy",
-      "camera_state": "Dynamic whip-pan tilting rapidly upward following Fuxi's gaze, motion blur streaking through frame, transitioning from ground level to sky, raindrops caught mid-motion appearing frozen in supernatural light",
+      "prompt": "camera whip-panning upward from character level, motion blur capturing rapid tilt toward breaking sky Camera whip-pans from character level up to the sky, clouds violently parting as silver-blue geometric light streams cascade downward like digital waterfalls, the light patterns have structured mathematical forms flowing through them, rain drops caught in the light appear to freeze momentarily, characters' hair and clothes blown by supernatural wind",
+      "camera_state": "Dynamic whip-pan tilting rapidly upward, low angle transitioning to sky view, motion blur effect, clouds beginning to tear apart, silver-blue light starting to pierce through storm",
       "ref_image": "S08-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -2187,7 +2188,8 @@
           "era": "上古时代（华胥氏部落时期）"
         },
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -2249,8 +2251,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "Full body shot of a 16-year-old tribal hunter boy with short dark hair standing alone in ancient swamp, bathed in cascading silver-blue geometric light from above, his muscular frame silhouetted against the supernatural glow, animal hide clothing whipping in cosmic wind, hexagonal light patterns surrounding him like a cocoon, muddy wetland terrain, heavy rain, extreme dramatic lighting from above, prehistoric setting, the boy at the center of a cosmic event",
-      "camera_state": "Extreme low angle worm's eye view of stormy sky violently tearing apart, silver-blue geometric light streams cascading downward like digital waterfalls, hexagonal crystalline energy patterns with mathematical forms, clouds parting dramatically",
+      "prompt": "camera locked on dramatic low angle looking straight up at torn sky, geometric light streams filling frame Camera whip-pans from character level up to the sky, clouds violently parting as silver-blue geometric light streams cascade downward like digital waterfalls, the light patterns have structured mathematical forms flowing through them, rain drops caught in the light appear to freeze momentarily, characters' hair and clothes blown by supernatural wind",
+      "camera_state": "Extreme wide worm's eye view of sky torn apart, silver-blue geometric light cascading down like digital waterfalls, hexagonal crystalline energy patterns, raindrops frozen in supernatural light, hair and clothes blown by cosmic wind",
       "ref_image": "S08-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -2284,7 +2286,8 @@
           "era": "上古时代（华胥氏部落时期）"
         },
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -2346,9 +2349,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "macro lens positioned extremely close to left eye, capturing intricate iris detail Extreme close-up of a young boy's left eye in pain, pupil dilating, faint golden flicker appearing deep within the iris, rain drops on the skin, hand reaching up to cover the eye, dramatic side lighting from the silver-blue light above, raw emotional expression of sudden unexplained pain, cinematic macro shot, shallow depth of field, water droplets on eyelashes",
-      "camera_state": "Extreme macro close-up of young boy's left eye, pupil beginning to contract in pain, raindrops glistening on skin surface, dramatic silver-blue side lighting from above, sharp focus on iris texture",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "macro lens positioned extremely close to subject's left eye, capturing iris detail Extreme close-up of a young boy's left eye in pain, pupil dilating, faint golden flicker appearing deep within the iris, rain drops on the skin, hand reaching up to cover the eye, dramatic side lighting from the silver-blue light above, raw emotional expression of sudden unexplained pain, cinematic macro shot, shallow depth of field, water droplets on eyelashes",
+      "camera_state": "Extreme macro close-up of young boy's left eye, pupil beginning to contract in pain, rain droplets on surrounding skin, dramatic silver-blue side lighting, shallow depth of field on iris texture",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "ancient_leize_swamp",
@@ -2420,8 +2423,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "macro lens maintaining extreme proximity, focus shifts to dilating pupil Eye contracts in pain with pupil rapidly dilating, a brief golden flash sparks deep within the iris, the boy's hand rushes up to press against the eye, rain streaming down the face, subtle trembling of the features, background glow of the descending light stream reflected in the visible right eye",
-      "camera_state": "Macro shot of pupil rapidly dilating, golden flash sparking deep within iris, rain streaming down face visible at frame edge, subtle facial trembling, light stream reflection in cornea",
+      "prompt": "macro lens holding steady on dilating pupil, capturing golden flash deep within iris Eye contracts in pain with pupil rapidly dilating, a brief golden flash sparks deep within the iris, the boy's hand rushes up to press against the eye, rain streaming down the face, subtle trembling of the features, background glow of the descending light stream reflected in the visible right eye",
+      "camera_state": "Macro shot of dilating pupil with brief golden spark flickering deep in iris, rain streaming down face, subtle facial trembling visible at frame edge, reflected light stream glow in visible portion",
       "ref_image": "S09-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -2494,8 +2497,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "macro lens static as hand enters frame to cover eye Eye contracts in pain with pupil rapidly dilating, a brief golden flash sparks deep within the iris, the boy's hand rushes up to press against the eye, rain streaming down the face, subtle trembling of the features, background glow of the descending light stream reflected in the visible right eye",
-      "camera_state": "Static macro shot as boy's hand rushes into frame covering pained left eye, fingers wet with rain, right eye visible reflecting descending light vortex, emotional raw expression frozen in moment of agony",
+      "prompt": "macro lens holding position as hand enters frame to cover eye Eye contracts in pain with pupil rapidly dilating, a brief golden flash sparks deep within the iris, the boy's hand rushes up to press against the eye, rain streaming down the face, subtle trembling of the features, background glow of the descending light stream reflected in the visible right eye",
+      "camera_state": "Hand rushing into frame covering the pained eye, fingers pressing against wet skin, camera static as view becomes partially obscured, dramatic lighting on knuckles, emotional pain expression freezing",
       "ref_image": "S09-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -2568,9 +2571,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned low at water level, frontal view capturing boy entering frame from distance A teenage boy in primitive animal hide clothing cautiously approaching a swirling luminous vortex in the center of a dark swamp, a semi-transparent crystal hovering at the vortex center emitting pulsating golden and silver light, the vortex creating ripples of light on the water surface, boy reaching out one hand toward the crystal, mystical and sacred atmosphere, dramatic back-lighting from the vortex, rain still falling but seeming to slow near the vortex, cinematic composition with the boy small against the cosmic phenomenon",
-      "camera_state": "Medium shot from low frontal angle at water level, boy in primitive hide clothing begins walking through shallow swamp water, glowing vortex visible ahead casting golden-silver light patterns on rippling water surface",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned low near water surface, frontal view of approaching boy, vortex visible in background A teenage boy in primitive animal hide clothing cautiously approaching a swirling luminous vortex in the center of a dark swamp, a semi-transparent crystal hovering at the vortex center emitting pulsating golden and silver light, the vortex creating ripples of light on the water surface, boy reaching out one hand toward the crystal, mystical and sacred atmosphere, dramatic back-lighting from the vortex, rain still falling but seeming to slow near the vortex, cinematic composition with the boy small against the cosmic phenomenon",
+      "camera_state": "Medium shot from low angle near water level, teenage boy in animal hide stepping into shallow swamp water, luminous vortex glowing behind him, ripples spreading from his feet",
+      "ref_image": "/home/dz/fuxi/assets/locations/vortex_edge/vortex_edge_ref_00_seed0.png",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "vortex_edge",
@@ -2641,8 +2644,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera slowly pushing forward at low angle, closing distance as boy approaches vortex center Boy slowly walks forward through shallow water toward the glowing vortex, each step creating ripples that interact with the vortex light patterns, crystal hovering and slowly rotating at the center, his hand extends trembling toward it, vortex light intensifying as he approaches, water around the vortex spiraling gently",
-      "camera_state": "Low angle medium shot slowly pushing in, boy wading closer to swirling luminous vortex, semi-transparent crystal hovering and rotating at center, pulsating light intensifying, water spiraling gently around vortex creating mesmerizing light ripples",
+      "prompt": "camera slowly pushing forward at low angle, capturing boy mid-approach with crystal now prominent in frame Boy slowly walks forward through shallow water toward the glowing vortex, each step creating ripples that interact with the vortex light patterns, crystal hovering and slowly rotating at the center, his hand extends trembling toward it, vortex light intensifying as he approaches, water around the vortex spiraling gently",
+      "camera_state": "Low angle medium shot slowly pushing in, boy wading through light-rippled water, semi-transparent crystal rotating at vortex center emitting golden-silver pulsations, water spiraling gently around vortex",
       "ref_image": "S10-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -2714,8 +2717,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera pushed closer at low angle, framing boy's upper body and extended trembling hand reaching toward crystal Boy slowly walks forward through shallow water toward the glowing vortex, each step creating ripples that interact with the vortex light patterns, crystal hovering and slowly rotating at the center, his hand extends trembling toward it, vortex light intensifying as he approaches, water around the vortex spiraling gently",
-      "camera_state": "Medium close-up from low frontal angle, boy's trembling hand extends toward hovering crystal at vortex center, golden-silver light intensifying dramatically, spiral water patterns and light reflections creating ethereal atmosphere around the mystical moment",
+      "prompt": "camera pushed closer at low angle, framing boy's extended trembling hand and hovering crystal with intensified vortex light Boy slowly walks forward through shallow water toward the glowing vortex, each step creating ripples that interact with the vortex light patterns, crystal hovering and slowly rotating at the center, his hand extends trembling toward it, vortex light intensifying as he approaches, water around the vortex spiraling gently",
+      "camera_state": "Low angle medium shot pushed closer, boy's trembling hand reaching toward hovering crystal, vortex light intensifying dramatically, water surface alive with interacting light patterns and gentle spirals",
       "ref_image": "S10-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -2787,9 +2790,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera extremely close to hand and crystal contact point, capturing the explosive moment of energy transfer A young boy kneeling in swamp water screaming in pain, golden data streams surging up his arm from a shattered crystal like electric circuits forming under his skin, his left eye erupting with intense golden light, veins of light visible across his body, water around him blown outward by the energy release, the moment of cosmic awakening, extreme dramatic lighting, golden energy explosion, cinematic VFX shot, then the left eye revealed in macro with dark gold iris containing a tiny spinning bagua trigram pattern",
-      "camera_state": "Extreme close-up of finger touching crystal, instant of contact, golden data streams explode from shattered crystal racing up the arm like electric lightning, veins of light forming under skin",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera extremely close to hand and crystal contact point, capturing the precise moment of touch A young boy kneeling in swamp water screaming in pain, golden data streams surging up his arm from a shattered crystal like electric circuits forming under his skin, his left eye erupting with intense golden light, veins of light visible across his body, water around him blown outward by the energy release, the moment of cosmic awakening, extreme dramatic lighting, golden energy explosion, cinematic VFX shot, then the left eye revealed in macro with dark gold iris containing a tiny spinning bagua trigram pattern",
+      "camera_state": "Extreme close-up of finger touching crystal, golden data streams exploding from contact point like lightning, electric circuit patterns forming under skin, intense light burst",
+      "ref_image": "/home/dz/fuxi/assets/locations/vortex_edge/vortex_edge_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "vortex_edge",
@@ -2862,8 +2865,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera pulling back rapidly from close-up, low angle emphasizing the dramatic collapse and upward light beam The instant of contact triggers an explosive surge of golden data streams racing up the arm like lightning, character collapses to knees with mouth open in silent scream, left eye blasts a beam of golden light upward, water explodes outward in a ring, energy ripples through his entire body, then a cut to extreme close-up of the left eye opening to reveal transformed dark gold pupil with rotating miniature bagua symbol deep within",
-      "camera_state": "Rapid pull back to medium shot, boy collapses to knees in swamp water screaming silently, golden energy surging through his body, left eye blasting beam of golden light upward, water exploding outward in ring",
+      "prompt": "camera pulling back from close-up to medium distance, low angle emphasizing dramatic collapse and energy surge The instant of contact triggers an explosive surge of golden data streams racing up the arm like lightning, character collapses to knees with mouth open in silent scream, left eye blasts a beam of golden light upward, water explodes outward in a ring, energy ripples through his entire body, then a cut to extreme close-up of the left eye opening to reveal transformed dark gold pupil with rotating miniature bagua symbol deep within",
+      "camera_state": "Rapid pullback revealing boy collapsing to knees in swamp, golden veins racing up arm, mouth open in silent scream, left eye erupting golden beam skyward, water exploding outward in ring",
       "ref_image": "S11-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -2937,8 +2940,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera extremely close to left eye, static and intimate, capturing the mystical transformation of the pupil The instant of contact triggers an explosive surge of golden data streams racing up the arm like lightning, character collapses to knees with mouth open in silent scream, left eye blasts a beam of golden light upward, water explodes outward in a ring, energy ripples through his entire body, then a cut to extreme close-up of the left eye opening to reveal transformed dark gold pupil with rotating miniature bagua symbol deep within",
-      "camera_state": "Cut to extreme close-up of left eye slowly opening, revealing transformed dark gold pupil with rotating miniature bagua symbol deep within, mysterious golden light emanating from the iris",
+      "prompt": "camera extremely close to left eye, macro shot revealing transformed pupil detail The instant of contact triggers an explosive surge of golden data streams racing up the arm like lightning, character collapses to knees with mouth open in silent scream, left eye blasts a beam of golden light upward, water explodes outward in a ring, energy ripples through his entire body, then a cut to extreme close-up of the left eye opening to reveal transformed dark gold pupil with rotating miniature bagua symbol deep within",
+      "camera_state": "Extreme macro close-up of left eye opening, dark gold transformed pupil revealed, miniature rotating bagua symbol spinning deep within iris, ethereal golden glow emanating",
       "ref_image": "S11-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -3012,9 +3015,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "POV camera looking at ancient trees, first-person perspective with digital overlay First-person POV through code vision: looking at ancient trees overlaid with cascading green growth code strings like Matrix text but organic, then water surface showing molecular structure grid wireframes in blue, then looking down at own hands revealing bioluminescent blue circuit lines flowing beneath translucent skin, everything in the world revealed as underlying code and data, augmented reality aesthetic blended with primitive nature, HUD-like golden frame at edges, stunning visual metaphor of seeing reality's source code",
-      "camera_state": "POV shot looking at ancient trees, green Matrix-like code strings materialize and scroll upward along bark and branches, organic digital overlay effect with brief glitch transition",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "POV camera looking at ancient tree, first-person perspective with digital overlay interface First-person POV through code vision: looking at ancient trees overlaid with cascading green growth code strings like Matrix text but organic, then water surface showing molecular structure grid wireframes in blue, then looking down at own hands revealing bioluminescent blue circuit lines flowing beneath translucent skin, everything in the world revealed as underlying code and data, augmented reality aesthetic blended with primitive nature, HUD-like golden frame at edges, stunning visual metaphor of seeing reality's source code",
+      "camera_state": "First-person POV looking at ancient tree, green cascading code strings materializing along branches like organic Matrix text, digital glitch transition effect, forest environment with mystical atmosphere",
+      "ref_image": "/home/dz/fuxi/assets/locations/vortex_edge/vortex_edge_ref_00_seed0.png",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "vortex_edge",
@@ -3086,8 +3089,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "POV camera snaps to look down at water surface, first-person perspective with geometric overlay POV camera quickly pans to trees where green code strings materialize and scroll upward along branches, then snaps to water surface where geometric molecular grids shimmer into view, then looks down at trembling hands where blue bio-electric lines pulse beneath the skin in rhythm with heartbeat, each view transition has a brief digital glitch effect, the code overlays flutter and stabilize",
-      "camera_state": "POV shot snapping to water surface, blue molecular structure wireframe grids shimmer and materialize on reflective water, digital glitch effect during view transition",
+      "prompt": "POV camera snaps to look down at water surface, geometric overlay visible POV camera quickly pans to trees where green code strings materialize and scroll upward along branches, then snaps to water surface where geometric molecular grids shimmer into view, then looks down at trembling hands where blue bio-electric lines pulse beneath the skin in rhythm with heartbeat, each view transition has a brief digital glitch effect, the code overlays flutter and stabilize",
+      "camera_state": "POV snaps to water surface below, blue molecular structure grid wireframes shimmer and materialize across rippling water, brief digital glitch during view transition, ethereal bioluminescent glow",
       "ref_image": "S12-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -3160,8 +3163,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "POV camera looking down at own trembling hands, extreme close first-person view POV camera quickly pans to trees where green code strings materialize and scroll upward along branches, then snaps to water surface where geometric molecular grids shimmer into view, then looks down at trembling hands where blue bio-electric lines pulse beneath the skin in rhythm with heartbeat, each view transition has a brief digital glitch effect, the code overlays flutter and stabilize",
-      "camera_state": "POV close-up looking down at trembling hands, bioluminescent blue circuit lines pulse beneath skin in heartbeat rhythm, code overlay stabilizes revealing bio-electric network",
+      "prompt": "POV looking down at own trembling hands in close-up view POV camera quickly pans to trees where green code strings materialize and scroll upward along branches, then snaps to water surface where geometric molecular grids shimmer into view, then looks down at trembling hands where blue bio-electric lines pulse beneath the skin in rhythm with heartbeat, each view transition has a brief digital glitch effect, the code overlays flutter and stabilize",
+      "camera_state": "POV extreme close-up looking down at trembling hands, blue bioluminescent circuit lines pulsing beneath translucent skin in heartbeat rhythm, veins glowing with bio-electric energy, digital interface stabilizing",
       "ref_image": "S12-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -3234,15 +3237,17 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned low near swamp surface, looking up at stormy sky, three octahedral shapes visible as distant pale lights descending through dark clouds Three pale white octahedral geometric entities descending silently from the dark stormy sky, hovering above a swamp, each about 2 meters in diameter, emitting cold clinical white light that contrasts with the warm organic environment, perfectly symmetrical alien geometry against chaotic natural landscape, tribal hunters looking up in terror, eerie otherworldly presence, horror sci-fi atmosphere, volumetric light beams from each entity scanning the ground below, ancient tribal hunter, muscular primitive man in animal hide",
-      "camera_state": "Extreme wide low angle shot from swamp level looking up at dark stormy sky, three pale octahedral geometric entities first appearing as cold white points of light descending through rain and clouds, vast atmospheric scale",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned low in swamp looking up at dark stormy sky, capturing vast atmospheric expanse Three pale white octahedral geometric entities descending silently from the dark stormy sky, hovering above a swamp, each about 2 meters in diameter, emitting cold clinical white light that contrasts with the warm organic environment, perfectly symmetrical alien geometry against chaotic natural landscape, tribal hunters looking up in terror, eerie otherworldly presence, horror sci-fi atmosphere, volumetric light beams from each entity scanning the ground below",
+      "camera_state": "Extreme wide low angle shot looking up at dark stormy sky, three pale octahedral shapes emerging from clouds, cold white light piercing through rain, swamp environment below",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia",
+          "hunter_yi"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -3302,15 +3307,17 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera maintaining low position, tilting upward to track the descending octahedrons, cold white light expanding and casting geometric shadows across the swamp Three octahedral shapes descend in perfect unison with no sound, rotating slowly on their axes, cold white light expanding beneath them, rain drops evaporating on contact with their energy fields, the organic swamp environment seeming to recoil from their presence, scanning beams sweep methodically across the terrain, ancient tribal hunter, muscular primitive man in animal hide",
-      "camera_state": "Wide low angle shot tracking three 2-meter octahedral entities descending in perfect unison, rotating slowly on axes, cold clinical white light expanding beneath them, raindrops evaporating on contact with energy fields, scanning beams sweeping terrain",
+      "prompt": "camera remains low, slight tilt tracking descent, geometric entities now at mid-height Three octahedral shapes descend in perfect unison with no sound, rotating slowly on their axes, cold white light expanding beneath them, rain drops evaporating on contact with their energy fields, the organic swamp environment seeming to recoil from their presence, scanning beams sweep methodically across the terrain",
+      "camera_state": "Wide low angle shot, three octahedral entities descending in perfect unison, rotating slowly on axes, scanning beams sweeping terrain, rain evaporating on contact with energy fields",
       "ref_image": "S13-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia",
+          "hunter_yi"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -3370,15 +3377,17 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera at extreme low angle from swamp surface, three octahedrons hovering directly above, cold white light flooding downward creating stark contrast with organic environment Three octahedral shapes descend in perfect unison with no sound, rotating slowly on their axes, cold white light expanding beneath them, rain drops evaporating on contact with their energy fields, the organic swamp environment seeming to recoil from their presence, scanning beams sweep methodically across the terrain, ancient tribal hunter, muscular primitive man in animal hide",
-      "camera_state": "Worm's eye wide shot of three pale octahedral entities hovering silently above swamp, perfectly symmetrical alien geometry against chaotic organic landscape, cold white light contrasting warm environment, swamp vegetation recoiling from their presence",
+      "prompt": "camera low and stable, octahedrons hovering above swamp, cold white light expanding beneath them Three octahedral shapes descend in perfect unison with no sound, rotating slowly on their axes, cold white light expanding beneath them, rain drops evaporating on contact with their energy fields, the organic swamp environment seeming to recoil from their presence, scanning beams sweep methodically across the terrain",
+      "camera_state": "Wide low angle shot, three 2-meter octahedral entities hovering silently above swamp, emitting cold clinical white light contrasting warm organic environment, swamp recoiling from alien presence",
       "ref_image": "S13-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
         "character_refs": [
-          "young_fuxi"
+          "young_fuxi",
+          "hunter_jia",
+          "hunter_yi"
         ],
         "character_assets": {
           "young_fuxi": {
@@ -3438,14 +3447,16 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned at medium distance capturing hunter and approaching black data tendrils A terrified tribal hunter being engulfed by tendrils of black data streams emanating from a hovering octahedral entity, the hunter's body beginning to pixelate and decompose into digital fragments from the point of contact, his face frozen in a scream as parts of his body dissolve into black cubic particles, horrifying fusion of digital destruction and organic flesh, dark horror sci-fi aesthetic, dramatic low-key lighting, the black data streams having jagged sawtooth patterns visible in their structure",
-      "camera_state": "Medium shot framing terrified tribal hunter as jagged black data tendrils lash out from hovering octahedral entity, dark energy crackling, ominous atmosphere",
-      "ref_image": "/home/dz/fuxi/assets/characters/hunter/ref_final.png",
+      "prompt": "camera positioned at medium distance capturing the octahedral entity and hunter in frame, slight tension building composition A terrified tribal hunter being engulfed by tendrils of black data streams emanating from a hovering octahedral entity, the hunter's body beginning to pixelate and decompose into digital fragments from the point of contact, his face frozen in a scream as parts of his body dissolve into black cubic particles, horrifying fusion of digital destruction and organic flesh, dark horror sci-fi aesthetic, dramatic low-key lighting, the black data streams having jagged sawtooth patterns visible in their structure",
+      "camera_state": "Medium shot framing the hovering octahedral entity as jagged black data tendrils lash outward toward the tribal hunter, dramatic tension in the moment before contact, dark energy crackling",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "hunter_yi"
+        ],
         "character_assets": {},
         "prop_refs": [
           "black_data_stream"
@@ -3459,14 +3470,16 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera pushing in as tendrils make contact with hunter's body Black jagged data tendrils lash out from the octahedral entity and wrap around the hunter, upon contact his body begins to break apart into floating black pixels spreading outward from the touch points, his limbs fragmenting into digital cubes, face contorting in agony as the dissolution spreads, black data particles spiraling upward into the entity",
-      "camera_state": "Medium close-up tracking black data tendrils wrapping around hunter, contact point beginning to pixelate, body fragmenting into floating black cubic particles",
+      "prompt": "camera tracking closer to the hunter as black tendrils wrap around his body, focusing on the point of contact where pixelation begins Black jagged data tendrils lash out from the octahedral entity and wrap around the hunter, upon contact his body begins to break apart into floating black pixels spreading outward from the touch points, his limbs fragmenting into digital cubes, face contorting in agony as the dissolution spreads, black data particles spiraling upward into the entity",
+      "camera_state": "Medium close-up tracking shot as black data tendrils coil around the hunter's torso, his body beginning to fragment into floating black pixels at contact points, face contorting in terror",
       "ref_image": "S14-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "hunter_yi"
+        ],
         "character_assets": {},
         "prop_refs": [
           "black_data_stream"
@@ -3480,14 +3493,16 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera at close range tilting up following dissolving particles toward entity Black jagged data tendrils lash out from the octahedral entity and wrap around the hunter, upon contact his body begins to break apart into floating black pixels spreading outward from the touch points, his limbs fragmenting into digital cubes, face contorting in agony as the dissolution spreads, black data particles spiraling upward into the entity",
-      "camera_state": "Close-up of hunter's agonized face contorting as dissolution spreads, limbs fragmenting into digital cubes, black data particles spiraling upward into octahedral entity",
+      "prompt": "camera positioned low, tilting upward as digital fragments spiral toward the entity above, capturing the dissolution spreading across the hunter's agonized face Black jagged data tendrils lash out from the octahedral entity and wrap around the hunter, upon contact his body begins to break apart into floating black pixels spreading outward from the touch points, his limbs fragmenting into digital cubes, face contorting in agony as the dissolution spreads, black data particles spiraling upward into the entity",
+      "camera_state": "Close-up low angle shot of hunter's face frozen in agony as pixelation spreads across his features, limbs fragmenting into digital cubes, black particles spiraling upward into the octahedral entity",
       "ref_image": "S14-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "hunter_yi"
+        ],
         "character_assets": {},
         "prop_refs": [
           "black_data_stream"
@@ -3501,9 +3516,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned at medium distance, framing boy's upper body with outstretched arm prominent in frame A teenage boy with blazing dark-gold left eye screaming in rage, his outstretched hand surrounded by golden energy, POV code vision revealing the black data stream as a jagged sawtooth structure being physically grasped and torn apart by golden light from his hand, fragments of broken black code scattering, the visual intersection of code-sight and physical reality, dramatic action pose, golden energy contrasting with black data corruption, cinematic VFX hero moment",
-      "camera_state": "Medium shot of teenage boy lunging forward screaming 'NO!', left eye blazing dark-gold, arm outstretched with golden energy crackling around his hand, intense dramatic lighting",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned at medium distance facing the boy, capturing upper body and outstretched arm A teenage boy with blazing dark-gold left eye screaming in rage, his outstretched hand surrounded by golden energy, POV code vision revealing the black data stream as a jagged sawtooth structure being physically grasped and torn apart by golden light from his hand, fragments of broken black code scattering, the visual intersection of code-sight and physical reality, dramatic action pose, golden energy contrasting with black data corruption, cinematic VFX hero moment",
+      "camera_state": "Medium shot of teenage boy lurching forward screaming 'NO!', left eye blazing dark-gold, arm outstretched with golden energy beginning to emanate from hand, intense emotional moment",
+      "ref_image": null,
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "entropy_descent_site",
@@ -3552,8 +3567,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "POV perspective showing code-vision, camera positioned as if through boy's enhanced sight Boy lurches forward with arm outstretched, left eye flaring golden, camera switches to code-vision POV showing the black data tendril as a structured sawtooth code pattern, golden energy from his hand wraps around and violently tears the black code stream apart, fragments of black data explode outward, the severed tendril recoils back toward the octahedral entity, camera snaps back to normal view showing the physical result",
-      "camera_state": "Code-vision POV shot revealing black data tendril as jagged sawtooth pattern, golden energy from hand physically grasping and violently tearing the structured code stream apart, fragments exploding",
+      "prompt": "POV camera showing code-vision perspective, digital overlay revealing data structures Boy lurches forward with arm outstretched, left eye flaring golden, camera switches to code-vision POV showing the black data tendril as a structured sawtooth code pattern, golden energy from his hand wraps around and violently tears the black code stream apart, fragments of black data explode outward, the severed tendril recoils back toward the octahedral entity, camera snaps back to normal view showing the physical result",
+      "camera_state": "Code-vision POV close-up showing black data tendril as jagged sawtooth pattern, golden light from hand physically grasping and violently tearing apart the black code stream, fragments exploding outward",
       "ref_image": "S15-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -3603,8 +3618,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera snaps back to normal view, low angle emphasizing boy's power, capturing severed tendril recoiling toward octahedral entity Boy lurches forward with arm outstretched, left eye flaring golden, camera switches to code-vision POV showing the black data tendril as a structured sawtooth code pattern, golden energy from his hand wraps around and violently tears the black code stream apart, fragments of black data explode outward, the severed tendril recoils back toward the octahedral entity, camera snaps back to normal view showing the physical result",
-      "camera_state": "Snap back to normal view, low angle medium close-up of boy with golden eye flaring, black data fragments exploding outward, severed tendril recoiling toward distant octahedral entity",
+      "prompt": "camera snaps back to normal view at medium close distance showing physical aftermath Boy lurches forward with arm outstretched, left eye flaring golden, camera switches to code-vision POV showing the black data tendril as a structured sawtooth code pattern, golden energy from his hand wraps around and violently tears the black code stream apart, fragments of black data explode outward, the severed tendril recoils back toward the octahedral entity, camera snaps back to normal view showing the physical result",
+      "camera_state": "Medium close-up returning to normal vision showing severed black tendril recoiling toward octahedral entity, fragments of broken black data scattering, boy's hand surrounded by residual golden energy",
       "ref_image": "S15-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -3654,9 +3669,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned directly overhead at high altitude, capturing full swamp battlefield from above Overhead shot of a swamp battlefield, a young boy manipulating the ground code with both hands, the mud beneath the three octahedral entities transforming into quicksand with visible code-overlay showing terrain data being rewritten, golden code lines spreading from the boy's position through the ground, the geometric entities partially sinking into the altered terrain, black data tentacles reaching outward from the trapped entities, rain-soaked primordial landscape turned into a supernatural battleground",
-      "camera_state": "Bird's eye view of swamp battlefield, boy at center with golden code lines beginning to spread outward through mud, three octahedral entities visible in triangular formation, overhead perspective emphasizing ground pattern",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned directly overhead at high altitude, capturing full battlefield scope Overhead shot of a swamp battlefield, a young boy manipulating the ground code with both hands, the mud beneath the three octahedral entities transforming into quicksand with visible code-overlay showing terrain data being rewritten, golden code lines spreading from the boy's position through the ground, the geometric entities partially sinking into the altered terrain, black data tentacles reaching outward from the trapped entities, rain-soaked primordial landscape turned into a supernatural battleground",
+      "camera_state": "Bird's eye view of swamp battlefield, young boy at center with hands extended toward ground, golden code lines beginning to radiate outward from his position through dark mud, three octahedral entities visible in formation",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
@@ -3704,8 +3719,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera maintaining overhead position, capturing terrain transformation across wide area Boy slams hands toward the ground, golden code lines race outward from his position through the mud like cracks, wherever the golden lines touch, the solid ground transforms into swirling quicksand, the three octahedral entities begin to sink and tilt, their scanning beams flailing wildly, more black data tentacles shoot out desperately, the terrain visibly ripples and shifts like liquid",
-      "camera_state": "Overhead shot showing golden code cracks racing through mud like veins, solid ground beneath octahedral entities transforming into swirling quicksand with visible code-overlay, terrain data being actively rewritten",
+      "prompt": "camera maintaining overhead position, focusing on terrain transformation zone Boy slams hands toward the ground, golden code lines race outward from his position through the mud like cracks, wherever the golden lines touch, the solid ground transforms into swirling quicksand, the three octahedral entities begin to sink and tilt, their scanning beams flailing wildly, more black data tentacles shoot out desperately, the terrain visibly ripples and shifts like liquid",
+      "camera_state": "Overhead wide shot showing golden code network spreading like cracks through mud, terrain data overlay visible as ground beneath entities transforms, solid earth dissolving into swirling quicksand patterns",
       "ref_image": "S16-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -3754,8 +3769,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera holding overhead position, framing sinking entities and rippling terrain Boy slams hands toward the ground, golden code lines race outward from his position through the mud like cracks, wherever the golden lines touch, the solid ground transforms into swirling quicksand, the three octahedral entities begin to sink and tilt, their scanning beams flailing wildly, more black data tentacles shoot out desperately, the terrain visibly ripples and shifts like liquid",
-      "camera_state": "Bird's eye view of three octahedral entities sinking and tilting in quicksand, scanning beams flailing wildly, black data tentacles shooting out desperately, entire terrain rippling like liquid surface with golden code network visible",
+      "prompt": "camera at high angle capturing entities sinking into transformed terrain Boy slams hands toward the ground, golden code lines race outward from his position through the mud like cracks, wherever the golden lines touch, the solid ground transforms into swirling quicksand, the three octahedral entities begin to sink and tilt, their scanning beams flailing wildly, more black data tentacles shoot out desperately, the terrain visibly ripples and shifts like liquid",
+      "camera_state": "High angle wide shot of three octahedral entities tilting and sinking into rippling quicksand, scanning beams flailing erratically, black data tentacles shooting desperately skyward, terrain visibly undulating like liquid surface",
       "ref_image": "S16-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -3804,14 +3819,16 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned parallel to arrow trajectory, capturing the projectile's flight path through rain-filled atmosphere A bone arrow wrapped in spiraling green light energy streaking through the rain toward the octahedral entities, impact creating an explosion of green energy, on a distant cliff edge a 17-year-old girl with wild dark hair and primitive but distinctive clothing standing in a heroic archery pose, green energy aura around her, rain-soaked and fierce, her appearance striking against lightning-lit sky, first appearance of a key character, dramatic entrance composition",
-      "camera_state": "Extreme wide shot tracking a glowing bone arrow wrapped in spiraling emerald energy streaking through heavy rain in slow motion, leaving luminous green trail against dark stormy sky, lightning illuminating the scene",
-      "ref_image": "/home/dz/fuxi/assets/characters/nvwa/ref_final.png",
+      "prompt": "camera positioned parallel to arrow trajectory, tracking the projectile through the stormy sky A bone arrow wrapped in spiraling green light energy streaking through the rain toward the octahedral entities, impact creating an explosion of green energy, on a distant cliff edge a 17-year-old girl with wild dark hair and primitive but distinctive clothing standing in a heroic archery pose, green energy aura around her, rain-soaked and fierce, her appearance striking against lightning-lit sky, first appearance of a key character, dramatic entrance composition",
+      "camera_state": "Wide shot tracking a glowing bone arrow wrapped in spiraling green energy flying through rain in slow motion, emerald light trail streaking across dark stormy sky, lightning illuminating the scene",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "nuwa"
+        ],
         "character_assets": {},
         "prop_refs": [
           "green_light_bone_arrow"
@@ -3848,14 +3865,16 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "camera positioned to capture arrow impact on octahedral entity, framing the explosion of green energy A glowing green-wrapped bone arrow flies through the frame in slow motion leaving a trail of emerald light, camera follows the arrow's trajectory until it impacts an octahedral entity with a burst of green energy, then camera whip-pans to a distant cliff where a young girl stands with bow drawn, she lowers the bow and shouts urgently, wind whipping her hair, lightning flashing behind her creating a heroic silhouette",
-      "camera_state": "Medium shot capturing bone arrow impact on crystalline octahedral entity, explosive burst of emerald energy radiating outward, green light illuminating surrounding rain and debris, dramatic slow-motion energy dispersal",
+      "prompt": "camera focused on octahedral entity at moment of impact, capturing the explosion of green energy A glowing green-wrapped bone arrow flies through the frame in slow motion leaving a trail of emerald light, camera follows the arrow's trajectory until it impacts an octahedral entity with a burst of green energy, then camera whip-pans to a distant cliff where a young girl stands with bow drawn, she lowers the bow and shouts urgently, wind whipping her hair, lightning flashing behind her creating a heroic silhouette",
+      "camera_state": "Medium shot of bone arrow impacting octahedral entropy entity, explosive burst of green energy radiating outward, emerald light illuminating the geometric creature, rain droplets frozen in the flash",
       "ref_image": "S17-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "nuwa"
+        ],
         "character_assets": {},
         "prop_refs": [
           "green_light_bone_arrow"
@@ -3892,14 +3911,16 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "camera positioned below cliff edge looking up at heroic figure, creating powerful silhouette against stormy sky A glowing green-wrapped bone arrow flies through the frame in slow motion leaving a trail of emerald light, camera follows the arrow's trajectory until it impacts an octahedral entity with a burst of green energy, then camera whip-pans to a distant cliff where a young girl stands with bow drawn, she lowers the bow and shouts urgently, wind whipping her hair, lightning flashing behind her creating a heroic silhouette",
-      "camera_state": "Wide low-angle shot of 17-year-old Nuwa standing on cliff edge in heroic pose, lowering bone bow while shouting urgently, wild dark hair whipping in wind, lightning flash creating dramatic backlit silhouette, primitive clothing billowing",
+      "prompt": "camera whip-pans to distant cliff edge, low angle looking up at the heroic silhouette of the young archer A glowing green-wrapped bone arrow flies through the frame in slow motion leaving a trail of emerald light, camera follows the arrow's trajectory until it impacts an octahedral entity with a burst of green energy, then camera whip-pans to a distant cliff where a young girl stands with bow drawn, she lowers the bow and shouts urgently, wind whipping her hair, lightning flashing behind her creating a heroic silhouette",
+      "camera_state": "Low angle medium wide shot of 17-year-old Nuwa on cliff edge lowering her bow and shouting urgently, wild dark hair whipping in wind, lightning flashing behind creating dramatic heroic silhouette against stormy sky",
       "ref_image": "S17-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "nuwa"
+        ],
         "character_assets": {},
         "prop_refs": [
           "green_light_bone_arrow"
@@ -3936,9 +3957,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "handheld camera positioned behind and to the side of the running boy, following at close pursuit distance through the swamp A teenage boy running desperately through a dark rainy swamp, splashing through shallow water, looking back over his shoulder with his left eye glowing faint gold, three octahedral entities regrouping in the distance behind him with cold white light, the chaos of rain and darkness and pursuit, handheld camera feel creating urgency, motion blur on the edges, primal survival instinct captured in the running figure",
-      "camera_state": "Handheld tracking shot following teenage boy running through dark rainy swamp, splashing water, shaky pursuit camera style, rain pelting, branches whipping past lens, desperate escape atmosphere",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "handheld camera behind and slightly to the side of running boy, shaking with pursuit movement, low in swamp environment A teenage boy running desperately through a dark rainy swamp, splashing through shallow water, looking back over his shoulder with his left eye glowing faint gold, three octahedral entities regrouping in the distance behind him with cold white light, the chaos of rain and darkness and pursuit, handheld camera feel creating urgency, motion blur on the edges, primal survival instinct captured in the running figure",
+      "camera_state": "Handheld tracking shot following teenage boy running through dark rainy swamp, water splashing around his feet, camera shaking violently with pursuit energy, rain streaking across frame, murky darkness surrounding",
+      "ref_image": null,
       "duration_until_next_s": 1.0,
       "assets": {
         "location_ref": "entropy_descent_site",
@@ -3983,8 +4004,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.0,
-      "prompt": "handheld camera swings around to capture boy's face as he glances back over shoulder, maintaining shaky pursuit motion Boy runs frantically through the swamp, feet splashing in water, stumbling but regaining balance, camera shakes and follows in pursuit style, he glances back revealing his glowing left eye, the octahedral entities visible in the background rising from the quicksand trap and converging, rain pelting down intensely, branches whipping past the camera",
-      "camera_state": "Handheld medium close-up captures boy looking back over shoulder, left eye glowing faint gold, fear on face, three octahedral entities with cold white light visible in rainy background, intense shake",
+      "prompt": "handheld camera swings to capture boy's face as he looks back over shoulder, shaky movement maintaining pursuit tension Boy runs frantically through the swamp, feet splashing in water, stumbling but regaining balance, camera shakes and follows in pursuit style, he glances back revealing his glowing left eye, the octahedral entities visible in the background rising from the quicksand trap and converging, rain pelting down intensely, branches whipping past the camera",
+      "camera_state": "Shaky handheld medium close-up capturing boy glancing back over shoulder, left eye glowing faint gold piercing through rain and darkness, fear and determination on wet face, branches whipping past frame edges",
       "ref_image": "S18-KF1",
       "duration_until_next_s": 1.0,
       "assets": {
@@ -4030,8 +4051,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.0,
-      "prompt": "handheld camera drops low, shooting upward at running boy with converging geometric entities looming in stormy background Boy runs frantically through the swamp, feet splashing in water, stumbling but regaining balance, camera shakes and follows in pursuit style, he glances back revealing his glowing left eye, the octahedral entities visible in the background rising from the quicksand trap and converging, rain pelting down intensely, branches whipping past the camera",
-      "camera_state": "Low angle handheld wide shot, boy stumbling forward through swamp, octahedral entities converging behind rising from quicksand, rain streaking frame, dramatic pursuit chaos, shaky urgent camera",
+      "prompt": "handheld camera pulls wider to reveal background threat while maintaining forward momentum with fleeing boy in foreground Boy runs frantically through the swamp, feet splashing in water, stumbling but regaining balance, camera shakes and follows in pursuit style, he glances back revealing his glowing left eye, the octahedral entities visible in the background rising from the quicksand trap and converging, rain pelting down intensely, branches whipping past the camera",
+      "camera_state": "Chaotic handheld wide shot showing boy stumbling forward in foreground, three octahedral entities with cold white glow converging in misty background, intense rain pelting down, swamp environment closing in around pursuit",
       "ref_image": "S18-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
@@ -4077,14 +4098,16 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned low, looking up at three converging octahedral entities in triangular formation above dark swamp Three pale octahedral entities hovering together in formation above the dark swamp, their surfaces covered in crawling black data patterns, a beam of coded light shooting upward from their convergence point into the stormy sky toward unseen recipients, cold clinical white light contrasting with the dark organic environment, ominous and foreboding atmosphere, the geometry perfect and alien against nature's chaos, rain still falling but seeming irrelevant to these cosmic entities, pale white octahedron geometric entity, floating alien geometric body",
-      "camera_state": "Wide low angle shot of three pale octahedral entities converging into triangular formation, black data patterns crawling across surfaces, dark swamp below, stormy sky backdrop, cold clinical white glow",
-      "ref_image": "/home/dz/fuxi/assets/characters/entropy_unit/ref_final.png",
+      "prompt": "camera positioned below and at medium distance from the three converging octahedral entities, looking upward at their triangular formation Three pale octahedral entities hovering together in formation above the dark swamp, their surfaces covered in crawling black data patterns, a beam of coded light shooting upward from their convergence point into the stormy sky toward unseen recipients, cold clinical white light contrasting with the dark organic environment, ominous and foreboding atmosphere, the geometry perfect and alien against nature's chaos, rain still falling but seeming irrelevant to these cosmic entities",
+      "camera_state": "Medium shot from low angle capturing three pale octahedral entities converging into triangular formation above dark swamp, surfaces pulsing with synchronized black data patterns, cold clinical white glow against stormy sky",
+      "ref_image": null,
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "entropy_unit"
+        ],
         "character_assets": {
           "entropy_unit": {
             "zh_name": "熵格式化单位",
@@ -4125,14 +4148,16 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera pushing closer to nearest entity, beam of coded light visible shooting upward from convergence point Three octahedral entities slowly rotate and converge into a triangular formation, their surfaces pulsing with synchronized black data patterns, a thin beam of encoded light shoots upward from their center point into the clouds, the beam contains visible data packets traveling upward, camera slowly pushes toward the nearest entity's surface revealing intricate alien code scrolling across its face, then slowly pulling back as the entities begin to ascend, pale white octahedron geometric entity, floating alien geometric body",
-      "camera_state": "Medium shot pushing toward nearest octahedral entity, thin beam of encoded light shooting upward into clouds, visible data packets traveling in beam, synchronized pulsing patterns on entity surfaces",
+      "prompt": "camera pushing slowly toward nearest octahedral entity, capturing the thin beam of encoded light shooting upward from convergence point Three octahedral entities slowly rotate and converge into a triangular formation, their surfaces pulsing with synchronized black data patterns, a thin beam of encoded light shoots upward from their center point into the clouds, the beam contains visible data packets traveling upward, camera slowly pushes toward the nearest entity's surface revealing intricate alien code scrolling across its face, then slowly pulling back as the entities begin to ascend",
+      "camera_state": "Medium close-up slowly pushing toward nearest entity surface, thin beam of coded light shoots upward carrying visible data packets into stormy clouds, intricate alien code scrolling across pale octahedral face",
       "ref_image": "S19-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "entropy_unit"
+        ],
         "character_assets": {
           "entropy_unit": {
             "zh_name": "熵格式化单位",
@@ -4173,14 +4198,16 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera very close to entity surface revealing intricate alien code, beginning slow pullback as entities start ascending Three octahedral entities slowly rotate and converge into a triangular formation, their surfaces pulsing with synchronized black data patterns, a thin beam of encoded light shoots upward from their center point into the clouds, the beam contains visible data packets traveling upward, camera slowly pushes toward the nearest entity's surface revealing intricate alien code scrolling across its face, then slowly pulling back as the entities begin to ascend, pale white octahedron geometric entity, floating alien geometric body",
-      "camera_state": "Close-up of octahedral entity surface with intricate alien code scrolling across face, slowly pulling back as entities begin ascension, image gradually fading to black leaving unsettling void",
+      "prompt": "camera pulling back and looking upward as the three entities begin ascending into the stormy sky Three octahedral entities slowly rotate and converge into a triangular formation, their surfaces pulsing with synchronized black data patterns, a thin beam of encoded light shoots upward from their center point into the clouds, the beam contains visible data packets traveling upward, camera slowly pushes toward the nearest entity's surface revealing intricate alien code scrolling across its face, then slowly pulling back as the entities begin to ascend",
+      "camera_state": "Wide shot pulling back as three octahedral entities ascend in formation into dark clouds, beam of light trailing upward, image gradually fading to black leaving unsettling emptiness",
       "ref_image": "S19-KF2",
       "duration_until_next_s": 0.0,
       "assets": {
         "location_ref": "entropy_descent_site",
         "location_asset": {},
-        "character_refs": [],
+        "character_refs": [
+          "entropy_unit"
+        ],
         "character_assets": {
           "entropy_unit": {
             "zh_name": "熵格式化单位",
@@ -4221,9 +4248,9 @@
       "frame_index": 0,
       "type": "t2i",
       "timestamp_s": 0.0,
-      "prompt": "camera positioned at close range capturing boy's profile, rain-soaked face filling frame Cinematic close-up of a rain-soaked teenage boy's profile, water streaming down his face, looking back over his shoulder into the distance with a heavy expression, his left eye prominent in frame showing a dark gold iris with a slowly spinning miniature bagua trigram pattern deep within the pupil, dramatic side-lighting from distant lightning, the weight of destiny visible in his young face, beautiful melancholic composition, film grain, shallow depth of field with rain bokeh, end-of-episode contemplative mood",
-      "camera_state": "Cinematic close-up of teenage boy's rain-soaked profile in slow motion, water streaming down face, dramatic side lighting with intermittent lightning, heavy emotional atmosphere",
-      "ref_image": "/home/dz/fuxi/assets/characters/fuxi/ref_final.png",
+      "prompt": "camera positioned close to subject's profile, framing side of face with rain streaming down Cinematic close-up of a rain-soaked teenage boy's profile, water streaming down his face, looking back over his shoulder into the distance with a heavy expression, his left eye prominent in frame showing a dark gold iris with a slowly spinning miniature bagua trigram pattern deep within the pupil, dramatic side-lighting from distant lightning, the weight of destiny visible in his young face, beautiful melancholic composition, film grain, shallow depth of field with rain bokeh, end-of-episode contemplative mood",
+      "camera_state": "Cinematic close-up of teenage boy's rain-soaked profile in slow motion, water droplets streaming down face, moody lighting with intermittent lightning flashes, dark atmospheric backdrop",
+      "ref_image": null,
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
         "location_ref": "ancient_leize_swamp",
@@ -4297,8 +4324,8 @@
       "frame_index": 1,
       "type": "i2v",
       "timestamp_s": 1.3333333333333333,
-      "prompt": "camera slowly pushing in toward left eye, focusing on the dark gold iris with rotating bagua symbol Rain streams down the boy's face in slow motion, a single blink reveals the transformed left eye, camera very slowly pushes in toward the eye, within the dark gold iris the tiny bagua symbol rotates steadily like a cosmic clock, lightning flashes illuminate his features intermittently, his expression shifts subtly from fear to quiet determination, image gradually darkens at the edges, final slow fade to black",
-      "camera_state": "Extreme close-up slowly pushing toward left eye, single blink reveals transformed dark gold iris with miniature bagua trigram rotating like cosmic clock, lightning flash illumination",
+      "prompt": "camera slowly pushing in from profile close-up toward left eye, capturing the blink moment Rain streams down the boy's face in slow motion, a single blink reveals the transformed left eye, camera very slowly pushes in toward the eye, within the dark gold iris the tiny bagua symbol rotates steadily like a cosmic clock, lightning flashes illuminate his features intermittently, his expression shifts subtly from fear to quiet determination, image gradually darkens at the edges, final slow fade to black",
+      "camera_state": "Extreme close-up capturing boy's slow blink revealing transformed left eye, dark gold iris visible, expression shifting from fear to determination, rain continues streaming, lightning illumination",
       "ref_image": "S20-KF1",
       "duration_until_next_s": 1.3333333333333333,
       "assets": {
@@ -4373,8 +4400,8 @@
       "frame_index": 2,
       "type": "i2v",
       "timestamp_s": 2.6666666666666665,
-      "prompt": "camera at extreme proximity to eye, frame dominated by rotating bagua in dark gold iris, edges darkening Rain streams down the boy's face in slow motion, a single blink reveals the transformed left eye, camera very slowly pushes in toward the eye, within the dark gold iris the tiny bagua symbol rotates steadily like a cosmic clock, lightning flashes illuminate his features intermittently, his expression shifts subtly from fear to quiet determination, image gradually darkens at the edges, final slow fade to black",
-      "camera_state": "Extreme close-up of left eye filling frame, dark gold iris with steadily rotating bagua symbol, image gradually darkens at edges, slow fade to black for episode end",
+      "prompt": "camera at extreme proximity to left eye, filling frame with iris detail Rain streams down the boy's face in slow motion, a single blink reveals the transformed left eye, camera very slowly pushes in toward the eye, within the dark gold iris the tiny bagua symbol rotates steadily like a cosmic clock, lightning flashes illuminate his features intermittently, his expression shifts subtly from fear to quiet determination, image gradually darkens at the edges, final slow fade to black",
+      "camera_state": "Extreme close-up of dark gold iris with miniature bagua trigram rotating steadily like cosmic clock within pupil, edges darkening gradually, slow fade to black for episode end",
       "ref_image": "S20-KF2",
       "duration_until_next_s": 0.0,
       "assets": {

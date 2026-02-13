@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """
-镜头关键帧生成 — 全I2I (Image-to-Image) with Intelligent First-Frame Reference Selection
+镜头关键帧生成 — All Frames Multi-Reference (每帧都用原始参考图)
 
 逻辑:
-  - 第一帧 (i2i_first): 智能选择 location 或 character 资产 + visual prompt → 初始场景 (denoise=0.7)
-    * 多角色场景（2+）优先选择 character 资产
-    * 单角色或环境聚焦场景选择 location 资产
-  - 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
-  - 工作流: 所有关键帧都使用 flux2_i2i.json
-  - prompt: 从 keyframes.json 读取每个关键帧的 contextual prompt
+  - 所有关键帧: location 参考图 + 所有 character 参考图 + 各自的 prompt → 独立生成 (denoise=0.55)
+    * 使用 creative-toolkit 的 generate_with_references() 调用 flux2_ref_generate.json
+    * 每帧都基于相同的高质量原始参考图（location + characters）
+    * 通过不同的 prompt 实现运镜变化（景别、角度、动作）
+    * 每个镜头必须有 location 参考，有角色时必须添加所有 character 参考
+  - 优势:
+    * 无累积误差 - 每帧独立生成，不受前一帧影响
+    * 角色一致性极佳 - 所有帧参考同一组原始图
+    * 运镜自由 - 完全由 prompt 驱动，可实现大幅度变化
+    * 环境一致性 - 每帧都包含完整的场景参考
+  - prompt: 从 keyframes.json 读取每个关键帧的 contextual prompt，自动注入性别标识前缀
   - 资产: 从 keyframes.json 的 assets 字段读取 location_ref 和 character_refs
 
 用法:
@@ -18,13 +23,18 @@
 """
 
 import json
+import sys
 import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
 from PIL import Image
-from pipeline.utils import get_episode_dir, load_shots
+from pipeline.utils import get_episode_dir, load_shots, PROJECT_ROOT
+
+# 添加 creative-toolkit 到路径
+sys.path.insert(0, "/home/dz/creative-toolkit")
+from creative_toolkit.image.comfyui import ComfyUIImageGen
 
 
 COMFYUI_URL = "http://127.0.0.1:8188"
@@ -37,13 +47,83 @@ OUTPUT_WIDTH = 1920
 OUTPUT_HEIGHT = 1080
 
 
-def scale_image_to_resolution(src_path: Path, dest_path: Path, width: int = OUTPUT_WIDTH, height: int = OUTPUT_HEIGHT) -> None:
-    """将图像缩放到指定分辨率（保持宽高比，填充空白）。"""
+def load_characters_json() -> dict:
+    """加载 characters.json，返回 {char_id: char_def} 字典。"""
+    characters_path = PROJECT_ROOT / "assets" / "characters" / "characters.json"
+    if characters_path.exists():
+        with open(characters_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get("characters", {})
+    return {}
+
+
+# 角色名别名映射（与 gen_keyframes_json.py 一致）
+_CHARACTER_ALIASES = {
+    "young_fuxi": "fuxi",
+    "hunter_jia": "hunter",
+    "hunter_yi": "hunter",
+    "nuwa": "nvwa",
+    "observer_ai": None,
+}
+
+# 性别 → prompt 强化前缀
+_GENDER_PROMPT_PREFIX = {
+    "male": "male figure, masculine features, man, ",
+    "female": "female figure, feminine features, woman, ",
+}
+
+
+def build_gender_prefix(character_refs: list[str], characters_db: dict) -> str:
+    """根据角色性别和发型生成 prompt 前缀，强化角色一致性。
+
+    只处理有视觉形象且有明确性别的角色。
+    多角色时取第一个有性别定义的角色。
+    同时注入发型信息（如果定义了 hairstyle 字段）。
+    """
+    for char_ref in character_refs:
+        # 跳过无视觉形象的角色
+        if _CHARACTER_ALIASES.get(char_ref) is None and char_ref in _CHARACTER_ALIASES:
+            continue
+
+        # 在 characters_db 中查找（直接名或别名前的原名）
+        char_def = characters_db.get(char_ref, {})
+        gender = char_def.get("gender")
+        hairstyle = char_def.get("hairstyle", "")
+
+        if gender and gender in _GENDER_PROMPT_PREFIX:
+            prefix = _GENDER_PROMPT_PREFIX[gender]
+            # 添加发型信息（如果有）
+            if hairstyle:
+                prefix += f"{hairstyle}, "
+            return prefix
+
+    return ""
+
+
+def scale_image_to_resolution(src_path: Path, dest_path: Path, width: int = OUTPUT_WIDTH, height: int = OUTPUT_HEIGHT, mode: str = "auto") -> None:
+    """将图像缩放到指定分辨率。
+
+    Args:
+        mode:
+          "fill" — 裁切填满（适合宽幅场景参考）
+          "fit"  — 完整显示+黑边（适合正方形/竖幅角色参考，黑边由denoise填充）
+          "auto" — 自动检测：如果原图宽高比接近目标则fill，否则fit
+    """
     img = Image.open(src_path)
     original_w, original_h = img.size
+    target_ratio = width / height       # 1920/1080 ≈ 1.78
+    source_ratio = original_w / original_h
 
-    # 计算缩放比例（保持宽高比）
-    scale = max(width / original_w, height / original_h)
+    # auto 模式：宽高比偏差 > 30% 时用 fit（避免过度裁切）
+    if mode == "auto":
+        ratio_diff = abs(source_ratio - target_ratio) / target_ratio
+        mode = "fit" if ratio_diff > 0.3 else "fill"
+
+    if mode == "fit":
+        scale = min(width / original_w, height / original_h)
+    else:
+        scale = max(width / original_w, height / original_h)
+
     new_w = int(original_w * scale)
     new_h = int(original_h * scale)
 
@@ -358,13 +438,14 @@ def generate_shot_keyframes(
     num_candidates: int = 1,
     base_seed: int = 0,
 ) -> dict:
-    """为指定镜头生成所有关键帧 (全I2I，第一帧智能选择location或character资产，后续帧使用前一帧)。
+    """为指定镜头生成所有关键帧 (全Multi-Ref，每帧都用相同的原始参考图)。
 
     工作流:
-      1. 第一帧 (i2i_first): 智能选择location或character参考 + visual prompt → 初始场景 (denoise=0.7)
-         - 多角色场景（2+）优先选择character资产
-         - 单角色或环境聚焦场景选择location资产
-      2. 后续帧 (i2i_seq): 前一帧结果 + motion prompt → 运动变化 (denoise=0.5)
+      1. 所有关键帧: location + characters 参考 + 各自的 prompt → 独立生成 (denoise=0.55)
+         - 每帧都使用相同的原始参考图（location + 所有 characters）
+         - 通过不同的 prompt 实现运镜变化
+         - 无累积误差，角色和环境一致性极佳
+      2. 角色性别自动注入: 从characters.json读取gender，前缀到prompt防止性别漂移
 
     返回: {keyframe_id: Path, ...}
     """
@@ -415,90 +496,113 @@ def generate_shot_keyframes(
         print(f"⚠️ 黑屏镜头，跳过关键帧生成")
         return {}
 
+    # 加载角色数据库，用于性别注入
+    characters_db = load_characters_json()
+
     results = {}
     keyframe_dir = ep_dir / "video" / "keyframes"
     keyframe_dir.mkdir(parents=True, exist_ok=True)
 
-    # 用于跟踪每个candidate的最后一帧，以供下一帧作为参考
-    last_frame_per_candidate = {}
-
-    # 全I2I工作流生成所有关键帧
+    # 全Multi-Ref工作流生成所有关键帧（每帧都用相同的原始参考图）
     for kf_idx, kf in enumerate(shot_keyframes):
         keyframe_id = kf["keyframe_id"]
         kf_type = kf["type"]
         kf_prompt = kf.get("prompt", "")
-        kf_ref_image = kf.get("ref_image")  # 从keyframes.json读取ref_image
 
         if not kf_prompt:
             print(f"⚠️ [{keyframe_id}] No prompt, skipping")
             continue
 
-        print(f"[I2I] {keyframe_id}")
-        print(f"  Type: {kf_type}")
-        print(f"  Prompt: {kf_prompt[:80]}...")
+        # 注入角色性别前缀，强化一致性
+        kf_character_refs = kf.get("assets", {}).get("character_refs", []) or character_refs
+        gender_prefix = build_gender_prefix(kf_character_refs, characters_db)
+        if gender_prefix:
+            kf_prompt = gender_prefix + kf_prompt
+
+        # denoise: 所有帧使用 0.55
+        denoise = 0.55
+
+        print(f"\n{'─' * 50}")
+        print(f"[MultiRef] {keyframe_id}  (type: {kf_type}, denoise: {denoise})")
+        print(f"  📝 Prompt: {kf_prompt}")
 
         for cand_idx in range(num_candidates):
             seed = base_seed + kf["frame_index"] * 1000 + cand_idx * 10
-            output_path = keyframe_dir / f"{keyframe_id}_seed{seed:04d}.png"
+            # 简化文件名：去掉 seed 后缀，如果有多个候选则用 _N 后缀
+            if num_candidates == 1:
+                output_path = keyframe_dir / f"{keyframe_id}.png"
+            else:
+                output_path = keyframe_dir / f"{keyframe_id}_{cand_idx + 1}.png"
 
             print(f"  → Candidate {cand_idx + 1}/{num_candidates} (seed={seed})")
 
             try:
-                # 加载I2I工作流（所有关键帧都使用I2I）
-                workflow = load_workflow("flux2_i2i")
-                denoise = 0.7 if kf_idx == 0 else 0.5  # 首帧0.7，后续0.5
+                # 所有关键帧：使用多参考图工作流（location + characters）
+                # 从 keyframes.json assets 获取 location 和 character 参考图路径
+                kf_assets = kf.get("assets", {})
+                location_ref_key = kf_assets.get("location_ref")
+                character_refs_keys = kf_assets.get("character_refs", [])
 
-                # 构建工作流参数
-                params = {
-                    "positive_prompt": kf_prompt,
-                    "seed": seed,
-                    "denoise": denoise,
-                    "filename_prefix": f"keyframe/{keyframe_id}_seed{seed:04d}",
-                }
+                # 构建参考图列表：先 location，再 characters
+                ref_images = []
 
-                # 处理参考图像
-                if kf_ref_image:
-                    # 检查ref_image是否为文件路径或keyframe_id
-                    ref_path = Path(kf_ref_image)
+                # 添加 location 参考
+                if location_ref_key:
+                    from pipeline.gen_keyframes_json import find_location_reference
+                    loc_ref_path = find_location_reference(location_ref_key)
+                    if loc_ref_path:
+                        ref_images.append(loc_ref_path)
 
-                    if ref_path.is_absolute() and ref_path.exists():
-                        # 文件路径：缩放并复制到ComfyUI input
-                        ref_image_name = f"{keyframe_id}_ref.png"
-                        comfyui_ref = COMFYUI_INPUT / ref_image_name
-                        scale_image_to_resolution(ref_path, comfyui_ref)
-                        params["reference_image"] = ref_image_name
-                        print(f"    [I2I] Using reference image: {ref_path.name}")
+                # 添加 character 参考（过滤无视觉形象的角色）
+                # 多角色场景：只保留主角参考图以增强一致性
+                from pipeline.gen_keyframes_json import find_character_reference, resolve_character_name
 
-                    elif cand_idx in last_frame_per_candidate and kf_ref_image.startswith(shot_id):
-                        # 前一帧：使用前一个候选的输出
-                        prev_frame_path = last_frame_per_candidate[cand_idx]
-                        ref_image_name = f"{keyframe_id}_ref_c{cand_idx}.png"
-                        comfyui_ref = COMFYUI_INPUT / ref_image_name
-                        scale_image_to_resolution(prev_frame_path, comfyui_ref)
-                        params["reference_image"] = ref_image_name
-                        print(f"    [I2I] Using previous frame reference")
+                # 先过滤掉无视觉形象的角色
+                visual_char_refs = [
+                    char_ref for char_ref in character_refs_keys
+                    if resolve_character_name(char_ref) is not None
+                ]
 
-                # 注入参数
-                workflow = inject_parameters(workflow, params)
+                # 多角色场景：只使用第一个角色（主角）的参考图
+                if len(visual_char_refs) > 1:
+                    main_char = visual_char_refs[0]
+                    char_ref_path = find_character_reference(main_char)
+                    if char_ref_path:
+                        ref_images.append(char_ref_path)
+                    print(f"    💡 多角色场景，仅使用主角 '{main_char}' 的参考图以增强一致性")
+                else:
+                    # 单角色场景：正常添加
+                    for char_ref_key in visual_char_refs:
+                        char_ref_path = find_character_reference(char_ref_key)
+                        if char_ref_path:
+                            ref_images.append(char_ref_path)
 
-                # 执行工作流
-                prompt_id = queue_prompt(workflow)
-                print(f"    queued {prompt_id}, waiting...")
-
-                entry = poll_until_done(prompt_id)
-                images = get_output_images(entry)
-
-                if not images:
-                    print(f"    ⚠️ No output images")
+                # location 参考图是必须的
+                if not ref_images:
+                    print(f"    ⚠️ 无 location 参考图，跳过（location 是必须的）")
                     continue
 
-                # 下载图像
-                output_path = download_image(images[0], output_path)
+                # 确保参考图不超过2张（1 location + 最多1 character）
+                if len(ref_images) > 2:
+                    ref_images = ref_images[:2]
+
+                print(f"    [MultiRef] {len(ref_images)} refs: {[p.name for p in ref_images]}")
+
+                # 使用 creative-toolkit 多参考图工作流
+                img_gen = ComfyUIImageGen()
+                img_gen.generate_with_references(
+                    prompt=kf_prompt,
+                    ref_images=ref_images,
+                    output_path=output_path,
+                    size=f"{OUTPUT_WIDTH}x{OUTPUT_HEIGHT}",
+                    steps=28,
+                    guidance=8.0,
+                    seed=seed,
+                    upload=True,
+                    filename_prefix=f"keyframe/{keyframe_id}",
+                )
                 print(f"    ✅ {output_path.name}")
                 results[keyframe_id] = output_path
-
-                # 记录此candidate的最后一帧，供下一帧使用
-                last_frame_per_candidate[cand_idx] = output_path
 
             except Exception as e:
                 print(f"    ❌ Error: {e}")
@@ -511,37 +615,213 @@ def generate_shot_keyframes(
     return results
 
 
+def generate_all_keyframes(
+    episode_id: str,
+    num_candidates: int = 1,
+    base_seed: int = 0,
+) -> dict:
+    """为整个episode批量生成所有镜头的关键帧，自动跳过已完成的。
+
+    返回: {"generated": int, "skipped": int, "failed": int, "errors": [...]}
+    """
+    ep_dir = get_episode_dir(episode_id)
+    shots_data = load_shots(episode_id)
+
+    keyframes_path = ep_dir / "keyframes.json"
+    if not keyframes_path.exists():
+        raise FileNotFoundError(f"Missing keyframes.json: {keyframes_path}")
+
+    with open(keyframes_path, "r", encoding="utf-8") as f:
+        keyframes_data = json.load(f)
+
+    keyframe_dir = ep_dir / "video" / "keyframes"
+    keyframe_dir.mkdir(parents=True, exist_ok=True)
+
+    total = len(shots_data["shots"])
+    generated = 0
+    skipped = 0
+    failed = 0
+    errors = []
+
+    print(f"\n{'=' * 70}")
+    print(f"批量关键帧生成 — {episode_id} ({total} 镜头, {keyframes_data['total_keyframes']} 关键帧)")
+    print(f"{'=' * 70}\n")
+
+    for i, shot in enumerate(shots_data["shots"], 1):
+        shot_id = shot["shot_id"]
+
+        # 检查该shot的关键帧是否已全部生成
+        shot_kfs = [kf for kf in keyframes_data["keyframes"] if kf["shot_id"] == shot_id]
+        all_exist = all(
+            (keyframe_dir / f"{kf['keyframe_id']}.png").exists()
+            for kf in shot_kfs
+        ) if shot_kfs else False
+
+        if all_exist:
+            print(f"[{i:2d}/{total}] ⏭️  {shot_id} — 已完成 ({len(shot_kfs)} 帧)")
+            skipped += 1
+            continue
+
+        try:
+            results = generate_shot_keyframes(
+                episode_id=episode_id,
+                shot_id=shot_id,
+                num_candidates=num_candidates,
+                base_seed=base_seed,
+            )
+            if results:
+                generated += 1
+            else:
+                skipped += 1
+        except KeyboardInterrupt:
+            print(f"\n⚠️ 用户中断，已处理 {i-1}/{total}")
+            break
+        except Exception as e:
+            print(f"[{i:2d}/{total}] ❌ {shot_id} — {str(e)[:80]}")
+            failed += 1
+            errors.append({"shot_id": shot_id, "error": str(e)[:200]})
+
+    total_files = len(list(keyframe_dir.glob("*.png")))
+    print(f"\n{'=' * 70}")
+    print(f"批量生成完成 — 成功: {generated}, 跳过: {skipped}, 失败: {failed}")
+    print(f"关键帧目录共 {total_files} 个文件")
+    print(f"{'=' * 70}\n")
+
+    if errors:
+        print("失败的镜头:")
+        for err in errors:
+            print(f"  {err['shot_id']}: {err['error']}")
+
+    return {"generated": generated, "skipped": skipped, "failed": failed, "errors": errors}
+
+
+def preview_all_keyframes(
+    episode_id: str,
+    shot_id: str | None = None,
+    base_seed: int = 0,
+) -> None:
+    """打印所有关键帧的参考图和prompt信息，供用户检查（不实际生成）。"""
+    ep_dir = get_episode_dir(episode_id)
+    shots_data = load_shots(episode_id)
+
+    keyframes_path = ep_dir / "keyframes.json"
+    with open(keyframes_path, "r", encoding="utf-8") as f:
+        keyframes_data = json.load(f)
+
+    keyframe_dir = ep_dir / "video" / "keyframes"
+    characters_db = load_characters_json()
+
+    # 筛选shots
+    shots = shots_data["shots"]
+    if shot_id:
+        shots = [s for s in shots if s["shot_id"] == shot_id]
+
+    print(f"\n{'=' * 70}")
+    print(f"关键帧预览 — {episode_id} (dry-run)")
+    print(f"{'=' * 70}")
+
+    for shot in shots:
+        sid = shot["shot_id"]
+        shot_kfs = sorted(
+            [kf for kf in keyframes_data["keyframes"] if kf["shot_id"] == sid],
+            key=lambda x: x["frame_index"],
+        )
+        if not shot_kfs:
+            continue
+
+        location = shot.get("location", "")
+        location_ref = shot.get("location_ref", "")
+        characters = shot.get("characters", [])
+        character_refs = shot.get("character_refs", [])
+
+        print(f"\n{'━' * 70}")
+        print(f"🎬 {sid}  |  location: {location} ({location_ref})  |  chars: {characters} ({character_refs})")
+
+        for kf_idx, kf in enumerate(shot_kfs):
+            keyframe_id = kf["keyframe_id"]
+            kf_prompt = kf.get("prompt", "")
+            kf_ref_image = kf.get("ref_image")
+            denoise = 0.55 if kf_idx == 0 else 0.55
+            seed = base_seed + kf["frame_index"] * 1000
+
+            # 性别前缀（与生成时一致）
+            kf_character_refs = kf.get("assets", {}).get("character_refs", []) or character_refs
+            gender_prefix = build_gender_prefix(kf_character_refs, characters_db)
+            if gender_prefix:
+                kf_prompt = gender_prefix + kf_prompt
+
+            # 检查是否已生成
+            output_path = keyframe_dir / f"{keyframe_id}.png"
+            status = "✅ 已生成" if output_path.exists() else "⏳ 待生成"
+
+            print(f"\n  {'─' * 50}")
+            print(f"  [{keyframe_id}]  type: {kf['type']}  denoise: {denoise}  seed: {seed}  {status}")
+            print(f"  📝 Prompt: {kf_prompt}")
+
+            if kf_ref_image:
+                ref_path = Path(kf_ref_image)
+                if ref_path.is_absolute():
+                    exists = ref_path.exists()
+                    print(f"  🖼️  Ref: {kf_ref_image}")
+                    print(f"       {'✅ exists' if exists else '❌ NOT FOUND'}")
+                else:
+                    print(f"  🖼️  Ref: {kf_ref_image} (← 前一帧输出)")
+            else:
+                print(f"  🖼️  Ref: ⚠️ NONE — 将缺少参考图!")
+
+    print(f"\n{'=' * 70}")
+    print(f"预览完成 (dry-run，未实际生成)")
+    print(f"{'=' * 70}\n")
+
+
 def main():
     import sys
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="生成镜头的所有关键帧 (全I2I，智能选择location或character资产作为首帧参考)"
+        description="生成镜头关键帧 (全I2I，智能选择location或character资产作为首帧参考)"
     )
     parser.add_argument("episode_id", help="剧集编号, e.g. ep001")
-    parser.add_argument("shot_id", help="镜头编号, e.g. S01")
+    parser.add_argument("shot_id", nargs="?", default=None, help="镜头编号, e.g. S01 (省略则生成全部)")
     parser.add_argument(
-        "--num-candidates",
-        type=int,
-        default=1,
+        "--all", action="store_true",
+        help="生成所有镜头的关键帧（等同于省略shot_id）"
+    )
+    parser.add_argument(
+        "--num-candidates", type=int, default=1,
         help="每个关键帧的候选数 (default: 1)"
     )
     parser.add_argument(
-        "--base-seed",
-        type=int,
-        default=0,
+        "--base-seed", type=int, default=0,
         help="基础seed (default: 0)"
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true",
+        help="仅打印每个关键帧的参考图和prompt信息，不实际生成"
     )
 
     args = parser.parse_args()
 
     try:
-        generate_shot_keyframes(
-            episode_id=args.episode_id,
-            shot_id=args.shot_id,
-            num_candidates=args.num_candidates,
-            base_seed=args.base_seed,
-        )
+        if args.dry_run:
+            preview_all_keyframes(
+                episode_id=args.episode_id,
+                shot_id=args.shot_id,
+                base_seed=args.base_seed,
+            )
+        elif args.all or args.shot_id is None:
+            generate_all_keyframes(
+                episode_id=args.episode_id,
+                num_candidates=args.num_candidates,
+                base_seed=args.base_seed,
+            )
+        else:
+            generate_shot_keyframes(
+                episode_id=args.episode_id,
+                shot_id=args.shot_id,
+                num_candidates=args.num_candidates,
+                base_seed=args.base_seed,
+            )
     except Exception as e:
         print(f"❌ 错误: {e}", file=sys.stderr)
         sys.exit(1)
